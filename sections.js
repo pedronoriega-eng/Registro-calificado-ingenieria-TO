@@ -54,6 +54,29 @@ window.SECTIONS.c1 = `
             </div>
         </div>
     </div>
+
+    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; position:relative; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <span class="event-time" style="color:#FF6600; font-weight:bold; font-size:1rem; text-transform:uppercase; display:block; margin-bottom:5px;">ANÁLISIS DE TENDENCIAS</span>
+        <div class="event-title" style="color:#111827; font-weight:bold; font-size:1.5rem; margin-bottom:12px;">Tendencias Nacionales e Internacionales</div>
+        <div class="event-desc" style="color:#374151; font-size:1.1rem; line-height:1.6;">La denominación "Ingeniería Industrial" responde a las tendencias globales de transformación digital, automatización inteligente y sostenibilidad industrial. El programa incorpora estas megatendencias como ejes transversales.</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px; margin-top:20px;">
+            <div style="background:#eff6ff; border:1px solid #bfdbfe; padding:15px; border-radius:10px;">
+                <h4 style="color:#1e40af; font-weight:bold; margin-bottom:8px; font-size:1.1rem;"><i class="fas fa-robot mr-2"></i> Industria 4.0</h4>
+                <p style="color:#374151; font-size:1rem;">IA, IoT, Big Data y Automatización como pilares del perfil profesional futuro.</p>
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:15px; border-radius:10px;">
+                <h4 style="color:#166534; font-weight:bold; margin-bottom:8px; font-size:1.1rem;"><i class="fas fa-leaf mr-2"></i> Sostenibilidad</h4>
+                <p style="color:#374151; font-size:1rem;">Economía circular, producción limpia y ODS como marco de acción.</p>
+            </div>
+            <div style="background:#fef3c7; border:1px solid #fde68a; padding:15px; border-radius:10px;">
+                <h4 style="color:#92400e; font-weight:bold; margin-bottom:8px; font-size:1.1rem;"><i class="fas fa-chart-line mr-2"></i> Demanda Laboral</h4>
+                <p style="color:#374151; font-size:1rem;">Colombia requiere +12.000 ingenieros industriales/año según el OLE y el DNP.</p>
+            </div>
+        </div>
+        <div class="evidence-box" style="background:#f0fdf4; color:#166534; border-left:5px solid #16a34a; padding:15px; font-weight:bold; font-size:1.1rem; border-radius:4px; margin-top:15px;">
+            <i class="fas fa-file-alt mr-2"></i> Estudio de Pertinencia (Anexo 4) - Análisis de tendencias documentado
+        </div>
+    </div>
 </div>
 `;
 

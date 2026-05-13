@@ -29,8 +29,11 @@
     </script>
     
     <!-- Carga de la BD Documental (Obligatorio para conservar argumentos tecnicos) -->
-    <script src="sections.js?v=4"></script>
-    <script src="sections2.js?v=4"></script>
+    <script src="sections.js?v=5"></script>
+    <script src="sections2.js?v=5"></script>
+    <script src="sections_c2.js?v=5"></script>
+    <script src="sections_c3.js?v=5"></script>
+    <script src="sections_c5.js?v=5"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -277,14 +280,21 @@
             setTimeout(() => {
                 // Mapa Leaflet (Condicion 2)
                 if(id === 'c2' && document.getElementById('mapaColombiaSlide')) {
-                    if(!window.myMap) {
-                        window.myMap = L.map('mapaColombiaSlide').setView([4.5709, -74.2973], 5);
-                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(window.myMap);
-                        L.marker([4.7110, -74.0721]).addTo(window.myMap).bindPopup("<b>Bogotá</b><br>15 programas virtuales.");
-                        L.marker([7.1254, -73.1198]).addTo(window.myMap).bindPopup("<b>Bucaramanga</b><br>Sede TO. Gran oportunidad de expansión.");
-                    } else {
-                        window.myMap.invalidateSize();
-                    }
+                    if(window.myMap) { window.myMap.remove(); window.myMap = null; }
+                    window.myMap = L.map('mapaColombiaSlide').setView([4.5709, -74.2973], 5);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(window.myMap);
+                    L.marker([4.7110, -74.0721]).addTo(window.myMap).bindPopup("<b>Bogotá</b><br>8 programas virtuales de Ing. Industrial");
+                    L.marker([6.2518, -75.5636]).addTo(window.myMap).bindPopup("<b>Medellín</b><br>2 programas virtuales");
+                    L.marker([3.4516, -76.5320]).addTo(window.myMap).bindPopup("<b>Cali</b><br>1 programa virtual");
+                    L.marker([5.0689, -75.5174]).addTo(window.myMap).bindPopup("<b>Manizales</b><br>1 programa virtual");
+                    L.marker([10.9639, -74.7964]).addTo(window.myMap).bindPopup("<b>Barranquilla</b><br>1 programa virtual");
+                    L.marker([7.1254, -73.1198]).addTo(window.myMap).bindPopup("<b>Bucaramanga - TO</b><br>Sede principal. Oportunidad estratégica.").openPopup();
+                    L.marker([7.0636, -73.0852]).addTo(window.myMap).bindPopup("<b>Floridablanca</b><br>UNAD CEAD");
+                }
+                // Reset Investigation slides (Condicion 5)
+                if(id === 'c5') {
+                    window._invIdx = 0;
+                    if(window._updateInvSlide) window._updateInvSlide();
                 }
             }, 300);
         }
