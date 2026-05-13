@@ -115,20 +115,23 @@
             </div>
         </div>
 
-        <div class="flex flex-1 overflow-hidden">
+        <div class="flex flex-1 overflow-hidden min-h-0">
             <!-- Sidebar -->
-            <div class="w-64 bg-white border-r border-gray-200 overflow-y-auto custom-scrollbar flex flex-col shadow-md z-40" id="slideList"></div>
-            <!-- Slide Area -->
-            <div class="flex-1 overflow-y-auto custom-scrollbar p-6 flex justify-center items-start">
-                <div class="bg-white w-full max-w-6xl rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col min-h-[80vh]">
-                    <div class="border-b border-gray-100 p-6">
-                        <div class="text-toRed font-bold text-xs tracking-widest uppercase mb-1" id="slideCategory">Categoría</div>
-                        <h3 class="text-2xl font-bold text-toBlue font-heading" id="slideTitle">Título</h3>
-                    </div>
-                    <div class="p-6 md:p-10 flex-1 overflow-visible" id="slideBody"></div>
-                    <div class="bg-gray-50 border-t border-gray-200 p-4 flex justify-between items-center">
-                        <button onclick="prevSlide()" class="px-5 py-2 text-toBlue font-bold hover:bg-gray-200 rounded"><i class="fas fa-arrow-left mr-2"></i> Anterior</button>
-                        <button onclick="nextSlide()" class="px-5 py-2 bg-toBlue text-white font-bold hover:bg-toLightBlue rounded shadow">Siguiente <i class="fas fa-arrow-right ml-2"></i></button>
+            <div class="w-64 bg-white border-r border-gray-200 overflow-y-auto custom-scrollbar flex flex-col shadow-md z-40 hidden" id="slideList"></div>
+            <!-- Slide Area Container (Scrollable) -->
+            <div class="flex-1 overflow-y-auto custom-scrollbar min-h-0 relative bg-gray-100" id="scrollContainer">
+                <!-- Wrapper for centering -->
+                <div class="min-h-full p-6 flex justify-center items-start">
+                    <div class="bg-white w-full max-w-6xl rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
+                        <div class="border-b border-gray-100 p-6 md:p-8">
+                            <div class="text-toRed font-bold text-xs tracking-widest uppercase mb-1" id="slideCategory">Categoría</div>
+                            <h3 class="text-3xl font-bold text-toBlue font-heading" id="slideTitle">Título</h3>
+                        </div>
+                        <div class="p-6 md:p-10 flex-1 overflow-visible text-gray-800" id="slideBody"></div>
+                        <div class="bg-gray-50 border-t border-gray-200 p-6 flex justify-between items-center">
+                            <button onclick="prevSlide()" class="px-6 py-3 text-toBlue font-bold hover:bg-gray-200 rounded-lg transition-colors"><i class="fas fa-arrow-left mr-2"></i> Anterior</button>
+                            <button onclick="nextSlide()" class="px-6 py-3 bg-toBlue text-white font-bold hover:bg-toLightBlue rounded-lg shadow-md transition-colors">Siguiente <i class="fas fa-arrow-right ml-2"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -251,7 +254,8 @@
             runSlideScripts(id);
             
             // Forzar que el contenedor inicie desde arriba
-            document.querySelector('.overflow-y-auto.custom-scrollbar.p-6').scrollTop = 0;
+            const scroller = document.getElementById('scrollContainer');
+            if(scroller) scroller.scrollTop = 0;
         }
 
         function nextSlide() {
