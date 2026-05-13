@@ -1,107 +1,139 @@
-// Condición 3 - Contenidos Curriculares (Expanded)
+// Sección Condición 3 - Aspectos Curriculares (Completa)
+window.SECTIONS = window.SECTIONS || {};
 window.SECTIONS.c3 = `
 <div class="slide-header" style="border-bottom:2px solid #FF6600; padding-bottom:15px; margin-bottom:25px;">
-    <div class="slide-subtitle" style="color:#FF6600; font-weight:bold; text-transform:uppercase; font-size:1.1rem;">Condición 03</div>
-    <h1 style="color:#0A2540; font-size:2.2rem; margin:0; font-weight:bold;">Contenidos Curriculares</h1>
+    <div class="slide-subtitle" style="color:#FF6600; font-weight:bold; text-transform:uppercase; font-size:1.1rem;">Condición 3</div>
+    <h1 style="color:#0A2540; font-size:2.2rem; margin:0; font-weight:bold;">Aspectos Curriculares e Innovación Pedagógica</h1>
 </div>
-<div class="timeline" style="border-left:4px solid #374151; padding-left:25px;">
 
-    <!-- COMPOSICIÓN -->
-    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 6px rgba(0,0,0,0.05);">
-        <span style="color:#FF6600; font-weight:bold; font-size:1rem; text-transform:uppercase; display:block; margin-bottom:5px;">COMPOSICIÓN CURRICULAR</span>
-        <div style="color:#111827; font-weight:bold; font-size:1.5rem; margin-bottom:12px;">Plan de Estudios — 48 Asignaturas · 144 Créditos</div>
-        <table style="width:100%; border-collapse:collapse; font-size:1.1rem; border:1px solid #e5e7eb;">
-            <tr style="background:#0A2540; color:white;"><th style="padding:12px; text-align:left;">Componente</th><th style="padding:12px; text-align:center;">Asignaturas</th><th style="padding:12px; text-align:center;">%</th></tr>
-            <tr><td style="padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold;">Ciencias Básicas</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb;">Física, Álgebra, Cálculo, Estadística</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold;">15%</td></tr>
-            <tr><td style="padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold; color:#C8102E;">Ingeniería Aplicada</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb;">Producción, Logística, Simulación, IA</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold; color:#C8102E;">30%</td></tr>
-            <tr><td style="padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold;">Económico-Gestión</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb;">Finanzas, Calidad, Proyectos</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold;">20%</td></tr>
-            <tr><td style="padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold;">Investigación</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb;">Metodología, Seminarios, Grado</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold;">15%</td></tr>
-            <tr><td style="padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold;">Humanística</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb;">Ética, Comunicación, Electivas</td><td style="text-align:center; padding:12px; border-bottom:1px solid #e5e7eb; font-weight:bold;">10%</td></tr>
-            <tr><td style="padding:12px; font-weight:bold;">Complementaria</td><td style="text-align:center; padding:12px;">Inglés, TIC, Herramientas</td><td style="text-align:center; padding:12px; font-weight:bold;">10%</td></tr>
-        </table>
+<!-- Modelo Pedagógico -->
+<div style="display:grid; grid-template-columns: 1fr 1fr; gap:25px; margin-bottom:30px;">
+    <div style="background:#f8fafc; padding:25px; border-radius:15px; border-left:5px solid #0A2540; box-shadow:0 4px 6px rgba(0,0,0,0.05);">
+        <h3 style="color:#0A2540; font-weight:bold; margin-top:0; font-size:1.4rem;"><i class="fas fa-university mr-2"></i> Modelo Pedagógico</h3>
+        <p style="font-size:1.1rem; line-height:1.6; color:#334155;">
+            Nuestro modelo de <strong>"Formación en Contextos de Aplicación"</strong> garantiza que el aprendizaje no sea solo teórico, sino una interacción constante con el sector real.
+        </p>
+        <ul style="color:#475569; font-size:1rem; padding-left:20px;">
+            <li style="margin-bottom:8px;">Aprendizaje basado en retos industriales reales.</li>
+            <li style="margin-bottom:8px;">Resultados de aprendizaje medibles en entornos de simulación.</li>
+            <li style="margin-bottom:8px;">Integración de competencias blandas y técnicas.</li>
+        </ul>
     </div>
-
-    <!-- SELECTOR DE COMPONENTE -->
-    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 6px rgba(0,0,0,0.05);">
-        <span style="color:#FF6600; font-weight:bold; font-size:1rem; text-transform:uppercase; display:block; margin-bottom:5px;">SELECTOR DE TRAZABILIDAD</span>
-        <div style="color:#111827; font-weight:bold; font-size:1.5rem; margin-bottom:12px;">Componente → Asignatura → Resultado de Aprendizaje → Competencia</div>
-        <div style="color:#374151; margin-bottom:15px; font-size:1rem;">Seleccione un componente para visualizar la trazabilidad desde la asignatura hasta la competencia del perfil de egreso:</div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
-            <button onclick="document.querySelectorAll('[id^=comp_]').forEach(e=>e.style.display='none'); document.getElementById('comp_basicas').style.display='block';" style="background:#0A2540; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; font-weight:bold;">Ciencias Básicas</button>
-            <button onclick="document.querySelectorAll('[id^=comp_]').forEach(e=>e.style.display='none'); document.getElementById('comp_aplicada').style.display='block';" style="background:#C8102E; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; font-weight:bold;">Ing. Aplicada</button>
-            <button onclick="document.querySelectorAll('[id^=comp_]').forEach(e=>e.style.display='none'); document.getElementById('comp_gestion').style.display='block';" style="background:#eab308; color:#111; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; font-weight:bold;">Eco-Gestión</button>
-            <button onclick="document.querySelectorAll('[id^=comp_]').forEach(e=>e.style.display='none'); document.getElementById('comp_invest').style.display='block';" style="background:#8b5cf6; color:white; border:none; padding:10px 16px; border-radius:6px; cursor:pointer; font-weight:bold;">Investigación</button>
+    <div style="background:linear-gradient(135deg, #0A2540, #1e40af); padding:25px; border-radius:15px; color:white; box-shadow:0 10px 20px rgba(10,37,64,0.2);">
+        <h3 style="font-weight:bold; margin-top:0; font-size:1.4rem; color:#FF6600;"><i class="fas fa-microchip mr-2"></i> Industria 4.0 y Simulación</h3>
+        <p style="font-size:1rem; line-height:1.6; opacity:0.9;">
+            Las asignaturas de tipología <strong>Teórico-Práctica (TP)</strong> se desarrollan mediante software especializado y simuladores potenciales para Ingeniería Industrial:
+        </p>
+        <div style="display:flex; gap:10px; margin-top:15px;">
+            <div style="background:rgba(255,255,255,0.1); padding:10px; border-radius:8px; flex:1; text-align:center;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/FlexSim_Logo.png" style="height:30px; filter:brightness(0) invert(1); margin-bottom:5px;"><br>
+                <strong>FlexSim</strong>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); padding:10px; border-radius:8px; flex:1; text-align:center;">
+                <i class="fas fa-vr-cardboard fa-2x" style="color:#FF6600;"></i><br>
+                <strong>Virtual Pro</strong>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); padding:10px; border-radius:8px; flex:1; text-align:center;">
+                <i class="fas fa-code-branch fa-2x"></i><br>
+                <strong>Apps Propias</strong>
+            </div>
         </div>
-
-        <div id="comp_basicas" style="display:block;">
-            <table style="width:100%; border-collapse:collapse; font-size:0.95rem; border:1px solid #e5e7eb;">
-                <tr style="background:#0A2540; color:white;"><th style="padding:10px;">Asignatura</th><th style="padding:10px;">R.A. Específico</th><th style="padding:10px;">Competencia Egreso</th></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Matemáticas I</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Resolver problemas con pensamiento lógico-matemático</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Modelamiento cuantitativo de problemas industriales</td></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Cálculo Diferencial</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Aplicar derivadas a optimización</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Optimización de procesos productivos</td></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Física Mecánica</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Comprender principios mecánicos aplicados</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Diseño de sistemas mecánicos industriales</td></tr>
-                <tr><td style="padding:10px;">Estadística y Prob.</td><td style="padding:10px;">Analizar datos con herramientas estadísticas</td><td style="padding:10px;">Toma de decisiones basada en datos</td></tr>
-            </table>
-        </div>
-        <div id="comp_aplicada" style="display:none;">
-            <table style="width:100%; border-collapse:collapse; font-size:0.95rem; border:1px solid #e5e7eb;">
-                <tr style="background:#C8102E; color:white;"><th style="padding:10px;">Asignatura</th><th style="padding:10px;">R.A. Específico</th><th style="padding:10px;">Competencia Egreso</th></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Intro. Ing. Industrial</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Identificar áreas de acción del ingeniero</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Visión sistémica de la ingeniería</td></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Procesos Industriales</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Diseñar y documentar procesos</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Gestión y mejora de procesos productivos</td></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Logística y Cadena</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Optimizar cadenas de suministro</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Gestión logística integral</td></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Producción con IA</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Aplicar IA a planificación productiva</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Integración tecnológica 4.0</td></tr>
-                <tr><td style="padding:10px;">Simulación con IA</td><td style="padding:10px;">Modelar escenarios con herramientas IA</td><td style="padding:10px;">Innovación en procesos industriales</td></tr>
-            </table>
-        </div>
-        <div id="comp_gestion" style="display:none;">
-            <table style="width:100%; border-collapse:collapse; font-size:0.95rem; border:1px solid #e5e7eb;">
-                <tr style="background:#eab308; color:#111;"><th style="padding:10px;">Asignatura</th><th style="padding:10px;">R.A. Específico</th><th style="padding:10px;">Competencia Egreso</th></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Fund. de Economía</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Comprender contexto económico</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Análisis económico organizacional</td></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Costos y Presupuestos</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Calcular y controlar costos</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Gestión financiera de operaciones</td></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Gestión de Calidad</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Implementar SGC (ISO 9001)</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Aseguramiento de calidad industrial</td></tr>
-                <tr><td style="padding:10px;">Gerencia de Proyectos</td><td style="padding:10px;">Formular y gestionar proyectos</td><td style="padding:10px;">Liderazgo de proyectos industriales</td></tr>
-            </table>
-        </div>
-        <div id="comp_invest" style="display:none;">
-            <table style="width:100%; border-collapse:collapse; font-size:0.95rem; border:1px solid #e5e7eb;">
-                <tr style="background:#8b5cf6; color:white;"><th style="padding:10px;">Asignatura</th><th style="padding:10px;">R.A. Específico</th><th style="padding:10px;">Competencia Egreso</th></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Metodología de Inv.</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Diseñar protocolos de investigación</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Investigación aplicada</td></tr>
-                <tr><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Seminario I</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Analizar problemas del sector</td><td style="padding:10px; border-bottom:1px solid #e5e7eb;">Pensamiento crítico investigativo</td></tr>
-                <tr><td style="padding:10px;">Trabajo de Grado</td><td style="padding:10px;">Ejecutar proyecto de investigación</td><td style="padding:10px;">Generación de conocimiento aplicado</td></tr>
-            </table>
-        </div>
+        <p style="font-size:0.85rem; margin-top:10px; font-style:italic;">*Apps desarrolladas por semilleros de investigación en conjunto con el programa de Software.</p>
     </div>
+</div>
 
-    <!-- MALLA HORIZONTAL COMPLETA -->
-    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 6px rgba(0,0,0,0.05); overflow:hidden;">
-        <span style="color:#FF6600; font-weight:bold; font-size:1rem; text-transform:uppercase; display:block; margin-bottom:5px;">MALLA CURRICULAR COMPLETA</span>
-        <div style="color:#111827; font-weight:bold; font-size:1.5rem; margin-bottom:5px;">Estructura de Pre-saberes por Semestre</div>
-        <div style="color:#374151; margin-bottom:15px; font-size:1rem;">Deslice horizontalmente → para ver la secuencia completa de 8 semestres.</div>
-        <div style="width:100%; overflow-x:auto; padding-bottom:15px;" class="custom-scrollbar">
-            <table style="min-width:1400px; border-collapse:collapse; font-size:0.85rem; border:1px solid #e5e7eb;">
-                <tr style="background:#0A2540; color:white;">
-                    <th style="padding:8px; min-width:100px;">Componente</th>
-                    <th style="padding:8px; text-align:center;">Sem 1</th><th style="padding:8px; text-align:center;">Sem 2</th><th style="padding:8px; text-align:center;">Sem 3</th><th style="padding:8px; text-align:center;">Sem 4</th><th style="padding:8px; text-align:center;">Sem 5</th><th style="padding:8px; text-align:center;">Sem 6</th><th style="padding:8px; text-align:center;">Sem 7</th><th style="padding:8px; text-align:center;">Sem 8</th>
-                </tr>
-                <tr style="background:#eff6ff;"><td style="padding:8px; font-weight:bold; background:#0A2540; color:white;">C. Básicas</td><td style="padding:8px; border:1px solid #e5e7eb;">Matemáticas I</td><td style="padding:8px; border:1px solid #e5e7eb;">Cálculo Dif. →</td><td style="padding:8px; border:1px solid #e5e7eb;">Cálculo Int. →</td><td style="padding:8px; border:1px solid #e5e7eb;">Ec. Diferen. →</td><td style="padding:8px; border:1px solid #e5e7eb;">Estadística →</td><td style="padding:8px; border:1px solid #e5e7eb;">Física Mec.</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td></tr>
-                <tr style="background:#fef2f2;"><td style="padding:8px; font-weight:bold; background:#C8102E; color:white;">Ing. Aplicada</td><td style="padding:8px; border:1px solid #e5e7eb;">Intro Ing. Ind.</td><td style="padding:8px; border:1px solid #e5e7eb;">Procesos Ind. →</td><td style="padding:8px; border:1px solid #e5e7eb;">Métodos y T. →</td><td style="padding:8px; border:1px solid #e5e7eb;">Producción I →</td><td style="padding:8px; border:1px solid #e5e7eb;">Producción IA →</td><td style="padding:8px; border:1px solid #e5e7eb;">Logística →</td><td style="padding:8px; border:1px solid #e5e7eb;">Simulación IA →</td><td style="padding:8px; border:1px solid #e5e7eb;">Diseño Planta</td></tr>
-                <tr style="background:#fefce8;"><td style="padding:8px; font-weight:bold; background:#eab308; color:#111;">Eco-Gestión</td><td style="padding:8px; border:1px solid #e5e7eb;">Fund. Economía</td><td style="padding:8px; border:1px solid #e5e7eb;">Contabilidad →</td><td style="padding:8px; border:1px solid #e5e7eb;">Costos →</td><td style="padding:8px; border:1px solid #e5e7eb;">Finanzas →</td><td style="padding:8px; border:1px solid #e5e7eb;">G. Calidad →</td><td style="padding:8px; border:1px solid #e5e7eb;">G. Ambiental →</td><td style="padding:8px; border:1px solid #e5e7eb;">G. Proyectos →</td><td style="padding:8px; border:1px solid #e5e7eb;">Emprendimiento</td></tr>
-                <tr style="background:#f5f3ff;"><td style="padding:8px; font-weight:bold; background:#8b5cf6; color:white;">Investigación</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">Metodología →</td><td style="padding:8px; border:1px solid #e5e7eb;">Seminario I →</td><td style="padding:8px; border:1px solid #e5e7eb;">Seminario II →</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">Trabajo Grado</td></tr>
-                <tr style="background:#f0fdf4;"><td style="padding:8px; font-weight:bold; background:#10b981; color:white;">Humanística</td><td style="padding:8px; border:1px solid #e5e7eb;">Comunicación</td><td style="padding:8px; border:1px solid #e5e7eb;">Constitución</td><td style="padding:8px; border:1px solid #e5e7eb;">Ética Prof.</td><td style="padding:8px; border:1px solid #e5e7eb;">Electiva I</td><td style="padding:8px; border:1px solid #e5e7eb;">Electiva II</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td></tr>
-                <tr style="background:#f9fafb;"><td style="padding:8px; font-weight:bold; background:#6b7280; color:white;">Complementar.</td><td style="padding:8px; border:1px solid #e5e7eb;">Inglés I →</td><td style="padding:8px; border:1px solid #e5e7eb;">Inglés II →</td><td style="padding:8px; border:1px solid #e5e7eb;">Inglés III →</td><td style="padding:8px; border:1px solid #e5e7eb;">Inglés IV</td><td style="padding:8px; border:1px solid #e5e7eb;">Herram. TIC</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td><td style="padding:8px; border:1px solid #e5e7eb;">-</td></tr>
-            </table>
-        </div>
-        <div style="color:#6b7280; font-size:0.9rem; margin-top:8px;"><i class="fas fa-info-circle mr-1"></i> Las flechas (→) indican pre-saberes obligatorios entre asignaturas consecutivas.</div>
+<!-- Plan de Estudios Detallado -->
+<h2 style="color:#0A2540; border-bottom:2px solid #e2e8f0; padding-bottom:10px;"><i class="fas fa-list-ol mr-2"></i> Estructura del Plan de Estudios (144 Créditos)</h2>
+
+<style>
+    .component-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 20px; overflow: hidden; }
+    .component-header { background: #f1f5f9; padding: 12px 20px; font-weight: bold; color: #0A2540; display: flex; justify-content: space-between; align-items: center; }
+    .course-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .course-table th { background: #f8fafc; padding: 10px; text-align: left; border-bottom: 2px solid #e2e8f0; color: #64748b; }
+    .course-table td { padding: 10px; border-bottom: 1px solid #f1f5f9; }
+    .tag-t { background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+    .tag-tp { background: #fef9c3; color: #854d0e; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+</style>
+
+<div class="component-card">
+    <div class="component-header">
+        <span>CIENCIAS BÁSICAS DE INGENIERÍA</span>
+        <span style="background:#0A2540; color:white; font-size:0.7rem; padding:2px 8px; border-radius:10px;">9 ASIGNATURAS</span>
     </div>
+    <table class="course-table">
+        <thead>
+            <tr><th>Sem</th><th>Asignatura</th><th>Tipo</th><th>CR</th><th>Software / Aplicación</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Cálculo Diferencial</td><td><span class="tag-t">T</span></td><td>3</td><td>GeoGebra / Symbolab</td></tr>
+            <tr><td>1</td><td>Álgebra Lineal</td><td><span class="tag-t">T</span></td><td>3</td><td>MATLAB Basic</td></tr>
+            <tr><td>2</td><td>Cálculo Integral</td><td><span class="tag-t">T</span></td><td>3</td><td>Wolfram Alpha</td></tr>
+            <tr><td>2</td><td>Física I</td><td><span class="tag-t">T</span></td><td>3</td><td>PhET Simulations</td></tr>
+            <tr><td>2</td><td>Estadística Descriptiva</td><td><span class="tag-t">T</span></td><td>3</td><td>Excel Avanzado / SPSS</td></tr>
+            <tr><td>3</td><td>Cálculo Multivariado</td><td><span class="tag-t">T</span></td><td>3</td><td>Mathematica</td></tr>
+            <tr><td>3</td><td>Física II</td><td><span class="tag-t">T</span></td><td>3</td><td>Lab Virtuales Institucionales</td></tr>
+            <tr><td>3</td><td>Estadística Inferencial</td><td><span class="tag-t">T</span></td><td>3</td><td>R-Studio / Minitab</td></tr>
+            <tr><td>4</td><td>Ecuaciones Diferenciales</td><td><span class="tag-t">T</span></td><td>3</td><td>Matlab / Python</td></tr>
+        </tbody>
+    </table>
+</div>
 
-    <!-- SÍNTESIS -->
-    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 6px rgba(0,0,0,0.05);">
-        <span style="color:#FF6600; font-weight:bold; font-size:1rem; text-transform:uppercase; display:block; margin-bottom:5px;">DOCUMENTACIÓN</span>
-        <div style="color:#111827; font-weight:bold; font-size:1.5rem; margin-bottom:12px;">Evidencias Anexas</div>
-        <div style="background:#f0fdf4; color:#166534; border-left:5px solid #16a34a; padding:15px; font-weight:bold; font-size:1.1rem; border-radius:4px; margin-bottom:10px;">
-            <i class="fas fa-sitemap mr-2"></i> Anexo 11: Malla Curricular Completa y Estructura de Pre-saberes
+<div class="component-card">
+    <div class="component-header">
+        <span>TECNOLOGÍA, ANÁLISIS Y TRANSFORMACIÓN DE DATOS</span>
+        <span style="background:#FF6600; color:white; font-size:0.7rem; padding:2px 8px; border-radius:10px;">8 ASIGNATURAS</span>
+    </div>
+    <table class="course-table">
+        <thead>
+            <tr><th>Sem</th><th>Asignatura</th><th>Tipo</th><th>CR</th><th>Eje de Innovación</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Introducción a la Ing. Industrial</td><td><span class="tag-t">T</span></td><td>3</td><td>Contexto Industrial 4.0</td></tr>
+            <tr><td>1</td><td>Fundamentos de Programación</td><td><span class="tag-tp">TP</span></td><td>3</td><td>Python para Ingenieros</td></tr>
+            <tr><td>3</td><td>Inteligencia Artificial</td><td><span class="tag-t">T</span></td><td>3</td><td>Machine Learning Aplicado</td></tr>
+            <tr><td>6</td><td>Big Data y Analítica de Datos</td><td><span class="tag-t">T</span></td><td>3</td><td>Power BI / Tableau</td></tr>
+            <tr><td>6</td><td>Investigación de Mercados</td><td><span class="tag-t">T</span></td><td>3</td><td>Análisis de Tendencias Digitales</td></tr>
+            <tr><td>6</td><td>Métodos Cualitativos y Cuantitativos</td><td><span class="tag-t">T</span></td><td>3</td><td>Modelamiento Matemático</td></tr>
+            <tr><td>7</td><td>Modelación y Simulación</td><td><span class="tag-tp">TP</span></td><td>3</td><td><strong>FlexSim / Arena</strong></td></tr>
+            <tr><td>8</td><td>Diseño de Experimentos</td><td><span class="tag-tp">TP</span></td><td>3</td><td><strong>Virtual Pro / Minitab</strong></td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="component-card">
+    <div class="component-header">
+        <span>PROCESOS Y SISTEMAS PRODUCTIVOS</span>
+        <span style="background:#059669; color:white; font-size:0.7rem; padding:2px 8px; border-radius:10px;">10 ASIGNATURAS</span>
+    </div>
+    <table class="course-table">
+        <thead>
+            <tr><th>Sem</th><th>Asignatura</th><th>Tipo</th><th>CR</th><th>Práctica / Aplicación</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Dibujo Industrial</td><td><span class="tag-tp">TP</span></td><td>3</td><td>AutoCAD / SolidWorks</td></tr>
+            <tr><td>2</td><td>Procesos Industriales y de Manufactura</td><td><span class="tag-t">T</span></td><td>3</td><td>Visitas Virtuales 360°</td></tr>
+            <tr><td>4</td><td>Investigación de Operaciones I</td><td><span class="tag-t">T</span></td><td>3</td><td>Solver / Lindo / Lingo</td></tr>
+            <tr><td>5</td><td>Termodinámica</td><td><span class="tag-t">T</span></td><td>3</td><td>Simuladores Termo-químicos</td></tr>
+            <tr><td>5</td><td>Investigación de Operaciones II</td><td><span class="tag-t">T</span></td><td>3</td><td>Teoría de Colas - Apps Propias</td></tr>
+            <tr><td>5</td><td>Gerencia de la Producción I</td><td><span class="tag-t">T</span></td><td>3</td><td>ERP Simulado (SAP/Odoo)</td></tr>
+            <tr><td>6</td><td>Logística y Cadena de Suministro</td><td><span class="tag-t">T</span></td><td>3</td><td>Simulación de Redes de Valor</td></tr>
+            <tr><td>6</td><td>Gerencia de la Producción II</td><td><span class="tag-t">T</span></td><td>3</td><td>MRP / JIT / Lean Manufacturing</td></tr>
+            <tr><td>7</td><td>Diseño de Planta y Dist. de Planta</td><td><span class="tag-tp">TP</span></td><td>3</td><td><strong>FlexSim Layout</strong></td></tr>
+            <tr><td>8</td><td>Gestión de la Higiene y Seg. Industrial</td><td><span class="tag-t">T</span></td><td>3</td><td>Matriz de Riesgos Interactiva</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="background:#eff6ff; padding:20px; border-radius:12px; margin-top:20px;">
+    <h3 style="color:#1e40af; margin-top:0;"><i class="fas fa-bullseye mr-2"></i> Resultados de Aprendizaje (RA)</h3>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; font-size:0.9rem; color:#1e3a8a;">
+        <div style="background:white; padding:15px; border-radius:8px;">
+            <strong>RA1: Análisis de Sistemas</strong><br>
+            Capacidad para identificar, formular y resolver problemas complejos de ingeniería industrial aplicando principios de matemáticas, ciencias y tecnología 4.0.
         </div>
-        <div style="background:#f0fdf4; color:#166534; border-left:5px solid #16a34a; padding:15px; font-weight:bold; font-size:1.1rem; border-radius:4px;">
-            <i class="fas fa-book mr-2"></i> Anexo 10: 48 Microcurrículos completos con Resultados de Aprendizaje
+        <div style="background:white; padding:15px; border-radius:8px;">
+            <strong>RA2: Diseño Industrial</strong><br>
+            Diseña procesos y sistemas que cumplen necesidades específicas con consideraciones de salud pública, seguridad, bienestar social, cultural y ambiental.
         </div>
     </div>
 </div>
