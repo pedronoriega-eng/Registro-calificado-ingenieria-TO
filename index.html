@@ -247,6 +247,7 @@
             // Mostrar el visor
             const viewer = document.getElementById('presentationViewer');
             viewer.classList.remove('hidden');
+            viewer.classList.add('flex');
             setTimeout(() => viewer.classList.remove('opacity-0', 'scale-95'), 10);
             document.body.style.overflow = 'hidden';
 
@@ -291,7 +292,7 @@
         function closePresentation() {
             const v = document.getElementById('presentationViewer');
             v.classList.add('opacity-0', 'scale-95');
-            setTimeout(() => { v.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
+            setTimeout(() => { v.classList.remove('flex'); v.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
         }
 
         window.zoomMap = function(zona) {
