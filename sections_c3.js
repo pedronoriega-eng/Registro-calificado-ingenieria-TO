@@ -1,102 +1,210 @@
-// Sección Condición 3 - Diseño Premium e Interactivo
+// Sección Condición 3 - RECONSTRUCCIÓN TOTAL PROFESIONAL
 window.SECTIONS = window.SECTIONS || {};
 window.SECTIONS.c3 = `
 <div class="slide-header" style="border-bottom:3px solid #C8102E; padding-bottom:15px; margin-bottom:25px;">
     <div style="display:flex; justify-content:space-between; align-items:center;">
-        <h1 style="color:#0A2540; font-size:2.2rem; margin:0; font-weight:bold;">3. Contenidos Curriculares e Innovación</h1>
-        <div style="background:#0A2540; color:white; padding:10px 20px; border-radius:12px; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
-            <span style="font-size:1.6rem; font-weight:bold;">144</span><br><span style="font-size:0.7rem; letter-spacing:1px;">CRÉDITOS</span>
+        <div>
+            <div class="slide-subtitle" style="color:#C8102E; font-weight:bold; text-transform:uppercase; font-size:0.9rem;">Condición 3</div>
+            <h1 style="color:#0A2540; font-size:2.4rem; margin:0; font-weight:bold;">Contenidos Curriculares e Innovación</h1>
+        </div>
+        <div style="background:#0A2540; color:white; padding:12px 25px; border-radius:15px; text-align:center; box-shadow:0 8px 16px rgba(10,37,64,0.2);">
+            <span style="font-size:1.8rem; font-weight:bold;">144</span><br><span style="font-size:0.75rem; letter-spacing:1px; opacity:0.8;">CRÉDITOS TOTALES</span>
         </div>
     </div>
 </div>
 
-<div style="background:#f8fafc; padding:20px; border-radius:15px; margin-bottom:30px; border-left:6px solid #FF6600; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-    <h3 style="color:#0A2540; margin:0 0 10px 0; font-size:1.3rem;"><i class="fas fa-university mr-2"></i> Modelo: Formación en Contextos de Aplicación</h3>
-    <p style="color:#334155; font-size:1rem; line-height:1.6; margin:0;">
-        Garantizamos que los Resultados de Aprendizaje se alcancen en interacción directa con el sector real mediante el uso de <strong>FlexSim</strong> y <strong>Virtual Pro</strong>, integrando la teoría con la práctica industrial 4.0.
-    </p>
+<!-- Modelo Pedagógico Institucional -->
+<div style="background:linear-gradient(135deg, #f8fafc, #f1f5f9); padding:25px; border-radius:18px; margin-bottom:35px; border-left:8px solid #FF6600; box-shadow:0 4px 15px rgba(0,0,0,0.05); display:flex; align-items:center; gap:20px;">
+    <div style="background:#FF6600; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <i class="fas fa-university fa-2x"></i>
+    </div>
+    <div>
+        <h3 style="color:#0A2540; margin:0 0 5px 0; font-size:1.4rem;">Modelo: Formación en Contextos de Aplicación</h3>
+        <p style="color:#475569; font-size:1.05rem; line-height:1.6; margin:0;">
+            Aprendizaje basado en la interacción con el sector real. Uso intensivo de software de simulación especializada: <strong>FlexSim</strong> (Optimización de procesos) y <strong>Virtual Pro</strong> (Manufactura y laboratorios industriales).
+        </p>
+    </div>
 </div>
 
-<!-- SELECTOR DE TRAZABILIDAD (DISEÑO ORIGINAL) -->
-<div style="background:white; border:1px solid #e2e8f0; border-radius:20px; padding:30px; margin-bottom:40px; box-shadow:0 10px 25px rgba(0,0,0,0.05);">
-    <div style="color:#FF6600; font-weight:bold; font-size:0.9rem; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Selector de Trazabilidad</div>
-    <h2 style="margin-top:0; color:#0A2540; font-size:1.5rem; margin-bottom:25px;">Componente → Asignatura → R.A. → Competencia</h2>
+<!-- SELECTOR DE TRAZABILIDAD PROFESIONAL -->
+<div style="background:white; border:1px solid #e2e8f0; border-radius:24px; padding:35px; margin-bottom:45px; box-shadow:0 15px 35px rgba(0,0,0,0.06);">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px;">
+        <div>
+            <div style="color:#FF6600; font-weight:bold; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px;">Herramienta de Auditoría</div>
+            <h2 style="margin:0; color:#0A2540; font-size:1.8rem;">Trazabilidad Curricular</h2>
+        </div>
+        <div style="font-size:0.9rem; color:#64748b; background:#f8fafc; padding:8px 15px; border-radius:10px;">
+            Componente → Asignatura → R.A. → Competencia
+        </div>
+    </div>
     
-    <div style="display:flex; gap:12px; margin-bottom:30px; flex-wrap:wrap;">
-        <button class="btn-selector active b-basicas" onclick="updateTrace('basicas', this)">Ciencias Básicas</button>
-        <button class="btn-selector b-aplicada" onclick="updateTrace('aplicada', this)">Ing. Aplicada</button>
-        <button class="btn-selector b-gestion" onclick="updateTrace('gestion', this)">Eco-Gestión</button>
-        <button class="btn-selector b-investigacion" onclick="updateTrace('investigacion', this)">Investigación</button>
+    <!-- Paso 1: Selección de Componente -->
+    <div style="margin-bottom:25px;">
+        <p style="font-weight:bold; color:#0A2540; margin-bottom:12px; font-size:0.95rem;">1. Seleccione el Componente:</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn-c basicas active" onclick="selComp('basicas', this)">Ciencias Básicas</button>
+            <button class="btn-c aplicada" onclick="selComp('aplicada', this)">Ing. Aplicada</button>
+            <button class="btn-c gestion" onclick="selComp('gestion', this)">Eco-Gestión</button>
+            <button class="btn-c investigacion" onclick="selComp('investigacion', this)">Investigación</button>
+        </div>
     </div>
 
-    <div style="border-radius:12px; overflow:hidden; border:1px solid #e2e8f0;">
-        <table class="trace-table">
-            <thead>
-                <tr>
-                    <th style="width:25%;">Asignatura</th>
-                    <th style="width:40%;">R.A. Específico</th>
-                    <th style="width:35%;">Competencia Egreso</th>
-                </tr>
-            </thead>
-            <tbody id="traceBody"></tbody>
-        </table>
+    <!-- Paso 2: Selección de Asignatura -->
+    <div id="asigSelectorCont" style="margin-bottom:30px; padding:20px; background:#f8fafc; border-radius:15px; border:1px dashed #cbd5e1;">
+        <p style="font-weight:bold; color:#0A2540; margin-bottom:12px; font-size:0.95rem;">2. Seleccione la Asignatura:</p>
+        <div id="asigList" style="display:flex; gap:10px; flex-wrap:wrap;">
+            <!-- Se llena dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Resultado de Trazabilidad -->
+    <div id="traceResult" style="display:none; animation:fadeIn 0.5s ease;">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+            <div style="background:#0A2540; color:white; padding:20px; border-radius:15px;">
+                <h4 style="color:#FF6600; margin:0 0 10px 0; text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Resultado de Aprendizaje (R.A.)</h4>
+                <p id="raText" style="margin:0; line-height:1.6; font-size:1rem;"></p>
+            </div>
+            <div style="background:#f1f5f9; color:#0A2540; padding:20px; border-radius:15px; border:1px solid #e2e8f0;">
+                <h4 style="color:#C8102E; margin:0 0 10px 0; text-transform:uppercase; font-size:0.8rem; letter-spacing:1px;">Competencia del Perfil</h4>
+                <p id="compText" style="margin:0; line-height:1.6; font-size:1rem;"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MALLA HORIZONTAL DE SABERES PREVIOS -->
+<div style="background:white; border:1px solid #e2e8f0; border-radius:24px; padding:35px; box-shadow:0 15px 35px rgba(0,0,0,0.06);">
+    <h2 style="color:#0A2540; margin-bottom:25px;"><i class="fas fa-project-diagram mr-2" style="color:#C8102E;"></i> Malla Curricular y Saberes Previos</h2>
+    <div style="overflow-x:auto; padding-bottom:20px;">
+        <div class="malla-wrapper">
+            <!-- Semestres -->
+            <div class="malla-line header">
+                <div class="label-col">Componente</div>
+                <div class="sem-col">SEM 1</div><div class="sem-col">SEM 2</div><div class="sem-col">SEM 3</div><div class="sem-col">SEM 4</div>
+                <div class="sem-col">SEM 5</div><div class="sem-col">SEM 6</div><div class="sem-col">SEM 7</div><div class="sem-col">SEM 8</div>
+            </div>
+            
+            <!-- Ciencias Básicas -->
+            <div class="malla-line">
+                <div class="label-col b">C. Básicas</div>
+                <div class="node-box b">Cálculo Dif.</div>
+                <div class="node-box b">Cálculo Int.<br><small>Saberes Previos: Dif.</small></div>
+                <div class="node-box b">Cálculo Mult.<br><small>Saberes Previos: Int.</small></div>
+                <div class="node-box b">Ecuaciones Dif.<br><small>Saberes Previos: Mult.</small></div>
+                <div class="node-box empty"></div><div class="node-box empty"></div><div class="node-box empty"></div><div class="node-box empty"></div>
+            </div>
+
+            <!-- Ing. Aplicada -->
+            <div class="malla-line">
+                <div class="label-col a">Ing. Aplicada</div>
+                <div class="node-box a">Dibujo Ind.</div>
+                <div class="node-box a">Proc. Manuf.</div>
+                <div class="node-box a">Física I</div>
+                <div class="node-box a">Física II<br><small>Saberes Previos: Fís I</small></div>
+                <div class="node-box a">Termodinámica</div>
+                <div class="node-box a">Modelación<br><small>FlexSim</small></div>
+                <div class="node-box a">Diseño Planta</div>
+                <div class="node-box a">Gestión Seg.</div>
+            </div>
+
+            <!-- Eco-Gestión -->
+            <div class="malla-line">
+                <div class="label-col g">Eco-Gestión</div>
+                <div class="node-box g">Intro Ing. Ind</div>
+                <div class="node-box g">Teoría Org.</div>
+                <div class="node-box g">Contabilidad</div>
+                <div class="node-box g">Ing. Económica</div>
+                <div class="node-box g">Gerencia Prod I</div>
+                <div class="node-box g">Logística</div>
+                <div class="node-box g">Gerencia Calidad</div>
+                <div class="node-box g">Pens. Estratégico</div>
+            </div>
+        </div>
     </div>
 </div>
 
 <style>
-    .btn-selector { padding:12px 24px; border-radius:12px; border:none; font-weight:bold; cursor:pointer; transition:all 0.3s; font-size:0.95rem; background:#f1f5f9; color:#64748b; }
-    .btn-selector.active { transform:translateY(-3px); box-shadow:0 6px 12px rgba(0,0,0,0.15); color:white; }
-    .b-basicas.active { background:#0A2540; }
-    .b-aplicada.active { background:#C8102E; }
-    .b-gestion.active { background:#FFB81C; color:#0A2540; }
-    .b-investigacion.active { background:#8B5CF6; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
     
-    .trace-table { width:100%; border-collapse:collapse; background:white; }
-    .trace-table th { background:#0A2540; color:white; padding:15px 20px; text-align:left; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; }
-    .trace-table td { padding:18px 20px; border-bottom:1px solid #f1f5f9; font-size:0.95rem; color:#334155; line-height:1.5; }
-    .trace-table tr:hover { background:#f8fafc; }
+    .btn-c { padding:10px 20px; border-radius:12px; border:none; font-weight:bold; cursor:pointer; transition:all 0.3s; color:#64748b; background:#f1f5f9; }
+    .btn-c.active { color:white; box-shadow:0 5px 15px rgba(0,0,0,0.1); transform:translateY(-2px); }
+    .basicas.active { background:#0A2540; }
+    .aplicada.active { background:#C8102E; }
+    .gestion.active { background:#FFB81C; color:#0A2540; }
+    .investigacion.active { background:#8B5CF6; }
+
+    .btn-asig { padding:8px 15px; border-radius:8px; border:1px solid #e2e8f0; background:white; cursor:pointer; font-size:0.85rem; transition:all 0.2s; }
+    .btn-asig:hover { border-color:#0A2540; background:#f0f9ff; }
+    .btn-asig.active { background:#0A2540; color:white; border-color:#0A2540; }
+
+    .malla-wrapper { min-width:1100px; display:flex; flex-direction:column; gap:12px; }
+    .malla-line { display:grid; grid-template-columns: 140px repeat(8, 1fr); gap:12px; align-items:center; }
+    .label-col { font-weight:bold; font-size:0.8rem; padding:10px; border-radius:8px; text-align:center; color:white; text-transform:uppercase; }
+    .label-col.b { background:#0A2540; }
+    .label-col.a { background:#C8102E; }
+    .label-col.g { background:#FFB81C; color:#0A2540; }
+    
+    .sem-col { text-align:center; font-weight:bold; color:#94a3b8; font-size:0.8rem; letter-spacing:1px; }
+    .node-box { background:white; border:1px solid #e2e8f0; border-radius:10px; padding:12px 5px; text-align:center; font-size:0.78rem; font-weight:600; min-height:55px; display:flex; flex-direction:column; justify-content:center; box-shadow:0 2px 4px rgba(0,0,0,0.02); }
+    .node-box small { color:#94a3b8; font-weight:normal; font-size:0.65rem; margin-top:3px; }
+    .node-box.b { border-bottom:4px solid #0A2540; }
+    .node-box.a { border-bottom:4px solid #C8102E; }
+    .node-box.g { border-bottom:4px solid #FFB81C; }
+    .node-box.empty { border:1px dashed #e2e8f0; background:transparent; box-shadow:none; }
 </style>
 
 <script>
 (function(){
-    var db = {
+    var data = {
         basicas: [
-            {a:"Cálculo Diferencial", r:"Aplica el concepto de derivada para la optimización de funciones en contextos de ingeniería.", c:"Modelamiento cuantitativo de problemas industriales."},
-            {a:"Física Mecánica", r:"Comprende y aplica los principios de la mecánica clásica en sistemas físicos.", c:"Diseño de sistemas mecánicos industriales."},
-            {a:"Estadística Inferencial", r:"Utiliza herramientas estadísticas para la toma de decisiones bajo incertidumbre.", c:"Gestión de datos para la productividad."},
-            {a:"Álgebra Lineal", r:"Resuelve sistemas de ecuaciones lineales aplicados a modelos de producción.", c:"Optimización operativa y matemática."}
+            {n:"Cálculo Diferencial", r:"Identificar y aplicar los conceptos de límites, derivadas y sus aplicaciones para optimizar funciones reales.", c:"Modelamiento cuantitativo de problemas industriales."},
+            {n:"Álgebra Lineal", r:"Resolver sistemas de ecuaciones y transformaciones lineales para modelos operativos.", c:"Optimización operativa y matemática."},
+            {n:"Estadística Descriptiva", r:"Analizar y representar conjuntos de datos para la toma de decisiones inicial.", c:"Gestión de datos para la productividad."},
+            {n:"Física Mecánica", r:"Comprender principios de mecánica clásica aplicados a la cinemática y dinámica industrial.", c:"Diseño de sistemas mecánicos industriales."}
         ],
         aplicada: [
-            {a:"Modelación y Simulación", r:"Construye modelos dinámicos en FlexSim para optimizar flujos de procesos.", c:"Ingeniería 4.0 y transformación digital."},
-            {a:"Investigación de Operaciones", r:"Diseña modelos de programación lineal para la asignación óptima de recursos.", c:"Eficiencia sistémica organizacional."},
-            {a:"Procesos Industriales", r:"Analiza los procesos de transformación de materia prima en Virtual Pro.", c:"Gestión de la manufactura moderna."},
-            {a:"Diseño de Planta", r:"Proyecta distribuciones espaciales eficientes minimizando costos de manejo de materiales.", c:"Diseño de infraestructura productiva."}
+            {n:"Modelación y Simulación", r:"Construir modelos dinámicos de sistemas industriales en FlexSim para optimizar tiempos y cuellos de botella.", c:"Ingeniería 4.0 y transformación digital."},
+            {n:"Investigación de Operaciones", r:"Diseñar modelos matemáticos de optimización para la asignación de recursos limitados.", c:"Eficiencia sistémica organizacional."},
+            {n:"Procesos de Manufactura", r:"Analizar y simular procesos de transformación en Virtual Pro para mejorar la calidad del producto.", c:"Gestión de la manufactura moderna."}
         ],
         gestion: [
-            {a:"Ingeniería Económica", r:"Evalúa la viabilidad financiera de proyectos de inversión en ingeniería.", c:"Gestión económica y financiera."},
-            {a:"Logística y SCM", r:"Diseña redes de valor integrando proveedores, producción y clientes.", c:"Optimización de la cadena de suministro."},
-            {a:"Sistemas de Gestión", r:"Implementa normativas de calidad y seguridad bajo estándares internacionales.", c:"Mejora continua y sostenibilidad."}
+            {n:"Ingeniería Económica", r:"Evaluar financieramente proyectos de inversión considerando el valor del dinero en el tiempo.", c:"Gestión económica y financiera."},
+            {n:"Logística y SCM", r:"Diseñar y optimizar redes de abastecimiento, producción y distribución.", c:"Optimización de la cadena de suministro."}
         ],
         investigacion: [
-            {a:"Metodología de Inv.", r:"Formula protocolos de investigación aplicados a problemas del sector real.", c:"Generación de conocimiento técnico."},
-            {a:"Proyecto de Grado", r:"Desarrolla una solución integral a un reto empresarial del entorno regional.", c:"Innovación y emprendimiento profesional."}
+            {n:"Proyecto de Grado", r:"Aplicar métodos científicos para resolver un problema real del sector industrial regional.", c:"Innovación y emprendimiento profesional."}
         ]
     };
 
-    window.updateTrace = function(key, btn) {
-        document.querySelectorAll('.btn-selector').forEach(b => b.classList.remove('active'));
+    // Funciones globales para que funcionen con onclick
+    window.selComp = function(id, btn) {
+        document.querySelectorAll('.btn-c').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        
+        var list = document.getElementById('asigList');
         var html = '';
-        db[key].forEach(i => {
-            html += '<tr><td><strong>'+i.a+'</strong></td><td>'+i.r+'</td><td>'+i.c+'</td></tr>';
+        data[id].forEach((asig, index) => {
+            html += '<button class="btn-asig" onclick="selAsig(\\''+id+'\\','+index+', this)">'+asig.n+'</button>';
         });
-        document.getElementById('traceBody').innerHTML = html;
+        list.innerHTML = html;
+        document.getElementById('traceResult').style.display = 'none';
     };
 
-    setTimeout(() => {
-        var defaultBtn = document.querySelector('.b-basicas');
-        if(defaultBtn) updateTrace('basicas', defaultBtn);
-    }, 100);
+    window.selAsig = function(compId, asigIndex, btn) {
+        document.querySelectorAll('.btn-asig').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        var asig = data[compId][asigIndex];
+        document.getElementById('raText').innerText = asig.r;
+        document.getElementById('compText').innerText = asig.c;
+        document.getElementById('traceResult').style.display = 'block';
+    };
+
+    // Inicialización forzada
+    setTimeout(function(){
+        var btn = document.querySelector('.btn-c.basicas');
+        if(btn) selComp('basicas', btn);
+    }, 300);
 })();
 </script>
 `;
