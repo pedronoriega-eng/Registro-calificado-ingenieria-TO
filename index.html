@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sustentación Técnica | Corporación Escuela Tecnológica del Oriente (TO)</title>
+    <title>SustentaciÃ³n TÃ©cnica | CorporaciÃ³n Escuela TecnolÃ³gica del Oriente (TO)</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -30,11 +30,11 @@
     
     <!-- Carga de la BD Documental (Obligatorio para conservar argumentos tecnicos) -->
     <script src="sections.js?v=6"></script>
-    <!-- Scripts del Portal - Versión v10 -->
+    <!-- Scripts del Portal - VersiÃ³n v10 -->
     <script src="sections2.js?v=10"></script>
     <script src="sections_c1.js?v=10"></script>
     <script src="sections_c2.js?v=10"></script>
-    <script src="sections_c3.js?v=10"></script>
+    <script src="sections_c3.js?v=11"></script>
     <script src="sections_c5.js?v=10"></script>
     <script src="sections_c6.js?v=10"></script>
     <script src="sections_anexos.js?v=10"></script>
@@ -98,8 +98,8 @@
             <div class="flex items-center gap-5">
                 <img src="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" alt="TO" class="h-12 object-contain">
                 <div class="border-l-2 border-gray-200 pl-5">
-                    <h1 class="text-xl font-bold text-toBlue font-heading">Ingeniería Industrial Virtual</h1>
-                    <p class="text-gray-500 text-xs font-medium">Sustentación Condiciones de Calidad (Dec. 1330)</p>
+                    <h1 class="text-xl font-bold text-toBlue font-heading">IngenierÃ­a Industrial Virtual</h1>
+                    <p class="text-gray-500 text-xs font-medium">SustentaciÃ³n Condiciones de Calidad (Dec. 1330)</p>
                 </div>
             </div>
             <button onclick="logout()" class="text-gray-500 hover:text-toRed border border-gray-300 rounded px-4 py-2 text-sm font-bold shadow-sm"><i class="fas fa-lock mr-2"></i> Salir</button>
@@ -115,7 +115,7 @@
         <div class="bg-toBlue text-white px-6 py-3 flex justify-between items-center shadow-md z-50">
             <div class="flex items-center gap-4">
                 <div class="bg-white p-1 rounded"><img src="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" alt="TO" class="h-6"></div>
-                <h2 id="viewerTitle" class="font-bold text-lg font-heading">Sustentación</h2>
+                <h2 id="viewerTitle" class="font-bold text-lg font-heading">SustentaciÃ³n</h2>
             </div>
             <div class="flex items-center gap-4">
                 <span class="bg-toLightBlue px-3 py-1 rounded-full text-sm font-bold"><span id="slideCounter">1</span> / <span id="slideTotalCounter">9</span></span>
@@ -132,8 +132,8 @@
                 <div class="min-h-full p-6 flex justify-center items-start">
                     <div class="bg-white w-full max-w-6xl rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
                         <div class="border-b border-gray-100 p-6 md:p-8">
-                            <div class="text-toRed font-bold text-xs tracking-widest uppercase mb-1" id="slideCategory">Categoría</div>
-                            <h3 class="text-3xl font-bold text-toBlue font-heading" id="slideTitle">Título</h3>
+                            <div class="text-toRed font-bold text-xs tracking-widest uppercase mb-1" id="slideCategory">CategorÃ­a</div>
+                            <h3 class="text-3xl font-bold text-toBlue font-heading" id="slideTitle">TÃ­tulo</h3>
                         </div>
                         <div class="p-6 md:p-10 flex-1 overflow-visible text-gray-800" id="slideBody"></div>
                         <div class="bg-gray-50 border-t border-gray-200 p-6 flex justify-between items-center">
@@ -154,13 +154,13 @@
             </div>
             <div class="p-8">
                 <h2 class="text-2xl font-bold text-center text-toBlue font-heading mb-2">Acceso Restringido</h2>
-                <p class="text-gray-500 text-center mb-6 text-sm">Presentación Técnica de Acreditación (Dec. 1330)</p>
+                <p class="text-gray-500 text-center mb-6 text-sm">PresentaciÃ³n TÃ©cnica de AcreditaciÃ³n (Dec. 1330)</p>
                 
                 <div class="relative">
                     <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                    <input type="password" id="pwdInput" placeholder="Código de acceso" class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-toRed focus:bg-white transition-all text-gray-800 font-bold" onkeypress="if(event.key === 'Enter') checkAuth()">
+                    <input type="password" id="pwdInput" placeholder="CÃ³digo de acceso" class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-toRed focus:bg-white transition-all text-gray-800 font-bold" onkeypress="if(event.key === 'Enter') checkAuth()">
                 </div>
-                <div id="pwdError" class="text-toRed text-sm font-bold mt-2 hidden text-center"><i class="fas fa-exclamation-circle"></i> Código incorrecto</div>
+                <div id="pwdError" class="text-toRed text-sm font-bold mt-2 hidden text-center"><i class="fas fa-exclamation-circle"></i> CÃ³digo incorrecto</div>
                 
                 <button onclick="checkAuth()" class="w-full mt-6 bg-toRed hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg transition-all transform hover:-translate-y-0.5"><i class="fas fa-sign-in-alt mr-2"></i> Ingresar</button>
             </div>
@@ -184,7 +184,7 @@
                     document.getElementById('authGateway').style.display = 'none';
                     const mainApp = document.getElementById('mainApp');
                     mainApp.classList.remove('hidden');
-                    // Pequeño delay para que la transición css de opacity funcione
+                    // PequeÃ±o delay para que la transiciÃ³n css de opacity funcione
                     setTimeout(() => { mainApp.classList.remove('opacity-0'); }, 50);
                 }, 300);
             } else {
@@ -202,15 +202,15 @@
             }, 50);
         }
         const condInfo = [
-            { id: 'c1', title: '1. Denominación del Programa', img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-id-card' },
-            { id: 'c2', title: '2. Justificación', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-chart-bar' },
-            { id: 'c3', title: '3. Contenidos Curriculares', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-sitemap' },
-            { id: 'c4', title: '4. Organización Académica', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-cogs' },
-            { id: 'c5', title: '5. Investigación', img: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80', slideLabel: '20 Slides Detallados', icon: 'fas fa-flask' },
-            { id: 'c6', title: '6. Sector Externo', img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-handshake' },
-            { id: 'c7', title: '7. Profesores', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-chalkboard-teacher' },
-            { id: 'c8', title: '8. Medios Educativos', img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-laptop' },
-            { id: 'c9', title: '9. Infraestructura', img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-building' },
+            { id: 'c1', title: '1. DenominaciÃ³n del Programa', img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-id-card' },
+            { id: 'c2', title: '2. JustificaciÃ³n', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-chart-bar' },
+            { id: 'c3', title: '3. Contenidos Curriculares', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-sitemap' },
+            { id: 'c4', title: '4. OrganizaciÃ³n AcadÃ©mica', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-cogs' },
+            { id: 'c5', title: '5. InvestigaciÃ³n', img: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80', slideLabel: '20 Slides Detallados', icon: 'fas fa-flask' },
+            { id: 'c6', title: '6. Sector Externo', img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-handshake' },
+            { id: 'c7', title: '7. Profesores', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-chalkboard-teacher' },
+            { id: 'c8', title: '8. Medios Educativos', img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-laptop' },
+            { id: 'c9', title: '9. Infraestructura', img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-building' },
             { id: 'anexos', title: 'Documentos Anexos', img: 'https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=600&q=80', slideLabel: '25 Documentos Verificables', icon: 'fas fa-folder-open' }
         ];
 
@@ -220,7 +220,7 @@
                 <div onclick="openPresentation('${c.id}', '${c.title}')" class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:border-toBlue cursor-pointer group flex flex-col transform transition hover:-translate-y-2 hover:shadow-2xl">
                     <div class="h-40 relative overflow-hidden">
                         <img src="${c.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'h-full bg-gradient-to-br from-toBlue to-toLightBlue flex items-center justify-center\'><i class=\'${c.icon} text-white text-4xl\'></i></div>';">
-                        <div class="absolute top-3 right-3 bg-toBlue/80 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">${c.id === 'anexos' ? 'SOPORTE' : 'CONDICIÓN ' + c.id.replace('c','')}</div>
+                        <div class="absolute top-3 right-3 bg-toBlue/80 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">${c.id === 'anexos' ? 'SOPORTE' : 'CONDICIÃ“N ' + c.id.replace('c','')}</div>
                     </div>
                     <div class="p-5 flex-1 flex flex-col">
                         <h3 class="text-lg font-bold text-toBlue font-heading">${c.title}</h3>
@@ -237,7 +237,7 @@
             currentConditionId = id;
             
             if(!window.SECTIONS || !window.SECTIONS[id]) {
-                document.getElementById('slideBody').innerHTML = `<div class="p-10 text-center text-red-500 font-bold"><h3>El contenido de la condición ${id} está en construcción.</h3></div>`;
+                document.getElementById('slideBody').innerHTML = `<div class="p-10 text-center text-red-500 font-bold"><h3>El contenido de la condiciÃ³n ${id} estÃ¡ en construcciÃ³n.</h3></div>`;
             } else {
                 document.getElementById('slideBody').innerHTML = window.SECTIONS[id];
             }
@@ -252,8 +252,8 @@
             document.getElementById('slideCounter').parentElement.style.display = 'inline-block';
             document.getElementById('slideCounter').parentElement.innerHTML = `<span id="slideCounter">${idx + 1}</span> / ${condInfo.length}`;
 
-            // Setear el título superior de la diapositiva
-            document.getElementById('slideCategory').innerText = `CONDICIÓN ${id.replace('c','')}`;
+            // Setear el tÃ­tulo superior de la diapositiva
+            document.getElementById('slideCategory').innerText = `CONDICIÃ“N ${id.replace('c','')}`;
             document.getElementById('slideTitle').innerText = condInfo.find(c => c.id === id)?.title || title;
 
             // Mostrar el visor
@@ -292,12 +292,12 @@
                     if(window.myMap) { window.myMap.remove(); window.myMap = null; }
                     window.myMap = L.map('mapaColombiaSlide').setView([4.5709, -74.2973], 5);
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(window.myMap);
-                    L.marker([4.7110, -74.0721]).addTo(window.myMap).bindPopup("<b>Bogotá</b><br>8 programas virtuales de Ing. Industrial");
-                    L.marker([6.2518, -75.5636]).addTo(window.myMap).bindPopup("<b>Medellín</b><br>2 programas virtuales");
+                    L.marker([4.7110, -74.0721]).addTo(window.myMap).bindPopup("<b>BogotÃ¡</b><br>8 programas virtuales de Ing. Industrial");
+                    L.marker([6.2518, -75.5636]).addTo(window.myMap).bindPopup("<b>MedellÃ­n</b><br>2 programas virtuales");
                     L.marker([3.4516, -76.5320]).addTo(window.myMap).bindPopup("<b>Cali</b><br>1 programa virtual");
                     L.marker([5.0689, -75.5174]).addTo(window.myMap).bindPopup("<b>Manizales</b><br>1 programa virtual");
                     L.marker([10.9639, -74.7964]).addTo(window.myMap).bindPopup("<b>Barranquilla</b><br>1 programa virtual");
-                    L.marker([7.1254, -73.1198]).addTo(window.myMap).bindPopup("<b>Bucaramanga - TO</b><br>Sede principal. Oportunidad estratégica.").openPopup();
+                    L.marker([7.1254, -73.1198]).addTo(window.myMap).bindPopup("<b>Bucaramanga - TO</b><br>Sede principal. Oportunidad estratÃ©gica.").openPopup();
                     L.marker([7.0636, -73.0852]).addTo(window.myMap).bindPopup("<b>Floridablanca</b><br>UNAD CEAD");
                 }
                 // Reset Investigation slides (Condicion 5)
