@@ -1,0 +1,399 @@
+/* ===== DESIGN SYSTEM: Modern Creative Agency ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --bg: #FFFFFF;
+  --primary: #000000;
+  --accent: #FF4500;
+  --secondary: #F4F4F4;
+  --grey-border: #E0E0E0;
+  --text-body: #000000;
+  --text-muted: #555555;
+}
+
+/* ===== RESET & BASE ===== */
+body { background: var(--bg); margin: 0; }
+.reveal { font-family: 'Inter', sans-serif; color: var(--primary); background: var(--bg); }
+.reveal .slide-background { background: var(--bg) !important; }
+.reveal .backgrounds { background: var(--bg) !important; }
+.reveal .slides section { padding: 60px 80px; text-align: left; background: var(--bg); }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Inter', sans-serif; font-size: 12px; }
+
+/* ===== TYPOGRAPHY ===== */
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+  text-align: left;
+  line-height: 1.0;
+  margin: 0;
+}
+.reveal h1 { font-size: 90px; }
+.reveal h2 { font-size: 52px; }
+.reveal h3 { font-size: 32px; }
+.reveal h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin: 0 0 8px;
+}
+.reveal p, .reveal li, .reveal td {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+/* ===== LOGO ===== */
+.logo-fixed {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  width: 280px;
+  z-index: 100;
+  pointer-events: none;
+}
+.logo-center {
+  display: block;
+  margin: 0 auto 30px;
+  width: 400px;
+}
+
+/* ===== ACCENT WORD ===== */
+.accent { color: var(--accent); }
+
+/* ===== VIGILADO LABEL ===== */
+.label-vig {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+/* ===== ORANGE LINE ===== */
+.line-accent {
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin: 16px 0;
+  border-radius: 0;
+}
+.line-accent.thick { height: 12px; width: 60px; }
+
+/* ===== GEOMETRIC CIRCLE ===== */
+.circle-deco {
+  position: absolute;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+.circle-deco.large { width: 500px; height: 500px; bottom: -150px; right: -100px; }
+.circle-deco.medium { width: 300px; height: 300px; top: -80px; right: -60px; }
+.circle-deco.small { width: 180px; height: 180px; bottom: -40px; left: 50%; }
+
+/* ===== LAYOUT: INSTITUTIONAL HERO ===== */
+.hero-slide {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-slide h1 {
+  max-width: 70%;
+  font-size: 80px;
+}
+
+/* ===== LAYOUT: SPLIT IMPACT ===== */
+.split-slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: -60px -80px;
+  min-height: 100%;
+}
+.split-photo {
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+}
+.split-content {
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===== LAYOUT: MINIMAL STATEMENT ===== */
+.minimal-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px;
+  position: relative;
+}
+.minimal-slide h2 {
+  font-size: 56px;
+  max-width: 80%;
+}
+
+/* ===== LAYOUT: DATA GRID ===== */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.data-cell {
+  border: 1px solid var(--grey-border);
+  padding: 30px 24px;
+}
+.data-cell.accent-cell {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.data-cell.accent-cell, .data-cell.accent-cell h4, .data-cell.accent-cell p {
+  color: #FFFFFF;
+}
+.data-cell h4 { margin-bottom: 10px; }
+
+/* ===== CONDITION HEADER ===== */
+.cond-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+/* ===== TABLES ===== */
+.clean-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.clean-table th {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 14px 16px;
+  border-bottom: 3px solid var(--primary);
+  text-align: left;
+  color: var(--primary);
+}
+.clean-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--grey-border);
+  font-size: 14px;
+}
+.clean-table tr:last-child td { border-bottom: none; }
+.clean-table .lb { font-weight: 700; width: 40%; }
+.clean-table .row-accent td {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ===== FEATURE LIST ===== */
+.feat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.feat-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--grey-border);
+  font-size: 16px;
+  position: relative;
+  padding-left: 20px;
+}
+.feat-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+}
+
+/* ===== STAT BLOCK ===== */
+.stat-block { text-align: left; }
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  color: var(--primary);
+  line-height: 1;
+}
+.stat-number.orange { color: var(--accent); }
+.stat-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+
+/* ===== TWO COLUMNS ===== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+.two-col-wide {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* ===== STATS ROW ===== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* ===== MALLA CURRICULAR ===== */
+.malla-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  font-size: 11px;
+}
+.sem-head {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 8px 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.mat-cell {
+  background: var(--secondary);
+  border: 1px solid var(--grey-border);
+  padding: 6px 4px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.3;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mat-cell.i40 {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.malla-legend {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.malla-legend span { margin-right: 20px; }
+.leg-orange { color: var(--accent); font-weight: 700; }
+
+/* ===== TIMELINE ===== */
+.timeline-v {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid var(--primary);
+}
+.tl-node {
+  margin-bottom: 28px;
+  position: relative;
+}
+.tl-node::before {
+  content: '';
+  position: absolute;
+  left: -35px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+}
+.tl-year {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--primary);
+}
+.tl-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ===== ECOSYSTEM ICONS ===== */
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.eco-card {
+  border: 1px solid var(--grey-border);
+  padding: 24px 20px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+.eco-card:hover { border-color: var(--accent); }
+.eco-card .icon { font-size: 32px; margin-bottom: 10px; }
+.eco-card .name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== FINAL SLIDE ===== */
+.final-slide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+.final-slide h1 {
+  text-align: center;
+  font-size: 100px;
+}
+.final-contact {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .two-col, .two-col-wide, .data-grid, .eco-grid, .stats-row { grid-template-columns: 1fr; }
+  .malla-grid { grid-template-columns: repeat(4, 1fr); }
+  .reveal h1 { font-size: 48px; }
+  .reveal h2 { font-size: 36px; }
+  .split-slide { grid-template-columns: 1fr; }
+}
