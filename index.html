@@ -1,274 +1,301 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SustentaciÃ³n TÃ©cnica | CorporaciÃ³n Escuela TecnolÃ³gica del Oriente (TO)</title>
+    <title>Sustentación Técnica | Corporación Escuela Tecnológica del Oriente (TO)</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        toBlue: '#0A2540',
-                        toLightBlue: '#173A66',
+                        toOrange: '#FF6600',
+                        toDark: '#0A2540',
                         toRed: '#C8102E',
-                        toGray: '#F3F4F6'
+                        toLight: '#F1F5F9'
                     },
                     fontFamily: {
-                        sans: ['Open Sans', 'sans-serif'],
-                        heading: ['Montserrat', 'sans-serif']
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <!-- Carga de la BD Documental (Obligatorio para conservar argumentos tecnicos) -->
-    <script src="sections.js?v=6"></script>
-    <!-- Scripts del Portal - VersiÃ³n v10 -->
-    <script src="sections2.js?v=10"></script>
-    <script src="sections_c1.js?v=10"></script>
-    <script src="sections_c2.js?v=10"></script>
-    <script src="sections_c3.js?v=11"></script>
-    <script src="sections_c5.js?v=10"></script>
-    <script src="sections_c6.js?v=10"></script>
-    <script src="sections_anexos.js?v=10"></script>
-    <script src="app.js?v=10"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Leaflet (Mapas) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <style>
-        body { font-family: 'Open Sans', sans-serif; background-color: #F8FAFC; color: #333; }
-        h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
-        
-        .custom-scrollbar::-webkit-scrollbar { width: 12px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #e5e7eb; border-radius: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF6600; border-radius: 6px; border: 2px solid #e5e7eb; }
-        
-        .slide-nav-item.active { background-color: #0A2540; color: white; border-left: 4px solid #C8102E; }
 
-        /* Estilos heredados necesarios para que SECTIONS se vea bien en cualquier tema */
-        .slide-header { border-bottom: 2px solid #C8102E; padding-bottom: 10px; margin-bottom: 20px; }
-        .slide-subtitle { color: #C8102E; font-weight: bold; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
-        .slide-title h1 { color: #0A2540; font-size: 2em; margin: 0; font-family: 'Montserrat', sans-serif;}
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-        .card { background: #fff; color: #374151; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
-        .card h4 { color: #0A2540; font-weight: bold; margin-bottom: 10px; }
-        .card p { color: #4b5563; }
-        .card-accent { background: #0A2540; color: white; padding: 20px; border-radius: 8px; border-bottom: 4px solid #C8102E; }
-        .card-accent p { color: #e5e7eb; }
-        .card-accent h4 { color: #fff; font-weight: bold; margin-bottom: 10px; }
-        .stat-num { font-size: 2.5em; font-weight: bold; color: #0A2540; font-family: 'Montserrat'; }
-        .stat-num.orange { color: #C8102E; }
-        .stat-label { font-size: 0.85em; color: #6b7280; font-weight: 600; text-transform: uppercase; }
-        .tbl { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em; color: #374151; background: #fff; }
-        .tbl th { background: #0A2540; color: white; padding: 10px; text-align: left; }
-        .tbl td { padding: 10px; border-bottom: 1px solid #e5e7eb; color: #374151; }
-        .tbl .lb { font-weight: bold; color: #0A2540; width: 30%; }
-        .tbl .row-accent { background: #eff6ff; border-left: 3px solid #C8102E; }
-        .timeline { margin-top: 20px; border-left: 3px solid #e5e7eb; padding-left: 20px; }
-        .event-card { background: white; color: #374151; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e5e7eb; position: relative; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .event-card::before { content: ''; position: absolute; left: -28px; top: 20px; width: 12px; height: 12px; border-radius: 50%; background: #0A2540; border: 3px solid white; }
-        .event-time { font-size: 0.75em; font-weight: bold; color: #C8102E; text-transform: uppercase; letter-spacing: 1px; }
-        .event-title { font-size: 1.2em; font-weight: bold; color: #0A2540; margin-bottom: 8px; font-family: 'Montserrat'; }
-        .tag-legal { display: inline-block; background: #e5e7eb; color: #374151; font-size: 0.7em; padding: 3px 8px; border-radius: 4px; margin-right: 5px; font-weight: bold; }
-        .evidence-box { background: #f8fafc; padding: 12px; border-radius: 6px; margin-top: 15px; font-size: 0.85em; border-left: 3px solid #10b981; color: #047857; font-weight: 600; }
-        .evidence-box i { margin-right: 8px; font-size: 1.2em; }
-        .malla { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 15px; }
-        .sh { background: #0A2540; color: white; text-align: center; font-size: 0.75em; font-weight: bold; padding: 8px; border-radius: 4px; }
-        .mc { background: #f3f4f6; border: 1px solid #d1d5db; padding: 8px; font-size: 0.7em; text-align: center; border-radius: 4px; font-weight: 600; color: #374151; display:flex; align-items:center; justify-content:center; min-height: 40px;}
-        .mc.i4 { border-left: 4px solid #C8102E; background: #fff1f2; }
-        .nav-btn { background: #0A2540; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; transition: 0.3s; font-weight: 600; font-size: 0.9em; }
-        .nav-btn:hover { background: #C8102E; }
+    <!-- Apache ECharts (Para Condicion 2) -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+
+    <style>
+        :root {
+            --to-orange: #FF6600;
+            --to-dark: #0A2540;
+            --to-red: #C8102E;
+            --to-bg: #F8FAFC;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--to-bg); color: #1E293B; }
+        .brand-font { font-family: 'Montserrat', sans-serif; }
+        
+        .cond-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #E2E8F0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+            cursor: pointer;
+        }
+        .cond-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 37, 64, 0.1);
+            border-color: var(--to-orange);
+        }
+        .icon-circle {
+            width: 54px; height: 54px;
+            border-radius: 12px;
+            background: #F1F5F9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--to-dark);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .cond-card:hover .icon-circle {
+            background: var(--to-orange);
+            color: white;
+            transform: rotate(10deg);
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        #presentationViewer {
+            z-index: 1000;
+            background: #F8FAFC;
+        }
+        .slide-header { border-bottom: 3px solid var(--to-red); padding-bottom: 15px; margin-bottom: 25px; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased overflow-x-hidden">
 
-    <!-- MAIN APP -->
-    <div id="mainApp" class="min-h-screen flex flex-col hidden opacity-0 transition-opacity duration-500">
-        <header class="bg-white border-b border-gray-200 py-4 px-6 sticky top-0 z-40 shadow-sm flex justify-between items-center">
-            <div class="flex items-center gap-5">
-                <img src="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" alt="TO" class="h-12 object-contain">
-                <div class="border-l-2 border-gray-200 pl-5">
-                    <h1 class="text-xl font-bold text-toBlue font-heading">IngenierÃ­a Industrial Virtual</h1>
-                    <p class="text-gray-500 text-xs font-medium">SustentaciÃ³n Condiciones de Calidad (Dec. 1330)</p>
-                </div>
-            </div>
-            <button onclick="logout()" class="text-gray-500 hover:text-toRed border border-gray-300 rounded px-4 py-2 text-sm font-bold shadow-sm"><i class="fas fa-lock mr-2"></i> Salir</button>
-        </header>
-
-        <main class="flex-1 max-w-7xl mx-auto p-6 md:p-10 w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gridCards"></div>
-        </main>
-    </div>
-
-    <!-- PRESENTATION VIEWER -->
-    <div id="presentationViewer" class="fixed inset-0 bg-gray-100 z-[60] hidden flex-col transition-all duration-300 opacity-0 scale-95">
-        <div class="bg-toBlue text-white px-6 py-3 flex justify-between items-center shadow-md z-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
-                <div class="bg-white p-1 rounded"><img src="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" alt="TO" class="h-6"></div>
-                <h2 id="viewerTitle" class="font-bold text-lg font-heading">SustentaciÃ³n</h2>
+                <div class="w-12 h-12 bg-toDark rounded-lg flex items-center justify-center text-white font-bold text-xl brand-font">TO</div>
+                <div>
+                    <h1 class="text-xl font-bold text-toDark brand-font">Escuela Tecnológica del Oriente</h1>
+                    <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Acreditación Institucional - Ingeniería Industrial</p>
+                </div>
             </div>
+            <div class="hidden md:flex flex-col text-right">
+                <span class="text-sm font-bold text-gray-800">Radicado No. 1</span>
+                <span class="text-xs text-gray-500">Visita de Pares Académicos</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="mainApp" class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Hero -->
+        <div class="mb-16 text-center">
+            <span class="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Proceso de Registro Calificado</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-toDark brand-font mb-6">Sustentación de Condiciones de Calidad</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Visualizador interactivo del cumplimiento normativo y técnico para el programa de <strong>Ingeniería Industrial (Virtual)</strong>.
+            </p>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div id="gridCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            <!-- Cargado por JS -->
+        </div>
+
+        <!-- Anexos Banner -->
+        <div class="bg-toDark rounded-3xl p-10 text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div class="relative z-10">
+                <h3 class="text-2xl font-bold mb-2">Biblioteca de Anexos Oficiales</h3>
+                <p class="text-gray-400">Acceso a los 25 documentos que soportan la propuesta técnica.</p>
+            </div>
+            <button onclick="openPresentation('anexos', 'Biblioteca de Anexos')" class="relative z-10 bg-white text-toDark px-8 py-4 rounded-xl font-bold hover:bg-toOrange hover:text-white transition-all transform hover:-translate-y-1">
+                <i class="fas fa-folder-open mr-2"></i> Ver Todos los Anexos
+            </button>
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-20 -mt-20"></div>
+        </div>
+    </main>
+
+    <!-- Presentation Viewer -->
+    <div id="presentationViewer" class="fixed inset-0 hidden flex-col opacity-0 scale-95 transition-all duration-300 ease-out">
+        <!-- Top Bar -->
+        <div class="bg-white border-b border-gray-200 px-6 h-16 flex items-center justify-between shrink-0">
             <div class="flex items-center gap-4">
-                <span class="bg-toLightBlue px-3 py-1 rounded-full text-sm font-bold"><span id="slideCounter">1</span> / <span id="slideTotalCounter">9</span></span>
-                <button onclick="closePresentation()" class="text-white hover:text-toRed bg-white/10 hover:bg-white/20 w-8 h-8 rounded-full"><i class="fas fa-times"></i></button>
+                <button onclick="closePresentation()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="h-6 w-px bg-gray-200"></div>
+                <div>
+                    <span id="slideCategory" class="text-[10px] font-bold text-toOrange tracking-widest uppercase">Condición</span>
+                    <h3 id="slideTitle" class="text-sm font-bold text-toDark brand-font truncate max-w-[300px]">Título</h3>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">
+                    <span id="slideCounter">1</span> / 10
+                </span>
+                <div class="w-8 h-8 bg-toDark rounded flex items-center justify-center text-white text-xs font-bold">TO</div>
             </div>
         </div>
 
-        <div class="flex flex-1 overflow-hidden min-h-0">
-            <!-- Sidebar -->
-            <div class="w-64 bg-white border-r border-gray-200 overflow-y-auto custom-scrollbar flex flex-col shadow-md z-40 hidden" id="slideList"></div>
-            <!-- Slide Area Container (Scrollable) -->
-            <div class="flex-1 overflow-y-auto custom-scrollbar min-h-0 relative bg-gray-100" id="scrollContainer">
-                <!-- Wrapper for centering -->
-                <div class="min-h-full p-6 flex justify-center items-start">
-                    <div class="bg-white w-full max-w-6xl rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
-                        <div class="border-b border-gray-100 p-6 md:p-8">
-                            <div class="text-toRed font-bold text-xs tracking-widest uppercase mb-1" id="slideCategory">CategorÃ­a</div>
-                            <h3 class="text-3xl font-bold text-toBlue font-heading" id="slideTitle">TÃ­tulo</h3>
-                        </div>
-                        <div class="p-6 md:p-10 flex-1 overflow-visible text-gray-800" id="slideBody"></div>
-                        <div class="bg-gray-50 border-t border-gray-200 p-6 flex justify-between items-center">
-                            <button onclick="prevSlide()" class="px-6 py-3 text-toBlue font-bold hover:bg-gray-200 rounded-lg transition-colors"><i class="fas fa-arrow-left mr-2"></i> Anterior</button>
-                            <button onclick="nextSlide()" class="px-6 py-3 bg-toBlue text-white font-bold hover:bg-toLightBlue rounded-lg shadow-md transition-colors">Siguiente <i class="fas fa-arrow-right ml-2"></i></button>
-                        </div>
-                    </div>
-                </div>
+        <!-- Content -->
+        <div id="scrollContainer" class="flex-1 overflow-y-auto bg-gray-50 p-6 md:p-12">
+            <div id="slideBody" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-14 min-h-[80vh]">
+                <!-- Contenido dinámico -->
             </div>
         </div>
-    </div>
-    
-    <!-- LOGIN GATEWAY -->
-    <div id="authGateway" class="fixed inset-0 z-50 bg-gray-100 flex items-center justify-center p-4 transition-opacity duration-300">
-        <div class="bg-white max-w-md w-full rounded-2xl shadow-xl overflow-hidden border border-gray-200">
-            <div class="bg-toBlue p-6 flex justify-center">
-                <img src="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" alt="Institucional" class="h-20 bg-white p-2 rounded shadow-sm">
-            </div>
-            <div class="p-8">
-                <h2 class="text-2xl font-bold text-center text-toBlue font-heading mb-2">Acceso Restringido</h2>
-                <p class="text-gray-500 text-center mb-6 text-sm">PresentaciÃ³n TÃ©cnica de AcreditaciÃ³n (Dec. 1330)</p>
-                
-                <div class="relative">
-                    <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                    <input type="password" id="pwdInput" placeholder="CÃ³digo de acceso" class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-toRed focus:bg-white transition-all text-gray-800 font-bold" onkeypress="if(event.key === 'Enter') checkAuth()">
-                </div>
-                <div id="pwdError" class="text-toRed text-sm font-bold mt-2 hidden text-center"><i class="fas fa-exclamation-circle"></i> CÃ³digo incorrecto</div>
-                
-                <button onclick="checkAuth()" class="w-full mt-6 bg-toRed hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg transition-all transform hover:-translate-y-0.5"><i class="fas fa-sign-in-alt mr-2"></i> Ingresar</button>
-            </div>
-            <div class="bg-gray-50 p-4 text-center border-t border-gray-200">
-                <p class="text-xs text-gray-500"><i class="fas fa-shield-alt mr-1 text-toLightBlue"></i> Plataforma segura y confidencial</p>
-            </div>
+
+        <!-- Footer Navigation -->
+        <div class="bg-white border-t border-gray-200 h-20 px-8 flex items-center justify-center gap-10 shrink-0">
+            <button onclick="prevSlide()" class="group flex items-center gap-3 text-gray-500 hover:text-toDark font-bold transition-colors">
+                <span class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-toDark">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="hidden sm:inline">Anterior</span>
+            </button>
+            <button onclick="nextSlide()" class="group flex items-center gap-3 text-gray-500 hover:text-toDark font-bold transition-colors">
+                <span class="hidden sm:inline">Siguiente</span>
+                <span class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-toDark">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+            </button>
         </div>
     </div>
 
-    <!-- LOGIC -->
+    <!-- Data & Logic -->
+    <script src="sections.js?v=8"></script>
+    <script src="sections2.js?v=12"></script>
+    <script src="sections_c1.js?v=12"></script>
+    <script src="sections_c2.js?v=12"></script>
+    <script src="sections_c3.js?v=13"></script>
+    <script src="sections_c5.js?v=12"></script>
+    <script src="sections_c6.js?v=12"></script>
+    <script src="sections_anexos.js?v=12"></script>
+
     <script>
-        const PWD_HASH = "TO2026"; 
-        
-        function checkAuth() {
-            const pwd = document.getElementById('pwdInput').value.trim().toUpperCase();
-            const err = document.getElementById('pwdError');
-            
-            if(pwd === PWD_HASH) {
-                document.getElementById('authGateway').classList.add('opacity-0');
-                setTimeout(() => {
-                    document.getElementById('authGateway').style.display = 'none';
-                    const mainApp = document.getElementById('mainApp');
-                    mainApp.classList.remove('hidden');
-                    // PequeÃ±o delay para que la transiciÃ³n css de opacity funcione
-                    setTimeout(() => { mainApp.classList.remove('opacity-0'); }, 50);
-                }, 300);
-            } else {
-                err.classList.remove('hidden');
-                setTimeout(() => err.classList.add('hidden'), 3000);
-            }
-        }
-        
-        function logout() {
-            document.getElementById('pwdInput').value = '';
-            document.getElementById('mainApp').classList.add('hidden', 'opacity-0');
-            document.getElementById('authGateway').style.display = 'flex';
-            setTimeout(() => {
-                document.getElementById('authGateway').classList.remove('opacity-0');
-            }, 50);
-        }
         const condInfo = [
-            { id: 'c1', title: '1. DenominaciÃ³n del Programa', img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-id-card' },
-            { id: 'c2', title: '2. JustificaciÃ³n', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-chart-bar' },
-            { id: 'c3', title: '3. Contenidos Curriculares', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-sitemap' },
-            { id: 'c4', title: '4. OrganizaciÃ³n AcadÃ©mica', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-cogs' },
-            { id: 'c5', title: '5. InvestigaciÃ³n', img: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80', slideLabel: '20 Slides Detallados', icon: 'fas fa-flask' },
-            { id: 'c6', title: '6. Sector Externo', img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-handshake' },
-            { id: 'c7', title: '7. Profesores', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-chalkboard-teacher' },
-            { id: 'c8', title: '8. Medios Educativos', img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-laptop' },
-            { id: 'c9', title: '9. Infraestructura', img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80', slideLabel: 'PresentaciÃ³n Interactiva', icon: 'fas fa-building' },
-            { id: 'anexos', title: 'Documentos Anexos', img: 'https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=600&q=80', slideLabel: '25 Documentos Verificables', icon: 'fas fa-folder-open' }
+            { id: 'c1', title: '1. Denominación del Programa', icon: 'fa-tag' },
+            { id: 'c2', title: '2. Justificación del Programa', icon: 'fa-globe' },
+            { id: 'c3', title: '3. Aspectos Curriculares', icon: 'fa-graduation-cap' },
+            { id: 'c4', title: '4. Organización de Actividades', icon: 'fa-cogs' },
+            { id: 'c5', title: '5. Investigación e Innovación', icon: 'fa-microchip' },
+            { id: 'c6', title: '6. Relación Sector Externo', icon: 'fa-handshake' },
+            { id: 'c7', title: '7. Profesores', icon: 'fa-users' },
+            { id: 'c8', title: '8. Medios Educativos', icon: 'fa-desktop' },
+            { id: 'c9', title: '9. Infraestructura Física', icon: 'fa-building' }
         ];
 
-        document.addEventListener("DOMContentLoaded", () => {
+        let currentConditionId = 'c1';
+
+        document.addEventListener('DOMContentLoaded', () => {
             const grid = document.getElementById('gridCards');
             grid.innerHTML = condInfo.map(c => `
-                <div onclick="openPresentation('${c.id}', '${c.title}')" class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:border-toBlue cursor-pointer group flex flex-col transform transition hover:-translate-y-2 hover:shadow-2xl">
-                    <div class="h-40 relative overflow-hidden">
-                        <img src="${c.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'h-full bg-gradient-to-br from-toBlue to-toLightBlue flex items-center justify-center\'><i class=\'${c.icon} text-white text-4xl\'></i></div>';">
-                        <div class="absolute top-3 right-3 bg-toBlue/80 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">${c.id === 'anexos' ? 'SOPORTE' : 'CONDICIÃ“N ' + c.id.replace('c','')}</div>
+                <div class="cond-card" onclick="openPresentation('${c.id}', '${c.title}')">
+                    <div>
+                        <div class="icon-circle"><i class="fas ${c.icon}"></i></div>
+                        <h4 class="text-xl font-bold text-toDark brand-font mb-2">${c.title}</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Explorar cumplimiento técnico y evidencias de soporte oficial.</p>
                     </div>
-                    <div class="p-5 flex-1 flex flex-col">
-                        <h3 class="text-lg font-bold text-toBlue font-heading">${c.title}</h3>
-                        <div class="mt-auto pt-4 text-toRed font-bold text-sm"><i class="${c.icon} mr-1"></i> ${c.slideLabel}</div>
+                    <div class="mt-6 flex items-center text-toOrange font-bold text-sm">
+                        Ver Contenido <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
             `).join('');
         });
 
-        let currentConditionId = 'c1';
-
         function openPresentation(id, title) {
-            document.getElementById('viewerTitle').innerText = title || condInfo.find(c => c.id === id)?.title || id;
             currentConditionId = id;
+            const slideBody = document.getElementById('slideBody');
             
             if(!window.SECTIONS || !window.SECTIONS[id]) {
-                document.getElementById('slideBody').innerHTML = `<div class="p-10 text-center text-red-500 font-bold"><h3>El contenido de la condiciÃ³n ${id} estÃ¡ en construcciÃ³n.</h3></div>`;
+                slideBody.innerHTML = `<div class="p-10 text-center text-red-500 font-bold"><h3>Contenido en construcción.</h3></div>`;
             } else {
-                document.getElementById('slideBody').innerHTML = window.SECTIONS[id];
+                slideBody.innerHTML = window.SECTIONS[id];
             }
 
-            // Ocultar barra lateral
-            document.getElementById('slideList').style.display = 'none';
-            // MOSTRAR la barra inferior de botones
-            document.querySelector('.bg-gray-50.border-t').style.display = 'flex';
-            
-            // Actualizar contador
             const idx = condInfo.findIndex(c => c.id === id);
-            document.getElementById('slideCounter').parentElement.style.display = 'inline-block';
-            document.getElementById('slideCounter').parentElement.innerHTML = `<span id="slideCounter">${idx + 1}</span> / ${condInfo.length}`;
+            document.getElementById('slideCounter').innerText = idx >= 0 ? idx + 1 : '0';
+            document.getElementById('slideCategory').innerText = id === 'anexos' ? 'ANEXOS' : `CONDICIÓN ${id.replace('c','')}`;
+            document.getElementById('slideTitle').innerText = title;
 
-            // Setear el tÃ­tulo superior de la diapositiva
-            document.getElementById('slideCategory').innerText = `CONDICIÃ“N ${id.replace('c','')}`;
-            document.getElementById('slideTitle').innerText = condInfo.find(c => c.id === id)?.title || title;
-
-            // Mostrar el visor
             const viewer = document.getElementById('presentationViewer');
             viewer.classList.remove('hidden');
             viewer.classList.add('flex');
             setTimeout(() => viewer.classList.remove('opacity-0', 'scale-95'), 10);
             document.body.style.overflow = 'hidden';
-
-            // Ejecutar scripts si los hay
-            runSlideScripts(id);
             
-            // Forzar que el contenedor inicie desde arriba
-            const scroller = document.getElementById('scrollContainer');
-            if(scroller) scroller.scrollTop = 0;
+            runSlideScripts(id);
+            document.getElementById('scrollContainer').scrollTop = 0;
+        }
+
+        function runSlideScripts(id) {
+            setTimeout(() => {
+                if(id === 'c1' && window.c1Init) window.c1Init();
+                if(id === 'c2' && window.c2Init) window.c2Init();
+                if(id === 'c3') {
+                    if(window.changeTab) {
+                        const firstTab = document.querySelector('.tab-btn');
+                        if(firstTab) firstTab.click();
+                    }
+                    if(window.updateAsignaturas) window.updateAsignaturas();
+                }
+                if(id === 'anexos' && window._anexosInit) window._anexosInit();
+                
+                // Inicialización de Gráficos (antes en app.js)
+                initCharts();
+            }, 400);
+        }
+
+        function initCharts() {
+            // Lógica de Chart.js si los elementos existen en el slideBody actual
+            const h = document.getElementById('horasChart');
+            if(h) {
+                new Chart(h, { type: 'doughnut', data: { labels: ['Acompañamiento', 'Autónomo'], datasets: [{ data: [16, 32], backgroundColor: ['#FF6600', '#0A2540'] }] }, options: { plugins: { legend: { position: 'bottom' } } } });
+            }
+            const f = document.getElementById('formacionChart');
+            if(f) {
+                new Chart(f, { type: 'bar', data: { labels: ['Doctorado', 'Maestría', 'Esp.'], datasets: [{ data: [2, 6, 8], backgroundColor: '#FF6600' }] }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
+            }
+        }
+
+        function closePresentation() {
+            const v = document.getElementById('presentationViewer');
+            v.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => { v.classList.remove('flex'); v.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
         }
 
         function nextSlide() {
@@ -285,42 +312,6 @@
             }
         }
 
-        function runSlideScripts(id) {
-            setTimeout(() => {
-                // Mapa Leaflet (Condicion 2)
-                if(id === 'c2' && document.getElementById('mapaColombiaSlide')) {
-                    if(window.myMap) { window.myMap.remove(); window.myMap = null; }
-                    window.myMap = L.map('mapaColombiaSlide').setView([4.5709, -74.2973], 5);
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(window.myMap);
-                    L.marker([4.7110, -74.0721]).addTo(window.myMap).bindPopup("<b>BogotÃ¡</b><br>8 programas virtuales de Ing. Industrial");
-                    L.marker([6.2518, -75.5636]).addTo(window.myMap).bindPopup("<b>MedellÃ­n</b><br>2 programas virtuales");
-                    L.marker([3.4516, -76.5320]).addTo(window.myMap).bindPopup("<b>Cali</b><br>1 programa virtual");
-                    L.marker([5.0689, -75.5174]).addTo(window.myMap).bindPopup("<b>Manizales</b><br>1 programa virtual");
-                    L.marker([10.9639, -74.7964]).addTo(window.myMap).bindPopup("<b>Barranquilla</b><br>1 programa virtual");
-                    L.marker([7.1254, -73.1198]).addTo(window.myMap).bindPopup("<b>Bucaramanga - TO</b><br>Sede principal. Oportunidad estratÃ©gica.").openPopup();
-                    L.marker([7.0636, -73.0852]).addTo(window.myMap).bindPopup("<b>Floridablanca</b><br>UNAD CEAD");
-                }
-                // Reset Investigation slides (Condicion 5)
-                if(id === 'c5') {
-                    window._invIdx = 0;
-                    if(window._updateInvSlide) window._updateInvSlide();
-                }
-            }, 300);
-        }
-
-        function closePresentation() {
-            const v = document.getElementById('presentationViewer');
-            v.classList.add('opacity-0', 'scale-95');
-            setTimeout(() => { v.classList.remove('flex'); v.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
-        }
-
-        window.zoomMap = function(zona) {
-            if(!window.myMap) return;
-            if(zona === 'nacional') window.myMap.flyTo([4.5709, -74.2973], 5);
-            if(zona === 'regional') window.myMap.flyTo([7.1254, -73.1198], 8);
-            if(zona === 'local') window.myMap.flyTo([7.1139, -73.1198], 12);
-        };
-
         document.addEventListener('keydown', e => {
             if(!document.getElementById('presentationViewer').classList.contains('hidden')) {
                 if(e.key === "ArrowRight") nextSlide();
@@ -328,12 +319,6 @@
                 if(e.key === "Escape") closePresentation();
             }
         });
-
-        // Intercept openModal de Condicion 5 original para que funcione como goToSlide
-        window.openModal = function(imgSrc, title) {
-            // Ir a un slide de anexo aleatorio o especifico para simularlo
-            nextSlide();
-        };
     </script>
 </body>
 </html>
