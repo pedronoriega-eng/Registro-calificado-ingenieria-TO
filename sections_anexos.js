@@ -59,7 +59,7 @@ window.renderAnexos = function() {
     window._anexosData.forEach(function(a, i) {
         var cc = catColors[a.cat] || {bg:"#64748b", label:a.cat};
         // URL relativa: los PDFs están en la raíz del repo, la página está en /presentacion/
-        var url = '../' + encodeURIComponent(a.f);
+        var url = encodeURIComponent(a.f);
         html += '<div style="background:white;border:1px solid #e2e8f0;border-radius:12px;margin-bottom:10px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.04);transition:box-shadow .3s" onmouseenter="this.style.boxShadow=\'0 6px 20px rgba(0,0,0,0.1)\'" onmouseleave="this.style.boxShadow=\'0 2px 6px rgba(0,0,0,0.04)\'">';
         html += '<div onclick="anexoToggle(' + i + ')" style="display:flex;align-items:center;padding:16px 20px;cursor:pointer;gap:14px;user-select:none">';
         html += '<span style="background:'+cc.bg+';color:white;font-weight:700;font-size:.75rem;padding:5px 11px;border-radius:8px;min-width:72px;text-align:center;flex-shrink:0">'+a.n+'</span>';
