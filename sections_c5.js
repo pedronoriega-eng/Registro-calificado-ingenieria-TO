@@ -11,33 +11,34 @@ window.SECTIONS.c5 = `
         <span id="invSlideCounter" style="font-weight:bold; color:#0A2540; font-size:1.2rem;">1 / 20</span>
         <button onclick="window.nextInvSlide()" style="background:#FF6600; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:1.1rem;">Siguiente <i class="fas fa-arrow-right ml-2"></i></button>
     </div>
-    <img id="invSlideImg" src="assets/c5_slide_1.png" style="max-width:100%; border-radius:8px; border:2px solid #d1d5db; box-shadow:0 4px 12px rgba(0,0,0,0.15);" alt="Slide de Investigación">
+    <img id="invSlideImg" src="c5_slide_1.png" style="max-width:100%; border-radius:8px; border:2px solid #d1d5db; box-shadow:0 4px 12px rgba(0,0,0,0.15);" alt="Slide de Investigación">
     <div style="margin-top:10px; color:#6b7280; font-size:0.95rem;" id="invSlideTitle">Portada - Condición 5: Investigación</div>
 </div>
 `;
 
-// Slide navigation for Condición 5 - 20 slides from "ppt condicion 5 INDUSTRIAL.pptx"
+// Slide navigation - 20 slides from "ppt condicion 5 INDUSTRIAL.pptx"
+// Paths are ROOT-relative (all files deployed to GitHub root, NOT inside presentacion/)
 window._invSlides = [
-    {img:'assets/c5_slide_1.png', title:'Portada - Condición 5: Investigación'},
-    {img:'assets/c5_slide_2.png', title:'Modelo de Investigación, Innovación y Desarrollo'},
-    {img:'assets/c5_slide_3.png', title:'Transferencia de Conocimiento'},
-    {img:'assets/c5_slide_4.png', title:'Elementos para Definir Líneas de Investigación'},
-    {img:'assets/c5_slide_5.png', title:'Conceptualización Teórica del Programa'},
-    {img:'assets/c5_slide_6.png', title:'Tendencias del Conocimiento'},
-    {img:'assets/c5_slide_7.png', title:'Estrategias Institucionales de Investigación'},
-    {img:'assets/c5_slide_8.png', title:'Convocatorias y Redes'},
-    {img:'assets/c5_slide_9.png', title:'Semilleros de Investigación'},
-    {img:'assets/c5_slide_10.png', title:'Redes de Investigación Proyectadas (1)'},
-    {img:'assets/c5_slide_11.png', title:'Redes de Investigación Proyectadas (2)'},
-    {img:'assets/c5_slide_12.png', title:'Grupo de Investigación'},
-    {img:'assets/c5_slide_13.png', title:'Acciones Consolidadas de Investigación'},
-    {img:'assets/c5_slide_14.png', title:'Líneas de Investigación del Programa'},
-    {img:'assets/c5_slide_15.png', title:'Sublíneas y Articulación'},
-    {img:'assets/c5_slide_16.png', title:'Estrategias Pedagógicas de Aula'},
-    {img:'assets/c5_slide_17.png', title:'Asignaturas del Componente Investigativo'},
-    {img:'assets/c5_slide_18.png', title:'Aportes al Sector Productivo'},
-    {img:'assets/c5_slide_19.png', title:'Proyección de Investigación a 7 Años'},
-    {img:'assets/c5_slide_20.png', title:'Síntesis de Investigación e Innovación'}
+    {img:'c5_slide_1.png', title:'Portada - Condición 5: Investigación'},
+    {img:'c5_slide_2.png', title:'Modelo de Investigación, Innovación y Desarrollo'},
+    {img:'c5_slide_3.png', title:'Transferencia de Conocimiento'},
+    {img:'c5_slide_4.png', title:'Elementos para Definir Líneas de Investigación'},
+    {img:'c5_slide_5.png', title:'Conceptualización Teórica del Programa'},
+    {img:'c5_slide_6.png', title:'Tendencias del Conocimiento'},
+    {img:'c5_slide_7.png', title:'Estrategias Institucionales de Investigación'},
+    {img:'c5_slide_8.png', title:'Convocatorias y Redes'},
+    {img:'c5_slide_9.png', title:'Semilleros de Investigación'},
+    {img:'c5_slide_10.png', title:'Redes de Investigación Proyectadas (1)'},
+    {img:'c5_slide_11.png', title:'Redes de Investigación Proyectadas (2)'},
+    {img:'c5_slide_12.png', title:'Grupo de Investigación'},
+    {img:'c5_slide_13.png', title:'Acciones Consolidadas de Investigación'},
+    {img:'c5_slide_14.png', title:'Líneas de Investigación del Programa'},
+    {img:'c5_slide_15.png', title:'Sublíneas y Articulación'},
+    {img:'c5_slide_16.png', title:'Estrategias Pedagógicas de Aula'},
+    {img:'c5_slide_17.png', title:'Asignaturas del Componente Investigativo'},
+    {img:'c5_slide_18.png', title:'Aportes al Sector Productivo'},
+    {img:'c5_slide_19.png', title:'Proyección de Investigación a 7 Años'},
+    {img:'c5_slide_20.png', title:'Síntesis de Investigación e Innovación'}
 ];
 window._invIdx = 0;
 
