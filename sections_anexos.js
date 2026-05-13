@@ -65,7 +65,7 @@ html+='<i class="fas fa-chevron-down anexo-toggle"></i>';
 html+='</div>';
 html+='<div class="anexo-body" id="ab_'+i+'">';
 html+='<p style="margin-bottom:10px;">Documento oficial correspondiente al '+a.n+' del Radicado No. 1 para la acreditación del programa de Ingeniería Industrial.</p>';
-html+='<a class="anexo-link" href="docs/'+encodeURIComponent(a.f)+'" target="_blank"><i class="fas fa-file-pdf"></i> Ver Documento Original</a>';
+html+='<a class="anexo-link" href="../'+encodeURIComponent(a.f)+'" target="_blank"><i class="fas fa-file-pdf"></i> Ver Documento Original</a>';
 html+='</div></div>';
 });
 document.getElementById('anexosList').innerHTML=html;
