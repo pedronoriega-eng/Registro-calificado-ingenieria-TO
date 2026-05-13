@@ -219,62 +219,38 @@
 
         function openPresentation(id, title) {
             document.getElementById('viewerTitle').innerText = title;
-            currentSlides = window.PRESENTATION_SLIDES || [];
             
-            if(currentSlides.length === 0) {
-                alert("Error: No se han cargado los slides (sections.js)");
+            if(!window.SECTIONS || !window.SECTIONS[id]) {
+                alert("Error: No se han cargado los contenidos de la condición (sections.js)");
                 return;
             }
 
-            // Buscar el primer slide que corresponde a esta condicion
-            let targetIndex = 0;
-            if(id) {
-                const foundIdx = currentSlides.findIndex(s => s.cond === id);
-                if(foundIdx !== -1) targetIndex = foundIdx;
-            }
+            // Ocultar barra lateral y botones prev/next ya que usamos un timeline unificado
+            document.getElementById('slideList').style.display = 'none';
+            document.querySelector('.bg-gray-50.border-t').style.display = 'none';
+            document.getElementById('slideCounter').parentElement.style.display = 'none';
 
-            // Render UI Sidebar
-            document.getElementById('slideList').innerHTML = currentSlides.map((s, i) => `
-                <div onclick="goToSlide(${i})" id="btnSlide${i}" class="slide-nav-item p-4 border-b border-gray-100 cursor-pointer hover:bg-gray-50">
-                    <div class="text-xs font-bold mb-1 ${s.cond===id?'text-toRed':'text-gray-400'}">${s.cat}</div>
-                    <div class="text-sm font-semibold truncate ${s.cond===id?'text-toBlue':'text-gray-700'}">${s.title}</div>
-                </div>
-            `).join('');
-
-            currentIndex = targetIndex;
-            renderSlide();
+            // Setear el título superior de la diapositiva
+            document.getElementById('slideCategory').innerText = `CONDICIÓN ${id.replace('c','')}`;
+            document.getElementById('slideTitle').innerText = title;
             
+            // Inyectar el HTML del timeline directamente
+            document.getElementById('slideBody').innerHTML = window.SECTIONS[id];
+
+            // Mostrar el visor
             const viewer = document.getElementById('presentationViewer');
             viewer.classList.remove('hidden');
             setTimeout(() => viewer.classList.remove('opacity-0', 'scale-95'), 10);
             document.body.style.overflow = 'hidden';
 
-            // Reiniciar scripts especificos de la diapositiva actual
-            runSlideScripts();
+            // Ejecutar scripts si los hay
+            runSlideScripts(id);
         }
 
-        function runSlideScripts() {
+        function runSlideScripts(id) {
             setTimeout(() => {
-                const s = currentSlides[currentIndex];
-                // Graficos ChartJS de Condicion 2 y 3
-                if(s.cond === 'c2' && document.getElementById('chartDemandaC2')) {
-                    if(window.chartC2) window.chartC2.destroy();
-                    window.chartC2 = new Chart(document.getElementById('chartDemandaC2'), {
-                        type: 'bar',
-                        data: { labels: ['Bogotá', 'Medellín', 'Santander', 'Resto País'], datasets: [{ label: 'Oferta Virtual', data: [15, 8, 1, 5], backgroundColor: '#C8102E' }] },
-                        options: { responsive: true, maintainAspectRatio: false }
-                    });
-                }
-                if(s.cond === 'c3' && document.getElementById('chartAreasC3')) {
-                    if(window.chartC3) window.chartC3.destroy();
-                    window.chartC3 = new Chart(document.getElementById('chartAreasC3'), {
-                        type: 'doughnut',
-                        data: { labels: ['C. Básicas', 'Ing. Aplicada', 'Gestión', 'Investigación', 'Humanística', 'Complementaria'], datasets: [{ data: [15, 30, 20, 15, 10, 10], backgroundColor: ['#3b82f6', '#ef4444', '#eab308', '#22c55e', '#a855f7', '#6b7280'] }] },
-                        options: { responsive: true, maintainAspectRatio: false }
-                    });
-                }
-                // Mapa Leaflet
-                if(s.cond === 'c2' && document.getElementById('mapaColombiaSlide')) {
+                // Mapa Leaflet (Condicion 2)
+                if(id === 'c2' && document.getElementById('mapaColombiaSlide')) {
                     if(!window.myMap) {
                         window.myMap = L.map('mapaColombiaSlide').setView([4.5709, -74.2973], 5);
                         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(window.myMap);
@@ -287,29 +263,6 @@
             }, 300);
         }
 
-        function renderSlide() {
-            const s = currentSlides[currentIndex];
-            document.getElementById('slideCategory').innerText = s.cat;
-            document.getElementById('slideTitle').innerText = s.title;
-            document.getElementById('slideBody').innerHTML = s.html;
-            document.getElementById('slideCounter').innerText = currentIndex + 1;
-
-            // Actualizar numero total en UI
-            document.getElementById('slideCounter').parentElement.innerHTML = `<span id="slideCounter">${currentIndex + 1}</span> / ${currentSlides.length}`;
-
-            document.querySelectorAll('.slide-nav-item').forEach(el => el.classList.remove('active', 'text-white'));
-            const activeBtn = document.getElementById(`btnSlide${currentIndex}`);
-            if(activeBtn) {
-                activeBtn.classList.add('active');
-                activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-            
-            runSlideScripts();
-        }
-
-        function nextSlide() { if(currentIndex < currentSlides.length - 1) { currentIndex++; renderSlide(); } }
-        function prevSlide() { if(currentIndex > 0) { currentIndex--; renderSlide(); } }
-        function goToSlide(idx) { currentIndex = idx; renderSlide(); }
         function closePresentation() {
             const v = document.getElementById('presentationViewer');
             v.classList.add('opacity-0', 'scale-95');
