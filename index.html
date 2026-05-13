@@ -3,116 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sustentación Técnica | Corporación Escuela Tecnológica del Oriente (TO)</title>
-    
-    <!-- Google Fonts -->
+    <title>Sustentación Técnica | Corporación Escuela Tecnológica del Oriente</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        toOrange: '#FF6600',
-                        toDark: '#0A2540',
-                        toRed: '#C8102E',
-                        toLight: '#F1F5F9'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Montserrat', 'sans-serif'],
-                    }
+                    colors: { toOrange:'#FF6600', toDark:'#0A2540', toBlue:'#0A2540', toLightBlue:'#1e40af', toRed:'#C8102E' },
+                    fontFamily: { sans:['Inter','sans-serif'], heading:['Montserrat','sans-serif'] }
                 }
             }
         }
     </script>
-
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Leaflet (Mapas) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <!-- Apache ECharts (Para Condicion 2) -->
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
-
     <style>
-        :root {
-            --to-orange: #FF6600;
-            --to-dark: #0A2540;
-            --to-red: #C8102E;
-            --to-bg: #F8FAFC;
-        }
-        body { font-family: 'Inter', sans-serif; background-color: var(--to-bg); color: #1E293B; }
-        .brand-font { font-family: 'Montserrat', sans-serif; }
-        
-        .cond-card {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            border: 1px solid #E2E8F0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 220px;
-            cursor: pointer;
-        }
-        .cond-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(10, 37, 64, 0.1);
-            border-color: var(--to-orange);
-        }
-        .icon-circle {
-            width: 54px; height: 54px;
-            border-radius: 12px;
-            background: #F1F5F9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--to-dark);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-        .cond-card:hover .icon-circle {
-            background: var(--to-orange);
-            color: white;
-            transform: rotate(10deg);
-        }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-
-        #presentationViewer {
-            z-index: 1000;
-            background: #F8FAFC;
-        }
-        .slide-header { border-bottom: 3px solid var(--to-red); padding-bottom: 15px; margin-bottom: 25px; }
+        body{font-family:'Inter',sans-serif;background:#F8FAFC;color:#1E293B}
+        .brand-font{font-family:'Montserrat',sans-serif}
+        .cond-card{background:#fff;border-radius:16px;padding:24px;border:1px solid #E2E8F0;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;cursor:pointer}
+        .cond-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(10,37,64,.1);border-color:#FF6600}
+        .icon-circle{width:54px;height:54px;border-radius:12px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;color:#0A2540;font-size:1.5rem;margin-bottom:20px;transition:all .3s}
+        .cond-card:hover .icon-circle{background:#FF6600;color:#fff;transform:rotate(10deg)}
+        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f1f1}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}
+        #presentationViewer{z-index:1000;background:#F8FAFC}
+        .slide-header{border-bottom:3px solid #C8102E;padding-bottom:15px;margin-bottom:25px}
+        .slide-subtitle{color:#FF6600;font-weight:bold;letter-spacing:1px;text-transform:uppercase;font-size:1.1rem}
+        .slide-title h1{color:#0A2540;font-size:2rem;margin:0;font-weight:bold}
+        .date-badge{background:#FF6600;color:#fff;padding:6px 14px;border-radius:8px;font-size:.85rem;font-weight:700}
+        .timeline{border-left:4px solid #374151;padding-left:25px}
+        .event-card{background:#fff;color:#111827;padding:25px;border-radius:12px;margin-bottom:25px;box-shadow:0 4px 6px rgba(0,0,0,.05)}
+        .event-time{color:#FF6600;font-weight:bold;font-size:1rem;text-transform:uppercase;display:block;margin-bottom:5px}
+        .event-title{color:#111827;font-weight:bold;font-size:1.5rem;margin-bottom:12px}
+        .event-desc{color:#374151;margin-bottom:15px;font-size:1.1rem;line-height:1.6}
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+        .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+        .card{background:#f9fafb;border:1px solid #e5e7eb;padding:20px;border-radius:10px}
+        .card h4{color:#111827;font-weight:bold;margin-bottom:10px;font-size:1.1rem}
+        .card p{color:#374151;font-size:1rem;line-height:1.5}
+        .card-accent{background:#0A2540;color:#fff;padding:20px;border-radius:10px}
+        .card-accent h4{color:#FF6600;font-weight:bold;margin-bottom:10px}
+        .card-accent p{color:#d1d5db;font-size:1rem;line-height:1.5}
+        .tbl{width:100%;border-collapse:collapse;font-size:1rem;background:#fff;color:#111827}
+        .tbl th{background:#0A2540;color:#fff;padding:12px 15px;text-align:left;font-size:.9rem}
+        .tbl td{padding:12px 15px;border-bottom:1px solid #e5e7eb;color:#374151}
+        .tbl .lb{font-weight:bold;color:#111827;background:#f9fafb;width:30%}
+        .evidence-box{background:#f0fdf4;color:#166534;border-left:5px solid #16a34a;padding:15px;font-weight:bold;font-size:1.05rem;border-radius:4px;margin-top:12px}
+        .tag-legal{background:#e5e7eb;color:#111827;padding:5px 10px;border-radius:6px;font-size:.85rem;font-weight:bold;margin-right:6px;display:inline-block;margin-bottom:4px}
+        .chart-box{background:#fff;border:1px solid #e5e7eb;padding:20px;border-radius:10px}
+        .chart-box h4{color:#111827;font-weight:bold;margin-bottom:12px}
+        .stat-num{font-size:2.5rem;font-weight:900;color:#0A2540}.stat-num.orange{color:#FF6600}
+        .stat-label{font-size:.85rem;color:#6b7280;font-weight:600}
+        .nav-btn{background:#1f2937;color:#fff;border:1px solid #374151;padding:8px 14px;border-radius:6px;cursor:pointer;font-weight:bold;font-size:.9rem;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+        .nav-btn:hover{background:#FF6600;border-color:#FF6600}
+        .type-legal .event-time{color:#3b82f6}.type-academic .event-time{color:#8b5cf6}
+        .type-research .event-time{color:#10b981}.type-induction .event-time{color:#f59e0b}
+        .type-tech .event-time{color:#06b6d4}.type-sst .event-time{color:#ef4444}
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
 
-    <!-- Header -->
+    <!-- Cabecera -->
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-toDark rounded-lg flex items-center justify-center text-white font-bold text-xl brand-font">TO</div>
                 <div>
-                    <h1 class="text-xl font-bold text-toDark brand-font">Escuela Tecnológica del Oriente</h1>
-                    <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Acreditación Institucional - Ingeniería Industrial</p>
+                    <h1 class="text-xl font-bold text-toDark brand-font">Corporación Escuela Tecnológica del Oriente</h1>
+                    <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Sustentación Técnica — Ingeniería Industrial (Virtual)</p>
                 </div>
             </div>
             <div class="hidden md:flex flex-col text-right">
@@ -122,202 +86,234 @@
         </div>
     </header>
 
+    <!-- Panel Principal -->
     <main id="mainApp" class="max-w-7xl mx-auto px-6 py-12">
-        <!-- Hero -->
         <div class="mb-16 text-center">
             <span class="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Proceso de Registro Calificado</span>
-            <h2 class="text-4xl md:text-5xl font-extrabold text-toDark brand-font mb-6">Sustentación de Condiciones de Calidad</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Visualizador interactivo del cumplimiento normativo y técnico para el programa de <strong>Ingeniería Industrial (Virtual)</strong>.
-            </p>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-toDark brand-font mb-6">Condiciones de Calidad</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">Visualizador interactivo de las 9 condiciones exigidas por el Decreto 1330 de 2019 para el programa de <strong>Ingeniería Industrial</strong>.</p>
         </div>
-
-        <!-- Dashboard Grid -->
-        <div id="gridCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            <!-- Cargado por JS -->
-        </div>
-
-        <!-- Anexos Banner -->
+        <div id="gridCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"></div>
         <div class="bg-toDark rounded-3xl p-10 text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="relative z-10">
                 <h3 class="text-2xl font-bold mb-2">Biblioteca de Anexos Oficiales</h3>
-                <p class="text-gray-400">Acceso a los 25 documentos que soportan la propuesta técnica.</p>
+                <p class="text-gray-400">Acceso directo a los 25 documentos de soporte del radicado.</p>
             </div>
-            <button onclick="openPresentation('anexos', 'Biblioteca de Anexos')" class="relative z-10 bg-white text-toDark px-8 py-4 rounded-xl font-bold hover:bg-toOrange hover:text-white transition-all transform hover:-translate-y-1">
+            <button onclick="openPresentation('anexos','Documentos Anexos')" class="relative z-10 bg-white text-toDark px-8 py-4 rounded-xl font-bold hover:bg-toOrange hover:text-white transition-all transform hover:-translate-y-1">
                 <i class="fas fa-folder-open mr-2"></i> Ver Todos los Anexos
             </button>
-            <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-20 -mt-20"></div>
         </div>
     </main>
 
-    <!-- Presentation Viewer -->
+    <!-- Visor de Presentación -->
     <div id="presentationViewer" class="fixed inset-0 hidden flex-col opacity-0 scale-95 transition-all duration-300 ease-out">
-        <!-- Top Bar -->
         <div class="bg-white border-b border-gray-200 px-6 h-16 flex items-center justify-between shrink-0">
             <div class="flex items-center gap-4">
-                <button onclick="closePresentation()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600 transition-colors">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
+                <button onclick="closePresentation()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-600"><i class="fas fa-times text-xl"></i></button>
                 <div class="h-6 w-px bg-gray-200"></div>
                 <div>
                     <span id="slideCategory" class="text-[10px] font-bold text-toOrange tracking-widest uppercase">Condición</span>
-                    <h3 id="slideTitle" class="text-sm font-bold text-toDark brand-font truncate max-w-[300px]">Título</h3>
+                    <h3 id="slideTitle" class="text-sm font-bold text-toDark brand-font truncate max-w-[400px]">Título</h3>
                 </div>
             </div>
             <div class="flex items-center gap-3">
-                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold">
-                    <span id="slideCounter">1</span> / 10
-                </span>
+                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold"><span id="slideCounter">1</span> / <span id="slideTotal">10</span></span>
                 <div class="w-8 h-8 bg-toDark rounded flex items-center justify-center text-white text-xs font-bold">TO</div>
             </div>
         </div>
-
-        <!-- Content -->
         <div id="scrollContainer" class="flex-1 overflow-y-auto bg-gray-50 p-6 md:p-12">
-            <div id="slideBody" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-14 min-h-[80vh]">
-                <!-- Contenido dinámico -->
-            </div>
+            <div id="slideBody" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-14 min-h-[80vh]"></div>
         </div>
-
-        <!-- Footer Navigation -->
         <div class="bg-white border-t border-gray-200 h-20 px-8 flex items-center justify-center gap-10 shrink-0">
             <button onclick="prevSlide()" class="group flex items-center gap-3 text-gray-500 hover:text-toDark font-bold transition-colors">
-                <span class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-toDark">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
+                <span class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-toDark"><i class="fas fa-chevron-left"></i></span>
                 <span class="hidden sm:inline">Anterior</span>
             </button>
             <button onclick="nextSlide()" class="group flex items-center gap-3 text-gray-500 hover:text-toDark font-bold transition-colors">
                 <span class="hidden sm:inline">Siguiente</span>
-                <span class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-toDark">
-                    <i class="fas fa-chevron-right"></i>
-                </span>
+                <span class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-toDark"><i class="fas fa-chevron-right"></i></span>
             </button>
         </div>
     </div>
 
-    <!-- Data & Logic -->
-    <script src="sections.js?v=8"></script>
-    <script src="sections2.js?v=12"></script>
-    <script src="sections_c1.js?v=12"></script>
-    <script src="sections_c2.js?v=12"></script>
-    <script src="sections_c3.js?v=13"></script>
-    <script src="sections_c5.js?v=12"></script>
-    <script src="sections_c6.js?v=12"></script>
-    <script src="sections_anexos.js?v=12"></script>
+    <!-- Carga de módulos de datos (ORDEN CRÍTICO: primero los básicos, luego los mejorados que sobreescriben) -->
+    <script src="sections.js?v=20"></script>
+    <script src="sections2.js?v=20"></script>
+    <script src="sections_c1.js?v=20"></script>
+    <script src="sections_c2.js?v=20"></script>
+    <script src="sections_c3.js?v=20"></script>
+    <script src="sections_c5.js?v=20"></script>
+    <script src="sections_c6.js?v=20"></script>
+    <script src="sections_anexos.js?v=20"></script>
 
     <script>
+        /* ========================================
+           LÓGICA PRINCIPAL — 100% EN ESPAÑOL
+           ======================================== */
+
         const condInfo = [
-            { id: 'c1', title: '1. Denominación del Programa', icon: 'fa-tag' },
-            { id: 'c2', title: '2. Justificación del Programa', icon: 'fa-globe' },
-            { id: 'c3', title: '3. Aspectos Curriculares', icon: 'fa-graduation-cap' },
-            { id: 'c4', title: '4. Organización de Actividades', icon: 'fa-cogs' },
-            { id: 'c5', title: '5. Investigación e Innovación', icon: 'fa-microchip' },
-            { id: 'c6', title: '6. Relación Sector Externo', icon: 'fa-handshake' },
-            { id: 'c7', title: '7. Profesores', icon: 'fa-users' },
-            { id: 'c8', title: '8. Medios Educativos', icon: 'fa-desktop' },
-            { id: 'c9', title: '9. Infraestructura Física', icon: 'fa-building' }
+            { id:'c1', title:'Denominación del Programa',    icon:'fa-tag',            num:'01' },
+            { id:'c2', title:'Justificación del Programa',   icon:'fa-globe',          num:'02' },
+            { id:'c3', title:'Aspectos Curriculares',        icon:'fa-graduation-cap', num:'03' },
+            { id:'c4', title:'Organización de Actividades',  icon:'fa-cogs',           num:'04' },
+            { id:'c5', title:'Investigación e Innovación',   icon:'fa-microchip',      num:'05' },
+            { id:'c6', title:'Relación con el Sector Externo', icon:'fa-handshake',    num:'06' },
+            { id:'c7', title:'Profesores',                   icon:'fa-users',          num:'07' },
+            { id:'c8', title:'Medios Educativos',            icon:'fa-desktop',        num:'08' },
+            { id:'c9', title:'Infraestructura Física y Tecnológica', icon:'fa-building', num:'09' }
         ];
 
         let currentConditionId = 'c1';
 
+        /* --- Renderizar tarjetas del tablero --- */
         document.addEventListener('DOMContentLoaded', () => {
             const grid = document.getElementById('gridCards');
             grid.innerHTML = condInfo.map(c => `
-                <div class="cond-card" onclick="openPresentation('${c.id}', '${c.title}')">
+                <div class="cond-card" onclick="openPresentation('${c.id}','${c.title}')">
                     <div>
                         <div class="icon-circle"><i class="fas ${c.icon}"></i></div>
-                        <h4 class="text-xl font-bold text-toDark brand-font mb-2">${c.title}</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">Explorar cumplimiento técnico y evidencias de soporte oficial.</p>
+                        <h4 class="text-xl font-bold text-toDark brand-font mb-2">Condición ${c.num}</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">${c.title}</p>
                     </div>
-                    <div class="mt-6 flex items-center text-toOrange font-bold text-sm">
-                        Ver Contenido <i class="fas fa-arrow-right ml-2"></i>
-                    </div>
+                    <div class="mt-6 flex items-center text-toOrange font-bold text-sm">Ver Contenido <i class="fas fa-arrow-right ml-2"></i></div>
                 </div>
             `).join('');
+            document.getElementById('slideTotal').textContent = condInfo.length;
         });
 
+        /* --- Abrir el visor de presentación --- */
         function openPresentation(id, title) {
             currentConditionId = id;
             const slideBody = document.getElementById('slideBody');
-            
-            if(!window.SECTIONS || !window.SECTIONS[id]) {
-                slideBody.innerHTML = `<div class="p-10 text-center text-red-500 font-bold"><h3>Contenido en construcción.</h3></div>`;
+
+            if (!window.SECTIONS || !window.SECTIONS[id]) {
+                slideBody.innerHTML = '<div class="p-10 text-center text-red-500 font-bold"><h3>El contenido de esta condición está en construcción.</h3></div>';
             } else {
                 slideBody.innerHTML = window.SECTIONS[id];
             }
 
+            // Actualizar encabezado del visor
             const idx = condInfo.findIndex(c => c.id === id);
-            document.getElementById('slideCounter').innerText = idx >= 0 ? idx + 1 : '0';
-            document.getElementById('slideCategory').innerText = id === 'anexos' ? 'ANEXOS' : `CONDICIÓN ${id.replace('c','')}`;
-            document.getElementById('slideTitle').innerText = title;
+            document.getElementById('slideCounter').textContent = idx >= 0 ? idx + 1 : '-';
+            document.getElementById('slideCategory').textContent = id === 'anexos' ? 'DOCUMENTACIÓN' : 'CONDICIÓN ' + (id.replace('c',''));
+            document.getElementById('slideTitle').textContent = title || '';
 
+            // Mostrar visor
             const viewer = document.getElementById('presentationViewer');
             viewer.classList.remove('hidden');
             viewer.classList.add('flex');
-            setTimeout(() => viewer.classList.remove('opacity-0', 'scale-95'), 10);
+            setTimeout(() => viewer.classList.remove('opacity-0','scale-95'), 10);
             document.body.style.overflow = 'hidden';
-            
-            runSlideScripts(id);
+
+            // Scroll al inicio
             document.getElementById('scrollContainer').scrollTop = 0;
+
+            // Inicializar scripts de la sección
+            runSlideScripts(id);
         }
 
+        /* --- Inicialización específica de cada sección --- */
         function runSlideScripts(id) {
             setTimeout(() => {
-                if(id === 'c1' && window.c1Init) window.c1Init();
-                if(id === 'c2' && window.c2Init) window.c2Init();
-                if(id === 'c3') {
-                    if(window.changeTab) {
-                        const firstTab = document.querySelector('.tab-btn');
-                        if(firstTab) firstTab.click();
-                    }
-                    if(window.updateAsignaturas) window.updateAsignaturas();
+                // Condición 1: pestañas interactivas (sections_c1.js)
+                if (id === 'c1' && window.c1Init) window.c1Init();
+
+                // Condición 2: pestañas + mapa ECharts con selectores Nacional/Regional/Local (sections_c2.js)
+                if (id === 'c2' && window.c2Init) window.c2Init();
+
+                // Condición 3: 5 pestañas + motor de trazabilidad de 48 asignaturas (sections_c3.js)
+                if (id === 'c3') {
+                    var firstTab = document.querySelector('.tab-btn');
+                    if (firstTab) firstTab.click();
+                    if (window.updateAsignaturas) window.updateAsignaturas();
                 }
-                if(id === 'anexos' && window._anexosInit) window._anexosInit();
-                
-                // Inicialización de Gráficos (antes en app.js)
+
+                // Condición 5: visor de 20 slides PNG (sections_c5.js)
+                if (id === 'c5') {
+                    window._invIdx = 0;
+                    if (window._updateInvSlide) window._updateInvSlide();
+                }
+
+                // Anexos: renderizar la lista de 25 documentos (sections_anexos.js)
+                if (id === 'anexos' && window._anexosInit) window._anexosInit();
+
+                // Mapa Leaflet (presente en sections.js -> c2 básico, como respaldo)
+                var mapDom = document.getElementById('mapaColombiaSlide');
+                if (mapDom) {
+                    if (window.myMap) { window.myMap.remove(); window.myMap = null; }
+                    window.myMap = L.map('mapaColombiaSlide').setView([4.5709, -74.2973], 5);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(window.myMap);
+                    L.marker([4.7110,-74.0721]).addTo(window.myMap).bindPopup('<b>Bogotá</b><br>8 programas virtuales de Ing. Industrial');
+                    L.marker([6.2518,-75.5636]).addTo(window.myMap).bindPopup('<b>Medellín</b><br>2 programas virtuales');
+                    L.marker([3.4516,-76.5320]).addTo(window.myMap).bindPopup('<b>Cali</b><br>1 programa virtual');
+                    L.marker([5.0689,-75.5174]).addTo(window.myMap).bindPopup('<b>Manizales</b><br>1 programa virtual');
+                    L.marker([10.9639,-74.7964]).addTo(window.myMap).bindPopup('<b>Barranquilla</b><br>1 programa virtual');
+                    L.marker([7.1254,-73.1198]).addTo(window.myMap).bindPopup('<b>Bucaramanga — TO</b><br>Sede principal. Oportunidad estratégica.').openPopup();
+                    L.marker([7.0636,-73.0852]).addTo(window.myMap).bindPopup('<b>Floridablanca</b><br>UNAD CEAD');
+                }
+
+                // Gráficos Chart.js (condiciones 4, 7, 8, 9 usan canvas)
                 initCharts();
             }, 400);
         }
 
+        /* --- Gráficos Chart.js --- */
+        var _ci = {};
         function initCharts() {
-            // Lógica de Chart.js si los elementos existen en el slideBody actual
-            const h = document.getElementById('horasChart');
-            if(h) {
-                new Chart(h, { type: 'doughnut', data: { labels: ['Acompañamiento', 'Autónomo'], datasets: [{ data: [16, 32], backgroundColor: ['#FF6600', '#0A2540'] }] }, options: { plugins: { legend: { position: 'bottom' } } } });
-            }
-            const f = document.getElementById('formacionChart');
-            if(f) {
-                new Chart(f, { type: 'bar', data: { labels: ['Doctorado', 'Maestría', 'Esp.'], datasets: [{ data: [2, 6, 8], backgroundColor: '#FF6600' }] }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
-            }
+            var h = document.getElementById('horasChart');
+            if (h && !_ci.h) { _ci.h = new Chart(h,{type:'doughnut',data:{labels:['Acompañamiento (16h)','Trabajo Autónomo (32h)'],datasets:[{data:[16,32],backgroundColor:['#FF6600','#0A2540'],borderWidth:0}]},options:{responsive:true,cutout:'60%',plugins:{legend:{position:'bottom',labels:{color:'#1f2937'}}}}}); }
+
+            var f = document.getElementById('formacionChart');
+            if (f && !_ci.f) { _ci.f = new Chart(f,{type:'bar',data:{labels:['Doctorado (curso)','Maestría','Especialización'],datasets:[{data:[2,6,8],backgroundColor:['#FF6600','#0A2540','#6b7280'],borderRadius:6,barThickness:28}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#1f2937'}},y:{ticks:{color:'#1f2937'}}}}}); }
+
+            var p = document.getElementById('proyeccionChart');
+            if (p && !_ci.p) { _ci.p = new Chart(p,{type:'line',data:{labels:['Año 1','Año 2','Año 3','Año 4','Año 5','Año 6','Año 7'],datasets:[{label:'Tiempo Completo',data:[5,6,8,10,12,14,16],borderColor:'#FF6600',backgroundColor:'rgba(255,102,0,0.1)',fill:true,tension:.3},{label:'Medio Tiempo',data:[3,4,5,6,7,8,9],borderColor:'#0A2540',backgroundColor:'rgba(10,37,64,0.1)',fill:true,tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#1f2937'}}},scales:{y:{beginAtZero:true,ticks:{color:'#1f2937'}},x:{ticks:{color:'#1f2937'}}}}}); }
+
+            var t = document.getElementById('techChart');
+            if (t && !_ci.t) { _ci.t = new Chart(t,{type:'radar',data:{labels:['LMS','Sincrónica','E-Libro','Antiplagio','Correo','Creación'],datasets:[{label:'Capacidad (%)',data:[95,90,100,85,100,80],backgroundColor:'rgba(255,102,0,0.15)',borderColor:'#FF6600',borderWidth:2,pointBackgroundColor:'#FF6600'}]},options:{responsive:true,scales:{r:{beginAtZero:true,max:100,pointLabels:{color:'#1f2937'},ticks:{display:false}}},plugins:{legend:{display:false}}}}); }
         }
 
+        /* --- Cerrar visor --- */
         function closePresentation() {
-            const v = document.getElementById('presentationViewer');
-            v.classList.add('opacity-0', 'scale-95');
+            _ci = {}; // Limpiar instancias de Chart para re-creación
+            var v = document.getElementById('presentationViewer');
+            v.classList.add('opacity-0','scale-95');
             setTimeout(() => { v.classList.remove('flex'); v.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
         }
 
+        /* --- Navegación entre condiciones --- */
         function nextSlide() {
-            const idx = condInfo.findIndex(c => c.id === currentConditionId);
-            if(idx >= 0 && idx < condInfo.length - 1) {
-                openPresentation(condInfo[idx + 1].id, condInfo[idx + 1].title);
-            }
+            var idx = condInfo.findIndex(c => c.id === currentConditionId);
+            if (idx >= 0 && idx < condInfo.length - 1) openPresentation(condInfo[idx+1].id, condInfo[idx+1].title);
         }
-
         function prevSlide() {
-            const idx = condInfo.findIndex(c => c.id === currentConditionId);
-            if(idx > 0) {
-                openPresentation(condInfo[idx - 1].id, condInfo[idx - 1].title);
-            }
+            var idx = condInfo.findIndex(c => c.id === currentConditionId);
+            if (idx > 0) openPresentation(condInfo[idx-1].id, condInfo[idx-1].title);
         }
 
-        document.addEventListener('keydown', e => {
-            if(!document.getElementById('presentationViewer').classList.contains('hidden')) {
-                if(e.key === "ArrowRight") nextSlide();
-                if(e.key === "ArrowLeft") prevSlide();
-                if(e.key === "Escape") closePresentation();
-            }
+        /* --- Función de zoom del mapa Leaflet (Condición 2 básica) --- */
+        window.zoomMap = function(zona) {
+            if (!window.myMap) return;
+            if (zona === 'nacional') window.myMap.flyTo([4.5709,-74.2973], 5);
+            if (zona === 'regional') window.myMap.flyTo([7.1254,-73.1198], 8);
+            if (zona === 'local')    window.myMap.flyTo([7.1139,-73.1198], 12);
+        };
+
+        /* --- Función openModal para Condición 5 (assets de slides) --- */
+        window.openModal = function(imgSrc, title) {
+            var modal = document.createElement('div');
+            modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px';
+            modal.onclick = function(){ document.body.removeChild(modal); };
+            modal.innerHTML = '<img src="'+imgSrc+'" style="max-width:90%;max-height:80vh;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.5)" onerror="this.alt=\'Imagen no disponible\';this.style.background=\'#1f2937\';this.style.padding=\'40px\';this.style.color=\'#fff\';this.style.fontSize=\'1.2rem\'"><p style="color:#fff;margin-top:16px;font-weight:bold;font-size:1.1rem">'+title+'</p><p style="color:#94a3b8;font-size:.85rem;margin-top:6px">Haga clic en cualquier parte para cerrar</p>';
+            document.body.appendChild(modal);
+        };
+
+        /* --- Navegación por teclado --- */
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('presentationViewer').classList.contains('hidden')) return;
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'Escape') closePresentation();
         });
     </script>
 </body>
