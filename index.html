@@ -267,6 +267,8 @@
                 openPresentation(condInfo[idx - 1].id, condInfo[idx - 1].title);
             }
         }
+
+        function runSlideScripts(id) {
             setTimeout(() => {
                 // Mapa Leaflet (Condicion 2)
                 if(id === 'c2' && document.getElementById('mapaColombiaSlide')) {
