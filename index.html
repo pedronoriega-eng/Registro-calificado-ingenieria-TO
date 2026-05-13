@@ -39,9 +39,9 @@
         body { font-family: 'Open Sans', sans-serif; background-color: #F8FAFC; color: #333; }
         h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
         
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #0A2540; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar { width: 12px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #e5e7eb; border-radius: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF6600; border-radius: 6px; border: 2px solid #e5e7eb; }
         
         .slide-nav-item.active { background-color: #0A2540; color: white; border-left: 4px solid #C8102E; }
 
@@ -215,27 +215,31 @@
             `).join('');
         });
 
-        let currentSlides = [], currentIndex = 0;
+        let currentConditionId = 'c1';
 
         function openPresentation(id, title) {
-            document.getElementById('viewerTitle').innerText = title;
+            document.getElementById('viewerTitle').innerText = title || condInfo.find(c => c.id === id)?.title || id;
+            currentConditionId = id;
             
             if(!window.SECTIONS || !window.SECTIONS[id]) {
-                alert("Error: No se han cargado los contenidos de la condición (sections.js)");
-                return;
+                document.getElementById('slideBody').innerHTML = `<div class="p-10 text-center text-red-500 font-bold"><h3>El contenido de la condición ${id} está en construcción.</h3></div>`;
+            } else {
+                document.getElementById('slideBody').innerHTML = window.SECTIONS[id];
             }
 
-            // Ocultar barra lateral y botones prev/next ya que usamos un timeline unificado
+            // Ocultar barra lateral
             document.getElementById('slideList').style.display = 'none';
-            document.querySelector('.bg-gray-50.border-t').style.display = 'none';
-            document.getElementById('slideCounter').parentElement.style.display = 'none';
+            // MOSTRAR la barra inferior de botones
+            document.querySelector('.bg-gray-50.border-t').style.display = 'flex';
+            
+            // Actualizar contador
+            const idx = condInfo.findIndex(c => c.id === id);
+            document.getElementById('slideCounter').parentElement.style.display = 'inline-block';
+            document.getElementById('slideCounter').parentElement.innerHTML = `<span id="slideCounter">${idx + 1}</span> / ${condInfo.length}`;
 
             // Setear el título superior de la diapositiva
             document.getElementById('slideCategory').innerText = `CONDICIÓN ${id.replace('c','')}`;
-            document.getElementById('slideTitle').innerText = title;
-            
-            // Inyectar el HTML del timeline directamente
-            document.getElementById('slideBody').innerHTML = window.SECTIONS[id];
+            document.getElementById('slideTitle').innerText = condInfo.find(c => c.id === id)?.title || title;
 
             // Mostrar el visor
             const viewer = document.getElementById('presentationViewer');
@@ -245,9 +249,24 @@
 
             // Ejecutar scripts si los hay
             runSlideScripts(id);
+            
+            // Forzar que el contenedor inicie desde arriba
+            document.querySelector('.overflow-y-auto.custom-scrollbar.p-6').scrollTop = 0;
         }
 
-        function runSlideScripts(id) {
+        function nextSlide() {
+            const idx = condInfo.findIndex(c => c.id === currentConditionId);
+            if(idx >= 0 && idx < condInfo.length - 1) {
+                openPresentation(condInfo[idx + 1].id, condInfo[idx + 1].title);
+            }
+        }
+
+        function prevSlide() {
+            const idx = condInfo.findIndex(c => c.id === currentConditionId);
+            if(idx > 0) {
+                openPresentation(condInfo[idx - 1].id, condInfo[idx - 1].title);
+            }
+        }
             setTimeout(() => {
                 // Mapa Leaflet (Condicion 2)
                 if(id === 'c2' && document.getElementById('mapaColombiaSlide')) {
