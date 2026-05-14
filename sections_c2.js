@@ -1,4 +1,4 @@
-﻿window.SECTIONS=window.SECTIONS||{};
+window.SECTIONS=window.SECTIONS||{};
 var _c2ds={nacional:[{name:'BOGOTA',value:100},{name:'ANTIOQUIA',value:70},{name:'VALLE DEL CAUCA',value:55},{name:'SANTANDER',value:30},{name:'ATLANTICO',value:45},{name:'CUNDINAMARCA',value:50},{name:'CALDAS',value:20},{name:'BOYACA',value:15},{name:'NORTE DE SANTANDER',value:10}],regional:[{name:'ANTIOQUIA',value:90},{name:'VALLE DEL CAUCA',value:85},{name:'ATLANTICO',value:80},{name:'SANTANDER',value:65}],local:[{name:'SANTANDER',value:100},{name:'NORTE DE SANTANDER',value:60},{name:'ATLANTICO',value:40}]};
 var _c2chart=null;
 window.c2Nav=function(id,btn){var titles={'view-contexto':'Contexto del Programa','view-factor':'Factor Diferenciador','view-tendencias':'Indicadores y Desempeño','view-mapa':'Oferta de Programas (Mapa)'};document.querySelectorAll('.c2pane').forEach(p=>{p.style.display='none'});document.querySelectorAll('.c2navbtn').forEach(b=>b.classList.remove('active'));var p=document.getElementById(id);if(p)p.style.display='block';if(btn)btn.classList.add('active');if(id==='view-mapa'&&!_c2chart)setTimeout(window.c2InitMap,200);};
@@ -145,38 +145,99 @@ window.SECTIONS.c2=`
 
 <!-- VISTA 4: MAPA -->
 <div id="view-mapa" class="c2pane">
-  <div style="display:grid;grid-template-columns:280px 1fr;gap:20px;height:520px">
+  <div style="display:grid;grid-template-columns:280px 1fr;gap:20px;">
     <div style="display:flex;flex-direction:column;gap:14px">
       <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;padding:18px">
         <div style="font-size:.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px"><i class="fas fa-filter" style="color:#FF6600;margin-right:6px"></i>Filtros Geográficos</div>
         <div style="display:flex;flex-direction:column;gap:8px">
-          <button id="c2mb_nacional" class="c2mfbtn" onclick="c2MapFilter('nacional')" style="background:#FF6600;color:white"><i class="fas fa-earth-americas mr-2"></i>Nivel Nacional</button>
-          <button id="c2mb_regional" class="c2mfbtn" onclick="c2MapFilter('regional')"><i class="fas fa-map mr-2"></i>Polos de Desarrollo</button>
-          <button id="c2mb_local" class="c2mfbtn" onclick="c2MapFilter('local')"><i class="fas fa-location-dot mr-2"></i>Santanderes / Caribe</button>
+          <button id="c2mb_nacional" class="c2mfbtn" onclick="c2MapFilterTable('nacional')" style="background:#FF6600;color:white"><i class="fas fa-earth-americas mr-2"></i>Nivel Nacional</button>
+          <button id="c2mb_regional" class="c2mfbtn" onclick="c2MapFilterTable('regional')"><i class="fas fa-map mr-2"></i>Regional (Santander)</button>
+          <button id="c2mb_local" class="c2mfbtn" onclick="c2MapFilterTable('local')"><i class="fas fa-location-dot mr-2"></i>Local (AMB)</button>
         </div>
       </div>
       <div style="background:#0A2540;border-radius:14px;padding:18px;color:white;flex:1;border-top:4px solid #FF6600">
-        <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Distribución General (SNIES — 187 Prog.)</div>
+        <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Distribución General (SNIES)</div>
         <div style="display:flex;flex-direction:column;gap:14px">
-          <div><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:6px"><span>Presencial</span><span style="font-weight:700">155</span></div><div style="background:rgba(255,255,255,.15);border-radius:4px;height:6px"><div style="background:white;width:82%;height:6px;border-radius:4px"></div></div></div>
-          <div><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:6px"><span style="color:#FF6600;font-weight:700">Virtual</span><span style="font-weight:700;color:#FF6600;font-size:1rem">20</span></div><div style="background:rgba(255,255,255,.15);border-radius:4px;height:6px"><div style="background:#FF6600;width:10%;height:6px;border-radius:4px"></div></div></div>
-          <div><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:6px"><span>Distancia</span><span style="font-weight:700">7</span></div><div style="background:rgba(255,255,255,.15);border-radius:4px;height:6px"><div style="background:#94a3b8;width:4%;height:6px;border-radius:4px"></div></div></div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15)">
-          <div style="background:rgba(255,255,255,.07);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.5rem;font-weight:800">156</div><div style="font-size:.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:1px">Privado</div></div>
-          <div style="background:rgba(255,255,255,.07);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.5rem;font-weight:800">31</div><div style="font-size:.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:1px">Oficial</div></div>
+          <div><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:6px"><span style="color:#FF6600;font-weight:700">Virtual (Ing. Industrial)</span><span style="font-weight:700;color:#FF6600;font-size:1rem" id="c2TotalProg">15</span></div><div style="background:rgba(255,255,255,.15);border-radius:4px;height:6px"><div style="background:#FF6600;width:100%;height:6px;border-radius:4px"></div></div></div>
         </div>
       </div>
     </div>
-    <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;position:relative;overflow:hidden">
-      <div id="c2maplabel" style="position:absolute;top:12px;left:12px;z-index:10;background:rgba(10,37,64,.9);color:white;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:700"><i class="fas fa-layer-group" style="color:#FF6600;margin-right:8px"></i>Nivel Nacional Completo</div>
-      <div id="c2echmap" style="width:100%;height:100%"></div>
-      <div id="c2mapload" style="position:absolute;inset:0;background:rgba(255,255,255,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:20">
-        <i class="fas fa-spinner fa-spin fa-3x" style="color:#FF6600;margin-bottom:16px"></i>
-        <p style="font-weight:700;color:#0A2540">Cargando Cartografía Dinámica...</p>
-      </div>
+    <div style="display:flex;flex-direction:column;gap:20px;">
+        <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;position:relative;overflow:hidden;height:350px;">
+          <div id="c2maplabel" style="position:absolute;top:12px;left:12px;z-index:10;background:rgba(10,37,64,.9);color:white;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:700"><i class="fas fa-layer-group" style="color:#FF6600;margin-right:8px"></i>Información Nacional</div>
+          <div id="c2echmap" style="width:100%;height:100%"></div>
+        </div>
+        <div class="c2card" style="padding:0;overflow-y:auto;max-height:300px;">
+          <div style="background:#f8fafc;padding:12px 20px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0A2540;position:sticky;top:0;z-index:5;"><i class="fas fa-list" style="color:#FF6600;margin-right:8px"></i>Instituciones Ofertantes (Orden Ascendente)</div>
+          <table class="c2tbl" style="width:100%;border-collapse:collapse;">
+            <thead style="position:sticky;top:45px;z-index:5;"><tr><th>Ciudad</th><th>Institución</th></tr></thead>
+            <tbody id="c2InstitutionsTable">
+            </tbody>
+          </table>
+        </div>
     </div>
   </div>
 </div>
 `;
+
+window._c2InstData = {
+    nacional: [
+        { ciudad: 'Bogotá', inst: 'Corporación Universitaria Iberoamericana' },
+        { ciudad: 'Bogotá', inst: 'Corporación Universitaria Minuto de Dios - UNIMINUTO' },
+        { ciudad: 'Bogotá', inst: 'Fundación Universitaria del Área Andina' },
+        { ciudad: 'Bogotá', inst: 'Politécnico Grancolombiano' },
+        { ciudad: 'Bogotá', inst: 'Universidad de San Buenaventura' },
+        { ciudad: 'Bogotá', inst: 'Universidad Nacional Abierta y a Distancia - UNAD' },
+        { ciudad: 'Bogotá', inst: 'Universidad Piloto de Colombia' },
+        { ciudad: 'Bucaramanga', inst: 'Corporación Escuela Tecnológica del Oriente' },
+        { ciudad: 'Bucaramanga', inst: 'Universidad Autónoma de Bucaramanga - UNAB' },
+        { ciudad: 'Barranquilla', inst: 'Universidad de la Costa - CUC' },
+        { ciudad: 'Cali', inst: 'Fundación Universitaria Católica Lumen Gentium' },
+        { ciudad: 'Manizales', inst: 'Universidad Autónoma de Manizales' },
+        { ciudad: 'Medellín', inst: 'Fundación Universitaria Católica del Norte' },
+        { ciudad: 'Medellín', inst: 'Institución Universitaria CEIPA' }
+    ],
+    regional: [
+        { ciudad: 'Barrancabermeja', inst: 'Instituto Universitario de la Paz - UNIPAZ (Distancia)' },
+        { ciudad: 'Bucaramanga', inst: 'Corporación Escuela Tecnológica del Oriente' },
+        { ciudad: 'Bucaramanga', inst: 'Universidad Autónoma de Bucaramanga - UNAB' },
+        { ciudad: 'Floridablanca', inst: 'Universidad Nacional Abierta y a Distancia - UNAD CEAD' },
+        { ciudad: 'San Gil', inst: 'Fundación Universitaria de San Gil - UNISANGIL (Presencial)' }
+    ],
+    local: [
+        { ciudad: 'Bucaramanga', inst: 'Corporación Escuela Tecnológica del Oriente' },
+        { ciudad: 'Bucaramanga', inst: 'Universidad Autónoma de Bucaramanga - UNAB' },
+        { ciudad: 'Floridablanca', inst: 'Universidad Nacional Abierta y a Distancia - UNAD CEAD' }
+    ]
+};
+
+window.c2MapFilterTable = function(nivel) {
+    window.c2MapFilter(nivel);
+    
+    // Sort array descending or ascending
+    let data = window._c2InstData[nivel].slice().sort((a,b) => {
+        if(a.ciudad === b.ciudad) return a.inst.localeCompare(b.inst);
+        return a.ciudad.localeCompare(b.ciudad);
+    });
+    
+    var tbody = document.getElementById('c2InstitutionsTable');
+    if(tbody) {
+        tbody.innerHTML = data.map(d => `<tr><td style="font-weight:600;color:#0A2540;">${d.ciudad}</td><td>${d.inst}</td></tr>`).join('');
+    }
+    
+    var total = document.getElementById('c2TotalProg');
+    if(total) total.innerText = data.length;
+    
+    var titles = {nacional:'Información Nacional', regional:'Información Regional (Santander)', local:'Información Local (AMB)'};
+    var lbl = document.getElementById('c2maplabel');
+    if(lbl) lbl.innerText = titles[nivel] || nivel;
+};
+
+// Override original init to also trigger the table render
+const _originalC2InitMap = window.c2InitMap;
+window.c2InitMap = function() {
+    _originalC2InitMap();
+    setTimeout(() => { window.c2MapFilterTable('nacional'); }, 500);
+};
+
 window.c2Init();
