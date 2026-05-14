@@ -71,17 +71,17 @@ window.renderMalla = function() {
 
     for (const comp in window.trazabilidadData) {
         let col = colors[comp] || {bg:"#f1f5f9", border:"#64748b"};
-        html += `<div style="margin-bottom:20px;">
-                    <div style="font-weight:bold;color:${col.border};font-size:1.1rem;margin-bottom:8px;border-bottom:2px solid ${col.bg};padding-bottom:4px;">${comp}</div>
-                    <div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;align-items:center;">`;
+        html += `<div style="margin-bottom:12px;">
+                    <div style="font-weight:800;color:${col.border};font-size:1rem;margin-bottom:6px;border-bottom:2px solid ${col.bg};padding-bottom:2px;text-transform:uppercase;letter-spacing:0.5px;">${comp}</div>
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;padding-bottom:4px;align-items:center;">`;
         
         window.trazabilidadData[comp].forEach((asig, idx) => {
             html += `
-                <div class="asig-btn" onclick="showMallaDetails('${comp}', ${idx}, this)" style="flex-shrink:0;background:white;border:2px solid #e2e8f0;border-radius:8px;padding:12px;width:180px;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 4px rgba(0,0,0,0.05);position:relative;">
-                    <div style="font-size:0.85rem;font-weight:bold;margin-bottom:6px;line-height:1.2;">${asig.asig}</div>
-                    <div style="font-size:0.7rem;color:#64748b;background:#f8fafc;padding:4px 6px;border-radius:4px;display:inline-block;"><i class="fas fa-link" style="color:#FF6600"></i> Saberes Previos:<br><span style="color:#0A2540;font-weight:600">${asig.pre}</span></div>
+                <div class="asig-btn" onclick="showMallaDetails('${comp}', ${idx}, this)" style="background:white;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;width:150px;cursor:pointer;transition:all 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.04);position:relative;">
+                    <div style="font-size:0.75rem;font-weight:700;margin-bottom:4px;line-height:1.1;color:#0A2540;">${asig.asig}</div>
+                    <div style="font-size:0.65rem;color:#64748b;background:#f8fafc;padding:3px 4px;border-radius:3px;display:inline-block;border:1px solid #f1f5f9;width:100%"><i class="fas fa-link" style="color:#FF6600"></i> Previos: <span style="color:#0A2540;font-weight:600">${asig.pre}</span></div>
                 </div>
-                ${idx < window.trazabilidadData[comp].length - 1 ? `<div style="color:#cbd5e1;flex-shrink:0;"><i class="fas fa-arrow-right"></i></div>` : ''}
+                ${idx < window.trazabilidadData[comp].length - 1 ? `<div style="color:#cbd5e1;font-size:0.7rem;"><i class="fas fa-chevron-right"></i></div>` : ''}
             `;
         });
         html += `   </div>
@@ -181,26 +181,26 @@ window.SECTIONS.c3 = `
 
 <!-- CONTENIDO: MALLA INTERACTIVA Y TRAZABILIDAD -->
 <div id="malla_traz" class="tab-content">
-    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;">
-        <h3 style="color:#0A2540;font-weight:800;margin-top:0;margin-bottom:15px;font-size:1.2rem;"><i class="fas fa-sitemap" style="color:#FF6600;margin-right:8px;"></i> Malla Curricular por Componentes (Ruta Horizontal)</h3>
-        <p style="font-size:0.85rem;color:#64748b;margin-bottom:20px;">Haga clic en cualquier asignatura para visualizar su trazabilidad, Saberes Previos (no prerrequisitos restrictivos) y aporte al Perfil de Egreso.</p>
+    <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;padding:20px;margin-bottom:15px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <h3 style="color:#0A2540;font-weight:800;margin-top:0;margin-bottom:10px;font-size:1.1rem;"><i class="fas fa-sitemap" style="color:#FF6600;margin-right:8px;"></i> Malla Curricular por Componentes (Ruta Formativa)</h3>
+        <p style="font-size:0.8rem;color:#64748b;margin-bottom:15px;">Haga clic en cualquier asignatura para visualizar su trazabilidad, Saberes Previos (no prerrequisitos restrictivos) y aporte al Perfil de Egreso.</p>
         
-        <!-- Contenedor dinámico de la malla horizontal -->
-        <div id="malla_container" class="custom-scrollbar" style="max-height: 400px; overflow-y: auto; overflow-x: hidden; padding-right: 10px;"></div>
+        <!-- Contenedor dinámico de la malla (SIN SCROLL, CON WRAP) -->
+        <div id="malla_container"></div>
     </div>
     
-    <!-- Panel de Resultados (Inferior) -->
-    <div class="card p-6 bg-toBlue text-white rounded-xl shadow-xl relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10"></div>
-        <h3 id="ra_title" class="text-xl font-bold mb-4 text-toOrange">Detalle de Asignatura</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="p-5 bg-white/10 rounded-xl border border-white/20">
-                <h5 class="text-toOrange font-bold text-xs uppercase tracking-widest mb-2"><i class="fas fa-bullseye mr-1"></i> Resultado de Aprendizaje (RA)</h5>
-                <p id="ra_asig" class="text-sm leading-relaxed text-blue-50">Seleccione una asignatura en la malla arriba.</p>
+    <!-- Panel de Resultados (Estilo Condición 2) -->
+    <div style="background:#0A2540;border-radius:14px;padding:20px;color:white;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08);">
+        <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=60') center/cover;opacity:.1"></div>
+        <h3 id="ra_title" style="font-weight:800;font-size:1.1rem;margin:0 0 15px;color:white;position:relative;display:flex;align-items:center;gap:10px;"><div style="width:30px;height:30px;border-radius:50%;background:#FF6600;color:white;display:flex;align-items:center;justify-content:center"><i class="fas fa-check"></i></div>Detalle de Asignatura</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;position:relative;">
+            <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;">
+                <h5 style="color:#FF6600;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;"><i class="fas fa-bullseye mr-2"></i>Resultado de Aprendizaje (RA)</h5>
+                <p id="ra_asig" style="color:#e2e8f0;font-size:.85rem;line-height:1.5;margin:0;">Seleccione una asignatura en la malla arriba.</p>
             </div>
-            <div class="p-5 bg-white/10 rounded-xl border border-white/20">
-                <h5 class="text-toOrange font-bold text-xs uppercase tracking-widest mb-2"><i class="fas fa-graduation-cap mr-1"></i> Aporte a Competencia de Egreso</h5>
-                <p id="ra_prog" class="text-sm leading-relaxed text-blue-50">-</p>
+            <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;">
+                <h5 style="color:#FF6600;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;"><i class="fas fa-graduation-cap mr-2"></i>Aporte a Competencia de Egreso</h5>
+                <p id="ra_prog" style="color:#e2e8f0;font-size:.85rem;line-height:1.5;margin:0;">-</p>
             </div>
         </div>
     </div>
