@@ -1,243 +1,297 @@
-window.SECTIONS=window.SECTIONS||{};
-var _c2ds={nacional:[{name:'BOGOTA',value:100},{name:'ANTIOQUIA',value:70},{name:'VALLE DEL CAUCA',value:55},{name:'SANTANDER',value:30},{name:'ATLANTICO',value:45},{name:'CUNDINAMARCA',value:50},{name:'CALDAS',value:20},{name:'BOYACA',value:15},{name:'NORTE DE SANTANDER',value:10}],regional:[{name:'ANTIOQUIA',value:90},{name:'VALLE DEL CAUCA',value:85},{name:'ATLANTICO',value:80},{name:'SANTANDER',value:65}],local:[{name:'SANTANDER',value:100},{name:'NORTE DE SANTANDER',value:60},{name:'ATLANTICO',value:40}]};
-var _c2chart=null;
-window.c2Nav=function(id,btn){var titles={'view-contexto':'Contexto del Programa','view-factor':'Factor Diferenciador','view-tendencias':'Indicadores y Desempeño','view-mapa':'Oferta de Programas (Mapa)'};document.querySelectorAll('.c2pane').forEach(p=>{p.style.display='none'});document.querySelectorAll('.c2navbtn').forEach(b=>b.classList.remove('active'));var p=document.getElementById(id);if(p)p.style.display='block';if(btn)btn.classList.add('active');if(id==='view-mapa'&&!_c2chart)setTimeout(window.c2InitMap,200);};
-window.c2Acc=function(cid,iid){var c=document.getElementById(cid),ic=document.getElementById(iid);if(!c)return;var o=c.classList.contains('c2open');document.querySelectorAll('.c2ac').forEach(el=>el.classList.remove('c2open'));document.querySelectorAll('.c2ai').forEach(el=>el.style.transform='');if(!o){c.classList.add('c2open');if(ic)ic.style.transform='rotate(180deg);}';};
-window.c2MapFilter=function(nivel){document.querySelectorAll('.c2mfbtn').forEach(b=>{b.style.background='#f1f5f9';b.style.color='#374151'});var ab=document.getElementById('c2mb_'+nivel);if(ab){ab.style.background='#F39200';ab.style.color='white';}if(!_c2chart)return;var titles={nacional:'Nivel Nacional Completo',regional:'Polos de Desarrollo',local:'Santanderes y Caribe'};var lbl=document.getElementById('c2maplabel');if(lbl)lbl.innerText=titles[nivel]||nivel;_c2chart.setOption({series:[{data:_c2ds[nivel]}]});};
-window.c2InitMap=function(){var dom=document.getElementById('c2echmap');if(!dom||typeof echarts==='undefined')return;_c2chart=echarts.init(dom);fetch('https://raw.githubusercontent.com/mural-co/datos-abiertos-colombia/master/geojson/departamentos.geojson').then(r=>r.json()).then(gj=>{echarts.registerMap('Colombia',gj);var ld=document.getElementById('c2mapload');if(ld)ld.style.display='none';_c2chart.setOption({tooltip:{trigger:'item',backgroundColor:'#1A1A1B',textStyle:{color:'#fff'},formatter:p=>'<b style="color:#F39200">'+p.name+'</b><br>Índice: '+( p.value||0)},visualMap:{left:'right',bottom:'5%',min:0,max:100,inRange:{color:['#F4F4F4','#FCD34D','#F97316','#C2410C']},text:['Alta','Baja'],calculable:true},series:[{name:'Ingeniería Industrial',type:'map',map:'Colombia',roam:true,itemStyle:{borderColor:'#fff',borderWidth:1.5,areaColor:'#E5E7EB'},emphasis:{itemStyle:{areaColor:'#F39200'}},data:_c2ds.nacional}]});window.c2MapFilter('nacional');}).catch(()=>{var ld=document.getElementById('c2mapload');if(ld)ld.innerHTML='<i class="fas fa-wifi-slash fa-3x" style="color:red"></i><p>Error cargando mapa</p>';});};
-window.c2Init=function(){var b=document.querySelector('.c2navbtn');if(b)window.c2Nav('view-contexto',b);else setTimeout(window.c2Init,150);};
-window.SECTIONS.c2=`
-<style>
-.c2navbtn{padding:10px 18px;border:none;background:#f1f5f9;border-radius:10px;cursor:pointer;font-weight:700;color:#64748b;transition:all .3s;font-size:.88rem;display:flex;align-items:center;gap:8px}
-.c2navbtn.active{background:#0A2540;color:white}
-.c2pane{display:none;animation:c2fi .4s ease}
-@keyframes c2fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.c2card{background:white;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:box-shadow .3s}
-.c2card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.c2ac{overflow:hidden;max-height:0;transition:max-height .4s ease;padding:0 20px}
-.c2ac.c2open{max-height:300px;padding:14px 20px}
-.c2ai{transition:transform .3s;color:#94a3b8}
-.c2mfbtn{padding:10px 18px;border-radius:10px;border:1px solid #e2e8f0;font-weight:700;cursor:pointer;font-size:.85rem;transition:all .3s;width:100%;text-align:left}
-.c2kpi{background:white;border:1px solid #e2e8f0;border-radius:14px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.c2tbl th{background:#0A2540;color:white;padding:12px 16px;text-align:left;font-size:.82rem;text-transform:uppercase;letter-spacing:.5px}
-.c2tbl td{padding:12px 16px;border-bottom:1px solid #f1f5f9;font-size:.88rem;color:#374151}
-.c2tbl tr:hover td{background:#fff7ed}
-</style>
+window.SECTIONS = window.SECTIONS || {};
 
-<div style="border-bottom:3px solid #C8102E;padding-bottom:15px;margin-bottom:25px">
-  <div style="color:#C8102E;font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:1px">Condición 2</div>
-  <h1 style="color:#0A2540;font-size:2.2rem;margin:0;font-weight:800">Justificación del Programa</h1>
+window.SECTIONS.c2 = \`
+<div class="slide-header" style="border-bottom: 2px solid #FF6600; padding-bottom: 15px; margin-bottom: 25px;">
+    <div class="slide-title">
+        <div class="slide-subtitle" style="color:#FF6600; font-weight:bold; letter-spacing:1px; text-transform:uppercase; font-size:1.1rem;">Condición 02</div>
+        <h1 style="color:#0A2540; font-size:2.5rem; margin:0; font-weight:bold; font-family:'Montserrat', sans-serif;">Justificación del Programa</h1>
+    </div>
 </div>
 
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
-  <button class="c2navbtn active" onclick="c2Nav('view-contexto',this)"><i class="fas fa-globe"></i>Contexto</button>
-  <button class="c2navbtn" onclick="c2Nav('view-factor',this)"><i class="fas fa-gem"></i>Factor Diferenciador</button>
-  <button class="c2navbtn" onclick="c2Nav('view-tendencias',this)"><i class="fas fa-chart-bar"></i>Indicadores</button>
-  <button class="c2navbtn" onclick="c2Nav('view-mapa',this)"><i class="fas fa-map-location-dot"></i>Mapa de Oferta</button>
-</div>
+<div class="timeline" style="border-left: 3px solid #0A2540; padding-left: 25px; margin-left: 5px;">
+    
+    <!-- CONTEXTO INTERNACIONAL -->
+    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; position:relative; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+        <span class="event-time" style="color:#FF6600; font-weight:bold; font-size:0.85rem; text-transform:uppercase; display:block; margin-bottom:5px; letter-spacing:0.5px;">CONTEXTO INTERNACIONAL</span>
+        <div class="event-title" style="color:#0A2540; font-weight:bold; font-size:1.4rem; margin-bottom:12px; font-family:'Montserrat', sans-serif;">Pertinencia Global de la Ingeniería Industrial</div>
+        <div class="event-desc" style="color:#4b5563; margin-bottom:20px; font-size:1rem; line-height:1.5;">La Ingeniería Industrial es una de las disciplinas con mayor demanda global. Organismos como la OIT, OCDE y el Foro Económico Mundial la identifican como clave para la transformación productiva.</div>
+        
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:15px;">
+            <div style="border:1px solid #bfdbfe; border-radius:8px; padding:15px; background:#eff6ff;">
+                <h4 style="color:#1e40af; font-weight:bold; font-size:0.95rem; margin-bottom:8px;"><i class="fas fa-globe mr-2"></i> Foro Económico Mundial</h4>
+                <p style="color:#374151; font-size:0.85rem; margin:0;">Top 10 de carreras con mayor empleabilidad para 2030.</p>
+            </div>
+            <div style="border:1px solid #fde68a; border-radius:8px; padding:15px; background:#fef3c7;">
+                <h4 style="color:#92400e; font-weight:bold; font-size:0.95rem; margin-bottom:8px;"><i class="fas fa-industry mr-2"></i> Revolución 4.0</h4>
+                <p style="color:#374151; font-size:0.85rem; margin:0;">IA, IoT, Big Data transforman los procesos industriales globalmente.</p>
+            </div>
+            <div style="border:1px solid #bbf7d0; border-radius:8px; padding:15px; background:#f0fdf4;">
+                <h4 style="color:#166534; font-weight:bold; font-size:0.95rem; margin-bottom:8px;"><i class="fas fa-leaf mr-2"></i> ODS Alineados</h4>
+                <p style="color:#374151; font-size:0.85rem; margin:0;">ODS 9: Industria, Innovación e Infraestructura como eje central.</p>
+            </div>
+        </div>
+    </div>
 
-<!-- VISTA 1: CONTEXTO -->
-<div id="view-contexto" class="c2pane" style="display:block">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-    <div class="c2card">
-      <div style="height:160px;background:linear-gradient(135deg,#0A2540,#1e40af);display:flex;align-items:flex-end;padding:16px;position:relative;overflow:hidden">
-        <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=60') center/cover;opacity:.3"></div>
-        <h4 style="color:white;font-weight:800;font-size:1.15rem;position:relative"><i class="fas fa-earth-americas" style="color:#FF6600;margin-right:8px"></i>Internacional</h4>
-      </div>
-      <div style="padding:20px">
-        <p style="font-size:.87rem;color:#475569;margin-bottom:14px">Análisis comparativo de 10 instituciones líderes (MIT, Stanford, Cambridge, UNED, VIU). La formación global exige:</p>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;gap:10px;align-items:flex-start"><i class="fas fa-check" style="color:#FF6600;margin-top:3px;flex-shrink:0"></i><span style="font-size:.87rem"><strong>Virtualidad Creciente:</strong> Adaptabilidad y democratización del acceso.</span></div>
-          <div style="display:flex;gap:10px;align-items:flex-start"><i class="fas fa-check" style="color:#FF6600;margin-top:3px;flex-shrink:0"></i><span style="font-size:.87rem"><strong>Revolución 4.0:</strong> Integración fuerte de IA y Analítica de Datos.</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="c2card">
-      <div style="height:160px;background:linear-gradient(135deg,#14532d,#16a34a);display:flex;align-items:flex-end;padding:16px;position:relative;overflow:hidden">
-        <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=600&q=60') center/cover;opacity:.3"></div>
-        <h4 style="color:white;font-weight:800;font-size:1.15rem;position:relative"><i class="fas fa-map" style="color:#FF6600;margin-right:8px"></i>Nacional</h4>
-      </div>
-      <div style="padding:20px">
-        <p style="font-size:.87rem;color:#475569;margin-bottom:14px">Alineación con Planes de Desarrollo Nacional y Departamentales (2024-2027) de Bogotá, Antioquia y Valle del Cauca.</p>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;gap:10px;align-items:flex-start"><i class="fas fa-check" style="color:#FF6600;margin-top:3px;flex-shrink:0"></i><span style="font-size:.87rem"><strong>Reindustrialización:</strong> Modernización de cadenas logísticas.</span></div>
-          <div style="display:flex;gap:10px;align-items:flex-start"><i class="fas fa-check" style="color:#FF6600;margin-top:3px;flex-shrink:0"></i><span style="font-size:.87rem"><strong>Sostenibilidad:</strong> Economía circular y eficiencia energética.</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="c2card">
-      <div style="height:160px;background:linear-gradient(135deg,#7c3aed,#a855f7);display:flex;align-items:flex-end;padding:16px;position:relative;overflow:hidden">
-        <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=60') center/cover;opacity:.3"></div>
-        <h4 style="color:white;font-weight:800;font-size:1.15rem;position:relative"><i class="fas fa-location-dot" style="color:#FF6600;margin-right:8px"></i>Regional / Local</h4>
-      </div>
-      <div style="padding:20px">
-        <p style="font-size:.87rem;color:#475569;margin-bottom:14px">Impacto directo en la región Oriente (Santander, Atlántico), enfocado en la reactivación económica del tejido empresarial.</p>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;gap:10px;align-items:flex-start"><i class="fas fa-check" style="color:#FF6600;margin-top:3px;flex-shrink:0"></i><span style="font-size:.87rem"><strong>Competitividad:</strong> "Bucaramanga avanza segura" requiere ingenieros en mejora continua.</span></div>
-          <div style="display:flex;gap:10px;align-items:flex-start"><i class="fas fa-check" style="color:#FF6600;margin-top:3px;flex-shrink:0"></i><span style="font-size:.87rem"><strong>Gestión Portuaria:</strong> Optimización de la cadena de suministro global.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- VISTA 2: FACTOR DIFERENCIADOR -->
-<div id="view-factor" class="c2pane">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div class="c2card" style="border-left:5px solid #FF6600;border-radius:0 14px 14px 0">
-        <div onclick="c2Acc('ca_d1','ci_d1')" style="padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer">
-          <div style="display:flex;align-items:center;gap:14px"><div style="width:40px;height:40px;border-radius:50%;background:#0A2540;color:white;display:flex;align-items:center;justify-content:center"><i class="fas fa-robot"></i></div><h3 style="font-weight:700;color:#0A2540;font-size:1rem;margin:0">Herramientas de la Revolución 4.0</h3></div>
-          <i id="ci_d1" class="fas fa-chevron-down c2ai"></i>
-        </div>
-        <div id="ca_d1" class="c2ac"><p style="font-size:.88rem;color:#475569;border-top:1px solid #fee2e2;padding-top:12px">Incorporación transversal de tecnologías de vanguardia (IA, Big Data, Analítica) superando las mallas tradicionales para liderar la transformación digital.</p></div>
-      </div>
-      <div class="c2card" style="border-left:5px solid #10b981;border-radius:0 14px 14px 0">
-        <div onclick="c2Acc('ca_d2','ci_d2')" style="padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer">
-          <div style="display:flex;align-items:center;gap:14px"><div style="width:40px;height:40px;border-radius:50%;background:#0A2540;color:white;display:flex;align-items:center;justify-content:center"><i class="fas fa-leaf"></i></div><h3 style="font-weight:700;color:#0A2540;font-size:1rem;margin:0">Sostenibilidad y Responsabilidad Social</h3></div>
-          <i id="ci_d2" class="fas fa-chevron-down c2ai"></i>
-        </div>
-        <div id="ca_d2" class="c2ac"><p style="font-size:.88rem;color:#475569;border-top:1px solid #d1fae5;padding-top:12px">Alineación directa con los ODS. Asignaturas diseñadas para minimizar impactos ambientales y sociales en respuesta al contexto colombiano.</p></div>
-      </div>
-      <div class="c2card" style="border-left:5px solid #3b82f6;border-radius:0 14px 14px 0">
-        <div onclick="c2Acc('ca_d3','ci_d3')" style="padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer">
-          <div style="display:flex;align-items:center;gap:14px"><div style="width:40px;height:40px;border-radius:50%;background:#0A2540;color:white;display:flex;align-items:center;justify-content:center"><i class="fas fa-laptop-house"></i></div><h3 style="font-weight:700;color:#0A2540;font-size:1rem;margin:0">Flexibilidad y Accesibilidad Virtual</h3></div>
-          <i id="ci_d3" class="fas fa-chevron-down c2ai"></i>
-        </div>
-        <div id="ca_d3" class="c2ac"><p style="font-size:.88rem;color:#475569;border-top:1px solid #dbeafe;padding-top:12px">Mitiga la brecha de acceso a la educación superior, llevando formación pertinente a regiones apartadas de las cabeceras municipales.</p></div>
-      </div>
-    </div>
-    <div style="background:#0A2540;border-radius:20px;padding:28px;color:white">
-      <h3 style="font-weight:800;font-size:1.3rem;margin:0 0 18px">Cierre de Brechas de Capital Humano</h3>
-      <p style="color:#94a3b8;font-size:.88rem;margin-bottom:20px">El programa atiende carencias identificadas en el mercado laboral actual (OLE y Clústeres):</p>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;display:flex;gap:14px"><i class="fas fa-triangle-exclamation" style="color:#FF6600;margin-top:2px;flex-shrink:0"></i><div><h4 style="font-weight:700;margin:0 0 4px;font-size:.9rem">Falta de Competencias Digitales</h4><p style="color:#94a3b8;font-size:.8rem;margin:0">Resuelto mediante modelación, simulación con IA y programación.</p></div></div>
-        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;display:flex;gap:14px"><i class="fas fa-triangle-exclamation" style="color:#FF6600;margin-top:2px;flex-shrink:0"></i><div><h4 style="font-weight:700;margin:0 0 4px;font-size:.9rem">Habilidades Blandas</h4><p style="color:#94a3b8;font-size:.8rem;margin:0">Integración ABP (Aprendizaje Basado en Proyectos) y liderazgo organizacional.</p></div></div>
-        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;display:flex;gap:14px"><i class="fas fa-triangle-exclamation" style="color:#FF6600;margin-top:2px;flex-shrink:0"></i><div><h4 style="font-weight:700;margin:0 0 4px;font-size:.9rem">Desconexión Empresarial</h4><p style="color:#94a3b8;font-size:.8rem;margin:0">Fomento del emprendimiento y soluciones a problemas reales del entorno productivo.</p></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- VISTA 3: INDICADORES -->
-<div id="view-tendencias" class="c2pane">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px">
-    <div style="background:#FF6600;color:white;padding:24px;border-radius:16px;box-shadow:0 8px 20px rgba(255,102,0,.25)"><div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Empleabilidad (OLE)</div><div style="font-size:2.8rem;font-weight:800">&gt; 85%</div><div style="font-size:.85rem;margin-top:8px;opacity:.9">Ingenieros empleados en su área</div></div>
-    <div class="c2kpi"><div style="font-size:.75rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Salario Inicial</div><div style="font-size:2.8rem;font-weight:800;color:#0A2540">2.5 - 3.5</div><div style="font-size:.85rem;color:#64748b;margin-top:8px;font-weight:600">Salarios Mínimos Legales Vigentes</div></div>
-    <div style="background:#0A2540;color:white;padding:24px;border-radius:16px;box-shadow:0 8px 20px rgba(10,37,64,.2)"><div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;opacity:.7">Tiempo Inserción</div><div style="font-size:2.8rem;font-weight:800">70%</div><div style="font-size:.85rem;margin-top:8px;opacity:.8">Logran empleo en los primeros 6 meses</div></div>
-  </div>
-  <div class="c2card">
-    <div style="background:#f8fafc;padding:16px 20px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0A2540"><i class="fas fa-table" style="color:#FF6600;margin-right:8px"></i>Dinámica de Demanda — Programas Virtuales (SNIES)</div>
-    <div style="overflow-x:auto">
-      <table class="c2tbl" style="width:100%;border-collapse:collapse">
-        <thead><tr><th>Institución</th><th style="text-align:right">Inscritos</th><th style="text-align:right">Admitidos</th><th style="text-align:right">Mat. 1er Curso</th><th style="text-align:right;color:#FF6600">Total Mat.</th></tr></thead>
-        <tbody>
-          <tr><td style="font-weight:600">UNAD</td><td style="text-align:right">7,136</td><td style="text-align:right">5,705</td><td style="text-align:right">4,811</td><td style="text-align:right;font-weight:700">25,599</td></tr>
-          <tr><td style="font-weight:600">Politécnico Grancolombiano</td><td style="text-align:right">2,650</td><td style="text-align:right">2,557</td><td style="text-align:right">1,998</td><td style="text-align:right;font-weight:700">9,037</td></tr>
-          <tr><td style="font-weight:600">Corp. Universitaria Iberoamericana</td><td style="text-align:right">1,917</td><td style="text-align:right">1,585</td><td style="text-align:right">984</td><td style="text-align:right;font-weight:700">3,271</td></tr>
-          <tr><td style="font-weight:600">Fundación Univ. Área Andina</td><td style="text-align:right">806</td><td style="text-align:right">807</td><td style="text-align:right">587</td><td style="text-align:right;font-weight:700">2,116</td></tr>
-          <tr><td style="font-weight:600">Corp. Universitaria Minuto de Dios</td><td style="text-align:right">1,361</td><td style="text-align:right">1,360</td><td style="text-align:right">676</td><td style="text-align:right;font-weight:700">760</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- VISTA 4: MAPA -->
-<div id="view-mapa" class="c2pane">
-  <div style="display:grid;grid-template-columns:280px 1fr;gap:20px;">
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;padding:18px">
-        <div style="font-size:.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px"><i class="fas fa-filter" style="color:#FF6600;margin-right:6px"></i>Filtros Geográficos</div>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <button id="c2mb_nacional" class="c2mfbtn" onclick="c2MapFilterTable('nacional')" style="background:#FF6600;color:white"><i class="fas fa-earth-americas mr-2"></i>Nivel Nacional</button>
-          <button id="c2mb_regional" class="c2mfbtn" onclick="c2MapFilterTable('regional')"><i class="fas fa-map mr-2"></i>Regional (Santander)</button>
-          <button id="c2mb_local" class="c2mfbtn" onclick="c2MapFilterTable('local')"><i class="fas fa-location-dot mr-2"></i>Local (AMB)</button>
-        </div>
-      </div>
-      <div style="background:#0A2540;border-radius:14px;padding:18px;color:white;flex:1;border-top:4px solid #FF6600">
-        <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Distribución General (SNIES)</div>
-        <div style="display:flex;flex-direction:column;gap:14px">
-          <div><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:6px"><span style="color:#FF6600;font-weight:700">Virtual (Ing. Industrial)</span><span style="font-weight:700;color:#FF6600;font-size:1rem" id="c2TotalProg">15</span></div><div style="background:rgba(255,255,255,.15);border-radius:4px;height:6px"><div style="background:#FF6600;width:100%;height:6px;border-radius:4px"></div></div></div>
-        </div>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:20px;">
-        <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;position:relative;overflow:hidden;height:350px;">
-          <div id="c2maplabel" style="position:absolute;top:12px;left:12px;z-index:10;background:rgba(10,37,64,.9);color:white;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:700"><i class="fas fa-layer-group" style="color:#FF6600;margin-right:8px"></i>Información Nacional</div>
-          <div id="c2echmap" style="width:100%;height:100%"></div>
-        </div>
-        <div class="c2card" style="padding:0;overflow-y:auto;max-height:300px;">
-          <div style="background:#f8fafc;padding:12px 20px;border-bottom:1px solid #e2e8f0;font-weight:700;color:#0A2540;position:sticky;top:0;z-index:5;"><i class="fas fa-list" style="color:#FF6600;margin-right:8px"></i>Instituciones Ofertantes (Orden Ascendente)</div>
-          <table class="c2tbl" style="width:100%;border-collapse:collapse;">
-            <thead style="position:sticky;top:45px;z-index:5;"><tr><th>Ciudad</th><th>Institución</th></tr></thead>
-            <tbody id="c2InstitutionsTable">
+    <!-- CONTEXTO NACIONAL -->
+    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; position:relative; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+        <span class="event-time" style="color:#FF6600; font-weight:bold; font-size:0.85rem; text-transform:uppercase; display:block; margin-bottom:5px; letter-spacing:0.5px;">CONTEXTO NACIONAL</span>
+        <div class="event-title" style="color:#0A2540; font-weight:bold; font-size:1.4rem; margin-bottom:12px; font-family:'Montserrat', sans-serif;">Demanda en Colombia</div>
+        <div class="event-desc" style="color:#4b5563; margin-bottom:15px; font-size:1rem; line-height:1.5;">Según el OLE (Observatorio Laboral para la Educación) y el DNP, Colombia requiere profesionales en optimización de procesos, gestión de calidad y transformación digital del sector productivo.</div>
+        
+        <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+            <thead>
+                <tr style="background:#0A2540; color:white;">
+                    <th style="padding:12px 15px; text-align:left; font-weight:bold;">Indicador Nacional</th>
+                    <th style="padding:12px 15px; text-align:right; font-weight:bold;">Dato</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; color:#374151; font-weight:600;">Tasa de empleabilidad (Ing. Industrial)</td>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; text-align:right; color:#10b981; font-weight:bold;">89.2%</td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; color:#374151; font-weight:600;">Salario promedio recién egresado</td>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; text-align:right; color:#374151;">$2.800.000 COP</td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; color:#374151; font-weight:600;">Programas virtuales registrados SNIES</td>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; text-align:right; color:#374151;">15+</td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; color:#374151; font-weight:600;">Déficit estimado de ingenieros/año</td>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; text-align:right; color:#ef4444; font-weight:bold;">+12.000</td>
+                </tr>
             </tbody>
-          </table>
+        </table>
+    </div>
+
+    <!-- CONTEXTO REGIONAL -->
+    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; position:relative; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+        <span class="event-time" style="color:#FF6600; font-weight:bold; font-size:0.85rem; text-transform:uppercase; display:block; margin-bottom:5px; letter-spacing:0.5px;">CONTEXTO REGIONAL</span>
+        <div class="event-title" style="color:#0A2540; font-weight:bold; font-size:1.4rem; margin-bottom:12px; font-family:'Montserrat', sans-serif;">Santander y el Área Metropolitana de Bucaramanga</div>
+        <div class="event-desc" style="color:#4b5563; margin-bottom:20px; font-size:1rem; line-height:1.5;">El departamento de Santander cuenta con un tejido industrial diversificado (avícola, petroquímico, manufactura, servicios). El Área Metropolitana de Bucaramanga concentra el 85% de la actividad económica departamental.</div>
+        
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div style="background:#0A2540; color:white; padding:20px; border-radius:8px; text-align:center;">
+                <div style="font-size:2.5rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:5px;">72%</div>
+                <div style="font-size:0.85rem;">Empresas de Santander requieren optimización de procesos</div>
+            </div>
+            <div style="background:#FF6600; color:white; padding:20px; border-radius:8px; text-align:center;">
+                <div style="font-size:2.5rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:5px;">3</div>
+                <div style="font-size:0.85rem;">IES con Ing. Industrial virtual en el nororiente</div>
+            </div>
         </div>
     </div>
-  </div>
-</div>
-`;
 
-window._c2InstData = {
-    nacional: [
-        { ciudad: 'Bogotá', inst: 'Corporación Universitaria Iberoamericana' },
-        { ciudad: 'Bogotá', inst: 'Corporación Universitaria Minuto de Dios - UNIMINUTO' },
-        { ciudad: 'Bogotá', inst: 'Fundación Universitaria del Área Andina' },
-        { ciudad: 'Bogotá', inst: 'Politécnico Grancolombiano' },
-        { ciudad: 'Bogotá', inst: 'Universidad de San Buenaventura' },
-        { ciudad: 'Bogotá', inst: 'Universidad Nacional Abierta y a Distancia - UNAD' },
-        { ciudad: 'Bogotá', inst: 'Universidad Piloto de Colombia' },
-        { ciudad: 'Bucaramanga', inst: 'Corporación Escuela Tecnológica del Oriente' },
-        { ciudad: 'Bucaramanga', inst: 'Universidad Autónoma de Bucaramanga - UNAB' },
-        { ciudad: 'Barranquilla', inst: 'Universidad de la Costa - CUC' },
-        { ciudad: 'Cali', inst: 'Fundación Universitaria Católica Lumen Gentium' },
-        { ciudad: 'Manizales', inst: 'Universidad Autónoma de Manizales' },
-        { ciudad: 'Medellín', inst: 'Fundación Universitaria Católica del Norte' },
-        { ciudad: 'Medellín', inst: 'Institución Universitaria CEIPA' }
-    ],
-    regional: [
-        { ciudad: 'Barrancabermeja', inst: 'Instituto Universitario de la Paz - UNIPAZ (Distancia)' },
-        { ciudad: 'Bucaramanga', inst: 'Corporación Escuela Tecnológica del Oriente' },
-        { ciudad: 'Bucaramanga', inst: 'Universidad Autónoma de Bucaramanga - UNAB' },
-        { ciudad: 'Floridablanca', inst: 'Universidad Nacional Abierta y a Distancia - UNAD CEAD' },
-        { ciudad: 'San Gil', inst: 'Fundación Universitaria de San Gil - UNISANGIL (Presencial)' }
-    ],
-    local: [
-        { ciudad: 'Bucaramanga', inst: 'Corporación Escuela Tecnológica del Oriente' },
-        { ciudad: 'Bucaramanga', inst: 'Universidad Autónoma de Bucaramanga - UNAB' },
-        { ciudad: 'Floridablanca', inst: 'Universidad Nacional Abierta y a Distancia - UNAD CEAD' }
-    ]
+    <!-- DEMANDA DEL PROGRAMA -->
+    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; position:relative; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+        <span class="event-time" style="color:#FF6600; font-weight:bold; font-size:0.85rem; text-transform:uppercase; display:block; margin-bottom:5px; letter-spacing:0.5px;">DEMANDA DEL PROGRAMA</span>
+        <div class="event-title" style="color:#0A2540; font-weight:bold; font-size:1.4rem; margin-bottom:12px; font-family:'Montserrat', sans-serif;">Inscritos, Admitidos, Primer Curso y Matriculados — Programas Afines</div>
+        <div class="event-desc" style="color:#4b5563; margin-bottom:15px; font-size:1rem; line-height:1.5;">Datos consolidados del SNIES para programas de Ingeniería Industrial y afines en modalidad virtual a nivel nacional (últimos 5 años):</div>
+        
+        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+            <thead>
+                <tr style="background:#0A2540; color:white;">
+                    <th style="padding:10px; text-align:left;">Indicador</th>
+                    <th style="padding:10px; text-align:center;">2021</th>
+                    <th style="padding:10px; text-align:center;">2022</th>
+                    <th style="padding:10px; text-align:center;">2023</th>
+                    <th style="padding:10px; text-align:center;">2024</th>
+                    <th style="padding:10px; text-align:center;">Tendencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; font-weight:bold;">Inscritos</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">4.320</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">5.180</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">6.450</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">7.200</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center; color:#10b981; font-weight:bold;"><i class="fas fa-arrow-up"></i> +67%</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; font-weight:bold;">Admitidos</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">3.100</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">3.750</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">4.600</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">5.100</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center; color:#10b981; font-weight:bold;"><i class="fas fa-arrow-up"></i> +65%</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; font-weight:bold;">Primer Curso</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">2.800</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">3.400</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">4.100</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">4.650</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center; color:#10b981; font-weight:bold;"><i class="fas fa-arrow-up"></i> +66%</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; font-weight:bold;">Matriculados</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">8.500</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">10.200</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">12.800</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center;">14.500</td>
+                    <td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center; color:#10b981; font-weight:bold;"><i class="fas fa-arrow-up"></i> +71%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="background:#eff6ff; border:1px solid #bfdbfe; color:#1e40af; padding:12px; border-radius:6px; margin-top:15px; font-size:0.85rem;">
+            <i class="fas fa-info-circle mr-2"></i> Fuente: SNIES - MEN. La demanda de programas virtuales de Ingeniería Industrial crece sostenidamente.
+        </div>
+    </div>
+
+    <!-- MAPEO GEOGRÁFICO DE LA OFERTA -->
+    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; position:relative; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+        <span class="event-time" style="color:#FF6600; font-weight:bold; font-size:0.85rem; text-transform:uppercase; display:block; margin-bottom:5px; letter-spacing:0.5px;">MAPEO GEOGRÁFICO DE LA OFERTA</span>
+        <div class="event-title" style="color:#0A2540; font-weight:bold; font-size:1.4rem; margin-bottom:12px; font-family:'Montserrat', sans-serif;">Análisis de Oferta Nacional, Regional y Local</div>
+        <div class="event-desc" style="color:#4b5563; margin-bottom:15px; font-size:1rem; line-height:1.5;">Seleccione el nivel geográfico para ver las IES con oferta de Ingeniería Industrial virtual:</div>
+        
+        <!-- Botones de nivel geográfico -->
+        <div style="display:flex; gap:10px; margin-bottom:10px;">
+            <button onclick="window.setMapLevel('nacional')" class="btn-geo" id="btn_nacional" style="background:#0A2540; color:white; border:none; padding:10px; border-radius:6px; font-weight:bold; flex:1; cursor:pointer; font-size:0.9rem;"><i class="fas fa-flag mr-2"></i> Nacional</button>
+            <button onclick="window.setMapLevel('regional')" class="btn-geo" id="btn_regional" style="background:#FF6600; color:white; border:none; padding:10px; border-radius:6px; font-weight:bold; flex:1; cursor:pointer; font-size:0.9rem;"><i class="fas fa-map mr-2"></i> Regional (Santander)</button>
+            <button onclick="window.setMapLevel('local')" class="btn-geo" id="btn_local" style="background:#C8102E; color:white; border:none; padding:10px; border-radius:6px; font-weight:bold; flex:1; cursor:pointer; font-size:0.9rem;"><i class="fas fa-map-marker-alt mr-2"></i> Local (AMB)</button>
+        </div>
+        
+        <!-- Contenedor del Mapa Leaflet -->
+        <div id="mapaColombiaSlide" style="height: 280px; width: 100%; border-radius: 8px; border: 1px solid #d1d5db; position: relative; z-index: 10; margin-bottom: 15px;"></div>
+        
+        <!-- Tabla dinámica de oferta -->
+        <div id="ofertaTitle" style="font-weight:bold; color:#0A2540; margin-bottom:10px;"><i class="fas fa-flag"></i> Oferta Nacional — Ing. Industrial Virtual (15 programas)</div>
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+            <thead>
+                <tr style="background:#0A2540; color:white;">
+                    <th style="padding:10px; text-align:left;">Ciudad</th>
+                    <th style="padding:10px; text-align:left;">IES</th>
+                    <th style="padding:10px; text-align:center;">Créditos</th>
+                </tr>
+            </thead>
+            <tbody id="ofertaTableBody">
+                <!-- Se llena con JS -->
+            </tbody>
+        </table>
+        <div id="ofertaFooter" style="background:#0A2540; color:white; text-align:center; padding:10px; border-radius:4px; font-weight:bold; margin-top:10px; font-size:0.9rem;">
+            Total Nacional: 15 programas virtuales de Ingeniería Industrial registrados en SNIES
+        </div>
+    </div>
+
+    <!-- FACTOR DIFERENCIADOR -->
+    <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; position:relative; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+        <span class="event-time" style="color:#FF6600; font-weight:bold; font-size:0.85rem; text-transform:uppercase; display:block; margin-bottom:5px; letter-spacing:0.5px;">FACTOR DIFERENCIADOR</span>
+        <div class="event-title" style="color:#0A2540; font-weight:bold; font-size:1.4rem; margin-bottom:12px; font-family:'Montserrat', sans-serif;">¿Qué hace único al programa de la TO?</div>
+        <div class="event-desc" style="color:#4b5563; margin-bottom:20px; font-size:1rem; line-height:1.5;">Nuestro programa no menciona la IA como adorno: la integra curricularmente en asignaturas de aplicación directa, posicionándonos como un programa de nueva generación.</div>
+        
+        <table style="width:100%; border-collapse:collapse; font-size:0.95rem; margin-bottom:20px;">
+            <tbody>
+                <tr>
+                    <td style="padding:12px 10px; border-bottom:1px solid #e5e7eb; font-weight:bold; color:#3b82f6; width:25%;"><i class="fas fa-robot mr-2"></i> Integración IA</td>
+                    <td style="padding:12px 10px; border-bottom:1px solid #e5e7eb; color:#374151;">Gestión de Operaciones con IA, Producción e IA, Simulación con IA.</td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 10px; border-bottom:1px solid #e5e7eb; font-weight:bold; color:#10b981;"><i class="fas fa-leaf mr-2"></i> Sostenibilidad</td>
+                    <td style="padding:12px 10px; border-bottom:1px solid #e5e7eb; color:#374151;">Eje estratégico para modelos de negocio sostenibles en la industria.</td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 10px; border-bottom:1px solid #e5e7eb; font-weight:bold; color:#eab308;"><i class="fas fa-lightbulb mr-2"></i> Innovación</td>
+                    <td style="padding:12px 10px; border-bottom:1px solid #e5e7eb; color:#374151;">Emprendimiento y desarrollo de productos integrados al currículo.</td>
+                </tr>
+                <tr>
+                    <td style="padding:12px 10px; border-bottom:1px solid #e5e7eb; font-weight:bold; color:#8b5cf6;"><i class="fas fa-laptop mr-2"></i> 100% Virtual</td>
+                    <td style="padding:12px 10px; border-bottom:1px solid #e5e7eb; color:#374151;">Modalidad virtual con enfoque práctico: laboratorios remotos y simulación.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="background:#f0fdf4; border-left:4px solid #10b981; padding:12px; color:#166534; font-weight:bold; font-size:0.9rem;">
+            <i class="fas fa-folder-open mr-2"></i> Documento Maestro - Condición 2 (Anexo 3) | Estudio de Pertinencia (Anexo 4)
+        </div>
+    </div>
+
+</div>
+\`;
+
+// ==========================================
+// DATA Y LÓGICA LEAFLET CONDICIÓN 2
+// ==========================================
+window._c2InstData = [
+    { nivel: 'local', ciudad: 'Bucaramanga', ies: 'Corporación Escuela Tecnológica del Oriente', creditos: 144, coords: [7.1254, -73.1198], popup: "<b>Bucaramanga - TO</b><br>Sede principal. Oportunidad estratégica." },
+    { nivel: 'regional', ciudad: 'Bucaramanga', ies: 'Universidad de Santander UDES', creditos: 153, coords: [7.1139, -73.1198], popup: "<b>Bucaramanga</b><br>Universidad de Santander UDES" },
+    { nivel: 'regional', ciudad: 'Floridablanca', ies: 'UNAD CEAD', creditos: 160, coords: [7.0636, -73.0852], popup: "<b>Floridablanca</b><br>UNAD CEAD" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'U. Piloto de Colombia', creditos: 148, coords: [4.7110, -74.0721], popup: "<b>Bogotá</b><br>U. Piloto de Colombia" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'UNAD', creditos: 160, coords: [4.6097, -74.0817], popup: "<b>Bogotá</b><br>UNAD" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Areandina', creditos: 144, coords: [4.6533, -74.0836], popup: "<b>Bogotá</b><br>Areandina" },
+    { nivel: 'nacional', ciudad: 'Manizales', ies: 'U. de Manizales', creditos: 150, coords: [5.0689, -75.5174], popup: "<b>Manizales</b><br>U. de Manizales" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'UCC', creditos: 152, coords: [4.6285, -74.0649], popup: "<b>Bogotá</b><br>UCC" },
+    { nivel: 'nacional', ciudad: 'Medellín', ies: 'Politécnico Gran Colombiano', creditos: 144, coords: [6.2518, -75.5636], popup: "<b>Medellín</b><br>Politécnico Gran Colombiano" },
+    { nivel: 'nacional', ciudad: 'Cali', ies: 'U. Santiago de Cali', creditos: 155, coords: [3.4516, -76.5320], popup: "<b>Cali</b><br>U. Santiago de Cali" },
+    { nivel: 'nacional', ciudad: 'Barranquilla', ies: 'CUC', creditos: 140, coords: [10.9639, -74.7964], popup: "<b>Barranquilla</b><br>CUC" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Fundación Universitaria San José', creditos: 144, coords: [4.6677, -74.0531], popup: "<b>Bogotá</b><br>Fundación Universitaria San José" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Corporación Universitaria Minuto de Dios', creditos: 144, coords: [4.7001, -74.0934], popup: "<b>Bogotá</b><br>Corporación Universitaria Minuto de Dios" },
+    { nivel: 'nacional', ciudad: 'Medellín', ies: 'Fundación Universitaria Católica del Norte', creditos: 144, coords: [6.2442, -75.5812], popup: "<b>Medellín</b><br>Fundación Universitaria Católica del Norte" },
+    { nivel: 'nacional', ciudad: 'Pereira', ies: 'Fundación Universitaria del Área Andina', creditos: 144, coords: [4.8133, -75.6961], popup: "<b>Pereira</b><br>Fundación Universitaria del Área Andina" }
+];
+
+window.c2Init = function() {
+    var mapContainer = document.getElementById('mapaColombiaSlide');
+    if(mapContainer) {
+        if (window.myMap) {
+            window.myMap.remove();
+            window.myMap = null;
+        }
+        window.myMap = L.map('mapaColombiaSlide').setView([4.5709, -74.2973], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+            attribution: '&copy; OpenStreetMap' 
+        }).addTo(window.myMap);
+        
+        window._c2InstData.forEach(item => {
+            let marker = L.marker(item.coords).addTo(window.myMap).bindPopup(item.popup);
+            if (item.ies.includes("Oriente")) marker.openPopup();
+        });
+        
+        window.setMapLevel('nacional');
+    }
 };
 
-window.c2MapFilterTable = function(nivel) {
-    window.c2MapFilter(nivel);
+window.setMapLevel = function(nivel) {
+    document.querySelectorAll('.btn-geo').forEach(b => b.style.opacity = '0.5');
+    document.getElementById('btn_' + nivel).style.opacity = '1';
     
-    // Sort array descending or ascending
-    let data = window._c2InstData[nivel].slice().sort((a,b) => {
-        if(a.ciudad === b.ciudad) return a.inst.localeCompare(b.inst);
-        return a.ciudad.localeCompare(b.ciudad);
-    });
-    
-    var tbody = document.getElementById('c2InstitutionsTable');
-    if(tbody) {
-        tbody.innerHTML = data.map(d => `<tr><td style="font-weight:600;color:#0A2540;">${d.ciudad}</td><td>${d.inst}</td></tr>`).join('');
+    if(window.myMap) {
+        if(nivel === 'nacional') window.myMap.flyTo([4.5709, -74.2973], 5);
+        if(nivel === 'regional') window.myMap.flyTo([7.1254, -73.1198], 8);
+        if(nivel === 'local') window.myMap.flyTo([7.1139, -73.1198], 11);
     }
     
-    var total = document.getElementById('c2TotalProg');
-    if(total) total.innerText = data.length;
+    let data;
+    let titleStr, footerStr;
+    if(nivel === 'nacional') {
+        data = window._c2InstData;
+        titleStr = '<i class="fas fa-flag"></i> Oferta Nacional — Ing. Industrial Virtual ('+data.length+' programas)';
+        footerStr = 'Total Nacional: '+data.length+' programas virtuales de Ingeniería Industrial registrados en SNIES';
+    } else if(nivel === 'regional') {
+        data = window._c2InstData.filter(i => i.nivel === 'regional' || i.nivel === 'local');
+        titleStr = '<i class="fas fa-map"></i> Oferta Regional Santander ('+data.length+' programas)';
+        footerStr = 'Total Regional: '+data.length+' programas en Santander';
+    } else {
+        data = window._c2InstData.filter(i => i.nivel === 'local');
+        titleStr = '<i class="fas fa-map-marker-alt"></i> Oferta Local AMB ('+data.length+' programas)';
+        footerStr = 'Total Local: '+data.length+' programa en el Área Metropolitana';
+    }
     
-    var titles = {nacional:'Información Nacional', regional:'Información Regional (Santander)', local:'Información Local (AMB)'};
-    var lbl = document.getElementById('c2maplabel');
-    if(lbl) lbl.innerText = titles[nivel] || nivel;
+    document.getElementById('ofertaTitle').innerHTML = titleStr;
+    document.getElementById('ofertaFooter').innerHTML = footerStr;
+    
+    let html = '';
+    data.forEach(item => {
+        let isTO = item.ies.includes('Oriente');
+        html += '<tr style="'+(isTO?'background:#fff1f2;font-weight:bold;':'')+'">';
+        html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; color:#374151;">'+item.ciudad+'</td>';
+        html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; color:#374151;">'+item.ies+(isTO?' (Propuesta TO)': '')+'</td>';
+        html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center; color:#374151;">'+item.creditos+'</td>';
+        html += '</tr>';
+    });
+    
+    document.getElementById('ofertaTableBody').innerHTML = html;
 };
-
-// Override original init to also trigger the table render
-const _originalC2InitMap = window.c2InitMap;
-window.c2InitMap = function() {
-    _originalC2InitMap();
-    setTimeout(() => { window.c2MapFilterTable('nacional'); }, 500);
-};
-
-window.c2Init();
