@@ -1,6 +1,6 @@
 window.SECTIONS = window.SECTIONS || {};
 
-window.SECTIONS.c2 = \`
+window.SECTIONS.c2 = `
 <div class="slide-header" style="border-bottom: 2px solid #FF6600; padding-bottom: 15px; margin-bottom: 25px;">
     <div class="slide-title">
         <div class="slide-subtitle" style="color:#FF6600; font-weight:bold; letter-spacing:1px; text-transform:uppercase; font-size:1.1rem;">Condición 02</div>
@@ -210,7 +210,7 @@ window.SECTIONS.c2 = \`
     </div>
 
 </div>
-\`;
+`;
 
 // ==========================================
 // DATA Y LÓGICA LEAFLET CONDICIÓN 2
