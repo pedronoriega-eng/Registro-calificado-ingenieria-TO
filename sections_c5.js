@@ -11,7 +11,7 @@ window.SECTIONS.c5 = `
         <span id="invSlideCounter" style="font-weight:bold; color:#0A2540; font-size:1.2rem;">1 / 20</span>
         <button onclick="window.nextInvSlide()" style="background:#FF6600; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:1.1rem;">Siguiente <i class="fas fa-arrow-right ml-2"></i></button>
     </div>
-    <img id="invSlideImg" src="slide_1.jpg" style="max-width:100%; border-radius:8px; border:2px solid #d1d5db; box-shadow:0 4px 12px rgba(0,0,0,0.15);" alt="Slide de Investigación">
+    <img id="invSlideImg" src="assets/slide_1.png" style="max-width:100%; border-radius:8px; border:2px solid #d1d5db; box-shadow:0 4px 12px rgba(0,0,0,0.15);" alt="Slide de Investigación">
     <div style="margin-top:10px; color:#6b7280; font-size:0.95rem;" id="invSlideTitle">Portada - Condición 5: Investigación</div>
 </div>
 `;
@@ -19,26 +19,26 @@ window.SECTIONS.c5 = `
 // Slide navigation - 20 slides from "ppt condicion 5 INDUSTRIAL.pptx"
 // Paths are ROOT-relative (all files deployed to GitHub root, NOT inside presentacion/)
 window._invSlides = [
-    {img:'slide_1.jpg', title:'Portada - Condición 5: Investigación'},
-    {img:'slide_2.jpg', title:'Modelo de Investigación, Innovación y Desarrollo'},
-    {img:'slide_3.jpg', title:'Transferencia de Conocimiento'},
-    {img:'slide_4.jpg', title:'Elementos para Definir Líneas de Investigación'},
-    {img:'slide_5.jpg', title:'Conceptualización Teórica del Programa'},
-    {img:'slide_6.jpg', title:'Tendencias del Conocimiento'},
-    {img:'slide_7.jpg', title:'Estrategias Institucionales de Investigación'},
-    {img:'slide_8.jpg', title:'Convocatorias y Redes'},
-    {img:'slide_9.jpg', title:'Semilleros de Investigación'},
-    {img:'slide_10.jpg', title:'Redes de Investigación Proyectadas (1)'},
-    {img:'slide_11.jpg', title:'Redes de Investigación Proyectadas (2)'},
-    {img:'slide_12.jpg', title:'Grupo de Investigación'},
-    {img:'slide_13.jpg', title:'Acciones Consolidadas de Investigación'},
-    {img:'slide_14.jpg', title:'Líneas de Investigación del Programa'},
-    {img:'slide_15.jpg', title:'Sublíneas y Articulación'},
-    {img:'slide_16.jpg', title:'Estrategias Pedagógicas de Aula'},
-    {img:'slide_17.jpg', title:'Asignaturas del Componente Investigativo'},
-    {img:'slide_18.jpg', title:'Aportes al Sector Productivo'},
-    {img:'slide_19.jpg', title:'Proyección de Investigación a 7 Años'},
-    {img:'slide_20.jpg', title:'Síntesis de Investigación e Innovación'}
+    {img:'assets/slide_1.png', title:'Portada - Condición 5: Investigación'},
+    {img:'assets/slide_2.png', title:'Modelo de Investigación, Innovación y Desarrollo'},
+    {img:'assets/slide_3.png', title:'Transferencia de Conocimiento'},
+    {img:'assets/slide_4.png', title:'Elementos para Definir Líneas de Investigación'},
+    {img:'assets/slide_5.png', title:'Conceptualización Teórica del Programa'},
+    {img:'assets/slide_6.png', title:'Tendencias del Conocimiento'},
+    {img:'assets/slide_7.png', title:'Estrategias Institucionales de Investigación'},
+    {img:'assets/slide_8.png', title:'Convocatorias y Redes'},
+    {img:'assets/slide_9.png', title:'Semilleros de Investigación'},
+    {img:'assets/slide_10.png', title:'Redes de Investigación Proyectadas (1)'},
+    {img:'assets/slide_11.png', title:'Redes de Investigación Proyectadas (2)'},
+    {img:'assets/slide_12.png', title:'Grupo de Investigación'},
+    {img:'assets/slide_13.png', title:'Acciones Consolidadas de Investigación'},
+    {img:'assets/slide_14.png', title:'Líneas de Investigación del Programa'},
+    {img:'assets/slide_15.png', title:'Sublíneas y Articulación'},
+    {img:'assets/slide_16.png', title:'Estrategias Pedagógicas de Aula'},
+    {img:'assets/slide_17.png', title:'Asignaturas del Componente Investigativo'},
+    {img:'assets/slide_18.png', title:'Aportes al Sector Productivo'},
+    {img:'assets/slide_19.png', title:'Proyección de Investigación a 7 Años'},
+    {img:'assets/slide_20.png', title:'Síntesis de Investigación e Innovación'}
 ];
 window._invIdx = 0;
 
