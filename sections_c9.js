@@ -1,8 +1,8 @@
 // Condición 9 - Infraestructura Física y Tecnológica
 window.SECTIONS.c9 = `
-<div class="slide-header" style="border-bottom:2px solid #FF6600; padding-bottom:15px; margin-bottom:25px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+<div class="slide-header" style="border-bottom:2px solid #C8102E; padding-bottom:15px; margin-bottom:25px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
     <div>
-        <div class="slide-subtitle" style="color:#FF6600; font-weight:bold; text-transform:uppercase; font-size:1.1rem;">Condición 09</div>
+        <div class="slide-subtitle" style="color:#C8102E; font-weight:bold; text-transform:uppercase; font-size:1.1rem;">Condición 09</div>
         <h1 style="color:#0A2540; font-size:2.2rem; margin:0; font-weight:bold;">Infraestructura Física y Tecnológica</h1>
     </div>
     <div style="background:#e5e7eb; border-radius:30px; padding:4px; display:inline-flex; border:1px solid #d1d5db;">
@@ -13,8 +13,8 @@ window.SECTIONS.c9 = `
 
 <div id="c9TabTechnicalContent">
     <div class="grid-3">
-        <div class="card-accent" style="background:#0A2540; border-bottom:4px solid #FF6600;">
-            <h4 style="color:white;"><i class="fas fa-building" style="color:#FF6600; margin-right:8px;"></i> Sede A (Principal)</h4>
+        <div class="card-accent" style="background:#0A2540; border-bottom:4px solid #C8102E;">
+            <h4 style="color:white;"><i class="fas fa-building" style="color:#C8102E; margin-right:8px;"></i> Sede A (Principal)</h4>
             <p style="color:#e5e7eb;">Oficinas administrativas y aulas. Contrato vigente. Uso de suelo y Licencia de Construcción aprobados para el desarrollo óptimo de las actividades académicas.</p>
             <div style="margin-top:12px; display:flex; gap:6px;">
                 <span class="tag-legal" style="background:rgba(255,255,255,.2); color:#fff; padding:2px 8px; border-radius:4px;">Anexo 22</span>
@@ -49,9 +49,11 @@ window.SECTIONS.c9 = `
                 <tr><td class="lb" style="color:#0A2540; font-weight:bold;">Servidores</td><td>Capacidad técnica garantizada para 140+ estudiantes/cohorte</td></tr>
             </table>
         </div>
-        <div class="chart-box" style="background:white; border:1px solid #e5e7eb; border-radius:8px; padding:20px; box-shadow:0 4px 6px rgba(0,0,0,0.02);">
-            <h4 style="color:#0A2540; font-weight:bold; margin-bottom:12px;"><i class="fas fa-chart-bar" style="color:#FF6600; margin-right:8px;"></i> Dimensionamiento Tecnológico</h4>
-            <canvas id="techChart" style="width:100% !important; height:240px !important; display:block;"></canvas>
+        <div class="chart-box" style="background:white; border:1px solid #e5e7eb; border-radius:8px; padding:20px; box-shadow:0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column;">
+            <h4 style="color:#0A2540; font-weight:bold; margin-bottom:12px;"><i class="fas fa-chart-bar" style="color:#C8102E; margin-right:8px;"></i> Dimensionamiento Tecnológico</h4>
+            <div style="position: relative; height: 230px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+                <canvas id="techChart" style="max-height: 100%; max-width: 100%; display: block;"></canvas>
+            </div>
         </div>
     </div>
 </div>
@@ -61,7 +63,7 @@ window.SECTIONS.c9 = `
         <div style="margin-bottom:15px; display:flex; justify-content:space-between; align-items:center;">
             <button onclick="window.prevC9Slide()" style="background:#0A2540; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:1.1rem;"><i class="fas fa-arrow-left mr-2"></i> Anterior</button>
             <span id="c9SlideCounter" style="font-weight:bold; color:#0A2540; font-size:1.2rem;">1 / 26</span>
-            <button onclick="window.nextC9Slide()" style="background:#FF6600; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:1.1rem;">Siguiente <i class="fas fa-arrow-right mr-2"></i></button>
+            <button onclick="window.nextC9Slide()" style="background:#C8102E; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer; font-weight:bold; font-size:1.1rem;">Siguiente <i class="fas fa-arrow-right mr-2"></i></button>
         </div>
         <img id="c9SlideImg" src="assets/c9_slide_1.png" style="max-width:100%; border-radius:8px; border:2px solid #d1d5db; box-shadow:0 4px 12px rgba(0,0,0,0.15);" alt="Slide de Infraestructura">
         <div style="margin-top:10px; color:#6b7280; font-size:0.95rem; font-weight:bold;" id="c9SlideTitle">Portada - Condición 9: Infraestructura Física y Tecnológica</div>
@@ -125,8 +127,8 @@ window.c9Init = function() {
                 datasets: [{
                     label: 'Capacidad y Cobertura (%)',
                     data: [100, 95, 100, 90, 100, 85],
-                    backgroundColor: 'rgba(255, 102, 0, 0.15)',
-                    borderColor: '#FF6600',
+                    backgroundColor: 'rgba(200, 16, 46, 0.15)',
+                    borderColor: '#C8102E',
                     borderWidth: 2,
                     pointBackgroundColor: '#0A2540',
                     pointBorderColor: '#fff',
