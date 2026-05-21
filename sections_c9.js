@@ -100,6 +100,60 @@ window._c9Slides = [
 ];
 window._c9Idx = 0;
 
+window.c9Init = function() {
+    var t = document.getElementById('techChart');
+    if (!t) return;
+    
+    // Si ya existe un gráfico previo en window.ci.t, lo destruimos para evitar duplicación y liberar memoria
+    if (window.ci && window.ci.t) {
+        try {
+            window.ci.t.destroy();
+        } catch(e) {
+            console.error(e);
+        }
+    }
+    
+    // Inicializar el nuevo gráfico sobre el canvas recién inyectado
+    if (!window.ci) window.ci = {};
+    
+    window.ci.t = new Chart(t, {
+        type: 'radar',
+        data: {
+            labels: ['LMS (Moodle)', 'Sincrónica (Teams)', 'E-Libro', 'Antiplagio', 'Correo (Office 365)', 'Creación Contenido'],
+            datasets: [{
+                label: 'Capacidad y Cobertura (%)',
+                data: [100, 95, 100, 90, 100, 85],
+                backgroundColor: 'rgba(255, 102, 0, 0.15)',
+                borderColor: '#FF6600',
+                borderWidth: 2,
+                pointBackgroundColor: '#0A2540',
+                pointBorderColor: '#fff',
+                pointRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    max: 100,
+                    grid: { color: '#cbd5e1' },
+                    angleLines: { color: '#cbd5e1' },
+                    pointLabels: {
+                        color: '#0A2540',
+                        font: { size: 10, weight: 'bold', family: 'Montserrat' }
+                    },
+                    ticks: { display: false }
+                }
+            },
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+};
+
 window.switchC9Tab = function(tab) {
     var techTab = document.getElementById('tabC9Technical');
     var slidesTab = document.getElementById('tabC9Slides');
@@ -115,12 +169,9 @@ window.switchC9Tab = function(tab) {
         techContent.style.display = 'block';
         slidesContent.style.display = 'none';
         
-        // Redraw/resize radar chart to ensure correct display
+        // Destruir e inicializar de nuevo el gráfico en el nuevo canvas
         setTimeout(function() {
-            if (window.ci && window.ci.t) {
-                window.ci.t.resize();
-                window.ci.t.update();
-            }
+            if (window.c9Init) window.c9Init();
         }, 50);
     } else {
         slidesTab.style.background = '#0A2540';
