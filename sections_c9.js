@@ -51,7 +51,7 @@ window.SECTIONS.c9 = `
         </div>
         <div class="chart-box" style="background:white; border:1px solid #e5e7eb; border-radius:8px; padding:20px; box-shadow:0 4px 6px rgba(0,0,0,0.02);">
             <h4 style="color:#0A2540; font-weight:bold; margin-bottom:12px;"><i class="fas fa-chart-bar" style="color:#FF6600; margin-right:8px;"></i> Dimensionamiento Tecnológico</h4>
-            <canvas id="techChart" height="180"></canvas>
+            <canvas id="techChart" style="width:100% !important; height:240px !important; display:block;"></canvas>
         </div>
     </div>
 </div>
@@ -101,57 +101,62 @@ window._c9Slides = [
 window._c9Idx = 0;
 
 window.c9Init = function() {
-    var t = document.getElementById('techChart');
+    var t = document.querySelector('#slideBody #techChart');
     if (!t) return;
     
     // Si ya existe un gráfico previo en window.ci.t, lo destruimos para evitar duplicación y liberar memoria
     if (window.ci && window.ci.t) {
         try {
             window.ci.t.destroy();
+            window.ci.t = null;
         } catch(e) {
-            console.error(e);
+            console.error('Error al destruir el grafico C9 previo:', e);
         }
     }
     
     // Inicializar el nuevo gráfico sobre el canvas recién inyectado
     if (!window.ci) window.ci = {};
     
-    window.ci.t = new Chart(t, {
-        type: 'radar',
-        data: {
-            labels: ['LMS (Moodle)', 'Sincrónica (Teams)', 'E-Libro', 'Antiplagio', 'Correo (Office 365)', 'Creación Contenido'],
-            datasets: [{
-                label: 'Capacidad y Cobertura (%)',
-                data: [100, 95, 100, 90, 100, 85],
-                backgroundColor: 'rgba(255, 102, 0, 0.15)',
-                borderColor: '#FF6600',
-                borderWidth: 2,
-                pointBackgroundColor: '#0A2540',
-                pointBorderColor: '#fff',
-                pointRadius: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                r: {
-                    beginAtZero: true,
-                    max: 100,
-                    grid: { color: '#cbd5e1' },
-                    angleLines: { color: '#cbd5e1' },
-                    pointLabels: {
-                        color: '#0A2540',
-                        font: { size: 10, weight: 'bold', family: 'Montserrat' }
-                    },
-                    ticks: { display: false }
-                }
+    try {
+        window.ci.t = new Chart(t, {
+            type: 'radar',
+            data: {
+                labels: ['LMS (Moodle)', 'Sincrónica (Teams)', 'E-Libro', 'Antiplagio', 'Correo (Office 365)', 'Creación Contenido'],
+                datasets: [{
+                    label: 'Capacidad y Cobertura (%)',
+                    data: [100, 95, 100, 90, 100, 85],
+                    backgroundColor: 'rgba(255, 102, 0, 0.15)',
+                    borderColor: '#FF6600',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#0A2540',
+                    pointBorderColor: '#fff',
+                    pointRadius: 4
+                }]
             },
-            plugins: {
-                legend: { display: false }
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: '#cbd5e1' },
+                        angleLines: { color: '#cbd5e1' },
+                        pointLabels: {
+                            color: '#0A2540',
+                            font: { size: 10, weight: 'bold', family: 'Montserrat' }
+                        },
+                        ticks: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
             }
-        }
-    });
+        });
+    } catch (err) {
+        console.error('Error al crear el grafico radar C9:', err);
+    }
 };
 
 window.switchC9Tab = function(tab) {
