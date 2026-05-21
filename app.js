@@ -17,7 +17,7 @@ setTimeout(initCharts,100);
 }
 
 // Charts
-let ci={};
+window.ci={};
 function initCharts(){
 const d=document.getElementById('demandaChart');
 if(d&&!ci.d){ci.d=new Chart(d,{type:'bar',data:{labels:['Bogota','Medellin','B/quilla','Cali','Manizales','B/manga'],datasets:[{label:'Programas Virtuales',data:[4,1,1,1,1,0],backgroundColor:['#111827','#111827','#111827','#111827','#111827','#FF6600'],borderRadius:6,barThickness:30}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{color:'#1f2937',stepSize:1},grid:{color:'#e5e7eb'}},x:{ticks:{color:'#1f2937',font:{size:11}},grid:{display:false}}}}});}

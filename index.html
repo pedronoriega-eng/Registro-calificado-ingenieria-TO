@@ -37,6 +37,8 @@
     <script src="sections_c3.js?v=13"></script>
     <script src="sections_c5.js?v=13"></script>
     <script src="sections_c6.js?v=13"></script>
+    <script src="sections_c8.js?v=13"></script>
+    <script src="sections_c9.js?v=13"></script>
     <script src="sections_anexos.js?v=13"></script>
     <script src="app.js?v=13"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -318,6 +320,18 @@
                 if(id === 'c5') {
                     window._invIdx = 0;
                     if(window._updateInvSlide) window._updateInvSlide();
+                }
+                // Reset Medios Educativos slides (Condicion 8)
+                if(id === 'c8') {
+                    window._c8Idx = 0;
+                    if(window._updateC8Slide) window._updateC8Slide();
+                    if(window.switchC8Tab) window.switchC8Tab('tech');
+                }
+                // Reset Infraestructura slides (Condicion 9)
+                if(id === 'c9') {
+                    window._c9Idx = 0;
+                    if(window._updateC9Slide) window._updateC9Slide();
+                    if(window.switchC9Tab) window.switchC9Tab('tech');
                 }
             }, 300);
         }
