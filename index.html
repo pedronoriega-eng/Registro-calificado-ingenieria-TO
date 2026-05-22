@@ -35,6 +35,7 @@
     <script src="sections_c1.js?v=18"></script>
     <script src="sections_c2.js?v=18"></script>
     <script src="sections_c3.js?v=18"></script>
+    <script src="sections_c4.js?v=18"></script>
     <script src="sections_c5.js?v=18"></script>
     <script src="sections_c6.js?v=18"></script>
     <script src="sections_c8.js?v=18"></script>
@@ -301,6 +302,7 @@
                     }
                     if (window.updateAsignaturas) window.updateAsignaturas();
                 }
+                if (id === 'c4' && window.c4Init) window.c4Init();
                 if (id === 'anexos' && window._anexosInit) window._anexosInit();
 
                 // Mapa Leaflet dinámico está a cargo del método window.c2Init de sections_c2.js para evitar superposición.
