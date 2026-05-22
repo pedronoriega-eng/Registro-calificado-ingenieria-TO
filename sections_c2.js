@@ -251,7 +251,7 @@ window.c2Init = function() {
         
         window._c2InstData.forEach(item => {
             let marker = L.marker(item.coords).addTo(window.myMap).bindPopup(item.popup);
-            if (item.ies.includes("TO")) marker.openPopup();
+            if (item.nivel === 'propuesta') marker.openPopup();
         });
         
         window.setMapLevel('nacional');
@@ -291,7 +291,7 @@ window.setMapLevel = function(nivel) {
     
     let html = '';
     data.forEach(item => {
-        let isTO = item.ies.includes('TO');
+        let isTO = item.nivel === 'propuesta';
         html += '<tr style="'+(isTO?'background:#fff1f2;font-weight:bold;':'')+'">';
         html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; color:#374151;">'+item.ciudad+'</td>';
         html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; color:#374151;">'+item.ies+(isTO?' (Nuestra Propuesta)': '')+'</td>';
