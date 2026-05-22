@@ -36,7 +36,7 @@ window.SECTIONS.c2 = `
     <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; position:relative; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
         <span class="event-time" style="color:#FF6600; font-weight:bold; font-size:0.85rem; text-transform:uppercase; display:block; margin-bottom:5px; letter-spacing:0.5px;">CONTEXTO NACIONAL</span>
         <div class="event-title" style="color:#0A2540; font-weight:bold; font-size:1.4rem; margin-bottom:12px; font-family:'Montserrat', sans-serif;">Demanda en Colombia</div>
-        <div class="event-desc" style="color:#4b5563; margin-bottom:15px; font-size:1rem; line-height:1.5;">Según el OLE (Observatorio Laboral para la Educación) y el DNP, Colombia requiere profesionales en optimización de procesos, gestión de calidad y transformación digital del sector productivo.</div>
+        <div class="event-desc" style="color:#4b5563; margin-bottom:15px; font-size:1rem; line-height:1.5;">Según el OLE y el DNP, Colombia requiere ingenieros industriales para la optimización y reindustrialización. A nivel nacional, existen <b>187 programas registrados en SNIES</b>: 155 presenciales, 20 virtuales, 7 a distancia y 5 de modalidad presencial-virtual (SNIES 2024).</div>
         
         <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
             <thead>
@@ -55,8 +55,8 @@ window.SECTIONS.c2 = `
                     <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; text-align:right; color:#374151;">$2.800.000 COP</td>
                 </tr>
                 <tr>
-                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; color:#374151; font-weight:600;">Programas virtuales registrados SNIES</td>
-                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; text-align:right; color:#374151;">15+</td>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; color:#374151; font-weight:600;">Programas virtuales registrados SNIES (Total Nacional)</td>
+                    <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; text-align:right; color:#10b981; font-weight:bold;">20</td>
                 </tr>
                 <tr>
                     <td style="padding:12px 15px; border-bottom:1px solid #e5e7eb; color:#374151; font-weight:600;">Déficit estimado de ingenieros/año</td>
@@ -74,12 +74,12 @@ window.SECTIONS.c2 = `
         
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
             <div style="background:#0A2540; color:white; padding:20px; border-radius:8px; text-align:center;">
-                <div style="font-size:2.5rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:5px;">72%</div>
-                <div style="font-size:0.85rem;">Empresas de Santander requieren optimización de procesos</div>
+                <div style="font-size:2.2rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:5px; text-transform:uppercase; color:#FF6600;">ALTA</div>
+                <div style="font-size:0.85rem;">Necesidad regional de optimización de procesos y productividad</div>
             </div>
             <div style="background:#FF6600; color:white; padding:20px; border-radius:8px; text-align:center;">
-                <div style="font-size:2.5rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:5px;">3</div>
-                <div style="font-size:0.85rem;">IES con Ing. Industrial virtual en el nororiente</div>
+                <div style="font-size:2.5rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:5px;">2</div>
+                <div style="font-size:0.85rem;">IES competidoras con Ing. Industrial virtual en Santander</div>
             </div>
         </div>
     </div>
@@ -159,7 +159,7 @@ window.SECTIONS.c2 = `
         <div id="mapaColombiaSlide" style="height: 280px; width: 100%; border-radius: 8px; border: 1px solid #d1d5db; position: relative; z-index: 10; margin-bottom: 15px;"></div>
         
         <!-- Tabla dinámica de oferta -->
-        <div id="ofertaTitle" style="font-weight:bold; color:#0A2540; margin-bottom:10px;"><i class="fas fa-flag"></i> Oferta Nacional — Ing. Industrial Virtual (15 programas)</div>
+        <div id="ofertaTitle" style="font-weight:bold; color:#0A2540; margin-bottom:10px;"><i class="fas fa-flag"></i> Oferta Nacional — Ing. Industrial Virtual (16 programas destacados)</div>
         <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
             <thead>
                 <tr style="background:#0A2540; color:white;">
@@ -173,7 +173,7 @@ window.SECTIONS.c2 = `
             </tbody>
         </table>
         <div id="ofertaFooter" style="background:#0A2540; color:white; text-align:center; padding:10px; border-radius:4px; font-weight:bold; margin-top:10px; font-size:0.9rem;">
-            Total Nacional: 15 programas virtuales de Ingeniería Industrial registrados en SNIES
+            Total Nacional: 20 programas virtuales de Ingeniería Industrial registrados en SNIES
         </div>
     </div>
 
@@ -216,21 +216,25 @@ window.SECTIONS.c2 = `
 // DATA Y LÓGICA LEAFLET CONDICIÓN 2
 // ==========================================
 window._c2InstData = [
-    { nivel: 'local', ciudad: 'Bucaramanga', ies: 'Corporación Escuela Tecnológica del Oriente', creditos: 144, coords: [7.1254, -73.1198], popup: "<b>Bucaramanga - TO</b><br>Sede principal. Oportunidad estratégica." },
+    { nivel: 'propuesta', ciudad: 'Bucaramanga', ies: 'TO (Propuesta)', creditos: 144, coords: [7.1254, -73.1198], popup: "<b>Bucaramanga - TO</b><br>Propuesta del Programa (Nueva Generación)." },
     { nivel: 'regional', ciudad: 'Bucaramanga', ies: 'Universidad de Santander UDES', creditos: 153, coords: [7.1139, -73.1198], popup: "<b>Bucaramanga</b><br>Universidad de Santander UDES" },
-    { nivel: 'regional', ciudad: 'Floridablanca', ies: 'UNAD CEAD', creditos: 160, coords: [7.0636, -73.0852], popup: "<b>Floridablanca</b><br>UNAD CEAD" },
-    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'U. Piloto de Colombia', creditos: 148, coords: [4.7110, -74.0721], popup: "<b>Bogotá</b><br>U. Piloto de Colombia" },
-    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'UNAD', creditos: 160, coords: [4.6097, -74.0817], popup: "<b>Bogotá</b><br>UNAD" },
-    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Areandina', creditos: 144, coords: [4.6533, -74.0836], popup: "<b>Bogotá</b><br>Areandina" },
-    { nivel: 'nacional', ciudad: 'Manizales', ies: 'U. de Manizales', creditos: 150, coords: [5.0689, -75.5174], popup: "<b>Manizales</b><br>U. de Manizales" },
-    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'UCC', creditos: 152, coords: [4.6285, -74.0649], popup: "<b>Bogotá</b><br>UCC" },
-    { nivel: 'nacional', ciudad: 'Medellín', ies: 'Politécnico Gran Colombiano', creditos: 144, coords: [6.2518, -75.5636], popup: "<b>Medellín</b><br>Politécnico Gran Colombiano" },
-    { nivel: 'nacional', ciudad: 'Cali', ies: 'U. Santiago de Cali', creditos: 155, coords: [3.4516, -76.5320], popup: "<b>Cali</b><br>U. Santiago de Cali" },
-    { nivel: 'nacional', ciudad: 'Barranquilla', ies: 'CUC', creditos: 140, coords: [10.9639, -74.7964], popup: "<b>Barranquilla</b><br>CUC" },
-    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Fundación Universitaria San José', creditos: 144, coords: [4.6677, -74.0531], popup: "<b>Bogotá</b><br>Fundación Universitaria San José" },
-    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Corporación Universitaria Minuto de Dios', creditos: 144, coords: [4.7001, -74.0934], popup: "<b>Bogotá</b><br>Corporación Universitaria Minuto de Dios" },
-    { nivel: 'nacional', ciudad: 'Medellín', ies: 'Fundación Universitaria Católica del Norte', creditos: 144, coords: [6.2442, -75.5812], popup: "<b>Medellín</b><br>Fundación Universitaria Católica del Norte" },
-    { nivel: 'nacional', ciudad: 'Pereira', ies: 'Fundación Universitaria del Área Andina', creditos: 144, coords: [4.8133, -75.6961], popup: "<b>Pereira</b><br>Fundación Universitaria del Área Andina" }
+    { nivel: 'regional', ciudad: 'Bucaramanga', ies: 'UNAD CEAD Bucaramanga', creditos: 152, coords: [7.1000, -73.1150], popup: "<b>Bucaramanga</b><br>UNAD CEAD" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Corporación Universitaria de Asturias', creditos: 126, coords: [4.6500, -74.0600], popup: "<b>Bogotá</b><br>Corporación Universitaria de Asturias" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Corporación Universidad Piloto de Colombia', creditos: 142, coords: [4.7110, -74.0721], popup: "<b>Bogotá</b><br>U. Piloto de Colombia" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'UNAD (Nacional)', creditos: 152, coords: [4.6097, -74.0817], popup: "<b>Bogotá</b><br>UNAD (Nacional)" },
+    { nivel: 'nacional', ciudad: 'Sincelejo', ies: 'CORPOSUCRE', creditos: 144, coords: [9.3000, -75.4000], popup: "<b>Sincelejo</b><br>CORPOSUCRE" },
+    { nivel: 'nacional', ciudad: 'Manizales', ies: 'Universidad de Manizales', creditos: 126, coords: [5.0689, -75.5174], popup: "<b>Manizales</b><br>U. de Manizales" },
+    { nivel: 'nacional', ciudad: 'Medellín', ies: 'Universidad de Antioquia', creditos: 144, coords: [6.2518, -75.5636], popup: "<b>Medellín</b><br>Universidad de Antioquia" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'UNIMINUTO', creditos: 144, coords: [4.7001, -74.0934], popup: "<b>Bogotá</b><br>UNIMINUTO" },
+    { nivel: 'nacional', ciudad: 'Tunja', ies: 'Universidad de Boyacá UNIBOYACA', creditos: 160, coords: [5.5333, -73.3667], popup: "<b>Tunja</b><br>UNIBOYACA" },
+    { nivel: 'nacional', ciudad: 'Barranquilla', ies: 'Corporación Universidad de la Costa CUC', creditos: 140, coords: [10.9639, -74.7964], popup: "<b>Barranquilla</b><br>CUC" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Fundación Universitaria Internacional de Colombia - UNINCOL', creditos: 144, coords: [4.6600, -74.0500], popup: "<b>Bogotá</b><br>UNINCOL" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Corporación Internacional para el Desarrollo Educativo - CIDE', creditos: 144, coords: [4.6700, -74.0400], popup: "<b>Bogotá</b><br>CIDE" },
+    { nivel: 'nacional', ciudad: 'Cali', ies: 'Universidad Autónoma de Occidente (UAO)', creditos: 155, coords: [3.3533, -76.5208], popup: "<b>Cali</b><br>Universidad Autónoma de Occidente (UAO)" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Corporación Unificada Nacional de Educación Superior - CUN', creditos: 144, coords: [4.6200, -74.0700], popup: "<b>Bogotá</b><br>CUN" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Universidad Cooperativa de Colombia', creditos: 167, coords: [4.6285, -74.0649], popup: "<b>Bogotá</b><br>Universidad Cooperativa de Colombia" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Politécnico Grancolombiano', creditos: 155, coords: [4.6400, -74.0550], popup: "<b>Bogotá</b><br>Politécnico Grancolombiano" },
+    { nivel: 'nacional', ciudad: 'Bogotá', ies: 'Fundación Universitaria del Área Andina', creditos: 170, coords: [4.6533, -74.0836], popup: "<b>Bogotá</b><br>Área Andina" }
 ];
 
 window.c2Init = function() {
@@ -247,7 +251,7 @@ window.c2Init = function() {
         
         window._c2InstData.forEach(item => {
             let marker = L.marker(item.coords).addTo(window.myMap).bindPopup(item.popup);
-            if (item.ies.includes("Oriente")) marker.openPopup();
+            if (item.ies.includes("TO")) marker.openPopup();
         });
         
         window.setMapLevel('nacional');
@@ -267,17 +271,19 @@ window.setMapLevel = function(nivel) {
     let data;
     let titleStr, footerStr;
     if(nivel === 'nacional') {
-        data = window._c2InstData;
-        titleStr = '<i class="fas fa-flag"></i> Oferta Nacional — Ing. Industrial Virtual ('+data.length+' programas)';
-        footerStr = 'Total Nacional: '+data.length+' programas virtuales de Ingeniería Industrial registrados en SNIES';
+        data = window._c2InstData.filter(i => i.nivel === 'nacional' || i.nivel === 'regional');
+        let countNac = data.length;
+        titleStr = '<i class="fas fa-flag"></i> Oferta de Referencia Nacional — Tabla 10 ('+countNac+' programas)';
+        footerStr = 'Total Nacional Registrado: 20 programas virtuales en SNIES | Se detallan 16 programas representativos del Estudio de Pertinencia';
     } else if(nivel === 'regional') {
-        data = window._c2InstData.filter(i => i.nivel === 'regional' || i.nivel === 'local');
-        titleStr = '<i class="fas fa-map"></i> Oferta Regional Santander ('+data.length+' programas)';
-        footerStr = 'Total Regional: '+data.length+' programas en Santander';
+        data = window._c2InstData.filter(i => i.nivel === 'regional' || i.nivel === 'propuesta');
+        let compRegCount = data.filter(i => i.nivel === 'regional').length;
+        titleStr = '<i class="fas fa-map"></i> Oferta Regional Santander ('+compRegCount+' Competidores Existentes)';
+        footerStr = 'Total Competidores Existentes en Santander: '+compRegCount+' | Propuesta TO (144 cr)';
     } else {
-        data = window._c2InstData.filter(i => i.nivel === 'local');
-        titleStr = '<i class="fas fa-map-marker-alt"></i> Oferta Local AMB ('+data.length+' programas)';
-        footerStr = 'Total Local: '+data.length+' programa en el Área Metropolitana';
+        data = window._c2InstData.filter(i => i.nivel === 'propuesta');
+        titleStr = '<i class="fas fa-map-marker-alt"></i> Oferta Local AMB (Sin oferta virtual competidora)';
+        footerStr = 'Bucaramanga no cuenta con competidores activos en modalidad virtual | Propuesta TO es única';
     }
     
     document.getElementById('ofertaTitle').innerHTML = titleStr;
@@ -285,10 +291,10 @@ window.setMapLevel = function(nivel) {
     
     let html = '';
     data.forEach(item => {
-        let isTO = item.ies.includes('Oriente');
+        let isTO = item.ies.includes('TO');
         html += '<tr style="'+(isTO?'background:#fff1f2;font-weight:bold;':'')+'">';
         html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; color:#374151;">'+item.ciudad+'</td>';
-        html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; color:#374151;">'+item.ies+(isTO?' (Propuesta TO)': '')+'</td>';
+        html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; color:#374151;">'+item.ies+(isTO?' (Nuestra Propuesta)': '')+'</td>';
         html += '<td style="padding:10px; border-bottom:1px solid #e5e7eb; text-align:center; color:#374151;">'+item.creditos+'</td>';
         html += '</tr>';
     });
