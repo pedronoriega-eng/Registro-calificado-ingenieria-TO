@@ -55,6 +55,7 @@ window.showBloomDetail = function(domainId, btn) {
         card.classList.remove('active');
         card.style.borderColor = '#e2e8f0';
         card.style.boxShadow = 'none';
+        card.style.display = 'none';
     });
     document.querySelectorAll('.c4-bloom-btn').forEach(b => {
         b.classList.remove('active');
@@ -65,6 +66,7 @@ window.showBloomDetail = function(domainId, btn) {
         selectedCard.classList.add('active');
         selectedCard.style.borderColor = '#FF6600';
         selectedCard.style.boxShadow = '0 10px 15px -3px rgba(255, 102, 0, 0.1), 0 4px 6px -4px rgba(255, 102, 0, 0.1)';
+        selectedCard.style.display = 'block';
     }
     
     if (btn) {
