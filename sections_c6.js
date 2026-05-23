@@ -59,35 +59,39 @@ window.SECTIONS.c6 = `
     <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 6px rgba(0,0,0,0.05);">
         <span style="color:#FF6600; font-weight:bold; font-size:1rem; text-transform:uppercase; display:block; margin-bottom:5px;">SECTORES PRODUCTIVOS OBJETIVO</span>
         <div style="color:#111827; font-weight:bold; font-size:1.5rem; margin-bottom:12px;">Articulación con el Tejido Empresarial de Santander</div>
-        <div style="color:#374151; margin-bottom:15px; font-size:1.1rem; line-height:1.6;">El programa de Ingeniería Industrial se vincula estratégicamente con los sectores económicos clave del departamento de Santander y del nororiente colombiano:</div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:12px;">
-            <div style="background:linear-gradient(135deg,#0A2540,#173A66); color:white; padding:18px; border-radius:10px; text-align:center;">
-                <i class="fas fa-drumstick-bite" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                <div style="font-weight:bold; font-size:0.95rem;">Agroindustria y Avícola</div>
-                <div style="font-size:0.8rem; margin-top:4px; color:#94a3b8;">35% del PIB departamental</div>
+        <div style="color:#374151; margin-bottom:15px; font-size:1.1rem; line-height:1.6;">El programa de Ingeniería Industrial se vincula estratégicamente con los sectores económicos clave del departamento de Santander, aportando valor mediante proyectos de optimización y tecnología 4.0:</div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
+            <div style="background:linear-gradient(135deg,#0A2540,#173A66); color:white; padding:18px; border-radius:10px; text-align:center; display:flex; flex-direction:column; justify-content:space-between; min-height:180px;">
+                <div>
+                    <i class="fas fa-leaf" style="font-size:2rem; margin-bottom:8px; display:block; color:#10b981;"></i>
+                    <div style="font-weight:bold; font-size:1rem; margin-bottom:6px;">Agroindustria</div>
+                </div>
+                <div style="font-size:0.8rem; color:#cbd5e1; line-height:1.3;"><strong>+1.500 empresas agroalimentarias</strong> y <strong>30 asociaciones</strong> (Clúster Hortifrutícola). Santander es líder avícola nacional con el 25% de la producción de Colombia.</div>
             </div>
-            <div style="background:linear-gradient(135deg,#C8102E,#ef4444); color:white; padding:18px; border-radius:10px; text-align:center;">
-                <i class="fas fa-oil-can" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                <div style="font-weight:bold; font-size:0.95rem;">Petroquímico y Energía</div>
-                <div style="font-size:0.8rem; margin-top:4px; color:#fecaca;">Barrancabermeja - Ecopetrol</div>
+            <div style="background:linear-gradient(135deg,#C8102E,#ef4444); color:white; padding:18px; border-radius:10px; text-align:center; display:flex; flex-direction:column; justify-content:space-between; min-height:180px;">
+                <div>
+                    <i class="fas fa-bolt" style="font-size:2rem; margin-bottom:8px; display:block; color:#fef3c7;"></i>
+                    <div style="font-weight:bold; font-size:1rem; margin-bottom:6px;">Energía Petroquímica</div>
+                </div>
+                <div style="font-size:0.8rem; color:#fecaca; line-height:1.3;"><strong>+3.162 empresas</strong> en la cadena de valor en Santander. Eje refinador nacional en Barrancabermeja e impulso del nuevo Clúster de Energía regional.</div>
             </div>
-            <div style="background:linear-gradient(135deg,#FF6600,#f59e0b); color:white; padding:18px; border-radius:10px; text-align:center;">
-                <i class="fas fa-industry" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                <div style="font-weight:bold; font-size:0.95rem;">Manufactura y Calzado</div>
-                <div style="font-size:0.8rem; margin-top:4px; color:#fef3c7;">Clúster productivo AMB</div>
+            <div style="background:linear-gradient(135deg,#8b5cf6,#7c3aed); color:white; padding:18px; border-radius:10px; text-align:center; display:flex; flex-direction:column; justify-content:space-between; min-height:180px;">
+                <div>
+                    <i class="fas fa-hospital" style="font-size:2rem; margin-bottom:8px; display:block; color:#a7f3d0;"></i>
+                    <div style="font-weight:bold; font-size:1rem; margin-bottom:6px;">Salud y Biotecnología</div>
+                </div>
+                <div style="font-size:0.8rem; color:#ede9fe; line-height:1.3;"><strong>+6.115 empresas e instituciones prestadoras de salud e investigación</strong> registradas (Hub de alta complejidad de Latinoamérica con FCV y FOSCAL).</div>
             </div>
-            <div style="background:linear-gradient(135deg,#10b981,#059669); color:white; padding:18px; border-radius:10px; text-align:center;">
-                <i class="fas fa-laptop-code" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                <div style="font-weight:bold; font-size:0.95rem;">TIC y Servicios Digitales</div>
-                <div style="font-size:0.8rem; margin-top:4px; color:#d1fae5;">Sector en crecimiento 22%</div>
-            </div>
-            <div style="background:linear-gradient(135deg,#8b5cf6,#7c3aed); color:white; padding:18px; border-radius:10px; text-align:center;">
-                <i class="fas fa-hospital" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                <div style="font-weight:bold; font-size:0.95rem;">Salud y Bienestar</div>
-                <div style="font-size:0.8rem; margin-top:4px; color:#ede9fe;">Clúster de Salud Santander</div>
+            <div style="background:linear-gradient(135deg,#FF6600,#f59e0b); color:white; padding:18px; border-radius:10px; text-align:center; display:flex; flex-direction:column; justify-content:space-between; min-height:180px;">
+                <div>
+                    <i class="fas fa-mountain" style="font-size:2rem; margin-bottom:8px; display:block; color:#fed7aa;"></i>
+                    <div style="font-weight:bold; font-size:1rem; margin-bottom:6px;">Turismo de Aventura</div>
+                </div>
+                <div style="font-size:0.8rem; color:#fef3c7; line-height:1.3;"><strong>+1.245 empresas turísticas formales</strong>. San Gil es la capital nacional del turismo de aventura y deportes extremos, y el Parque Chicamocha.</div>
             </div>
         </div>
     </div>
+
 
     <!-- PLAN OPERATIVO 7 AÑOS -->
     <div class="event-card" style="background:white; color:#111827; padding:25px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 6px rgba(0,0,0,0.05);">

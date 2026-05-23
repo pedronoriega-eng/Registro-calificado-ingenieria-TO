@@ -1,4 +1,4 @@
-﻿window.SECTIONS=window.SECTIONS||{};
+window.SECTIONS=window.SECTIONS||{};
 window.c1OpenTab=function(id,btn){document.querySelectorAll('.c1pane').forEach(p=>{p.style.display='none'});document.querySelectorAll('.c1tab').forEach(b=>{b.classList.remove('active')});var p=document.getElementById(id);if(p)p.style.display='block';if(btn)btn.classList.add('active');};
 window.c1Accordion=function(id,ico){var c=document.getElementById(id),i=document.getElementById(ico);if(!c)return;var o=c.style.maxHeight&&c.style.maxHeight!='0px';document.querySelectorAll('.c1acc').forEach(el=>el.style.maxHeight='0px');document.querySelectorAll('.c1aco').forEach(el=>el.style.transform='');if(!o){c.style.maxHeight='400px';if(i)i.style.transform='rotate(180deg)';}};
 window.c1Init=function(){var b=document.querySelector('.c1tab');if(b)window.c1OpenTab('c1t1',b);else setTimeout(window.c1Init,150);};
@@ -42,19 +42,19 @@ window.SECTIONS.c1=`
     <div class="c1kpi"><div class="c1icon"><i class="fas fa-users"></i></div><div><div style="font-size:.7rem;color:#94a3b8;font-weight:700;text-transform:uppercase">Admisión Semestral</div><div style="font-weight:800;color:#0A2540">140 Estudiantes</div></div></div>
   </div>
   <div class="c1card">
-    <div style="background:#0A2540;color:white;margin:-20px -20px 20px;padding:16px 20px;border-radius:14px 14px 0 0;border-bottom:4px solid #FF6600;font-weight:700;font-size:1.05rem"><i class="fas fa-network-wired mr-2"></i>Clasificación y Normatividad</div>
+    <div style="background:#0A2540;color:white;margin:-20px -20px 20px;padding:16px 20px;border-radius:14px 14px 0 0;border-bottom:4px solid #FF6600;font-weight:700;font-size:1.05rem"><i class="fas fa-network-wired mr-2"></i>Clasificación, Normatividad y Lineamientos</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;divide-x:1px solid #e2e8f0">
-      <div style="padding-right:30px;display:flex;flex-direction:column;gap:18px">
+      <div style="padding-right:30px;display:flex;flex-direction:column;gap:15px">
         <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Nivel de Formación</div><div style="font-weight:600">Pregrado Universitario</div></div>
         <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Campo Amplio</div><div style="font-weight:600">Ingeniería, Industria y Construcción</div></div>
         <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Campo Específico</div><div style="font-weight:600">Ingeniería y profesiones afines</div></div>
-        <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Campo Detallado</div><div style="font-weight:600">Ingeniería y profesiones afines n.c.o.p.</div></div>
+        <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Credo Institucional</div><div style="font-weight:600;font-size:0.85rem;color:#475569">Educación virtual inclusiva y de alta calidad para el desarrollo y proyección social.</div></div>
       </div>
-      <div style="padding-left:30px;border-left:1px solid #e2e8f0;display:flex;flex-direction:column;gap:18px">
-        <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Área de Conocimiento</div><div style="font-weight:600">Ingeniería, arquitectura, urbanismo y afines</div></div>
-        <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Núcleo Básico del Conocimiento</div><div style="font-weight:600">Ingeniería industrial y afines</div></div>
+      <div style="padding-left:30px;border-left:1px solid #e2e8f0;display:flex;flex-direction:column;gap:15px">
+        <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Área del Conocimiento / NBC</div><div style="font-weight:600">Ingeniería, arquitectura, urbanismo y afines | Ing. Industrial y afines</div></div>
         <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Adscripción / Periodicidad</div><div style="font-weight:600">Escuela de Ingenierías | Admisión Semestral</div></div>
-        <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Norma Interna</div><div style="font-weight:600">Acuerdos 011, 021, 03 — Consejo Superior</div></div>
+        <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Norma Interna (Autorizaciones)</div><div style="font-weight:600;font-size:0.85rem">Acuerdos 011 (Creación), 021 (Aprobación Curricular) y 03 — Consejo Superior</div></div>
+        <div><div style="color:#FF6600;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px">Lineamiento Curricular</div><div style="font-weight:600;font-size:0.85rem;color:#10b981"><i class="fas fa-check-circle mr-1"></i>Actualización aprobada por el Consejo Académico</div></div>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ window.SECTIONS.c1=`
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
       <div class="c1card" style="border-left:4px solid #FF6600"><i class="fas fa-diagram-project" style="color:#FF6600;font-size:1.3rem"></i><h4 style="margin:10px 0 5px;color:#0A2540;font-weight:700">Diseño y Optimización</h4><div style="background:#f1f5f9;border-radius:6px;padding:6px;font-size:.75rem;margin-bottom:8px">Procesos Ind., Distribución Planta, Inv. Operaciones</div><p style="font-size:.85rem;color:#475569">Herramientas para analizar, modelar y mejorar sistemas productivos y logísticos.</p></div>
       <div class="c1card" style="border-left:4px solid #0A2540"><i class="fas fa-microchip" style="color:#0A2540;font-size:1.3rem"></i><h4 style="margin:10px 0 5px;color:#0A2540;font-weight:700">Gestión Tecnológica</h4><div style="background:#f1f5f9;border-radius:6px;padding:6px;font-size:.75rem;margin-bottom:8px">Big Data, Inteligencia Artificial, Simulación</div><p style="font-size:.85rem;color:#475569">Competencias para aplicar tecnologías avanzadas en toma de decisiones.</p></div>
-      <div class="c1card" style="border-left:4px solid #10b981"><i class="fas fa-leaf" style="color:#10b981;font-size:1.3rem"></i><h4 style="margin:10px 0 5px;color:#0A2540;font-weight:700">Sostenibilidad & RSE</h4><div style="background:#f1f5f9;border-radius:6px;padding:6px;font-size:.75rem;margin-bottom:8px">Desarrollo Sostenible, Gestión Proyectos, Bioética</div><p style="font-size:.85rem;color:#475569">Soluciones industriales con impacto social y ambiental positivo.</p></div>
+      <div class="c1card" style="border-left:4px solid #10b981"><i class="fas fa-leaf" style="color:#10b981;font-size:1.3rem"></i><h4 style="margin:10px 0 5px;color:#0A2540;font-weight:700">Sostenibilidad & RSE</h4><div style="background:#f1f5f9;border-radius:6px;padding:6px;font-size:.75rem;margin-bottom:8px">Desarrollo Sostenible, Gestión Proyectos, Bioética</div><p style="font-size:.85rem;color:#475569">Soluciones alineadas a los **ODS 9, 12 y 13**, garantizando la eco-eficiencia y economía circular.</p></div>
       <div class="c1card" style="border-left:4px solid #8B5CF6"><i class="fas fa-lightbulb" style="color:#8B5CF6;font-size:1.3rem"></i><h4 style="margin:10px 0 5px;color:#0A2540;font-weight:700">Innovación</h4><div style="background:#f1f5f9;border-radius:6px;padding:6px;font-size:.75rem;margin-bottom:8px">Lab. Innovación, Emprendimiento, Formulación Proyectos</div><p style="font-size:.85rem;color:#475569">Pensamiento creativo y capacidad de liderar proyectos disruptivos.</p></div>
     </div>
   </div>
@@ -78,23 +78,59 @@ window.SECTIONS.c1=`
 
 <!-- TAB 3: TENDENCIAS -->
 <div id="c1t3" class="c1pane">
-  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:28px">
-    <div class="c1trend"><div style="height:110px;background:linear-gradient(135deg,#0A2540,#1e40af);display:flex;align-items:center;justify-content:center;font-size:2rem;color:white"><i class="fas fa-robot"></i></div><div style="padding:14px"><h4 style="font-weight:700;font-size:.9rem;color:#0A2540;margin:0 0 6px">1. Industria 4.0</h4><p style="font-size:.78rem;color:#64748b">IoT, automatización e IA aplicados a sistemas productivos.</p></div></div>
-    <div class="c1trend"><div style="height:110px;background:linear-gradient(135deg,#065f46,#059669);display:flex;align-items:center;justify-content:center;font-size:2rem;color:white"><i class="fas fa-recycle"></i></div><div style="padding:14px"><h4 style="font-weight:700;font-size:.9rem;color:#0A2540;margin:0 0 6px">2. Sostenibilidad</h4><p style="font-size:.78rem;color:#64748b">Diseño de procesos sostenibles y minimización de huella ecológica.</p></div></div>
-    <div class="c1trend"><div style="height:110px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:2rem;color:white"><i class="fas fa-chart-line"></i></div><div style="padding:14px"><h4 style="font-weight:700;font-size:.9rem;color:#0A2540;margin:0 0 6px">3. Optimización</h4><p style="font-size:.78rem;color:#64748b">Lean Manufacturing, Six Sigma y simulación operativa.</p></div></div>
-    <div class="c1trend"><div style="height:110px;background:linear-gradient(135deg,#4c1d95,#8B5CF6);display:flex;align-items:center;justify-content:center;font-size:2rem;color:white"><i class="fas fa-truck-fast"></i></div><div style="padding:14px"><h4 style="font-weight:700;font-size:.9rem;color:#0A2540;margin:0 0 6px">4. Supply Chain</h4><p style="font-size:.78rem;color:#64748b">Logística e inventarios con tecnologías digitales.</p></div></div>
-    <div class="c1trend"><div style="height:110px;background:linear-gradient(135deg,#9a3412,#FF6600);display:flex;align-items:center;justify-content:center;font-size:2rem;color:white"><i class="fas fa-lightbulb"></i></div><div style="padding:14px"><h4 style="font-weight:700;font-size:.9rem;color:#0A2540;margin:0 0 6px">5. Innovación</h4><p style="font-size:.78rem;color:#64748b">Emprendimiento y pensamiento disruptivo.</p></div></div>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:28px">
+    <div class="c1trend"><div style="height:100px;background:linear-gradient(135deg,#0A2540,#1e40af);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:white"><i class="fas fa-robot"></i></div><div style="padding:10px"><h4 style="font-weight:700;font-size:.8rem;color:#0A2540;margin:0 0 4px">1. Industria 4.0</h4><p style="font-size:.7rem;color:#64748b;line-height:1.2">IoT, automatización e IA aplicados a sistemas productivos.</p></div></div>
+    <div class="c1trend"><div style="height:100px;background:linear-gradient(135deg,#065f46,#059669);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:white"><i class="fas fa-recycle"></i></div><div style="padding:10px"><h4 style="font-weight:700;font-size:.8rem;color:#0A2540;margin:0 0 4px">2. Sostenibilidad</h4><p style="font-size:.7rem;color:#64748b;line-height:1.2">Procesos sostenibles y minimización de huella ecológica.</p></div></div>
+    <div class="c1trend"><div style="height:100px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:white"><i class="fas fa-chart-line"></i></div><div style="padding:10px"><h4 style="font-weight:700;font-size:.8rem;color:#0A2540;margin:0 0 4px">3. Optimización</h4><p style="font-size:.7rem;color:#64748b;line-height:1.2">Lean Manufacturing, Six Sigma y simulación operativa.</p></div></div>
+    <div class="c1trend"><div style="height:100px;background:linear-gradient(135deg,#4c1d95,#8B5CF6);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:white"><i class="fas fa-truck-fast"></i></div><div style="padding:10px"><h4 style="font-weight:700;font-size:.8rem;color:#0A2540;margin:0 0 4px">4. Supply Chain</h4><p style="font-size:.7rem;color:#64748b;line-height:1.2">Logística e inventarios con tecnologías digitales.</p></div></div>
+    <div class="c1trend"><div style="height:100px;background:linear-gradient(135deg,#9a3412,#FF6600);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:white"><i class="fas fa-lightbulb"></i></div><div style="padding:10px"><h4 style="font-weight:700;font-size:.8rem;color:#0A2540;margin:0 0 4px">5. Innovación</h4><p style="font-size:.7rem;color:#64748b;line-height:1.2">Emprendimiento y pensamiento disruptivo.</p></div></div>
+    <div class="c1trend" style="border: 2px solid #FF6600;"><div style="height:100px;background:linear-gradient(135deg,#d97706,#f59e0b);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:white"><i class="fas fa-chart-bar"></i></div><div style="padding:10px"><h4 style="font-weight:700;font-size:.8rem;color:#FF6600;margin:0 0 4px">6. Google Trends</h4><p style="font-size:.7rem;color:#64748b;line-height:1.2">Alta demanda y búsquedas sostenidas en Colombia (últimos 4 años).</p></div></div>
   </div>
-  <div style="background:#0A2540;color:white;border-radius:16px;padding:28px">
-    <h3 style="color:#FF6600;font-weight:800;margin:0 0 20px"><i class="fas fa-map-location-dot mr-2"></i>Alineación con Planes de Desarrollo 2024-2027</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-      <div style="display:flex;gap:14px"><div style="background:rgba(255,255,255,.1);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-building" style="color:#FF6600"></i></div><div><h4 style="font-weight:700;margin:0 0 4px">Bogotá D.C.</h4><p style="color:#94a3b8;font-size:.85rem;margin:0">"Bogotá Camina Segura": Hub de tecnología, digitalización y automatización industrial sostenible.</p></div></div>
-      <div style="display:flex;gap:14px"><div style="background:rgba(255,255,255,.1);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-industry" style="color:#FF6600"></i></div><div><h4 style="font-weight:700;margin:0 0 4px">Antioquia</h4><p style="color:#94a3b8;font-size:.85rem;margin:0">"Por Antioquia Firme": Competitividad e integración de tecnologías avanzadas en manufactura local.</p></div></div>
-      <div style="display:flex;gap:14px"><div style="background:rgba(255,255,255,.1);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-boxes-stacked" style="color:#FF6600"></i></div><div><h4 style="font-weight:700;margin:0 0 4px">Valle del Cauca</h4><p style="color:#94a3b8;font-size:.85rem;margin:0">Reindustrialización y modernización de cadenas de suministro con enfoque sostenible.</p></div></div>
-      <div style="display:flex;gap:14px"><div style="background:rgba(255,255,255,.1);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-anchor" style="color:#FF6600"></i></div><div><h4 style="font-weight:700;margin:0 0 4px">Atlántico / Bucaramanga</h4><p style="color:#94a3b8;font-size:.85rem;margin:0">Fortalecimiento logístico-portuario e innovación tecnológica para la mejora continua.</p></div></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px;">
+    <!-- CARD PLANES DE DESARROLLO -->
+    <div style="background:#0A2540;color:white;border-radius:16px;padding:24px; box-shadow:0 4px 10px rgba(0,0,0,0.05); display:flex; flex-direction:column; justify-content:space-between;">
+      <h3 style="color:#FF6600;font-weight:800;margin:0 0 15px; font-size:1.15rem; font-family:'Montserrat', sans-serif;"><i class="fas fa-map-location-dot mr-2"></i>Alineación con Planes de Desarrollo</h3>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px">
+        <div style="display:flex;gap:10px"><div style="background:rgba(255,255,255,.1);width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-building" style="color:#FF6600; font-size:0.9rem;"></i></div><div><h4 style="font-weight:700;margin:0 0 2px; font-size:0.85rem; color:white;">Bogotá D.C.</h4><p style="color:#94a3b8;font-size:.75rem;margin:0">Hub de tecnología, digitalización y automatización industrial sostenible.</p></div></div>
+        <div style="display:flex;gap:10px"><div style="background:rgba(255,255,255,.1);width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-industry" style="color:#FF6600; font-size:0.9rem;"></i></div><div><h4 style="font-weight:700;margin:0 0 2px; font-size:0.85rem; color:white;">Antioquia</h4><p style="color:#94a3b8;font-size:.75rem;margin:0">Competitividad e integración de tecnologías avanzadas en manufactura local.</p></div></div>
+        <div style="display:flex;gap:10px"><div style="background:rgba(255,255,255,.1);width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-boxes-stacked" style="color:#FF6600; font-size:0.9rem;"></i></div><div><h4 style="font-weight:700;margin:0 0 2px; font-size:0.85rem; color:white;">Valle del Cauca</h4><p style="color:#94a3b8;font-size:.75rem;margin:0">Reindustrialización y modernización de cadenas de suministro con enfoque sostenible.</p></div></div>
+        <div style="display:flex;gap:10px"><div style="background:rgba(255,255,255,.1);width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-anchor" style="color:#FF6600; font-size:0.9rem;"></i></div><div><h4 style="font-weight:700;margin:0 0 2px; font-size:0.85rem; color:white;">Atlántico / Bucaramanga</h4><p style="color:#94a3b8;font-size:.75rem;margin:0">Fortalecimiento logístico-portuario e innovación tecnológica regional.</p></div></div>
+      </div>
+    </div>
+
+    <!-- CARD GOOGLE TRENDS ANALYTICS -->
+    <div class="c1card" style="padding:24px; border-left:5px solid #FF6600; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <h3 style="color:#0A2540;font-weight:800;margin:0 0 8px; font-size:1.15rem; font-family:'Montserrat', sans-serif;"><i class="fas fa-chart-line mr-2" style="color:#FF6600;"></i>Google Trends (1/1/24 - 31/12/25)</h3>
+        <p style="font-size:0.78rem; color:#475569; margin-bottom:12px; line-height:1.4;">El interés de búsqueda para <strong>"Ingeniería Industrial"</strong> en Google Colombia demuestra una demanda alta y descentralizada. **Santander ocupa la posición #5 nacional** con un índice de **75/100**.</p>
+        
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; font-size:0.75rem;">
+          <div>
+            <div style="font-weight:bold; color:#0A2540; margin-bottom:6px; border-bottom:1px solid #e2e8f0; padding-bottom:2px;">Top Regiones de Búsqueda</div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>1. Casanare</span><strong style="color:#0A2540;">100</strong></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>2. Boyacá</span><strong style="color:#0A2540;">94</strong></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>3. Arauca</span><strong style="color:#0A2540;">80</strong></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>4. Cesar</span><strong style="color:#0A2540;">75</strong></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px; background:#fff7ed; font-weight:bold; padding:1px 3px; border-radius:3px; border-left:3px solid #FF6600;"><span>5. Santander</span><strong style="color:#FF6600;">75</strong></div>
+          </div>
+          <div>
+            <div style="font-weight:bold; color:#0A2540; margin-bottom:6px; border-bottom:1px solid #e2e8f0; padding-bottom:2px;">Otras Regiones de Interés</div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>6. Magdalena</span><strong>74</strong></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>7. Córdoba</span><strong>70</strong></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>8. Atlántico</span><strong>69</strong></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>9. Cundinamarca</span><strong>67</strong></div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;"><span>10. Bogotá D.C.</span><strong>66</strong></div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="background:#f0fdf4; border-left:4px solid #10b981; padding:8px 12px; color:#166534; font-weight:bold; font-size:0.75rem; border-radius:4px; margin-top:12px;">
+        <i class="fas fa-info-circle mr-1" style="color:#10b981;"></i> Respaldo de Pertinencia: La alta concentración de búsquedas en Santander (75%) valida la necesidad y pertinencia del programa en la región.
+      </div>
     </div>
   </div>
 </div>
+
 
 <!-- TAB 4: MARCO NORMATIVO -->
 <div id="c1t4" class="c1pane">

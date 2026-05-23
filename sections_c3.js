@@ -402,8 +402,17 @@ window.SECTIONS.c3 = `
         </ul>
     </div>
     <div class="card p-6 bg-white rounded-xl shadow-lg border-l-4 border-toOrange">
-        <h4 class="text-xl font-bold mb-4 text-toOrange"><i class="fas fa-microchip mr-2"></i> Enfoque Industria 4.0</h4>
-        <p class="text-gray-700 leading-relaxed italic">"Formamos ingenieros capaces de liderar la transición digital, integrando IA, IoT y Big Data en la optimización de procesos productivos y de servicios."</p>
+        <h4 class="text-xl font-bold mb-3 text-toOrange"><i class="fas fa-microchip mr-2"></i> Enfoque Industria 4.0 y Sostenibilidad</h4>
+        <p class="text-gray-700 leading-relaxed italic mb-4" style="font-size:0.9rem;">"Formamos ingenieros capaces de liderar la transición digital y sostenible, integrando IA y economía circular en la optimización de procesos productivos y de servicios."</p>
+        <h5 class="font-bold text-toBlue mb-2" style="font-size:0.95rem;"><i class="fas fa-star text-toOrange mr-1"></i> Asignaturas Diferenciadoras Clave:</h5>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:0.75rem; color:#374151;">
+            <div><i class="fas fa-robot text-toOrange mr-1"></i> Inteligencia Artificial</div>
+            <div><i class="fas fa-cogs text-toOrange mr-1"></i> Gestión de Operaciones con IA</div>
+            <div><i class="fas fa-industry text-toOrange mr-1"></i> Producción e IA</div>
+            <div><i class="fas fa-laptop-code text-toOrange mr-1"></i> Modelación y Simulación</div>
+            <div><i class="fas fa-database text-toOrange mr-1"></i> Big Data y Analítica</div>
+            <div><i class="fas fa-lightbulb text-toOrange mr-1"></i> Lab. de Innovación</div>
+        </div>
     </div>
 </div>
 
