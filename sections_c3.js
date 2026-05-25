@@ -7,6 +7,7 @@ window.trazabilidadData = {
         {
             "asig": "Cálculo Diferencial",
             "pre": "Ninguno",
+            "sem": 1,
             "ra": "Comprende los conceptos básicos del cálculo diferencial, incluyendo límites, derivadas y su interpretación geométrica / Aplica las reglas de derivación para resolver problemas matemáticos y de optimización en contextos industriales / Analiza el comportamiento de funciones mediante el uso de derivadas, identificando puntos críticos y representando gráficamente resultados",
             "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -14,6 +15,7 @@ window.trazabilidadData = {
         {
             "asig": "Álgebra Lineal",
             "pre": "Ninguno",
+            "sem": 1,
             "ra": "Comprende los conceptos fundamentales del álgebra lineal, incluyendo vectores, matrices y sus aplicaciones en ingeniería. / Resuelve sistemas de ecuaciones lineales utilizando herramientas matriciales y analiza sus aplicaciones en contextos industriales / Analiza transformaciones lineales, autovalores y autovectores, y aplica estos conceptos en la solución de problemas técnicos y de modelado en ingeniería",
             "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -21,6 +23,7 @@ window.trazabilidadData = {
         {
             "asig": "Cálculo Integral",
             "pre": "Cálculo Diferencial",
+            "sem": 2,
             "ra": "Comprende y aplica los fundamentos del cálculo integral para resolver problemas matemáticos en contextos académicos e industriales / Emplea técnicas avanzadas de integración para calcular áreas, volúmenes y trabajo mecánico en aplicaciones relacionadas con la ingeniería / Analiza series y sucesiones como herramientas para modelar y resolver problemas industriales y tecnológicos",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -28,6 +31,7 @@ window.trazabilidadData = {
         {
             "asig": "Física I (Mecánica)",
             "pre": "Ninguno",
+            "sem": 2,
             "ra": "Comprende y aplica los principios básicos de la cinemática y dinámica en el análisis del movimiento de cuerpos / Analiza el trabajo, la energía y la potencia en sistemas físicos, identificando aplicaciones prácticas en contextos industriales / Resuelve problemas relacionados con el momento lineal y rotacional, considerando su impacto en el diseño y operación de sistemas mecánicos",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -35,6 +39,7 @@ window.trazabilidadData = {
         {
             "asig": "Estadística Descriptiva",
             "pre": "Ninguno",
+            "sem": 2,
             "ra": "Conocer e interpretar los términos, símbolos y representaciones estadísticas, utilizando apropiadamente los símbolos estadísticos y comprendiendo su significado para interpretar correctamente los datos. / Conecta conceptos y combinar ideas sobre las medidas de tendencia central, comprender y explicar los procesos estadísticos, e interpretar de manera completa los resultados estadísticos para su aplicación en contextos prácticos. / Comprende y aplica las medidas de dispersión asimétrica, como la desviación estándar, la varianza, y el coeficiente de asimetría, para analizar la distribución de datos y evaluar su variabilidad en diferentes contextos. / Aplica los conceptos de regresión y correlación para analizar y modelar relaciones entre variables, interpretando los coeficientes y resultados obtenidos a partir de los datos.",
             "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -42,6 +47,7 @@ window.trazabilidadData = {
         {
             "asig": "Cálculo Multivariado",
             "pre": "Cálculo Integral",
+            "sem": 3,
             "ra": "Analiza funciones de varias variables mediante el cálculo de límites, derivadas parciales y gradientes, interpretando su comportamiento desde una perspectiva geométrica y aplicada. / Resuelve problemas de optimización en funciones de varias variables, aplicando herramientas de derivación parcial en contextos reales de ingeniería y toma de decisiones. / Aplica técnicas de integración múltiple y cálculo vectorial para modelar y resolver problemas relacionados con áreas, volúmenes y fenómenos físicos.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -49,6 +55,7 @@ window.trazabilidadData = {
         {
             "asig": "Física II (Electromagnetismo)",
             "pre": "Física I (Mecánica)",
+            "sem": 3,
             "ra": "Comprende y aplica los principios básicos de la cinemática y dinámica en el análisis del movimiento de cuerpos / Analiza el trabajo, la energía y la potencia en sistemas físicos, identificando aplicaciones prácticas en contextos industriales / Resuelve problemas relacionados con el momento lineal y rotacional, considerando su impacto en el diseño y operación de sistemas mecánicos",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -56,6 +63,7 @@ window.trazabilidadData = {
         {
             "asig": "Estadística Inferencial",
             "pre": "Estadística Descriptiva",
+            "sem": 3,
             "ra": "Aplica métodos de muestreo y distribuciones muestrales para obtener inferencias válidas sobre parámetros poblacionales a partir de datos empresariales. / Formula y ejecuta procedimientos de estimación y pruebas de hipótesis para validar suposiciones y apoyar la toma de decisiones en situaciones empresariales concretas. / Emplea técnicas de diseño experimental y análisis de regresión para explicar relaciones entre variables e interpretar tendencias relevantes en el entorno empresarial.",
             "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -63,6 +71,7 @@ window.trazabilidadData = {
         {
             "asig": "Ecuaciones Diferenciales",
             "pre": "Cálculo Multivariado",
+            "sem": 4,
             "ra": "Resuelve ecuaciones diferenciales de primer orden aplicando distintos métodos analíticos en la modelación de fenómenos reales. / Analiza y resuelve ecuaciones diferenciales de orden superior, interpretando su comportamiento en sistemas físicos y de ingeniería. / Modela y analiza sistemas dinámicos mediante ecuaciones diferenciales, evaluando su estabilidad y comportamiento en diferentes contextos.",
             "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -72,6 +81,7 @@ window.trazabilidadData = {
         {
             "asig": "Diseño de Experimentos",
             "pre": "Estadística Inferencial",
+            "sem": 8,
             "ra": "Comprende los fundamentos del diseño de experimentos, identificando variables y principios que garantizan la validez de los resultados. / Analiza datos experimentales utilizando herramientas estadísticas para interpretar resultados y validar hipótesis. / Diseña y aplica experimentos para optimizar procesos, utilizando técnicas estadísticas que mejoran la calidad y eficiencia.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -79,6 +89,7 @@ window.trazabilidadData = {
         {
             "asig": "Introducción a la Ing. Industrial y Pensamiento de Diseño",
             "pre": "Ninguno",
+            "sem": 1,
             "ra": "Identifica las principales disciplinas de la ingeniería y explica su rol en la sociedad, comprendiendo los desafíos que enfrenta la ingeniería en la era de la digitalización y automatización / Reconoce las tecnologías clave de la Revolución 4.0, tales como la automatización, IoT y análisis de datos, y describe sus aplicaciones básicas en procesos ingenieriles / Aplica herramientas sencillas de resolución de problemas para abordar retos técnicos en ingeniería, utilizando metodologías básicas de análisis y evaluación de soluciones",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -86,6 +97,7 @@ window.trazabilidadData = {
         {
             "asig": "Modelación y Simulación",
             "pre": "Ninguno",
+            "sem": 7,
             "ra": "Construye modelos que representan sistemas reales, identificando variables, supuestos y relaciones entre sus componentes. / Aplica técnicas de simulación para analizar el comportamiento de sistemas y evaluar diferentes escenarios. / Integra la modelación y simulación en la solución de problemas reales, apoyando la toma de decisiones en contextos organizacionales.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -93,6 +105,7 @@ window.trazabilidadData = {
         {
             "asig": "Fundamentos de Programación",
             "pre": "Ninguno",
+            "sem": 1,
             "ra": "Comprende los conceptos básicos de la programación y explica la importancia de la lógica estructurada en el desarrollo de software. / Aplica diferentes tipos de datos y estructuras de control para resolver problemas simples de programación de manera efectiva. / Diseña funciones modulares que optimicen el código y faciliten la reutilización en proyectos de programación básicos.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
@@ -100,6 +113,7 @@ window.trazabilidadData = {
         {
             "asig": "Inteligencia Artificial",
             "pre": "Ninguno",
+            "sem": 3,
             "ra": "Comprende los conceptos básicos de la Inteligencia Artificial y reconoce su relevancia en diferentes disciplinas / Aplica algoritmos simples de aprendizaje automático en la resolución de problemas básicos y analiza sus resultados / Evalúa el impacto social y ético de la IA, y propone medidas para mitigar los riesgos asociados",
             "prog": "Utiliza herramientas computacionales y de programación para el análisis de información y optimización de procesos.",
             "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
@@ -107,6 +121,7 @@ window.trazabilidadData = {
         {
             "asig": "Big Data y Analítica de Datos",
             "pre": "Ninguno",
+            "sem": 6,
             "ra": "Comprende los principios de Big Data y explica los desafíos técnicos y las herramientas necesarias para su gestión / Aplica técnicas de analítica de datos para obtener información valiosa a partir de grandes volúmenes de datos estructurados y no estructurados / Analiza aplicaciones prácticas de Big Data y Analítica de Datos en diferentes disciplinas, evaluando su impacto y relevancia en contextos específicos",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
@@ -114,6 +129,7 @@ window.trazabilidadData = {
         {
             "asig": "Métodos Cualitativos y Cuantitativos",
             "pre": "Competencias Investigativas",
+            "sem": 6,
             "ra": "Proponer investigaciones empíricas siguiendo los procedimientos asociados a las diferentes técnicas cualitativas y cuantitativas. / Tomar decisiones coherentes con los datos obtenidos mediante técnicas cualitativas; Y redactar informes de investigaciones de tipo cualitativo y cuantitativo. / Aplicar métodos cualitativos y cuantitativos de investigación para analizar, interpretar y resolver problemáticas específicas en contextos organizacionales, sociales o académicos, demostrando habilidad en la recolección, procesamiento y presentación de datos relevantes, así como en la formulación de conclusiones fundamentadas",
             "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
             "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
@@ -121,6 +137,7 @@ window.trazabilidadData = {
         {
             "asig": "Investigación de mercados",
             "pre": "Ninguno",
+            "sem": 6,
             "ra": "Comprende y explica el proceso integral de la investigación de mercados, reconociendo su papel estratégico en la toma de decisiones empresariales. / Diseña y aplica instrumentos de recolección de información pertinentes, empleando herramientas tecnológicas y criterios metodológicos adecuados a los objetivos de la investigación. / Analiza, interpreta y comunica los resultados de una investigación de mercados para fundamentar decisiones estratégicas de marketing en la organización.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
@@ -130,6 +147,7 @@ window.trazabilidadData = {
         {
             "asig": "Termodinámica",
             "pre": "Ninguno",
+            "sem": 5,
             "ra": "Analiza sistemas termodinámicos aplicando la primera ley para evaluar intercambios de energía en procesos físicos. / Evalúa el desempeño de sistemas termodinámicos considerando la segunda ley y el concepto de entropía. / Aplica los principios de la termodinámica en el análisis de ciclos y sistemas reales, evaluando su eficiencia y funcionamiento.",
             "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
@@ -137,6 +155,7 @@ window.trazabilidadData = {
         {
             "asig": "Dibujo Industrial",
             "pre": "Ninguno",
+            "sem": 1,
             "ra": "Identifica las normas y conceptos básicos del dibujo técnico aplicados a la representación de piezas industriales / Interpreta y realiza planos técnicos utilizando proyecciones ortogonales y secciones, aplicando las normas de dibujo industrial / Emplea el uso de software CAD para el diseño y edición de piezas industriales en entornos digitales",
             "prog": "Diseña la distribución de planta y sistemas de trabajo considerando criterios técnicos, normativos y ergonómicos.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -144,6 +163,7 @@ window.trazabilidadData = {
         {
             "asig": "Procesos Industriales y de Manufactura",
             "pre": "Ninguno",
+            "sem": 2,
             "ra": "Analiza los fundamentos de los procesos industriales y su impacto en la productividad organizacional, identificando los elementos clave de los sistemas de manufactura. / Evalúa diferentes procesos de manufactura y tecnologías asociadas, seleccionando alternativas adecuadas según criterios técnicos, económicos y de calidad. / Diseña estrategias de mejora y optimización de procesos de manufactura, integrando herramientas de calidad, productividad y sostenibilidad.",
             "prog": "Diseña, mejora y optimiza procesos productivos y de servicios integrando criterios de eficiencia, calidad, seguridad y sostenibilidad.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -151,6 +171,7 @@ window.trazabilidadData = {
         {
             "asig": "Investigación de Operaciones I (Programación Lineal)",
             "pre": "Ninguno",
+            "sem": 4,
             "ra": "Comprende los fundamentos de la investigación de operaciones and su importancia en la optimización de procesos industriales / Formula y resuelve problemas de programación lineal utilizando herramientas matemáticas y métodos clásicos / Aplica modelos de transporte y asignación para resolver problemas logísticos y de optimización en sistemas industriales",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -158,6 +179,7 @@ window.trazabilidadData = {
         {
             "asig": "Investigación de Operaciones II (Modelos Estocásticos)",
             "pre": "Investigación de Operaciones I (Programación Lineal)",
+            "sem": 5,
             "ra": "Comprende los fundamentos de la investigación de operaciones and su importancia en la optimización de procesos industriales / Formula y resuelve problemas de programación lineal utilizando herramientas matemáticas y métodos clásicos / Aplica modelos de transporte y asignación para resolver problemas logísticos y de optimización en sistemas industriales",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -165,6 +187,7 @@ window.trazabilidadData = {
         {
             "asig": "Gerencia de la Producción I",
             "pre": "Ninguno",
+            "sem": 5,
             "ra": "Analiza los sistemas productivos y su estructura, identificando elementos clave para su diseño y funcionamiento. / Aplica herramientas de planeación y control para optimizar la producción y el manejo de inventarios. / Evalúa el desempeño de los sistemas productivos mediante indicadores y propone acciones de mejora.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -172,6 +195,7 @@ window.trazabilidadData = {
         {
             "asig": "Logística y Cadena de Suministro",
             "pre": "Ninguno",
+            "sem": 6,
             "ra": "Analiza la estructura y funcionamiento de la cadena de suministro, identificando sus componentes y su impacto en la competitividad empresarial. / Aplica herramientas de gestión de inventarios, almacenamiento y transporte para optimizar operaciones logísticas / Diseña estrategias logísticas integradas incorporando tecnología y sostenibilidad para mejorar el desempeño de la cadena de suministro.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -179,6 +203,7 @@ window.trazabilidadData = {
         {
             "asig": "Gestión de la Producción II (Lean Manufacturing)",
             "pre": "Gerencia de la Producción I",
+            "sem": 6,
             "ra": "Analiza los principios Lean identificando desperdicios y oportunidades de mejora en procesos productivos. / Aplica herramientas Lean para mejorar la eficiencia, reducir tiempos y optimizar procesos productivos. / Diseña estrategias de implementación Lean que mejoran la productividad y competitividad organizacional.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -186,6 +211,7 @@ window.trazabilidadData = {
         {
             "asig": "Diseño de Planta y distribución de planta",
             "pre": "Ninguno",
+            "sem": 7,
             "ra": "Analiza los fundamentos del diseño de planta y selecciona alternativas de localización y distribución adecuadas. / Aplica técnicas y herramientas para diseñar distribuciones en planta eficientes. / Evalúa y optimiza la distribución en planta considerando eficiencia, seguridad y costos.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -193,6 +219,7 @@ window.trazabilidadData = {
         {
             "asig": "Gestión de la Higiene y seguridad industrial",
             "pre": "Ninguno",
+            "sem": 8,
             "ra": "Analiza los fundamentos de la higiene y seguridad en el trabajo, identificando riesgos y comprendiendo el marco normativo aplicable. / Aplica metodologías para evaluar y controlar riesgos en entornos laborales, promoviendo condiciones seguras. / Diseña e implementa estrategias de gestión en seguridad y salud en el trabajo, promoviendo una cultura de prevención.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
@@ -202,6 +229,7 @@ window.trazabilidadData = {
         {
             "asig": "Gerencia de la Calidad (Six Sigma)",
             "pre": "Ninguno",
+            "sem": 4,
             "ra": "Analiza los fundamentos de Six Sigma y su relación con la gestión de la calidad, identificando su impacto en la mejora de procesos. / Aplica la metodología DMAIC utilizando herramientas estadísticas para analizar, mejorar y controlar procesos organizacionales. / Diseña e implementa proyectos Six Sigma alineados con la estrategia organizacional, generando mejoras sostenibles en calidad y productividad.",
             "prog": "Gestiona sistemas de calidad, producción y operaciones orientados a la mejora continua y excelencia organizacional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
@@ -209,6 +237,7 @@ window.trazabilidadData = {
         {
             "asig": "Fundamentos Contables y Financieros",
             "pre": "Ninguno",
+            "sem": 2,
             "ra": "Aplicar los fundamentos de la contabilidad general en la identificación, registro y análisis de transacciones comerciales, mediante el uso de documentos y libros contables, con base en las normas legales y principios contables vigentes. / Reconocer los hechos económicos y su tratamiento contable conforme a las políticas contables de la empresa y normativa. / laborar los estados financieros básicos conforme a normativa, garantizando la adecuada presentación y revelación de la información financiera.",
             "prog": "Formula, evalúa y sustenta proyectos de inversión aplicando criterios técnicos, económicos y ambientales.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
@@ -216,6 +245,7 @@ window.trazabilidadData = {
         {
             "asig": "Teoría Organizacional",
             "pre": "Ninguno",
+            "sem": 3,
             "ra": "Analiza los fundamentos y evolución de la teoría organizacional, identificando los aportes de los enfoques clásicos en la gestión empresarial. / Interpreta las organizaciones desde enfoques humanistas y sistémicos, reconociendo la importancia del talento humano y la interacción con el entorno. / Evalúa enfoques contemporáneos de la teoría organizacional, proponiendo estrategias de adaptación, innovación y cambio en contextos dinámicos.",
             "prog": "Gestiona el talento humano y lidera equipos de trabajo interdisciplinarios y multiculturales.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
@@ -223,6 +253,7 @@ window.trazabilidadData = {
         {
             "asig": "Gerencia del talento Humano",
             "pre": "Ninguno",
+            "sem": 4,
             "ra": "Comprende los fundamentos de la gestión integral del talento humano en un contexto global, aplicando estrategias de gestión que favorezcan el desarrollo organizacional. / Comprende y aplica el proceso integral de la gestión del talento humano para generar valor dentro de las organizaciones, alineando las estrategias de recursos humanos con los objetivos organizacionales. / Comprende y aplica las tendencias emergentes en la gestión integral del talento humano, adaptando estrategias innovadoras que promuevan la competitividad organizacional.",
             "prog": "Gestiona el talento humano y lidera equipos de trabajo interdisciplinarios y multiculturales.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
@@ -230,6 +261,7 @@ window.trazabilidadData = {
         {
             "asig": "Ingeniería Económica y Evaluación Financiera",
             "pre": "Ninguno",
+            "sem": 5,
             "ra": "Aplica conceptos financieros básicos para analizar el valor del dinero en el tiempo y estructurar flujos de caja. / Evalúa proyectos de inversión utilizando indicadores financieros para la toma de decisiones. / Analiza el riesgo y la incertidumbre en proyectos, integrando variables financieras y cualitativas para una evaluación integral.",
             "prog": "Formula, evalúa y sustenta proyectos de inversión aplicando criterios técnicos, económicos y ambientales.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
@@ -237,6 +269,7 @@ window.trazabilidadData = {
         {
             "asig": "Sistemas Integrados de Gestión",
             "pre": "Ninguno",
+            "sem": 5,
             "ra": "Describe sistemas integrados de gestión / Conoce sobre auditoria, mejora continua y sostenibilidad del SIG",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
@@ -244,6 +277,7 @@ window.trazabilidadData = {
         {
             "asig": "Costos y Presupuestos",
             "pre": "Ninguno",
+            "sem": 5,
             "ra": "Comprender y aplicar los principios básicos de costos y presupuestos, así como los fundamentos de los sistemas de costos, para clasificar, medir y analizar los costos asociados a las actividades organizacionales, presentando propuestas de mejora para la optimización de los recursos / Analizar y aplicar diferentes sistemas de costos (costeo por órdenes de producción, costeo por procesos, costeo ABC) para identificar, controlar y optimizar los recursos utilizados en procesos productivos o de prestación de servicios, generando reportes que respalden la toma de decisiones organizacionales / Diseñar y evaluar presupuestos operativos y financieros utilizando herramientas tecnológicas y técnicas de planeación estratégica, con el objetivo de proyectar resultados económicos, controlar recursos y proponer estrategias de mejora alineadas a los objetivos organizacionales",
             "prog": "Formula, evalúa y sustenta proyectos de inversión aplicando criterios técnicos, económicos y ambientales.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
@@ -251,6 +285,7 @@ window.trazabilidadData = {
         {
             "asig": "Gerencia Tecnológica y de la Innovación",
             "pre": "Ninguno",
+            "sem": 7,
             "ra": "Analiza el papel de la tecnología en la organización, identificando su impacto en la competitividad y el desarrollo empresarial. / Diseña y gestiona procesos de innovación utilizando metodologías y herramientas que promueven la creatividad y el desarrollo organizacional. / Evalúa estrategias de innovación y transformación digital, proponiendo soluciones que fortalezcan la competitividad organizacional.",
             "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
             "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
@@ -258,6 +293,7 @@ window.trazabilidadData = {
         {
             "asig": "Legislación empresarial",
             "pre": "Ninguno",
+            "sem": 8,
             "ra": "Analiza los fundamentos del derecho empresarial, identificando las normas que regulan la creación y funcionamiento de las empresas. / Aplica la normativa laboral y contractual en situaciones empresariales, garantizando relaciones legales y equitativas. / Evalúa el cumplimiento legal de una organización, proponiendo acciones que aseguren su funcionamiento dentro del marco normativo.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
@@ -265,6 +301,7 @@ window.trazabilidadData = {
         {
             "asig": "Pensamiento Estratégico y Prospectivo",
             "pre": "Ninguno",
+            "sem": 7,
             "ra": "Comprende los principios del pensamiento estratégico y explica su relevancia en la toma de decisiones informadas en contextos diversos / Analiza escenarios futuros mediante el uso de herramientas prospectivas y diseña estrategias para anticipar riesgos y oportunidades / Aplica el pensamiento estratégico y prospectivo en diversos contextos profesionales, desarrollando estrategias sostenibles a largo plazo",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
@@ -274,6 +311,7 @@ window.trazabilidadData = {
         {
             "asig": "Laboratorio de Innovación y Emprendimiento",
             "pre": "Ninguno",
+            "sem": 8,
             "ra": "Genera ideas innovadoras identificando oportunidades de negocio a partir de necesidades reales del entorno. / Diseña y valida modelos de negocio mediante herramientas ágiles que permiten evaluar su viabilidad en el mercado. / Desarrolla y presenta un proyecto de emprendimiento validado, demostrando su viabilidad técnica, económica y de mercado.",
             "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
             "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
@@ -281,6 +319,7 @@ window.trazabilidadData = {
         {
             "asig": "Competencias Investigativas",
             "pre": "Ninguno",
+            "sem": 4,
             "ra": "Comprende los principios de la investigación científica y explica la importancia de los métodos científicos en el desarrollo del conocimiento en diversas disciplinas. / Formula preguntas de investigación coherentes y diseña objetivos claros en la estructuración de proyectos de investigación interdisciplinarios / Diseña proyectos de investigación completos, seleccionando métodos de recolección de datos y planifica su ejecución mediante un cronograma adecuado",
             "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
             "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
@@ -288,6 +327,7 @@ window.trazabilidadData = {
         {
             "asig": "Formulación y Evaluación de Proyectos",
             "pre": "Ninguno",
+            "sem": 7,
             "ra": "Comprende los fundamentos de la formulación de proyectos y aplica herramientas para analizar su viabilidad técnica y económica / Evalúa proyectos utilizando indicadores financieros y económicos, identificando riesgos y proponiendo estrategias de mitigación / Diseña y presenta proyectos estructurados de manera profesional, integrando enfoques de gestión y asegurando su viabilidad y sostenibilidad",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
@@ -295,6 +335,7 @@ window.trazabilidadData = {
         {
             "asig": "Proyecto de Grado",
             "pre": "Competencias Investigativas",
+            "sem": 8,
             "ra": "Diseñar, estructurar y ejecutar de manera autónoma un proyecto de grado original que aplique metodologías científicas y de ingeniería para la solución de un problema del entorno industrial.",
             "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
             "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
@@ -304,6 +345,7 @@ window.trazabilidadData = {
         {
             "asig": "Cátedra de la Paz y resolución de Conflictos",
             "pre": "Ninguno",
+            "sem": 1,
             "ra": "Reconoce las causas y dinámicas de los conflictos en diferentes contextos sociales, identificando los factores estructurales, relacionales y culturales que influyen en su surgimiento y evolución, y aplica este conocimiento para evaluar casos concretos de conflicto / Explica las principales teorías y enfoques para la resolución pacífica de conflictos, y compara su aplicabilidad en diversos contextos, evaluando su efectividad para la transformación de conflictos en entornos personales y comunitarios / Describe la relación entre la educación para la paz y los derechos humanos, e identifica estrategias que promueven la convivencia pacífica y el respeto por la diversidad en entornos académicos y comunitarios",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "15. Actúa con ética profesional, liderazgo y compromiso social, contribuyendo al bienestar de las comunidades y a la preservación del medio ambiente."
@@ -311,6 +353,7 @@ window.trazabilidadData = {
         {
             "asig": "Inglés I",
             "pre": "Ninguno",
+            "sem": 2,
             "ra": "Identifica vocabulario y expresiones relacionadas. / Enuncia vocabulario y expresiones de acuerdo con su contexto personal. / Expresa oraciones cortas en inglés de forma oral acerca de situaciones cotidianas de acuerdo con su contexto familiar y personal teniendo en cuenta funciones del lenguaje y vocabulario pertinente.",
             "prog": "Comunica ideas, resultados y propuestas de manera clara y efectiva en español e inglés.",
             "perfil": "16. Se comunica efectivamente en contextos multidisciplinarios y multiculturales, con dominio de herramientas tecnológicas y competencia en una segunda lengua."
@@ -318,6 +361,7 @@ window.trazabilidadData = {
         {
             "asig": "Inglés II",
             "pre": "Inglés I",
+            "sem": 3,
             "ra": "Identifica vocabulario y expresiones relacionadas. / Enuncia vocabulario y expresiones de acuerdo con su contexto personal. / Expresa oraciones cortas en inglés de forma oral acerca de situaciones cotidianas de acuerdo con su contexto familiar y personal teniendo en cuenta funciones del lenguaje y vocabulario pertinente.",
             "prog": "Comunica ideas, resultados y propuestas de manera clara y efectiva en español e inglés.",
             "perfil": "16. Se comunica efectivamente en contextos multidisciplinarios y multiculturales, con dominio de herramientas tecnológicas y competencia en una segunda lengua."
@@ -325,6 +369,7 @@ window.trazabilidadData = {
         {
             "asig": "Inglés III",
             "pre": "Inglés II",
+            "sem": 4,
             "ra": "Identifica vocabulario y expresiones relacionadas. / Enuncia vocabulario y expresiones de acuerdo con su contexto personal. / Expresa oraciones cortas en inglés de forma oral acerca de situaciones cotidianas de acuerdo con su contexto familiar y personal teniendo en cuenta funciones del lenguaje y vocabulario pertinente.",
             "prog": "Comunica ideas, resultados y propuestas de manera clara y efectiva en español e inglés.",
             "perfil": "16. Se comunica efectivamente en contextos multidisciplinarios y multiculturales, con dominio de herramientas tecnológicas y competencia en una segunda lengua."
@@ -334,6 +379,7 @@ window.trazabilidadData = {
         {
             "asig": "Electiva Profesional I",
             "pre": "Ninguno",
+            "sem": 5,
             "ra": "Analizar y evaluar tendencias tecnológicas emergentes e innovaciones en el sector productivo global, identificando oportunidades para su aplicación estratégica en optimización de operaciones.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
             "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
@@ -341,6 +387,7 @@ window.trazabilidadData = {
         {
             "asig": "Electiva Profesional II",
             "pre": "Electiva Profesional I",
+            "sem": 6,
             "ra": "Diseñar e implementar modelos avanzados de optimización inteligente o eco-eficiencia en procesos de manufactura y servicios bajo el enfoque de Industria 4.0.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
             "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
@@ -348,6 +395,7 @@ window.trazabilidadData = {
         {
             "asig": "Electiva Profesional III",
             "pre": "Electiva Profesional II",
+            "sem": 7,
             "ra": "Simular y optimizar operaciones complejas y cadenas de valor digitales mediante tecnologías integradoras (como gemelos digitales o algoritmos de machine learning), formulando planes táctico-estratégicos sustentables.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
             "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
@@ -419,12 +467,151 @@ window.changeTab = function(tabId, event) {
     }
     
     if(tabId === 'malla_traz') {
-        window.renderMalla();
+        window.switchMallaView('global');
         // Reset details
         document.getElementById('ra_asig').textContent = "Seleccione una asignatura en la malla arriba.";
         document.getElementById('ra_prog').textContent = "-";
         document.getElementById('ra_perfil').textContent = "-";
         document.getElementById('ra_title').textContent = "Detalle de Asignatura";
+    }
+};
+
+window.switchMallaView = function(viewType) {
+    const globalView = document.getElementById('malla_global_view');
+    const trazView = document.getElementById('malla_traz_view');
+    const btnGlobal = document.getElementById('btn_malla_global');
+    const btnTraz = document.getElementById('btn_malla_detallada');
+    
+    if (viewType === 'global') {
+        if (globalView) globalView.classList.remove('hidden');
+        if (trazView) trazView.classList.add('hidden');
+        
+        if (btnGlobal) {
+            btnGlobal.style.background = '#0A2540';
+            btnGlobal.style.color = 'white';
+            btnGlobal.style.borderColor = '#0A2540';
+        }
+        if (btnTraz) {
+            btnTraz.style.background = 'white';
+            btnTraz.style.color = '#475569';
+            btnTraz.style.borderColor = '#e2e8f0';
+        }
+        window.renderMallaGlobal();
+    } else {
+        if (globalView) globalView.classList.add('hidden');
+        if (trazView) trazView.classList.remove('hidden');
+        
+        if (btnGlobal) {
+            btnGlobal.style.background = 'white';
+            btnGlobal.style.color = '#475569';
+            btnGlobal.style.borderColor = '#e2e8f0';
+        }
+        if (btnTraz) {
+            btnTraz.style.background = '#0A2540';
+            btnTraz.style.color = 'white';
+            btnTraz.style.borderColor = '#0A2540';
+        }
+        window.renderMalla();
+    }
+};
+
+window.renderMallaGlobal = function() {
+    let html = '';
+    const colors = {
+        "Ciencias Básicas de Ingeniería": {bg:"#e0f2fe", border:"#0284c7", text:"#0369a1"},
+        "Tecnología, Análisis y Transformación de Datos": {bg:"#ccfbf1", border:"#0d9488", text:"#0f766e"},
+        "Procesos y Sistemas Productivos": {bg:"#ffedd5", border:"#ea580c", text:"#c2410c"},
+        "Gestión Organizacional, Económica y Financiera": {bg:"#f3e8ff", border:"#9333ea", text:"#7e22ce"},
+        "Investigación, Innovación y Emprendimiento": {bg:"#dcfce7", border:"#16a34a", text:"#15803d"},
+        "Formación Humanística, Ética y Ciudadana": {bg:"#fee2e2", border:"#dc2626", text:"#b91c1c"},
+        "Componente Electivo (Profundización)": {bg:"#fef9c3", border:"#ca8a04", text:"#a16207"}
+    };
+
+    for (const comp in window.trazabilidadData) {
+        let col = colors[comp] || {bg:"#f1f5f9", border:"#64748b", text:"#475569"};
+        
+        html += `<tr style="border-bottom: 1px solid #cbd5e1;">
+                    <td style="padding:10px; border-right:1px solid #cbd5e1; font-weight:800; color:${col.text}; background:${col.bg}22; line-height:1.2; font-size:0.72rem;">
+                        <i class="fas fa-layer-group mr-1"></i>${comp}
+                    </td>`;
+        
+        for (let sem = 1; sem <= 8; sem++) {
+            let subjects = window.trazabilidadData[comp].filter(s => s.sem === sem);
+            
+            html += `<td style="padding:4px; border-right:1px solid #cbd5e1; vertical-align:top; background:#fafafa; text-align:center;">`;
+            
+            if (subjects.length > 0) {
+                subjects.forEach(asig => {
+                    let originalIdx = window.trazabilidadData[comp].findIndex(s => s.asig === asig.asig);
+                    
+                    html += `
+                        <div class="asig-global-card" onclick="selectGlobalSubject('${comp}', ${originalIdx}, this)" style="background:white; border:1.2px solid ${col.border}; border-radius:5px; padding:5px 6px; margin-bottom:4px; cursor:pointer; transition:all 0.2s; box-shadow:0 1px 2px rgba(0,0,0,0.03); text-align:left; position:relative;">
+                            <div style="font-size:0.65rem; font-weight:800; color:#0A2540; line-height:1.1;">${asig.asig}</div>
+                            <div style="font-size:0.52rem; color:#64748b; margin-top:2px; background:${col.bg}; padding:1px 3px; border-radius:2px; display:inline-block; border:1px solid ${col.border}15;"><i class="fas fa-link" style="color:${col.border}; font-size:0.5rem;"></i> Previos: <span style="font-weight:700; color:#0A2540;">${asig.pre}</span></div>
+                        </div>
+                    `;
+                });
+            } else {
+                html += `<div style="font-size:0.6rem; color:#cbd5e1; font-style:italic; margin-top:10px;">-</div>`;
+            }
+            
+            html += `</td>`;
+        }
+        
+        html += `</tr>`;
+    }
+    
+    const container = document.getElementById('malla_global_table_body');
+    if (container) container.innerHTML = html;
+};
+
+window.selectGlobalSubject = function(comp, idx, cardEl) {
+    document.querySelectorAll('.asig-global-card').forEach(card => {
+        card.style.transform = 'scale(1)';
+        card.style.boxShadow = '0 1px 2px rgba(0,0,0,0.03)';
+        card.style.backgroundColor = 'white';
+    });
+    
+    if (cardEl) {
+        cardEl.style.transform = 'scale(1.02)';
+        cardEl.style.boxShadow = '0 3px 8px rgba(0,0,0,0.06)';
+        cardEl.style.backgroundColor = '#f8fafc';
+    }
+    
+    window.showMallaDetails(comp, idx);
+};
+
+window.changeDegreeOption = function(optionId, btn) {
+    document.querySelectorAll('.degree-option-detail').forEach(d => d.classList.add('hidden'));
+    document.getElementById(optionId).classList.remove('hidden');
+    
+    document.querySelectorAll('.degree-option-btn').forEach(b => {
+        b.style.background = '#f8fafc';
+        b.style.color = '#4b5563';
+        b.style.borderColor = '#e2e8f0';
+    });
+    
+    if (btn) {
+        btn.style.background = '#e0f2fe';
+        btn.style.color = '#0284c7';
+        btn.style.borderColor = '#0284c7';
+    }
+};
+
+window.changeElectivePathway = function(pathwayId, btn) {
+    document.querySelectorAll('.elective-pathway-detail').forEach(d => d.classList.add('hidden'));
+    document.getElementById(pathwayId).classList.remove('hidden');
+    
+    document.querySelectorAll('.elective-pathway-btn').forEach(b => {
+        b.style.background = '#f1f5f9';
+        b.style.color = '#475569';
+        b.style.borderColor = '#cbd5e1';
+    });
+    
+    if (btn) {
+        btn.style.background = '#0A2540';
+        btn.style.color = 'white';
+        btn.style.borderColor = '#0A2540';
     }
 };
 
@@ -666,19 +853,106 @@ window.SECTIONS.c3 = `
 </div>
 
 <!-- CONTENIDO: FLEXIBILIDAD -->
-<div id="flex" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="card p-6 bg-white rounded-xl shadow-lg">
-        <h4 class="font-bold text-toBlue mb-4"><i class="fas fa-exchange-alt mr-2"></i> Opciones de Grado</h4>
-        <ul class="space-y-2 text-sm text-gray-600">
-            <li><i class="fas fa-chevron-right text-toOrange mr-2"></i> Proyecto de Investigación</li>
-            <li><i class="fas fa-chevron-right text-toOrange mr-2"></i> Seminario de Especialización</li>
-            <li><i class="fas fa-chevron-right text-toOrange mr-2"></i> Creación de Empresa (Spin-off)</li>
-            <li><i class="fas fa-chevron-right text-toOrange mr-2"></i> Práctica de Excelencia</li>
-        </ul>
+<div id="flex" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-6" style="font-family: 'Montserrat', sans-serif;">
+    
+    <!-- COLUMNA 1: OPCIONES DE GRADO INTERACTIVAS -->
+    <div class="card p-6 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between; min-height:430px;">
+        <div>
+            <h4 class="font-bold text-toBlue mb-2" style="font-size:1.15rem; color:#0A2540;"><i class="fas fa-exchange-alt mr-2" style="color:#0284c7;"></i> Opciones de Grado (Egreso Flexible)</h4>
+            <p class="text-xs text-gray-500 mb-4">El Reglamento contempla diversas opciones para que el estudiante culmine exitosamente su plan de estudios, adaptándose a su perfil profesional:</p>
+            
+            <!-- Botonera de Opciones -->
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:15px;">
+                <button onclick="changeDegreeOption('opt_investigacion', this)" class="degree-option-btn" style="padding:10px; font-size:0.75rem; font-weight:700; border-radius:6px; border:1px solid #0284c7; background:#e0f2fe; color:#0284c7; cursor:pointer; text-align:left; display:flex; align-items:center; gap:6px; transition:all 0.2s;">
+                    <i class="fas fa-microscope"></i> Proyecto de Investigación
+                </button>
+                <button onclick="changeDegreeOption('opt_seminario', this)" class="degree-option-btn" style="padding:10px; font-size:0.75rem; font-weight:700; border-radius:6px; border:1px solid #e2e8f0; background:#f8fafc; color:#4b5563; cursor:pointer; text-align:left; display:flex; align-items:center; gap:6px; transition:all 0.2s;">
+                    <i class="fas fa-chalkboard-teacher"></i> Seminario de Especializ.
+                </button>
+                <button onclick="changeDegreeOption('opt_empresa', this)" class="degree-option-btn" style="padding:10px; font-size:0.75rem; font-weight:700; border-radius:6px; border:1px solid #e2e8f0; background:#f8fafc; color:#4b5563; cursor:pointer; text-align:left; display:flex; align-items:center; gap:6px; transition:all 0.2s;">
+                    <i class="fas fa-rocket"></i> Creación de Empresa
+                </button>
+                <button onclick="changeDegreeOption('opt_practica', this)" class="degree-option-btn" style="padding:10px; font-size:0.75rem; font-weight:700; border-radius:6px; border:1px solid #e2e8f0; background:#f8fafc; color:#4b5563; cursor:pointer; text-align:left; display:flex; align-items:center; gap:6px; transition:all 0.2s;">
+                    <i class="fas fa-briefcase"></i> Práctica de Excelencia
+                </button>
+            </div>
+            
+            <!-- Descripciones Dinámicas -->
+            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:15px; min-height:160px; display:flex; flex-direction:column; justify-content:center;">
+                <!-- Proyecto de Investigación -->
+                <div id="opt_investigacion" class="degree-option-detail">
+                    <h5 style="margin:0 0 6px 0; font-size:0.85rem; font-weight:700; color:#0A2540;"><i class="fas fa-search-plus mr-1" style="color:#0284c7;"></i> Proyecto de Investigación Aplicada</h5>
+                    <p style="margin:0; font-size:0.78rem; color:#475569; line-height:1.4;">Permite al estudiante integrarse de manera directa a los **Semilleros de Investigación** institucionales de la Escuela de Ingenierías, participando activamente en el diagnóstico y propuesta de soluciones de alta base tecnológica para el oriente colombiano.</p>
+                </div>
+                <!-- Seminario de Especialización -->
+                <div id="opt_seminario" class="degree-option-detail hidden">
+                    <h5 style="margin:0 0 6px 0; font-size:0.85rem; font-weight:700; color:#0A2540;"><i class="fas fa-graduation-cap mr-1" style="color:#0284c7;"></i> Seminario de Profundización Profesional</h5>
+                    <p style="margin:0; font-size:0.78rem; color:#475569; line-height:1.4;">Consiste en cursar y aprobar un módulo avanzado o diplomado de postgrado en tópicos emergentes de vanguardia (como Inteligencia Artificial aplicada a la industria o logística global), con el fin de certificar competencias especializadas en su proyección egresada.</p>
+                </div>
+                <!-- Creación de Empresa -->
+                <div id="opt_empresa" class="degree-option-detail hidden">
+                    <h5 style="margin:0 0 6px 0; font-size:0.85rem; font-weight:700; color:#0A2540;"><i class="fas fa-lightbulb mr-1" style="color:#0284c7;"></i> Emprendimiento y Spin-off Industrial</h5>
+                    <p style="margin:0; font-size:0.78rem; color:#475569; line-height:1.4;">Bajo la tutoría de los expertos del **Laboratorio de Innovación y Emprendimiento**, el estudiante estructura, diseña y valida en el mercado real un plan de negocios sostenible y escalable para la constitución formal de su propia unidad empresarial.</p>
+                </div>
+                <!-- Práctica de Excelencia -->
+                <div id="opt_practica" class="degree-option-detail hidden">
+                    <h5 style="margin:0 0 6px 0; font-size:0.85rem; font-weight:700; color:#0A2540;"><i class="fas fa-industry mr-1" style="color:#0284c7;"></i> Práctica Profesional de Excelencia</h5>
+                    <p style="margin:0; font-size:0.78rem; color:#475569; line-height:1.4;">Vinculación directa en organizaciones aliadas de alta complejidad en Santander. El estudiante diseña y ejecuta un proyecto de mejora u optimización operacional, resolviendo un problema real bajo estándares de eficiencia, calidad y seguridad laboral.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="card p-6 bg-white rounded-xl shadow-lg">
-        <h4 class="font-bold text-toBlue mb-4"><i class="fas fa-layer-group mr-2"></i> Créditos Electivos</h4>
-        <p class="text-sm text-gray-600">El 12.5% del currículo es electivo, permitiendo al estudiante personalizar su ruta formativa en áreas como Inteligencia Artificial, Logística Verde o Gerencia de Proyectos.</p>
+    
+    <!-- COLUMNA 2: ELECTIVAS Y RUTAS DE PROFUNDIZACIÓN -->
+    <div class="card p-6 bg-white rounded-xl shadow-lg border-t-4 border-toOrange" style="display:flex; flex-direction:column; justify-content:space-between; min-height:430px;">
+        <div>
+            <h4 class="font-bold text-toOrange mb-2" style="font-size:1.15rem; color:#0A2540;"><i class="fas fa-layer-group mr-2" style="color:#ea580c;"></i> Créditos Electivos (Flexibilidad Curricular)</h4>
+            <p class="text-xs text-gray-500 mb-4">El 6% del plan de estudios (9 créditos) corresponde a electivas. El estudiante personaliza su formación eligiendo una de las siguientes **3 Rutas de Profundización (Énfasis)**:</p>
+            
+            <!-- Selector de Rutas -->
+            <div style="display:flex; gap:6px; margin-bottom:12px;">
+                <button onclick="changeElectivePathway('path_ia', this)" class="elective-pathway-btn" style="flex:1; padding:8px 4px; font-size:0.68rem; font-weight:700; border-radius:6px; border:1px solid #0A2540; background:#0A2540; color:white; cursor:pointer; transition:all 0.2s;">
+                    <i class="fas fa-robot"></i> Énfasis IA y Datos
+                </button>
+                <button onclick="changeElectivePathway('path_logistica', this)" class="elective-pathway-btn" style="flex:1; padding:8px 4px; font-size:0.68rem; font-weight:700; border-radius:6px; border:1px solid #cbd5e1; background:#f1f5f9; color:#475569; cursor:pointer; transition:all 0.2s;">
+                    <i class="fas fa-recycle"></i> Logística Verde
+                </button>
+                <button onclick="changeElectivePathway('path_gerencia', this)" class="elective-pathway-btn" style="flex:1; padding:8px 4px; font-size:0.68rem; font-weight:700; border-radius:6px; border:1px solid #cbd5e1; background:#f1f5f9; color:#475569; cursor:pointer; transition:all 0.2s;">
+                    <i class="fas fa-chart-line"></i> Alta Gerencia
+                </button>
+            </div>
+            
+            <!-- Detalles de Rutas -->
+            <div style="background:#fafafa; border:1px solid #e2e8f0; border-radius:8px; padding:12px; min-height:220px; display:flex; flex-direction:column; justify-content:center;">
+                <!-- Ruta 1: IA -->
+                <div id="path_ia" class="elective-pathway-detail">
+                    <h5 style="margin:0 0 8px 0; font-size:0.8rem; font-weight:700; color:#0A2540;"><i class="fas fa-robot text-toOrange mr-1" style="color:#ea580c;"></i> Inteligencia Artificial y Ciencia de Datos</h5>
+                    <div style="display:flex; flex-direction:column; gap:6px; font-size:0.72rem; color:#475569;">
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva I:</span> <span>Machine Learning & Analítica Predictiva para Procesos Industriales.</span></div>
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva II:</span> <span>Automatización de Procesos Avanzados e Internet de las Cosas (IoT).</span></div>
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva III:</span> <span>Optimización Inteligente Algorítmica y Modelos GenAI Industriales.</span></div>
+                    </div>
+                </div>
+                <!-- Ruta 2: Logística -->
+                <div id="path_logistica" class="elective-pathway-detail hidden">
+                    <h5 style="margin:0 0 8px 0; font-size:0.8rem; font-weight:700; color:#0A2540;"><i class="fas fa-recycle text-toOrange mr-1" style="color:#ea580c;"></i> Logística Sostenible y Economía Circular</h5>
+                    <div style="display:flex; flex-direction:column; gap:6px; font-size:0.72rem; color:#475569;">
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva I:</span> <span>Cadenas de Suministro Circulares y Eco-diseño de Empaques.</span></div>
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva II:</span> <span>Gestión de Huella de Carbono y Logística Inversa Industrial.</span></div>
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva III:</span> <span>Modelación Ambiental y Análisis de Ciclo de Vida del Producto.</span></div>
+                    </div>
+                </div>
+                <!-- Ruta 3: Gerencia -->
+                <div id="path_gerencia" class="elective-pathway-detail hidden">
+                    <h5 style="margin:0 0 8px 0; font-size:0.8rem; font-weight:700; color:#0A2540;"><i class="fas fa-chart-line text-toOrange mr-1" style="color:#ea580c;"></i> Gerencia Estratégica y Alta Dirección</h5>
+                    <div style="display:flex; flex-direction:column; gap:6px; font-size:0.72rem; color:#475569;">
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva I:</span> <span>Planeación Financiera Estratégica y Valoración de Empresas.</span></div>
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva II:</span> <span>Gerencia del Cambio y Liderazgo Exponencial Organizacional.</span></div>
+                        <div style="display:flex; gap:6px;"><span style="font-weight:700; color:#ea580c; white-space:nowrap;">Electiva III:</span> <span>Prospectiva de Negocios y Modelación Estratégica de Decisiones.</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
