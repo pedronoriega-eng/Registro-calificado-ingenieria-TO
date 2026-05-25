@@ -958,11 +958,48 @@ window.SECTIONS.c3 = `
 
 <!-- CONTENIDO: MALLA INTERACTIVA Y TRAZABILIDAD -->
 <div id="malla_traz" class="tab-content">
-    <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;padding:20px;margin-bottom:15px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-        <h3 style="color:#0A2540;font-weight:800;margin-top:0;margin-bottom:10px;font-size:1.1rem;"><i class="fas fa-sitemap" style="color:#FF6600;margin-right:8px;"></i> Malla Curricular por Componentes (Ruta Formativa)</h3>
-        <p style="font-size:0.8rem;color:#64748b;margin-bottom:15px;">Haga clic en cualquier asignatura para visualizar su trazabilidad, Saberes Previos (no prerrequisitos restrictivos) y aporte al Perfil de Egreso.</p>
+    
+    <!-- Barra de Selección de Vista de la Malla -->
+    <div style="display:flex; justify-content:center; gap:12px; margin-bottom:15px; font-family:'Montserrat', sans-serif;">
+        <button onclick="switchMallaView('global')" id="btn_malla_global" style="padding:10px 16px; font-size:0.8rem; font-weight:700; border-radius:8px; border:1px solid #0A2540; background:#0A2540; color:white; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:8px;">
+            <i class="fas fa-th-large"></i> Vista Global de la Malla (Semestre vs Componente)
+        </button>
+        <button onclick="switchMallaView('detallada')" id="btn_malla_detallada" style="padding:10px 16px; font-size:0.8rem; font-weight:700; border-radius:8px; border:1px solid #e2e8f0; background:white; color:#475569; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:8px;">
+            <i class="fas fa-project-diagram"></i> Vista por Componentes (Trazabilidad Detallada)
+        </button>
+    </div>
+
+    <!-- VISTA GLOBAL DE LA MALLA (SEMESTRE VS COMPONENTE) -->
+    <div id="malla_global_view" style="background:white; border:1px solid #e2e8f0; border-radius:14px; padding:20px; margin-bottom:15px; box-shadow:0 2px 8px rgba(0,0,0,0.04); font-family:'Montserrat', sans-serif;">
+        <h3 style="color:#0A2540; font-weight:800; margin-top:0; margin-bottom:6px; font-size:1.1rem;"><i class="fas fa-th" style="color:#FF6600; margin-right:8px;"></i> Malla Curricular de Ingeniería Industrial (Vista Global)</h3>
+        <p style="font-size:0.78rem; color:#64748b; margin-bottom:15px;">Estructura por períodos académicos (columnas) y componentes curriculares (filas). Haga clic en cualquier materia para cargar su trazabilidad detallada abajo.</p>
         
-        <!-- Contenedor dinámico de la malla (SIN SCROLL, CON WRAP) -->
+        <div style="overflow-x:auto; border-radius:8px; border:1px solid #cbd5e1;">
+            <table style="width:100%; border-collapse:collapse; background:white; font-size:0.7rem; min-width:1200px; table-layout: fixed;">
+                <thead>
+                    <tr style="background:#0A2540; color:white; border-bottom:2px solid #cbd5e1;">
+                        <th style="padding:10px; border-right:1px solid #334155; text-align:left; font-weight:800; width:160px; font-size:0.75rem;">Componente Curricular</th>
+                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo I</th>
+                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo II</th>
+                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo III</th>
+                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo IV</th>
+                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo V</th>
+                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo VI</th>
+                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo VII</th>
+                        <th style="padding:10px; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo VIII</th>
+                    </tr>
+                </thead>
+                <tbody id="malla_global_table_body">
+                    <!-- Dinámico -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- VISTA POR COMPONENTES (DETALLADA) -->
+    <div id="malla_traz_view" class="hidden" style="background:white; border:1px solid #e2e8f0; border-radius:14px; padding:20px; margin-bottom:15px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <h3 style="color:#0A2540; font-weight:800; margin-top:0; margin-bottom:10px; font-size:1.1rem;"><i class="fas fa-sitemap" style="color:#FF6600; margin-right:8px;"></i> Trazabilidad por Secuencias (Líneas Curriculares)</h3>
+        <p style="font-size:0.8rem; color:#64748b; margin-bottom:15px;">Flujo de asignaturas por componente formativo. Haga clic en cualquier asignatura para cargar su trazabilidad abajo.</p>
         <div id="malla_container"></div>
     </div>
     
