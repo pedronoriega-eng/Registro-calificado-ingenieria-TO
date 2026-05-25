@@ -630,6 +630,12 @@ window.changeTab = function(tabId, event) {
         window.initFundComponents();
     }
     
+    if(tabId === 'modelo_pei') {
+        setTimeout(function() {
+            window.selectPeiAxis('longitudinal');
+        }, 50);
+    }
+    
     if(tabId === 'malla_traz') {
         window.switchMallaView('global');
         // Reset details
@@ -811,6 +817,190 @@ window.changeProfileSubTab = function(subtabId, btn) {
     }
 };
 
+window.modeloPeiData = {
+    "longitudinal": {
+        title: "Eje Longitudinal (Secuencial-Disciplinario)",
+        concept: "Estructura formal y secuencial del currículo a través de semestres y áreas de formación. Materializa el plan de estudios, dividiéndose en áreas de fundamentación y profundización que avanzan progresivamente.",
+        color: "#0A2540",
+        accentColor: "#0284c7",
+        icon: "fa-arrows-alt-v",
+        areas: [
+            {
+                name: "Transversal",
+                desc: "Asignaturas comunes de fundamentación científica y metodológica que sirven de base para las demás disciplinas.",
+                subjects: ["Cálculo Diferencial", "Álgebra Lineal", "Cálculo Integral", "Física I (Mecánica)"]
+            },
+            {
+                name: "Disciplinar",
+                desc: "Asignaturas específicas y fundamentales de la Ingeniería Industrial orientadas a la optimización de procesos y tecnología.",
+                subjects: ["Inteligencia Artificial", "Gestión de la Producción II (Lean)", "Gerencia de la Calidad (Six Sigma)", "Modelación y Simulación"]
+            },
+            {
+                name: "Electiva",
+                desc: "Asignaturas de profundización flexibles donde el estudiante personaliza su formación profesional.",
+                subjects: ["Electiva Profesional I (IA y Datos)", "Electiva Profesional II (Logística Verde)", "Electiva Profesional III (Alta Gerencia)"]
+            }
+        ]
+    },
+    "problemeico": {
+        title: "Eje Problémico-Resolutivo (Interdisciplinario)",
+        concept: "Conecta la teoría con la práctica mediante la resolución de problemas reales. Sitúa al estudiante frente a la realidad contextual analizando el proceso histórico, la actualidad nacional e internacional, y proyectando soluciones con perspectiva de futuro.",
+        color: "#C8102E",
+        accentColor: "#ea580c",
+        icon: "fa-project-diagram",
+        areas: [
+            {
+                name: "Proceso Histórico",
+                desc: "Comprensión de los antecedentes, la evolución y las bases técnicas que configuran los sistemas de manufactura e industria moderna.",
+                subjects: ["Introducción a la Ing. Industrial", "Dibujo Industrial", "Procesos Industriales y de Manufactura"]
+            },
+            {
+                name: "Actualidad",
+                desc: "Aplicación de herramientas de vanguardia tecnológica para diagnosticar y optimizar problemáticas actuales en tiempo real.",
+                subjects: ["Big Data y Analítica de Datos", "Investigación de Operaciones I", "Gestión de la Higiene y Seguridad"]
+            },
+            {
+                name: "Perspectiva",
+                desc: "Formulación de soluciones disruptivas, prospectivas y sostenibles orientadas al emprendimiento y desarrollo futuro.",
+                subjects: ["Laboratorio de Innovación y Emprendimiento", "Pensamiento Estratégico y Prospectivo", "Proyecto de Grado"]
+            }
+        ]
+    },
+    "transversal": {
+        title: "Eje Transversal Ético-Transdisciplinario",
+        concept: "Desarrolla el ser integral. Promueve la autoconciencia, la ética, los valores ciudadanos y el liderazgo social. Conecta la historia personal y el inconsciente del estudiante con el proyecto ético de vida y la conciencia social/ecológica.",
+        color: "#16a34a",
+        accentColor: "#10b981",
+        icon: "fa-hands-helping",
+        areas: [
+            {
+                name: "Historia Personal / Inconsciente",
+                desc: "Desarrollo del autoconocimiento, la inteligencia emocional y la comprensión de los factores personales en la toma de decisiones.",
+                subjects: ["Cátedra de la Paz y Resolución de Conflictos", "Inglés I", "Inglés II"]
+            },
+            {
+                name: "Proyecto Ético / Conciencia",
+                desc: "Consolidación de un compromiso ético, ecológico y social con el entorno laboral y comunitario.",
+                subjects: ["Sistemas Integrados de Gestión (SIG)", "Gestión de la Higiene y Seguridad Industrial", "Inglés III"]
+            }
+        ]
+    }
+};
+
+window.selectPeiAxis = function(axisId) {
+    // 1. Reset all axis lines and buttons
+    const svg = document.getElementById('pei_svg_model');
+    if (svg) {
+        // Reset classes/opacity/stroke-width on lines
+        const lines = {
+            longitudinal: {el: svg.querySelector('#line_longitudinal'), grp: svg.querySelector('#axis_grp_longitudinal'), color: '#0A2540', filter: 'url(#glow_blue)'},
+            problemeico: {el: svg.querySelector('#line_problemeico'), grp: svg.querySelector('#axis_grp_problemeico'), color: '#C8102E', filter: 'url(#glow_red)'},
+            transversal: {el: svg.querySelector('#line_transversal'), grp: svg.querySelector('#axis_grp_transversal'), color: '#16a34a', filter: 'url(#glow_green)'}
+        };
+        
+        for (const id in lines) {
+            const l = lines[id];
+            if (l.el && l.grp) {
+                if (id === axisId) {
+                    l.el.setAttribute('stroke-width', '4.5');
+                    l.el.setAttribute('stroke', l.color);
+                    l.el.setAttribute('filter', l.filter);
+                    l.grp.style.opacity = '1';
+                } else {
+                    l.el.setAttribute('stroke-width', '2');
+                    l.el.setAttribute('stroke', id === 'longitudinal' ? '#0A2540' : (id === 'problemeico' ? '#C8102E' : '#16a34a'));
+                    l.el.removeAttribute('filter');
+                    l.grp.style.opacity = '0.4';
+                }
+            }
+        }
+        
+        // Quad II table opacity highlight
+        const tbl = svg.querySelector('#pei_table_group');
+        if (tbl) {
+            tbl.style.opacity = axisId === 'longitudinal' ? '1' : '0.4';
+            tbl.style.transform = axisId === 'longitudinal' ? 'scale(1.02)' : 'scale(1)';
+            tbl.style.transformOrigin = '110px 65px';
+        }
+    }
+    
+    // 2. Reset legend buttons
+    const buttons = {
+        longitudinal: {btn: document.getElementById('pei_btn_longitudinal'), color: '#0A2540'},
+        problemeico: {btn: document.getElementById('pei_btn_problemeico'), color: '#C8102E'},
+        transversal: {btn: document.getElementById('pei_btn_transversal'), color: '#16a34a'}
+    };
+    
+    for (const id in buttons) {
+        const b = buttons[id].btn;
+        if (b) {
+            if (id === axisId) {
+                b.style.backgroundColor = buttons[id].color;
+                b.style.color = 'white';
+                b.style.borderColor = buttons[id].color;
+                b.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            } else {
+                b.style.backgroundColor = 'white';
+                b.style.color = '#475569';
+                b.style.borderColor = '#cbd5e1';
+                b.style.boxShadow = 'none';
+            }
+        }
+    }
+    
+    // 3. Update right side card content
+    const data = window.modeloPeiData[axisId];
+    const rightCard = document.getElementById('pei_axis_detail_card');
+    if (data && rightCard) {
+        let areasHtml = '';
+        data.areas.forEach(area => {
+            let subjectsHtml = '';
+            area.subjects.forEach(s => {
+                subjectsHtml += `
+                    <span style="font-size:0.6rem; padding:2px 6px; background:${data.color}15; color:${data.color}; border:1.1px solid ${data.color}33; border-radius:4px; font-weight:700; display:inline-block; margin-right:4px; margin-bottom:4px;">
+                        <i class="fas fa-tag" style="font-size:0.5rem; margin-right:3px;"></i>${s}
+                    </span>
+                `;
+            });
+            areasHtml += `
+                <div style="background:#fafafa; border:1px solid #e2e8f0; border-radius:8px; padding:10px; margin-bottom:8px; border-left:4px solid ${data.color};">
+                    <h5 style="margin:0 0 4px 0; font-size:0.75rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:5px;">
+                        <i class="fas fa-layer-group" style="color:${data.accentColor}; font-size:0.65rem;"></i>${area.name}
+                    </h5>
+                    <p style="margin:0 0 8px 0; font-size:0.68rem; color:#64748b; line-height:1.35;">${area.desc}</p>
+                    <div style="display:flex; flex-wrap:wrap;">
+                        ${subjectsHtml}
+                    </div>
+                </div>
+            `;
+        });
+        
+        rightCard.innerHTML = `
+            <div>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; border-bottom:2px solid #f1f5f9; padding-bottom:6px;">
+                    <div style="width:28px; height:28px; border-radius:6px; background:${data.color}15; color:${data.color}; display:flex; align-items:center; justify-content:center; font-size:0.95rem;">
+                        <i class="fas ${data.icon}"></i>
+                    </div>
+                    <h4 style="margin:0; font-size:0.92rem; font-weight:800; color:#0A2540;">${data.title}</h4>
+                </div>
+                <p style="margin:0 0 10px 0; font-size:0.72rem; color:#475569; line-height:1.4; font-style:italic;">
+                    "${data.concept}"
+                </p>
+            </div>
+            
+            <div style="margin-top:2px;">
+                <h5 style="margin:0 0 6px 0; font-size:0.7rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.5px;">
+                    <i class="fas fa-graduation-cap" style="color:${data.color}; margin-right:4px;"></i>Áreas y Asignaturas de Ejemplo del Programa:
+                </h5>
+                <div style="max-height:210px; overflow-y:auto; padding-right:4px;" class="custom-scrollbar">
+                    ${areasHtml}
+                </div>
+            </div>
+        `;
+        rightCard.style.borderTopColor = data.color;
+    }
+};
+
 if (!window.SECTIONS) window.SECTIONS = {};
 
 window.SECTIONS.c3 = `
@@ -826,6 +1016,7 @@ window.SECTIONS.c3 = `
 <div class="flex border-b border-gray-200 mb-6 overflow-x-auto">
     <button onclick="changeTab('fund', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap">Fundamentación</button>
     <button onclick="changeTab('perfiles', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap">Perfiles y RA</button>
+    <button onclick="changeTab('modelo_pei', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap">Modelo PEI (Tridimensional)</button>
     <button onclick="changeTab('malla_traz', event)" class="tab-btn active px-6 py-3 border-b-2 border-toOrange text-toOrange font-bold whitespace-nowrap">Malla y Trazabilidad (Interactivo)</button>
     <button onclick="changeTab('flex', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap">Flexibilidad</button>
 </div>
@@ -1045,6 +1236,176 @@ window.SECTIONS.c3 = `
                 </div>
             </div>
             
+        </div>
+    </div>
+</div>
+
+<!-- CONTENIDO: MODELO PEI TRIDIMENSIONAL -->
+<div id="modelo_pei" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
+    <div style="display:grid; grid-template-columns: 520px 1fr; gap:20px; min-height:430px;">
+        <!-- COLUMNA IZQUIERDA: COORDINATE SYSTEM SVG -->
+        <div class="card p-4 bg-white rounded-xl shadow-lg border-t-4" style="border-top-color:#0A2540; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid #f1f5f9; padding-bottom:6px;">
+                <h4 style="margin:0; font-size:0.95rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:6px;">
+                    <i class="fas fa-cube" style="color:#C8102E;"></i> Modelo Tridimensional del Currículo
+                </h4>
+                <span style="font-size:0.6rem; color:#64748b; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Ilustración 2 (PEI)</span>
+            </div>
+            
+            <!-- SVG Tridimensional del Currículo -->
+            <div style="position:relative; width:100%; height:310px; display:flex; justify-content:center; align-items:center;">
+                <svg viewBox="0 0 500 320" width="100%" height="100%" id="pei_svg_model" style="user-select:none; font-family:'Montserrat', sans-serif;">
+                    <defs>
+                        <!-- Glow Filters -->
+                        <filter id="glow_blue" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow_red" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="glow_green" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    
+                    <!-- Grid lines (quadrants background) -->
+                    <line x1="220" y1="15" x2="220" y2="295" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2" />
+                    <line x1="25" y1="155" x2="475" y2="155" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2" />
+                    
+                    <!-- Quad II Table: Plan de estudios, áreas, asignaturas -->
+                    <g id="pei_table_group" style="transition:all 0.3s; opacity:0.85;">
+                        <!-- Header Title -->
+                        <text x="110" y="22" fill="#0A2540" font-size="8" font-weight="800" text-anchor="middle">Plan de estudios, áreas, asignaturas</text>
+                        
+                        <!-- Table Outer Frame -->
+                        <rect x="25" y="30" width="170" height="70" fill="none" stroke="#cbd5e1" stroke-width="1" rx="2" />
+                        
+                        <!-- Header Row -->
+                        <rect x="25" y="30" width="170" height="15" fill="#0A2540" rx="2" />
+                        <text x="65" y="40" fill="white" font-size="7" font-weight="800" text-anchor="middle">ÁREAS</text>
+                        <line x1="105" y1="30" x2="105" y2="100" stroke="#ffffff" stroke-width="1" />
+                        <text x="140" y="40" fill="white" font-size="7" font-weight="800" text-anchor="middle">ASIGNATURAS</text>
+                        
+                        <!-- Row 1: Transversal -->
+                        <rect x="25" y="45" width="80" height="18" fill="#e2e8f0" />
+                        <text x="32" y="56" fill="#334155" font-size="6.5" font-weight="700">Transversal</text>
+                        <!-- Asig cells transversal -->
+                        <rect x="105" y="45" width="90" height="18" fill="#f1f5f9" />
+                        <line x1="127" y1="45" x2="127" y2="63" stroke="#e2e8f0" stroke-width="0.8" />
+                        <line x1="150" y1="45" x2="150" y2="63" stroke="#e2e8f0" stroke-width="0.8" />
+                        <line x1="172" y1="45" x2="172" y2="63" stroke="#e2e8f0" stroke-width="0.8" />
+                        
+                        <!-- Row 2: Disciplinar -->
+                        <rect x="25" y="63" width="80" height="18" fill="#e2e8f0" />
+                        <text x="32" y="74" fill="#334155" font-size="6.5" font-weight="700">Disciplinar</text>
+                        <!-- Asig cells disciplinar -->
+                        <rect x="105" y="63" width="90" height="18" fill="#f8fafc" />
+                        <line x1="127" y1="63" x2="127" y2="81" stroke="#e2e8f0" stroke-width="0.8" />
+                        <line x1="150" y1="63" x2="150" y2="81" stroke="#e2e8f0" stroke-width="0.8" />
+                        <line x1="172" y1="63" x2="172" y2="81" stroke="#e2e8f0" stroke-width="0.8" />
+                        <line x1="25" y1="63" x2="195" y2="63" stroke="#cbd5e1" stroke-width="1" />
+                        
+                        <!-- Row 3: Electiva -->
+                        <rect x="25" y="81" width="80" height="19" fill="#e2e8f0" rx="2" />
+                        <text x="32" y="92" fill="#334155" font-size="6.5" font-weight="700">Electiva</text>
+                        <!-- Asig cells electiva -->
+                        <rect x="105" y="81" width="90" height="19" fill="#f1f5f9" rx="2" />
+                        <line x1="127" y1="81" x2="127" y2="100" stroke="#e2e8f0" stroke-width="0.8" />
+                        <line x1="150" y1="81" x2="150" y2="100" stroke="#e2e8f0" stroke-width="0.8" />
+                        <line x1="172" y1="81" x2="172" y2="100" stroke="#e2e8f0" stroke-width="0.8" />
+                        <line x1="25" y1="81" x2="195" y2="81" stroke="#cbd5e1" stroke-width="1" />
+                    </g>
+                    
+                    <!-- AXES DRAWINGS -->
+                    <!-- 1. Eje Problémico-Resolutivo Interdisciplinario (Horizontal) -->
+                    <g id="axis_grp_problemeico" class="cursor-pointer" onclick="window.selectPeiAxis('problemeico')" style="transition:all 0.3s;">
+                        <!-- Red Horizontal Line -->
+                        <line id="line_problemeico" x1="15" y1="155" x2="485" y2="155" stroke="#C8102E" stroke-width="2" stroke-linecap="round" />
+                        <!-- Arrow heads -->
+                        <polygon points="485,152 491,155 485,158" fill="#C8102E" />
+                        
+                        <!-- Red Labels -->
+                        <text x="25" y="172" fill="#C8102E" font-size="8.5" font-weight="800">Proceso Histórico</text>
+                        <text x="475" y="172" fill="#C8102E" font-size="8.5" font-weight="800" text-anchor="end">Actualidad...................Perspectiva</text>
+                        <text x="475" y="146" fill="#C8102E" font-size="8" font-weight="800" text-anchor="end">Eje problémico – resolutivo interdisciplinario</text>
+                        
+                        <!-- Invisible large click zone line -->
+                        <line x1="15" y1="155" x2="485" y2="155" stroke="transparent" stroke-width="18" />
+                    </g>
+                    
+                    <!-- 2. Eje Longitudinal Secuencial-Disciplinario (Vertical) -->
+                    <g id="axis_grp_longitudinal" class="cursor-pointer" onclick="window.selectPeiAxis('longitudinal')" style="transition:all 0.3s;">
+                        <!-- Dark Blue Vertical Line -->
+                        <line id="line_longitudinal" x1="220" y1="15" x2="220" y2="295" stroke="#0A2540" stroke-width="2" stroke-linecap="round" />
+                        <!-- Arrow heads -->
+                        <polygon points="217,15 220,9 223,15" fill="#0A2540" />
+                        
+                        <!-- Vertical Text rotated next to the axis -->
+                        <g transform="rotate(-90 236 100)">
+                            <text x="236" y="100" fill="#0A2540" font-size="8.5" font-weight="800" text-anchor="middle" style="letter-spacing:0.3px;">Eje longitudinal</text>
+                        </g>
+                        <g transform="rotate(-90 248 100)">
+                            <text x="248" y="100" fill="#0A2540" font-size="8.5" font-weight="800" text-anchor="middle" style="letter-spacing:0.3px;">Secuencial - disciplinario</text>
+                        </g>
+                        
+                        <!-- Invisible large click zone line -->
+                        <line x1="220" y1="15" x2="220" y2="295" stroke="transparent" stroke-width="18" />
+                    </g>
+                    
+                    <!-- 3. Eje Transversal Ético-Transdisciplinario (Diagonal) -->
+                    <g id="axis_grp_transversal" class="cursor-pointer" onclick="window.selectPeiAxis('transversal')" style="transition:all 0.3s;">
+                        <!-- Green Diagonal Line -->
+                        <line id="line_transversal" x1="50" y1="254" x2="455" y2="20" stroke="#16a34a" stroke-width="2" stroke-linecap="round" />
+                        <!-- Arrow heads -->
+                        <polygon points="450,15 460,17 453,25" fill="#16a34a" />
+                        
+                        <!-- Green Labels parallel to diagonal line -->
+                        <g transform="rotate(-30 360 80)">
+                            <text x="360" y="80" fill="#16a34a" font-size="8" font-weight="800" text-anchor="middle">Eje transversal ético-transdisciplinario</text>
+                        </g>
+                        <g transform="rotate(-30 405 105)">
+                            <text x="405" y="105" fill="#16a34a" font-size="8" font-weight="800" text-anchor="middle">Proyecto ético</text>
+                        </g>
+                        <g transform="rotate(-30 315 130)">
+                            <text x="315" y="130" fill="#16a34a" font-size="8" font-weight="800" text-anchor="middle">Conciencia</text>
+                        </g>
+                        
+                        <g transform="rotate(-30 135 210)">
+                            <text x="135" y="210" fill="#16a34a" font-size="8" font-weight="800" text-anchor="middle">Historia Personal</text>
+                        </g>
+                        <g transform="rotate(-30 165 230)">
+                            <text x="165" y="230" fill="#16a34a" font-size="8" font-weight="800" text-anchor="middle">Inconsciente</text>
+                        </g>
+                        
+                        <!-- Invisible large click zone line -->
+                        <line x1="50" y1="254" x2="455" y2="20" stroke="transparent" stroke-width="18" />
+                    </g>
+                </svg>
+            </div>
+            
+            <!-- Selector Manual Alternativo -->
+            <div style="display:flex; justify-content:space-around; align-items:center; background:#fafafa; border:1px solid #e2e8f0; padding:6px; border-radius:8px;">
+                <button onclick="window.selectPeiAxis('longitudinal')" id="pei_btn_longitudinal" style="font-size:0.65rem; font-weight:800; padding:4px 10px; border-radius:6px; border:1.2px solid #0A2540; background:#0A2540; color:white; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:4px;">
+                    <i class="fas fa-arrows-alt-v"></i> Longitudinal
+                </button>
+                <button onclick="window.selectPeiAxis('problemeico')" id="pei_btn_problemeico" style="font-size:0.65rem; font-weight:800; padding:4px 10px; border-radius:6px; border:1.2px solid #cbd5e1; background:white; color:#475569; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:4px;">
+                    <i class="fas fa-project-diagram"></i> Problémico-Resolutivo
+                </button>
+                <button onclick="window.selectPeiAxis('transversal')" id="pei_btn_transversal" style="font-size:0.65rem; font-weight:800; padding:4px 10px; border-radius:6px; border:1.2px solid #cbd5e1; background:white; color:#475569; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:4px;">
+                    <i class="fas fa-hands-helping"></i> Transversal Ético
+                </button>
+            </div>
+            <div style="font-size:0.6rem; color:#64748b; text-align:center; font-weight:700; margin-top:4px;">
+                Fuente: Proyecto Educativo Institucional - PEI
+            </div>
+        </div>
+        
+        <!-- COLUMNA DERECHA: COMPONENTES Y ASIGNATURAS EJEMPLO -->
+        <div id="pei_axis_detail_card" class="card p-5 bg-white rounded-xl shadow-lg border-t-4" style="display:flex; flex-direction:column; justify-content:space-between; border-top-color:#0A2540; min-height:430px;">
+            <!-- Dinámico -->
         </div>
     </div>
 </div>
