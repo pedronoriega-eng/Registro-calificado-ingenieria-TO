@@ -458,12 +458,176 @@ window.renderMalla = function() {
     if (container) container.innerHTML = html;
 };
 
+window.fundComponentData = {
+    "Ciencias Básicas de Ingeniería": {
+        credits: 27,
+        subjectsCount: 9,
+        percentage: "18.75%",
+        purpose: "Proporciona las herramientas conceptuales y metodológicas necesarias para la modelación matemática, física y estadística de fenómenos complejos en ingeniería industrial, sirviendo de cimiento analítico para la toma de decisiones.",
+        icon: "fa-calculator",
+        color: "#0284c7",
+        bg: "#e0f2fe"
+    },
+    "Tecnología, Análisis y Transformación de Datos": {
+        credits: 24,
+        subjectsCount: 8,
+        percentage: "16.67%",
+        purpose: "Capacita al estudiante en la integración de herramientas informáticas, lenguajes de programación, inteligencia artificial y analítica de datos para liderar la transformación digital en las organizaciones.",
+        icon: "fa-robot",
+        color: "#0d9488",
+        bg: "#ccfbf1"
+    },
+    "Procesos y Sistemas Productivos": {
+        credits: 30,
+        subjectsCount: 10,
+        percentage: "20.83%",
+        purpose: "Centrado en el diseño, control, optimización y mejora continua de sistemas productivos de bienes y servicios, integrando metodologías avanzadas como Lean Manufacturing y Six Sigma.",
+        icon: "fa-industry",
+        color: "#ea580c",
+        bg: "#ffedd5"
+    },
+    "Gestión Organizacional, Económica y Financiera": {
+        credits: 30,
+        subjectsCount: 10,
+        percentage: "20.83%",
+        purpose: "Prepara al futuro ingeniero para administrar de manera eficiente, ética y sostenible los recursos humanos, financieros, materiales y de calidad en entornos empresariales altamente competitivos.",
+        icon: "fa-chart-line",
+        color: "#9333ea",
+        bg: "#f3e8ff"
+    },
+    "Investigación, Innovación y Emprendimiento": {
+        credits: 12,
+        subjectsCount: 4,
+        percentage: "8.33%",
+        purpose: "Fomenta el desarrollo de competencias para diagnosticar problemas reales, formular proyectos sostenibles, emprender modelos de negocio innovadores y aplicar el método científico.",
+        icon: "fa-lightbulb",
+        color: "#16a34a",
+        bg: "#dcfce7"
+    },
+    "Formación Humanística, Ética y Ciudadana": {
+        credits: 12,
+        subjectsCount: 4,
+        percentage: "8.33%",
+        purpose: "Garantiza una formación integral, promoviendo el liderazgo ético, la responsabilidad social corporativa, la resolución de conflictos y competencias lingüísticas esenciales (inglés).",
+        icon: "fa-users",
+        color: "#dc2626",
+        bg: "#fee2e2"
+    },
+    "Componente Electivo (Profundización)": {
+        credits: 9,
+        subjectsCount: 3,
+        percentage: "6.25%",
+        purpose: "Permite al estudiante personalizar su ruta formativa eligiendo énfasis avanzados de alta gerencia, logística sostenible (verde) o ciencia de datos e IA aplicada.",
+        icon: "fa-layer-group",
+        color: "#ca8a04",
+        bg: "#fef9c3"
+    }
+};
+
+window.initFundComponents = function() {
+    let listHtml = '';
+    const colors = {
+        "Ciencias Básicas de Ingeniería": {icon: "fa-calculator", color: "#0284c7"},
+        "Tecnología, Análisis y Transformación de Datos": {icon: "fa-robot", color: "#0d9488"},
+        "Procesos y Sistemas Productivos": {icon: "fa-industry", color: "#ea580c"},
+        "Gestión Organizacional, Económica y Financiera": {icon: "fa-chart-line", color: "#9333ea"},
+        "Investigación, Innovación y Emprendimiento": {icon: "fa-lightbulb", color: "#16a34a"},
+        "Formación Humanística, Ética y Ciudadana": {icon: "fa-users", color: "#dc2626"},
+        "Componente Electivo (Profundización)": {icon: "fa-layer-group", color: "#ca8a04"}
+    };
+    
+    for (const compName in window.fundComponentData) {
+        const data = window.fundComponentData[compName];
+        const col = colors[compName];
+        listHtml += `
+            <button onclick="window.selectFundComponent('${compName}', this)" class="fund-comp-btn" id="fund_btn_${compName.replace(/\s+/g, '_')}" style="width:100%; text-align:left; padding:8px 10px; border-radius:6px; border:1.5px solid #e2e8f0; background:white; font-weight:700; color:#475569; font-size:0.72rem; cursor:pointer; transition:all 0.2s; display:flex; justify-content:space-between; align-items:center; box-shadow:0 1px 2px rgba(0,0,0,0.02);">
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div class="fund-icon-box" style="width:22px; height:22px; border-radius:4px; background:${data.bg}; color:${data.color}; display:flex; align-items:center; justify-content:center; font-size:0.75rem; transition: all 0.2s;"><i class="fas ${col.icon}"></i></div>
+                    <span style="line-height:1.2; max-width:260px;">${compName}</span>
+                </div>
+                <span style="font-size:0.6rem; font-weight:800; background:#f1f5f9; color:#475569; padding:2px 5px; border-radius:4px; border:1px solid #cbd5e1; white-space:nowrap;">${data.credits} CR</span>
+            </button>
+        `;
+    }
+    
+    const listContainer = document.getElementById('fund_components_list');
+    if (listContainer) {
+        listContainer.innerHTML = listHtml;
+        const firstCompName = Object.keys(window.fundComponentData)[0];
+        const firstBtn = listContainer.querySelector('.fund-comp-btn');
+        if (firstBtn) {
+            window.selectFundComponent(firstCompName, firstBtn);
+        }
+    }
+};
+
+window.selectFundComponent = function(compName, btn) {
+    document.querySelectorAll('.fund-comp-btn').forEach(b => {
+        b.style.background = 'white';
+        b.style.color = '#475569';
+        b.style.borderColor = '#e2e8f0';
+        b.style.boxShadow = '0 1px 2px rgba(0,0,0,0.02)';
+        const iconBox = b.querySelector('.fund-icon-box');
+        if (iconBox) {
+            iconBox.style.transform = 'scale(1)';
+        }
+    });
+    
+    const data = window.fundComponentData[compName];
+    
+    if (btn) {
+        btn.style.background = '#f8fafc';
+        btn.style.borderColor = '#C8102E';
+        btn.style.color = '#0A2540';
+        btn.style.boxShadow = '0 3px 8px rgba(0,0,0,0.04)';
+        const iconBox = btn.querySelector('.fund-icon-box');
+        if (iconBox) {
+            iconBox.style.transform = 'scale(1.05)';
+        }
+    }
+    
+    let subjectsHtml = '';
+    if (window.trazabilidadData[compName]) {
+        window.trazabilidadData[compName].forEach(s => {
+            subjectsHtml += `<span style="font-size:0.6rem; padding:3px 6px; background:${data.bg}; color:${data.color}; border:1px solid ${data.color}25; border-radius:4px; font-weight:700; display:inline-block; margin-right:4px; margin-bottom:4px;">${s.asig}</span>`;
+        });
+    }
+    
+    const detailCard = document.getElementById('fund_comp_detail_card');
+    if (detailCard) {
+        detailCard.innerHTML = `
+            <div>
+                <div style="display:flex; justify-content:between; align-items:center; margin-bottom:10px; border-bottom:2px solid #f1f5f9; padding-bottom:8px;">
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <div style="width:28px; height:28px; border-radius:6px; background:${data.bg}; color:${data.color}; display:flex; align-items:center; justify-content:center; font-size:0.95rem;"><i class="fas ${data.icon}"></i></div>
+                        <h4 style="margin:0; font-size:0.95rem; font-weight:800; color:#0A2540;">${compName}</h4>
+                    </div>
+                    <span style="font-size:0.68rem; font-weight:800; background:#fff1f2; color:#C8102E; padding:3px 8px; border-radius:6px; border:1.1px solid #fee2e2; margin-left:auto;">${data.credits} Créditos (${data.percentage})</span>
+                </div>
+                <p style="margin:0 0 12px 0; font-size:0.75rem; color:#475569; line-height:1.45; font-style:italic;">"${data.purpose}"</p>
+            </div>
+            
+            <div>
+                <h5 style="margin:0 0 6px 0; font-size:0.72rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.5px;"><i class="fas fa-graduation-cap mr-1" style="color:${data.color};"></i> Asignaturas Clave de la Malla (${data.subjectsCount} Materias):</h5>
+                <div style="display:flex; flex-wrap:wrap; gap:4px;">
+                    ${subjectsHtml}
+                </div>
+            </div>
+        `;
+        detailCard.style.borderTopColor = data.color;
+    }
+};
+
 window.changeTab = function(tabId, event) {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active', 'border-toOrange', 'text-toOrange'));
     document.getElementById(tabId).classList.remove('hidden');
     if(event && event.currentTarget) {
         event.currentTarget.classList.add('active', 'border-toOrange', 'text-toOrange');
+    }
+    
+    if(tabId === 'fund') {
+        window.initFundComponents();
     }
     
     if(tabId === 'malla_traz') {
@@ -667,29 +831,61 @@ window.SECTIONS.c3 = `
 </div>
 
 <!-- CONTENIDO: FUNDAMENTACION -->
-<div id="fund" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="card p-6 bg-white rounded-xl shadow-lg border-l-4 border-toBlue">
-        <h4 class="text-xl font-bold mb-4 text-toBlue"><i class="fas fa-book-open mr-2"></i> Componentes Formativos</h4>
-        <p class="text-gray-600 mb-4">El programa se estructura en áreas que garantizan la formación integral del Ingeniero Industrial TO:</p>
-        <ul class="space-y-2 text-sm">
-            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Ciencias Básicas: 32 Créditos</li>
-            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Ciencias Básicas de Ingeniería: 28 Créditos</li>
-            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Ingeniería Aplicada: 54 Créditos</li>
-            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Socio-Humanística: 12 Créditos</li>
-            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Electivas: 18 Créditos</li>
-        </ul>
-    </div>
-    <div class="card p-6 bg-white rounded-xl shadow-lg border-l-4 border-toOrange">
-        <h4 class="text-xl font-bold mb-3 text-toOrange"><i class="fas fa-microchip mr-2"></i> Enfoque Industria 4.0 y Sostenibilidad</h4>
-        <p class="text-gray-700 leading-relaxed italic mb-4" style="font-size:0.9rem;">"Formamos ingenieros capaces de liderar la transición digital y sostenible, integrando IA y economía circular en la optimización de procesos productivos y de servicios."</p>
-        <h5 class="font-bold text-toBlue mb-2" style="font-size:0.95rem;"><i class="fas fa-star text-toOrange mr-1"></i> Asignaturas Diferenciadoras Clave:</h5>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:0.75rem; color:#374151;">
-            <div><i class="fas fa-robot text-toOrange mr-1"></i> Inteligencia Artificial</div>
-            <div><i class="fas fa-cogs text-toOrange mr-1"></i> Gestión de Operaciones con IA</div>
-            <div><i class="fas fa-industry text-toOrange mr-1"></i> Producción e IA</div>
-            <div><i class="fas fa-laptop-code text-toOrange mr-1"></i> Modelación y Simulación</div>
-            <div><i class="fas fa-database text-toOrange mr-1"></i> Big Data y Analítica</div>
-            <div><i class="fas fa-lightbulb text-toOrange mr-1"></i> Lab. de Innovación</div>
+<div id="fund" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; min-height:430px;">
+        
+        <!-- COLUMNA IZQUIERDA: LISTA DE COMPONENTES INTERACTIVA -->
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4" style="display:flex; flex-direction:column; justify-content:space-between; border-top-color:#0A2540;">
+            <div>
+                <h4 style="margin:0 0 10px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-book-open" style="color:#C8102E;"></i> Componentes Curriculares</h4>
+                <p style="font-size:0.75rem; color:#64748b; margin-bottom:12px; line-height:1.35;">Explore la carga académica, el propósito de formación y las asignaturas de cada uno de los 7 componentes aprobados en la malla:</p>
+                
+                <div style="display:flex; flex-direction:column; gap:6px;" id="fund_components_list">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+            
+            <!-- Resumen de Totales del Plan -->
+            <div style="margin-top:12px; background:#fafafa; border:1px solid #e2e8f0; padding:10px; border-radius:8px; display:flex; justify-content:space-around; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.01);">
+                <div style="text-align:center;">
+                    <span style="font-size:1.15rem; font-weight:800; color:#0A2540; display:block; line-height:1;">48</span>
+                    <span style="font-size:0.55rem; color:#64748b; text-transform:uppercase; display:block; font-weight:700; margin-top:2px;">Asignaturas</span>
+                </div>
+                <div style="width:1px; height:24px; background:#e2e8f0;"></div>
+                <div style="text-align:center;">
+                    <span style="font-size:1.15rem; font-weight:800; color:#C8102E; display:block; line-height:1;">144</span>
+                    <span style="font-size:0.55rem; color:#64748b; text-transform:uppercase; display:block; font-weight:700; margin-top:2px;">Créditos</span>
+                </div>
+                <div style="width:1px; height:24px; background:#e2e8f0;"></div>
+                <div style="text-align:center;">
+                    <span style="font-size:1.15rem; font-weight:800; color:#0A2540; display:block; line-height:1;">8</span>
+                    <span style="font-size:0.55rem; color:#64748b; text-transform:uppercase; display:block; font-weight:700; margin-top:2px;">Semestres</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COLUMNA DERECHA: DETALLE DINÁMICO DEL COMPONENTE + ENFOQUE 4.0 -->
+        <div style="display:flex; flex-direction:column; gap:15px; justify-content:space-between;">
+            <!-- Detalle del Componente -->
+            <div id="fund_comp_detail_card" class="card p-5 bg-white rounded-xl shadow-lg border-t-4" style="flex:1; display:flex; flex-direction:column; justify-content:space-between; min-height:240px; border-top-color:#C8102E;">
+                <!-- Dinámico -->
+            </div>
+            
+            <!-- Enfoque Industria 4.0 -->
+            <div class="card p-5 bg-toBlue text-white rounded-xl shadow-lg relative overflow-hidden" style="min-height:175px; background:#0A2540; border-top: 4px solid #C8102E;">
+                <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=60') center/cover;opacity:.1"></div>
+                <h4 style="margin:0 0 6px 0; font-size:0.95rem; font-weight:800; color:white; position:relative; display:flex; align-items:center; gap:8px;"><i class="fas fa-microchip" style="color:#C8102E;"></i> Enfoque Industria 4.0 y Sostenibilidad</h4>
+                <p style="margin:0 0 10px 0; font-size:0.75rem; color:#e2e8f0; line-height:1.35; position:relative; font-style:italic;">"Formamos ingenieros capaces de liderar la transición digital y sostenible, integrando IA y economía circular en la optimización de procesos productivos y de servicios."</p>
+                <h5 style="margin:0 0 6px 0; font-size:0.7rem; font-weight:800; color:#C8102E; text-transform:uppercase; letter-spacing:0.5px; position:relative;"><i class="fas fa-star mr-1"></i> Asignaturas Diferenciadoras Clave:</h5>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 10px; font-size:0.68rem; color:#cbd5e1; position:relative;">
+                    <div><i class="fas fa-robot" style="color:#C8102E; margin-right:4px; font-size:0.6rem;"></i> Inteligencia Artificial</div>
+                    <div><i class="fas fa-cogs" style="color:#C8102E; margin-right:4px; font-size:0.6rem;"></i> Gestión de Operaciones con IA</div>
+                    <div><i class="fas fa-industry" style="color:#C8102E; margin-right:4px; font-size:0.6rem;"></i> Producción e IA</div>
+                    <div><i class="fas fa-laptop-code" style="color:#C8102E; margin-right:4px; font-size:0.6rem;"></i> Modelación y Simulación</div>
+                    <div><i class="fas fa-database" style="color:#C8102E; margin-right:4px; font-size:0.6rem;"></i> Big Data y Analítica</div>
+                    <div><i class="fas fa-lightbulb" style="color:#C8102E; margin-right:4px; font-size:0.6rem;"></i> Lab. de Innovación</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
