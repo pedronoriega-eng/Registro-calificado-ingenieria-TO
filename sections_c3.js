@@ -3,7 +3,7 @@
 // Malla Interactiva Horizontal
 // ==========================================
 window.trazabilidadData = {
-    "Ciencias Básicas": [
+    "Ciencias Básicas de Ingeniería": [
         {
             "asig": "Cálculo Diferencial",
             "pre": "Ninguno",
@@ -66,29 +66,73 @@ window.trazabilidadData = {
             "ra": "Resuelve ecuaciones diferenciales de primer orden aplicando distintos métodos analíticos en la modelación de fenómenos reales. / Analiza y resuelve ecuaciones diferenciales de orden superior, interpretando su comportamiento en sistemas físicos y de ingeniería. / Modela y analiza sistemas dinámicos mediante ecuaciones diferenciales, evaluando su estabilidad y comportamiento en diferentes contextos.",
             "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
-        },
-        {
-            "asig": "Termodinámica",
-            "pre": "Ninguno",
-            "ra": "Analiza sistemas termodinámicos aplicando la primera ley para evaluar intercambios de energía en procesos físicos. / Evalúa el desempeño de sistemas termodinámicos considerando la segunda ley y el concepto de entropía. / Aplica los principios de la termodinámica en el análisis de ciclos y sistemas reales, evaluando su eficiencia y funcionamiento.",
-            "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
-            "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
-        },
+        }
+    ],
+    "Tecnología, Análisis y Transformación de Datos": [
         {
             "asig": "Diseño de Experimentos",
             "pre": "Estadística Inferencial",
             "ra": "Comprende los fundamentos del diseño de experimentos, identificando variables y principios que garantizan la validez de los resultados. / Analiza datos experimentales utilizando herramientas estadísticas para interpretar resultados y validar hipótesis. / Diseña y aplica experimentos para optimizar procesos, utilizando técnicas estadísticas que mejoran la calidad y eficiencia.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
-        }
-    ],
-    "Ingeniería Aplicada": [
+        },
         {
             "asig": "Introducción a la Ing. Industrial y Pensamiento de Diseño",
             "pre": "Ninguno",
             "ra": "Identifica las principales disciplinas de la ingeniería y explica su rol en la sociedad, comprendiendo los desafíos que enfrenta la ingeniería en la era de la digitalización y automatización / Reconoce las tecnologías clave de la Revolución 4.0, tales como la automatización, IoT y análisis de datos, y describe sus aplicaciones básicas en procesos ingenieriles / Aplica herramientas sencillas de resolución de problemas para abordar retos técnicos en ingeniería, utilizando metodologías básicas de análisis y evaluación de soluciones",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
+        },
+        {
+            "asig": "Modelación y Simulación",
+            "pre": "Ninguno",
+            "ra": "Construye modelos que representan sistemas reales, identificando variables, supuestos y relaciones entre sus componentes. / Aplica técnicas de simulación para analizar el comportamiento de sistemas y evaluar diferentes escenarios. / Integra la modelación y simulación en la solución de problemas reales, apoyando la toma de decisiones en contextos organizacionales.",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
+            "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
+        },
+        {
+            "asig": "Fundamentos de Programación",
+            "pre": "Ninguno",
+            "ra": "Comprende los conceptos básicos de la programación y explica la importancia de la lógica estructurada en el desarrollo de software. / Aplica diferentes tipos de datos y estructuras de control para resolver problemas simples de programación de manera efectiva. / Diseña funciones modulares que optimicen el código y faciliten la reutilización en proyectos de programación básicos.",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
+            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
+        },
+        {
+            "asig": "Inteligencia Artificial",
+            "pre": "Ninguno",
+            "ra": "Comprende los conceptos básicos de la Inteligencia Artificial y reconoce su relevancia en diferentes disciplinas / Aplica algoritmos simples de aprendizaje automático en la resolución de problemas básicos y analiza sus resultados / Evalúa el impacto social y ético de la IA, y propone medidas para mitigar los riesgos asociados",
+            "prog": "Utiliza herramientas computacionales y de programación para el análisis de información y optimización de procesos.",
+            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
+        },
+        {
+            "asig": "Big Data y Analítica de Datos",
+            "pre": "Ninguno",
+            "ra": "Comprende los principios de Big Data y explica los desafíos técnicos y las herramientas necesarias para su gestión / Aplica técnicas de analítica de datos para obtener información valiosa a partir de grandes volúmenes de datos estructurados y no estructurados / Analiza aplicaciones prácticas de Big Data y Analítica de Datos en diferentes disciplinas, evaluando su impacto y relevancia en contextos específicos",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
+            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
+        },
+        {
+            "asig": "Métodos Cualitativos y Cuantitativos",
+            "pre": "Competencias Investigativas",
+            "ra": "Proponer investigaciones empíricas siguiendo los procedimientos asociados a las diferentes técnicas cualitativas y cuantitativas. / Tomar decisiones coherentes con los datos obtenidos mediante técnicas cualitativas; Y redactar informes de investigaciones de tipo cualitativo y cuantitativo. / Aplicar métodos cualitativos y cuantitativos de investigación para analizar, interpretar y resolver problemáticas específicas en contextos organizacionales, sociales o académicos, demostrando habilidad en la recolección, procesamiento y presentación de datos relevantes, así como en la formulación de conclusiones fundamentadas",
+            "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
+            "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
+        },
+        {
+            "asig": "Investigación de mercados",
+            "pre": "Ninguno",
+            "ra": "Comprende y explica el proceso integral de la investigación de mercados, reconociendo su papel estratégico en la toma de decisiones empresariales. / Diseña y aplica instrumentos de recolección de información pertinentes, empleando herramientas tecnológicas y criterios metodológicos adecuados a los objetivos de la investigación. / Analiza, interpreta y comunica los resultados de una investigación de mercados para fundamentar decisiones estratégicas de marketing en la organización.",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
+            "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
+        }
+    ],
+    "Procesos y Sistemas Productivos": [
+        {
+            "asig": "Termodinámica",
+            "pre": "Ninguno",
+            "ra": "Analiza sistemas termodinámicos aplicando la primera ley para evaluar intercambios de energía en procesos físicos. / Evalúa el desempeño de sistemas termodinámicos considerando la segunda ley y el concepto de entropía. / Aplica los principios de la termodinámica en el análisis de ciclos y sistemas reales, evaluando su eficiencia y funcionamiento.",
+            "prog": "Aplica fundamentos matemáticos, estadísticos y físicos para la solución de problemas de ingeniería industrial.",
+            "perfil": "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
         },
         {
             "asig": "Dibujo Industrial",
@@ -102,13 +146,6 @@ window.trazabilidadData = {
             "pre": "Ninguno",
             "ra": "Analiza los fundamentos de los procesos industriales y su impacto en la productividad organizacional, identificando los elementos clave de los sistemas de manufactura. / Evalúa diferentes procesos de manufactura y tecnologías asociadas, seleccionando alternativas adecuadas según criterios técnicos, económicos y de calidad. / Diseña estrategias de mejora y optimización de procesos de manufactura, integrando herramientas de calidad, productividad y sostenibilidad.",
             "prog": "Diseña, mejora y optimiza procesos productivos y de servicios integrando criterios de eficiencia, calidad, seguridad y sostenibilidad.",
-            "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
-        },
-        {
-            "asig": "Gerencia de la Calidad (Six Sigma)",
-            "pre": "Ninguno",
-            "ra": "Analiza los fundamentos de Six Sigma y su relación con la gestión de la calidad, identificando su impacto en la mejora de procesos. / Aplica la metodología DMAIC utilizando herramientas estadísticas para analizar, mejorar y controlar procesos organizacionales. / Diseña e implementa proyectos Six Sigma alineados con la estrategia organizacional, generando mejoras sostenibles en calidad y productividad.",
-            "prog": "Gestiona sistemas de calidad, producción y operaciones orientados a la mejora continua y excelencia organizacional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
         },
         {
@@ -147,27 +184,27 @@ window.trazabilidadData = {
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
         },
         {
-            "asig": "Modelación y Simulación",
-            "pre": "Ninguno",
-            "ra": "Construye modelos que representan sistemas reales, identificando variables, supuestos y relaciones entre sus componentes. / Aplica técnicas de simulación para analizar el comportamiento de sistemas y evaluar diferentes escenarios. / Integra la modelación y simulación en la solución de problemas reales, apoyando la toma de decisiones en contextos organizacionales.",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
-            "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
-        },
-        {
             "asig": "Diseño de Planta y distribución de planta",
             "pre": "Ninguno",
             "ra": "Analiza los fundamentos del diseño de planta y selecciona alternativas de localización y distribución adecuadas. / Aplica técnicas y herramientas para diseñar distribuciones en planta eficientes. / Evalúa y optimiza la distribución en planta considerando eficiencia, seguridad y costos.",
             "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
             "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
+        },
+        {
+            "asig": "Gestión de la Higiene y seguridad industrial",
+            "pre": "Ninguno",
+            "ra": "Analiza los fundamentos de la higiene y seguridad en el trabajo, identificando riesgos y comprendiendo el marco normativo aplicable. / Aplica metodologías para evaluar y controlar riesgos en entornos laborales, promoviendo condiciones seguras. / Diseña e implementa estrategias de gestión en seguridad y salud en el trabajo, promoviendo una cultura de prevención.",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
+            "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
         }
     ],
-    "Tecnología 4.0 y Eco-Gestión": [
+    "Gestión Organizacional, Económica y Financiera": [
         {
-            "asig": "Fundamentos de Programación",
+            "asig": "Gerencia de la Calidad (Six Sigma)",
             "pre": "Ninguno",
-            "ra": "Comprende los conceptos básicos de la programación y explica la importancia de la lógica estructurada en el desarrollo de software. / Aplica diferentes tipos de datos y estructuras de control para resolver problemas simples de programación de manera efectiva. / Diseña funciones modulares que optimicen el código y faciliten la reutilización en proyectos de programación básicos.",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
-            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
+            "ra": "Analiza los fundamentos de Six Sigma y su relación con la gestión de la calidad, identificando su impacto en la mejora de procesos. / Aplica la metodología DMAIC utilizando herramientas estadísticas para analizar, mejorar y controlar procesos organizacionales. / Diseña e implementa proyectos Six Sigma alineados con la estrategia organizacional, generando mejoras sostenibles en calidad y productividad.",
+            "prog": "Gestiona sistemas de calidad, producción y operaciones orientados a la mejora continua y excelencia organizacional.",
+            "perfil": "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
         },
         {
             "asig": "Fundamentos Contables y Financieros",
@@ -175,13 +212,6 @@ window.trazabilidadData = {
             "ra": "Aplicar los fundamentos de la contabilidad general en la identificación, registro y análisis de transacciones comerciales, mediante el uso de documentos y libros contables, con base en las normas legales y principios contables vigentes. / Reconocer los hechos económicos y su tratamiento contable conforme a las políticas contables de la empresa y normativa. / laborar los estados financieros básicos conforme a normativa, garantizando la adecuada presentación y revelación de la información financiera.",
             "prog": "Formula, evalúa y sustenta proyectos de inversión aplicando criterios técnicos, económicos y ambientales.",
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
-        },
-        {
-            "asig": "Inteligencia Artificial",
-            "pre": "Ninguno",
-            "ra": "Comprende los conceptos básicos de la Inteligencia Artificial y reconoce su relevancia en diferentes disciplinas / Aplica algoritmos simples de aprendizaje automático en la resolución de problemas básicos y analiza sus resultados / Evalúa el impacto social y ético de la IA, y propone medidas para mitigar los riesgos asociados",
-            "prog": "Utiliza herramientas computacionales y de programación para el análisis de información y optimización de procesos.",
-            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
         },
         {
             "asig": "Teoría Organizacional",
@@ -219,46 +249,11 @@ window.trazabilidadData = {
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
         },
         {
-            "asig": "Big Data y Analítica de Datos",
-            "pre": "Ninguno",
-            "ra": "Comprende los principios de Big Data y explica los desafíos técnicos y las herramientas necesarias para su gestión / Aplica técnicas de analítica de datos para obtener información valiosa a partir de grandes volúmenes de datos estructurados y no estructurados / Analiza aplicaciones prácticas de Big Data y Analítica de Datos en diferentes disciplinas, evaluando su impacto y relevancia en contextos específicos",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
-            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
-        },
-        {
-            "asig": "Electiva Profesional I",
-            "pre": "Ninguno",
-            "ra": "Analizar y evaluar tendencias tecnológicas emergentes e innovaciones en el sector productivo global, identificando oportunidades para su aplicación estratégica en optimización de operaciones.",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
-            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
-        },
-        {
             "asig": "Gerencia Tecnológica y de la Innovación",
             "pre": "Ninguno",
             "ra": "Analiza el papel de la tecnología en la organización, identificando su impacto en la competitividad y el desarrollo empresarial. / Diseña y gestiona procesos de innovación utilizando metodologías y herramientas que promueven la creatividad y el desarrollo organizacional. / Evalúa estrategias de innovación y transformación digital, proponiendo soluciones que fortalezcan la competitividad organizacional.",
             "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
             "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
-        },
-        {
-            "asig": "Electiva Profesional II",
-            "pre": "Electiva Profesional I",
-            "ra": "Diseñar e implementar modelos avanzados de optimización inteligente o eco-eficiencia en procesos de manufactura y servicios bajo el enfoque de Industria 4.0.",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
-            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
-        },
-        {
-            "asig": "Laboratorio de Innovación y Emprendimiento",
-            "pre": "Ninguno",
-            "ra": "Genera ideas innovadoras identificando oportunidades de negocio a partir de necesidades reales del entorno. / Diseña y valida modelos de negocio mediante herramientas ágiles que permiten evaluar su viabilidad en el mercado. / Desarrolla y presenta un proyecto de emprendimiento validado, demostrando su viabilidad técnica, económica y de mercado.",
-            "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
-            "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
-        },
-        {
-            "asig": "Gestión de la Higiene y seguridad industrial",
-            "pre": "Ninguno",
-            "ra": "Analiza los fundamentos de la higiene y seguridad en el trabajo, identificando riesgos y comprendiendo el marco normativo aplicable. / Aplica metodologías para evaluar y controlar riesgos en entornos laborales, promoviendo condiciones seguras. / Diseña e implementa estrategias de gestión en seguridad y salud en el trabajo, promoviendo una cultura de prevención.",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
-            "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
         },
         {
             "asig": "Legislación empresarial",
@@ -268,14 +263,44 @@ window.trazabilidadData = {
             "perfil": "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
         },
         {
-            "asig": "Electiva Profesional III",
-            "pre": "Electiva Profesional II",
-            "ra": "Simular y optimizar operaciones complejas y cadenas de valor digitales mediante tecnologías integradoras (como gemelos digitales o algoritmos de machine learning), formulando planes táctico-estratégicos sustentables.",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
-            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
+            "asig": "Pensamiento Estratégico y Prospectivo",
+            "pre": "Ninguno",
+            "ra": "Comprende los principios del pensamiento estratégico y explica su relevancia en la toma de decisiones informadas en contextos diversos / Analiza escenarios futuros mediante el uso de herramientas prospectivas y diseña estrategias para anticipar riesgos y oportunidades / Aplica el pensamiento estratégico y prospectivo en diversos contextos profesionales, desarrollando estrategias sostenibles a largo plazo",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
+            "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
         }
     ],
-    "Investigación e Integración": [
+    "Investigación, Innovación y Emprendimiento": [
+        {
+            "asig": "Laboratorio de Innovación y Emprendimiento",
+            "pre": "Ninguno",
+            "ra": "Genera ideas innovadoras identificando oportunidades de negocio a partir de necesidades reales del entorno. / Diseña y valida modelos de negocio mediante herramientas ágiles que permiten evaluar su viabilidad en el mercado. / Desarrolla y presenta un proyecto de emprendimiento validado, demostrando su viabilidad técnica, económica y de mercado.",
+            "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
+            "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
+        },
+        {
+            "asig": "Competencias Investigativas",
+            "pre": "Ninguno",
+            "ra": "Comprende los principios de la investigación científica y explica la importancia de los métodos científicos en el desarrollo del conocimiento en diversas disciplinas. / Formula preguntas de investigación coherentes y diseña objetivos claros en la estructuración de proyectos de investigación interdisciplinarios / Diseña proyectos de investigación completos, seleccionando métodos de recolección de datos y planifica su ejecución mediante un cronograma adecuado",
+            "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
+            "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
+        },
+        {
+            "asig": "Formulación y Evaluación de Proyectos",
+            "pre": "Ninguno",
+            "ra": "Comprende los fundamentos de la formulación de proyectos y aplica herramientas para analizar su viabilidad técnica y económica / Evalúa proyectos utilizando indicadores financieros y económicos, identificando riesgos y proponiendo estrategias de mitigación / Diseña y presenta proyectos estructurados de manera profesional, integrando enfoques de gestión y asegurando su viabilidad y sostenibilidad",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
+            "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
+        },
+        {
+            "asig": "Proyecto de Grado",
+            "pre": "Competencias Investigativas",
+            "ra": "Diseñar, estructurar y ejecutar de manera autónoma un proyecto de grado original que aplique metodologías científicas y de ingeniería para la solución de un problema del entorno industrial.",
+            "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
+            "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
+        }
+    ],
+    "Formación Humanística, Ética y Ciudadana": [
         {
             "asig": "Cátedra de la Paz y resolución de Conflictos",
             "pre": "Ninguno",
@@ -298,53 +323,34 @@ window.trazabilidadData = {
             "perfil": "16. Se comunica efectivamente en contextos multidisciplinarios y multiculturales, con dominio de herramientas tecnológicas y competencia en una segunda lengua."
         },
         {
-            "asig": "Competencias Investigativas",
-            "pre": "Ninguno",
-            "ra": "Comprende los principios de la investigación científica y explica la importancia de los métodos científicos en el desarrollo del conocimiento en diversas disciplinas. / Formula preguntas de investigación coherentes y diseña objetivos claros en la estructuración de proyectos de investigación interdisciplinarios / Diseña proyectos de investigación completos, seleccionando métodos de recolección de datos y planifica su ejecución mediante un cronograma adecuado",
-            "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
-            "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
-        },
-        {
             "asig": "Inglés III",
             "pre": "Inglés II",
             "ra": "Identifica vocabulario y expresiones relacionadas. / Enuncia vocabulario y expresiones de acuerdo con su contexto personal. / Expresa oraciones cortas en inglés de forma oral acerca de situaciones cotidianas de acuerdo con su contexto familiar y personal teniendo en cuenta funciones del lenguaje y vocabulario pertinente.",
             "prog": "Comunica ideas, resultados y propuestas de manera clara y efectiva en español e inglés.",
             "perfil": "16. Se comunica efectivamente en contextos multidisciplinarios y multiculturales, con dominio de herramientas tecnológicas y competencia en una segunda lengua."
-        },
+        }
+    ],
+    "Componente Electivo (Profundización)": [
         {
-            "asig": "Métodos Cualitativos y Cuantitativos",
-            "pre": "Competencias Investigativas",
-            "ra": "Proponer investigaciones empíricas siguiendo los procedimientos asociados a las diferentes técnicas cualitativas y cuantitativas. / Tomar decisiones coherentes con los datos obtenidos mediante técnicas cualitativas; Y redactar informes de investigaciones de tipo cualitativo y cuantitativo. / Aplicar métodos cualitativos y cuantitativos de investigación para analizar, interpretar y resolver problemáticas específicas en contextos organizacionales, sociales o académicos, demostrando habilidad en la recolección, procesamiento y presentación de datos relevantes, así como en la formulación de conclusiones fundamentadas",
-            "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
-            "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
-        },
-        {
-            "asig": "Investigación de mercados",
+            "asig": "Electiva Profesional I",
             "pre": "Ninguno",
-            "ra": "Comprende y explica el proceso integral de la investigación de mercados, reconociendo su papel estratégico en la toma de decisiones empresariales. / Diseña y aplica instrumentos de recolección de información pertinentes, empleando herramientas tecnológicas y criterios metodológicos adecuados a los objetivos de la investigación. / Analiza, interpreta y comunica los resultados de una investigación de mercados para fundamentar decisiones estratégicas de marketing en la organización.",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
-            "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
+            "ra": "Analizar y evaluar tendencias tecnológicas emergentes e innovaciones en el sector productivo global, identificando oportunidades para su aplicación estratégica en optimización de operaciones.",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
+            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
         },
         {
-            "asig": "Formulación y Evaluación de Proyectos",
-            "pre": "Ninguno",
-            "ra": "Comprende los fundamentos de la formulación de proyectos y aplica herramientas para analizar su viabilidad técnica y económica / Evalúa proyectos utilizando indicadores financieros y económicos, identificando riesgos y proponiendo estrategias de mitigación / Diseña y presenta proyectos estructurados de manera profesional, integrando enfoques de gestión y asegurando su viabilidad y sostenibilidad",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
-            "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
+            "asig": "Electiva Profesional II",
+            "pre": "Electiva Profesional I",
+            "ra": "Diseñar e implementar modelos avanzados de optimización inteligente o eco-eficiencia en procesos de manufactura y servicios bajo el enfoque de Industria 4.0.",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
+            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
         },
         {
-            "asig": "Pensamiento Estratégico y Prospectivo",
-            "pre": "Ninguno",
-            "ra": "Comprende los principios del pensamiento estratégico y explica su relevancia en la toma de decisiones informadas en contextos diversos / Analiza escenarios futuros mediante el uso de herramientas prospectivas y diseña estrategias para anticipar riesgos y oportunidades / Aplica el pensamiento estratégico y prospectivo en diversos contextos profesionales, desarrollando estrategias sostenibles a largo plazo",
-            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional.",
-            "perfil": "13. Formula, evalúa y ejecuta proyectos empresariales y de innovación, orientados a la creación de valor, el emprendimiento y el desarrollo sostenible."
-        },
-        {
-            "asig": "Proyecto de Grado",
-            "pre": "Competencias Investigativas",
-            "ra": "Diseñar, estructurar y ejecutar de manera autónoma un proyecto de grado original que aplique metodologías científicas y de ingeniería para la solución de un problema del entorno industrial.",
-            "prog": "Formula y desarrolla proyectos de investigación e innovación aplicados a problemáticas del entorno.",
-            "perfil": "14. Aplica enfoques investigativos, cuantitativos y cualitativos para diagnosticar y proponer soluciones a problemáticas industriales y organizacionales."
+            "asig": "Electiva Profesional III",
+            "pre": "Electiva Profesional II",
+            "ra": "Simular y optimizar operaciones complejas y cadenas de valor digitales mediante tecnologías integradoras (como gemelos digitales o algoritmos de machine learning), formulando planes táctico-estratégicos sustentables.",
+            "prog": "Aplica conocimientos especializados de profundización acordes con su proyección profesional (Énfasis en IA y Alta Tecnología).",
+            "perfil": "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
         }
     ]
 };
@@ -373,10 +379,13 @@ window.showMallaDetails = function(comp, asigIdx, btn) {
 window.renderMalla = function() {
     let html = '';
     const colors = {
-        "Ciencias Básicas": {bg:"#e0f2fe", border:"#0284c7"},
-        "Ingeniería Aplicada": {bg:"#ffedd5", border:"#ea580c"},
-        "Tecnología 4.0 y Eco-Gestión": {bg:"#f3e8ff", border:"#9333ea"},
-        "Investigacion e Integración": {bg:"#dcfce7", border:"#16a34a"}
+        "Ciencias Básicas de Ingeniería": {bg:"#e0f2fe", border:"#0284c7"},
+        "Tecnología, Análisis y Transformación de Datos": {bg:"#ccfbf1", border:"#0d9488"},
+        "Procesos y Sistemas Productivos": {bg:"#ffedd5", border:"#ea580c"},
+        "Gestión Organizacional, Económica y Financiera": {bg:"#f3e8ff", border:"#9333ea"},
+        "Investigación, Innovación y Emprendimiento": {bg:"#dcfce7", border:"#16a34a"},
+        "Formación Humanística, Ética y Ciudadana": {bg:"#fee2e2", border:"#dc2626"},
+        "Componente Electivo (Profundización)": {bg:"#fef9c3", border:"#ca8a04"}
     };
 
     for (const comp in window.trazabilidadData) {
