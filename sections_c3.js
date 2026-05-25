@@ -531,28 +531,29 @@ window.renderMallaGlobal = function() {
         let col = colors[comp] || {bg:"#f1f5f9", border:"#64748b", text:"#475569"};
         
         html += `<tr style="border-bottom: 1px solid #cbd5e1;">
-                    <td style="padding:10px; border-right:1px solid #cbd5e1; font-weight:800; color:${col.text}; background:${col.bg}22; line-height:1.2; font-size:0.72rem;">
-                        <i class="fas fa-layer-group mr-1"></i>${comp}
+                    <td style="padding:6px 4px; border-right:1px solid #cbd5e1; font-weight:800; color:${col.text}; background:${col.bg}22; line-height:1.15; font-size:0.62rem; word-wrap: break-word;">
+                        <i class="fas fa-layer-group mr-1" style="font-size:0.55rem;"></i>${comp}
                     </td>`;
         
         for (let sem = 1; sem <= 8; sem++) {
             let subjects = window.trazabilidadData[comp].filter(s => s.sem === sem);
             
-            html += `<td style="padding:4px; border-right:1px solid #cbd5e1; vertical-align:top; background:#fafafa; text-align:center;">`;
+            html += `<td style="padding:2px; border-right:1px solid #cbd5e1; vertical-align:top; background:#fafafa; text-align:center;">`;
             
             if (subjects.length > 0) {
                 subjects.forEach(asig => {
                     let originalIdx = window.trazabilidadData[comp].findIndex(s => s.asig === asig.asig);
+                    let preText = asig.pre === "Ninguno" ? "Ninguno" : asig.pre;
                     
                     html += `
-                        <div class="asig-global-card" onclick="selectGlobalSubject('${comp}', ${originalIdx}, this)" style="background:white; border:1.2px solid ${col.border}; border-radius:5px; padding:5px 6px; margin-bottom:4px; cursor:pointer; transition:all 0.2s; box-shadow:0 1px 2px rgba(0,0,0,0.03); text-align:left; position:relative;">
-                            <div style="font-size:0.65rem; font-weight:800; color:#0A2540; line-height:1.1;">${asig.asig}</div>
-                            <div style="font-size:0.52rem; color:#64748b; margin-top:2px; background:${col.bg}; padding:1px 3px; border-radius:2px; display:inline-block; border:1px solid ${col.border}15;"><i class="fas fa-link" style="color:${col.border}; font-size:0.5rem;"></i> Previos: <span style="font-weight:700; color:#0A2540;">${asig.pre}</span></div>
+                        <div class="asig-global-card" onclick="selectGlobalSubject('${comp}', ${originalIdx}, this)" style="background:white; border:1.1px solid ${col.border}; border-radius:4px; padding:3px 4px; margin-bottom:2px; cursor:pointer; transition:all 0.2s; box-shadow:0 1px 2px rgba(0,0,0,0.02); text-align:left; position:relative;">
+                            <div style="font-size:0.56rem; font-weight:800; color:#0A2540; line-height:1.05; word-wrap: break-word;">${asig.asig}</div>
+                            <div style="font-size:0.46rem; color:#64748b; margin-top:1px; line-height:1;"><i class="fas fa-link" style="color:${col.border}; font-size:0.44rem; margin-right:1px;"></i>${preText}</div>
                         </div>
                     `;
                 });
             } else {
-                html += `<div style="font-size:0.6rem; color:#cbd5e1; font-style:italic; margin-top:10px;">-</div>`;
+                html += `<div style="font-size:0.55rem; color:#cbd5e1; font-style:italic; margin-top:6px;">-</div>`;
             }
             
             html += `</td>`;
@@ -974,19 +975,19 @@ window.SECTIONS.c3 = `
         <h3 style="color:#0A2540; font-weight:800; margin-top:0; margin-bottom:6px; font-size:1.1rem;"><i class="fas fa-th" style="color:#FF6600; margin-right:8px;"></i> Malla Curricular de Ingeniería Industrial (Vista Global)</h3>
         <p style="font-size:0.78rem; color:#64748b; margin-bottom:15px;">Estructura por períodos académicos (columnas) y componentes curriculares (filas). Haga clic en cualquier materia para cargar su trazabilidad detallada abajo.</p>
         
-        <div style="overflow-x:auto; border-radius:8px; border:1px solid #cbd5e1;">
-            <table style="width:100%; border-collapse:collapse; background:white; font-size:0.7rem; min-width:1200px; table-layout: fixed;">
+        <div style="border-radius:8px; border:1px solid #cbd5e1; overflow:hidden;">
+            <table style="width:100%; border-collapse:collapse; background:white; font-size:0.62rem; table-layout: fixed;">
                 <thead>
                     <tr style="background:#0A2540; color:white; border-bottom:2px solid #cbd5e1;">
-                        <th style="padding:10px; border-right:1px solid #334155; text-align:left; font-weight:800; width:160px; font-size:0.75rem;">Componente Curricular</th>
-                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo I</th>
-                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo II</th>
-                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo III</th>
-                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo IV</th>
-                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo V</th>
-                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo VI</th>
-                        <th style="padding:10px; border-right:1px solid #334155; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo VII</th>
-                        <th style="padding:10px; text-align:center; font-weight:800; width:130px; font-size:0.75rem;">Periodo VIII</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:left; font-weight:800; width:14%; font-size:0.65rem;">Componente Curricular</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. I</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. II</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. III</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. IV</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. V</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. VI</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. VII</th>
+                        <th style="padding:6px 4px; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. VIII</th>
                     </tr>
                 </thead>
                 <tbody id="malla_global_table_body">
