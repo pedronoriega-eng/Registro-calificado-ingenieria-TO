@@ -102,3 +102,27 @@ Cuando necesites hacer ajustes:
    git push origin main
    ```
 4. Espera 1 minuto a que GitHub Pages procese la compilación y prueba utilizando recarga forzada (`Ctrl + F5` o `Cmd + Shift + R`).
+
+---
+
+## 📝 6. Últimos Avances y Estado Actual (Fase Mayo 2026)
+
+Se ha consolidado con éxito la reestructuración académica y la interactividad curricular avanzada en la Condición 2 y Condición 3:
+
+### A. Condición 2 (Justificación)
+* **Perfil de Egreso Integrado**: Al final del timeline se añadió una sección interactiva para explorar las Competencias del Egresado (Específicas, Genéricas, Transversales y Digitales).
+* **Duración Curricular Corrección**: Se ajustó la duración de la propuesta de la TO a **8 semestres** (144 créditos), unificándolo con la malla real.
+* **UNAD y Competencia Bucaramanga**: Se reubicó la UNAD al ámbito nacional (registro en Bogotá), dejando el contador de competidores regionales virtuales locales en Santander en **0**, maximizando la justificación y pertinencia del programa de la TO.
+
+### B. Condición 3 (Aspectos Curriculares)
+* **Mapeo del Perfil (Puntos 9 al 16)**: Cada una de las 48 asignaturas de `window.trazabilidadData` cuenta con la propiedad `perfil` asignada, mapeada a su punto específico de egreso. El panel inferior de la malla interactiva renderiza este aporte de forma dinámica con resaltado naranja (`#FF6600`) al seleccionar cualquier materia.
+* **6 Componentes PEP Oficiales**: Se reagruparon las 48 asignaturas bajo los componentes oficiales: *Ciencias Básicas de Ingeniería* (9), *Tecnología, Análisis y Transformación de Datos* (8), *Procesos y Sistemas Productivos* (10), *Gestión Organizacional, Económica y Financiera* (10), *Investigación, Innovación y Emprendimiento* (4), *Formación Humanística, Ética y Ciudadana* (4) y *Componente Electivo* (3).
+* **Perfiles y RAP Rediseño**: Se refactorizó la pestaña "Perfiles y RA" a una interfaz interactiva de doble columna, detallando Perfil de Ingreso (Aspirante), Perfil de Egreso y los **9 Resultados de Aprendizaje del Programa (RAP)** en un listado auto-desplazable.
+* **Modelo Tridimensional del Currículo (Ilustración 2 PEI)**:
+  - Se implementó la nueva pestaña **"Modelo PEI (Tridimensional)"** con un gráfico vectorial SVG de alta definición de los ejes cartesianos interactivos (Longitudinal, Problémico y Transversal).
+  - Incluye la representación vectorial exacta de la tabla "Plan de estudios, áreas, asignaturas" en el cuadrante superior izquierdo.
+  - Al interactuar con el SVG (hover, clic o selector inferior), el panel derecho inyecta los conceptos pedagógicos institucionales del PEI y lista las asignaturas reales que materializan cada eje.
+
+### C. Estado del Repositorio y Despliegue
+* **Caché**: Archivo index.html configurado con script parametrizado como `sections_c3.js?v=23`.
+* **Sincronización**: Cambios consolidados, probados y subidos de manera exitosa en `origin/main` en GitHub, listos para visualización en producción.
