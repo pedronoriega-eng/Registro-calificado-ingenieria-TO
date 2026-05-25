@@ -428,6 +428,37 @@ window.changeTab = function(tabId, event) {
     }
 };
 
+window.changeProfileSubTab = function(subtabId, btn) {
+    // Hide all subtab contents
+    document.querySelectorAll('.subtab-content').forEach(c => c.classList.add('hidden'));
+    // Show selected subtab content
+    document.getElementById(subtabId).classList.remove('hidden');
+    
+    // Remove active styles from all subtab buttons
+    document.querySelectorAll('.subtab-btn').forEach(b => {
+        b.style.backgroundColor = 'white';
+        b.style.color = '#475569';
+        b.style.borderColor = '#e2e8f0';
+        b.classList.remove('active');
+        const iconDiv = b.querySelector('div');
+        if (iconDiv) {
+            iconDiv.style.transform = 'scale(1)';
+        }
+    });
+    
+    // Add active styles to clicked button
+    if (btn) {
+        btn.classList.add('active');
+        btn.style.backgroundColor = '#f8fafc';
+        btn.style.borderColor = '#cbd5e1';
+        btn.style.color = '#0A2540';
+        const iconDiv = btn.querySelector('div');
+        if (iconDiv) {
+            iconDiv.style.transform = 'scale(1.05)';
+        }
+    }
+};
+
 if (!window.SECTIONS) window.SECTIONS = {};
 
 window.SECTIONS.c3 = `
@@ -476,18 +507,161 @@ window.SECTIONS.c3 = `
 </div>
 
 <!-- CONTENIDO: PERFILES -->
-<div id="perfiles" class="tab-content hidden grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="card p-4 bg-gray-50 rounded-lg shadow">
-        <h5 class="font-bold text-toBlue border-b pb-2 mb-3">Perfil Ingreso</h5>
-        <p class="text-xs text-gray-600">Bachiller con interés en las ciencias exactas, capacidad de análisis lógico y disposición para el trabajo en equipo y la innovación tecnológica.</p>
-    </div>
-    <div class="card p-4 bg-gray-50 rounded-lg shadow">
-        <h5 class="font-bold text-toBlue border-b pb-2 mb-3">Perfil Profesional</h5>
-        <p class="text-xs text-gray-600">Líder integral con visión sistémica, capaz de diseñar, gestionar y optimizar sistemas productivos sostenibles bajo estándares globales.</p>
-    </div>
-    <div class="card p-4 bg-gray-50 rounded-lg shadow">
-        <h5 class="font-bold text-toBlue border-b pb-2 mb-3">Resultados de Aprendizaje (RA)</h5>
-        <p class="text-xs text-gray-600">Aseguramos que el egresado demuestre competencias en: Diseño de Procesos, Gestión de Calidad, Analítica de Datos y Ética Profesional.</p>
+<div id="perfiles" class="tab-content hidden">
+    <div style="display: grid; grid-template-columns: 280px 1fr; gap: 20px; min-height: 400px; font-family: 'Montserrat', sans-serif;">
+        
+        <!-- Menú de Navegación Izquierdo (Sub-pestañas) -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button onclick="changeProfileSubTab('sub_ingreso', this)" class="subtab-btn active" style="text-align: left; padding: 14px 16px; border-radius: 8px; border: 1px solid #cbd5e1; background: #f8fafc; font-weight: 700; color: #0A2540; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+                <div style="width: 32px; height: 32px; border-radius: 6px; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;"><i class="fas fa-door-open"></i></div>
+                <span>Perfil de Ingreso</span>
+            </button>
+            
+            <button onclick="changeProfileSubTab('sub_egreso', this)" class="subtab-btn" style="text-align: left; padding: 14px 16px; border-radius: 8px; border: 1px solid #e2e8f0; background: white; font-weight: 700; color: #475569; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+                <div style="width: 32px; height: 32px; border-radius: 6px; background: #ffedd5; color: #ea580c; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;"><i class="fas fa-graduation-cap"></i></div>
+                <span>Perfil de Egreso</span>
+            </button>
+            
+            <button onclick="changeProfileSubTab('sub_ra', this)" class="subtab-btn" style="text-align: left; padding: 14px 16px; border-radius: 8px; border: 1px solid #e2e8f0; background: white; font-weight: 700; color: #475569; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+                <div style="width: 32px; height: 32px; border-radius: 6px; background: #dcfce7; color: #16a34a; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform 0.2s;"><i class="fas fa-bullseye"></i></div>
+                <span>Resultados de Aprendizaje</span>
+            </button>
+        </div>
+        
+        <!-- Contenedor del Contenido de Sub-pestañas -->
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+            
+            <!-- SUB-TAB 1: PERFIL DE INGRESO -->
+            <div id="sub_ingreso" class="subtab-content">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px;">
+                    <i class="fas fa-user-astronaut text-toBlue" style="font-size: 1.5rem; color: #0284c7;"></i>
+                    <h4 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0A2540;">Perfil de Ingreso (Aspirante)</h4>
+                </div>
+                
+                <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin-bottom: 15px;">
+                    El aspirante al programa de <strong>Ingeniería Industrial</strong> de la Corporación Escuela Tecnológica del Oriente debe ser una persona con un alto interés por la ciencia, la tecnología, la innovación y la gestión de procesos productivos y organizacionales. Se espera que demuestre disposición para el aprendizaje autónomo, el pensamiento analítico y la solución sistemática de problemas mediante el razonamiento lógico y cuantitativo.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 15px; border-radius: 8px; border-left: 4px solid #0284c7;">
+                        <h5 style="margin: 0 0 6px 0; font-size: 0.85rem; font-weight: 700; color: #0A2540;"><i class="fas fa-tools mr-1" style="color: #0284c7;"></i> Habilidades Clave</h5>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 0.8rem; color: #475569; line-height: 1.4;">
+                            <li>Habilidades en comunicación oral y escrita.</li>
+                            <li>Manejo básico de herramientas informáticas.</li>
+                            <li>Capacidad y disposición para el trabajo colaborativo.</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px 15px; border-radius: 8px; border-left: 4px solid #16a34a;">
+                        <h5 style="margin: 0 0 6px 0; font-size: 0.85rem; font-weight: 700; color: #0A2540;"><i class="fas fa-heart mr-1" style="color: #16a34a;"></i> Actitud y Valores</h5>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 0.8rem; color: #475569; line-height: 1.4;">
+                            <li>Actitud ética y alta responsabilidad ciudadana.</li>
+                            <li>Compromiso activo con el desarrollo sostenible.</li>
+                            <li>Orientación hacia la mejora y optimización de su entorno.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Acceso inclusivo -->
+                <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 15px; display: flex; gap: 12px; align-items: flex-start;">
+                    <div style="color: #1d4ed8; font-size: 1.2rem;"><i class="fas fa-info-circle"></i></div>
+                    <div style="font-size: 0.75rem; color: #1e3a8a; line-height: 1.4;">
+                        <strong>Carácter Inclusivo y Acceso Libre:</strong> De acuerdo con el PEI de la ETO, no se establecen requisitos restrictivos para el ingreso. Todos los estudiantes cuentan con el acompañamiento pedagógico para asegurar el máximo aprovechamiento del plan formativo.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SUB-TAB 2: PERFIL DE EGRESO -->
+            <div id="sub_egreso" class="subtab-content hidden">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+                    <i class="fas fa-user-tie text-toOrange" style="font-size: 1.5rem; color: #ea580c;"></i>
+                    <h4 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0A2540;">Perfil de Egreso (Profesional Integral)</h4>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: #475569; line-height: 1.5; margin-bottom: 12px;">
+                    El egresado es un profesional con sólida formación científica, tecnológica y humanista, capaz de comprender, diseñar y optimizar sistemas integrados de personas, materiales, información y tecnología, con el fin de mejorar la productividad, eficiencia y sostenibilidad de las organizaciones.
+                </p>
+                
+                <h5 style="margin: 0 0 8px 0; font-size: 0.85rem; font-weight: 700; color: #0A2540; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fas fa-tasks text-toOrange mr-1" style="color: #ea580c;"></i> Competencias Específicas del Perfil:</h5>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.75rem; color: #374151;">
+                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
+                        <span style="font-weight: 800; color: #FF6600;">9.</span>
+                        <span><strong>Modelación Científica:</strong> Aplica ciencias básicas y de ingeniería para optimizar sistemas.</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
+                        <span style="font-weight: 800; color: #FF6600;">10.</span>
+                        <span><strong>Diseño y Procesos:</strong> Optimiza manufactura y servicios usando Lean y Six Sigma.</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
+                        <span style="font-weight: 800; color: #FF6600;">11.</span>
+                        <span><strong>Transformación Digital:</strong> Integra analítica de datos e IA en la toma de decisiones.</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
+                        <span style="font-weight: 800; color: #FF6600;">12.</span>
+                        <span><strong>Gestión Eficiente:</strong> Dirige recursos con criterios de eficiencia, calidad y RSE.</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
+                        <span style="font-weight: 800; color: #FF6600;">13.</span>
+                        <span><strong>Proyectos e Innovación:</strong> Formula y ejecuta proyectos de emprendimiento sostenible.</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
+                        <span style="font-weight: 800; color: #FF6600;">14.</span>
+                        <span><strong>Enfoques de Investigación:</strong> Resuelve problemáticas usando metodologías científicas.</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
+                        <span style="font-weight: 800; color: #FF6600;">15.</span>
+                        <span><strong>Ética y Sostenibilidad:</strong> Actúa con valores sólidos y vela por la preservación ambiental.</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
+                        <span style="font-weight: 800; color: #FF6600;">16.</span>
+                        <span><strong>Dominio Global:</strong> Se comunica efectivamente en equipos multiculturales y domina inglés.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SUB-TAB 3: RESULTADOS DE APRENDIZAJE -->
+            <div id="sub_ra" class="subtab-content hidden">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+                    <i class="fas fa-bullseye text-toGreen" style="font-size: 1.5rem; color: #16a34a;"></i>
+                    <h4 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0A2540;">Resultados de Aprendizaje del Programa (RAP)</h4>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: #475569; line-height: 1.5; margin-bottom: 12px;">
+                    Nuestros RAPs declaran explícitamente lo que el egresado conoce, comprende y demuestra en el ejercicio profesional (Decreto 1330). Se organizan de forma progresiva en 9 líneas principales:
+                </p>
+                
+                <div style="max-height: 220px; overflow-y: auto; padding-right: 8px; display: flex; flex-direction: column; gap: 8px;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 1: Modelación y Análisis</strong> - Modela y analiza fenómenos y sistemas industriales utilizando herramientas matemáticas, estadísticas y físicas para sustentar la toma de decisiones.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 2: Herramientas Digitales</strong> - Emplea lenguajes de programación y herramientas digitales para analizar datos, modelar procesos y apoyar la gestión organizacional.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 3: Diseño y Optimización</strong> - Diseña y optimiza procesos industriales integrando criterios de eficiencia, calidad, seguridad y sostenibilidad.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 4: Modelos Operativos</strong> - Formula y resuelve modelos determinísticos y estocásticos que apoyan la toma de decisiones en sistemas industriales.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 5: Gestión de Calidad</strong> - Implementa y evalúa sistemas de gestión orientados a la mejora continua y la excelencia organizacional.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 6: Distribución de Planta</strong> - Diseña soluciones técnicas para la disposición de instalaciones y flujos productivos considerando criterios técnicos, normativos y ergonómicos.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 7: Formulación de Proyectos</strong> - Formula, evalúa y sustenta proyectos aplicando criterios técnicos, financieros y de viabilidad económica.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 8: Análisis de Entorno</strong> - Interpreta información del mercado y del entorno empresarial para apoyar la planeación y la toma de decisiones estratégicas.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; border-radius: 6px; border-left: 3px solid #16a34a; font-size: 0.75rem;">
+                        <strong style="color: #16a34a;">RAP 9: Gestión Humana y Liderazgo</strong> - Lidera equipos multidisciplinarios con enfoque en la gestión humana, la ética y el pensamiento estratégico.
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </div>
 
