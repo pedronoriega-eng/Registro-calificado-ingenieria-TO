@@ -97,9 +97,10 @@ window.SECTIONS.c2 = `
                 <div style="font-size:2.2rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:5px; text-transform:uppercase; color:#FF6600;">ALTA</div>
                 <div style="font-size:0.85rem;">Necesidad regional de optimización de procesos y productividad</div>
             </div>
-            <div style="background:#FF6600; color:white; padding:20px; border-radius:8px; text-align:center;">
-                <div style="font-size:2.5rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:5px;">0</div>
-                <div style="font-size:0.85rem;">IES con sede principal en Santander que ofrezca el programa en modalidad virtual</div>
+            <div style="background:#FF6600; color:white; padding:20px; border-radius:8px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                <div style="font-size:2.5rem; font-weight:bold; font-family:'Montserrat', sans-serif; margin-bottom:2px;">0</div>
+                <div style="font-size:0.85rem; font-weight:600; line-height:1.2;">IES con sede principal en Santander que ofrezca el programa en modalidad virtual</div>
+                <div style="font-size:0.65rem; opacity:0.9; margin-top:6px; font-style:italic;"><i class="fas fa-database mr-1"></i>A corte de 2024, de acuerdo con los datos de SNIES</div>
             </div>
         </div>
     </div>
