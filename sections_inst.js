@@ -127,7 +127,7 @@ window.SECTIONS.inst = `
     <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; margin-bottom:25px; text-align:center;">
         <h3 style="color:#0A2540; font-weight:800; font-size:1.5rem; margin-bottom:5px;"><i class="fas fa-history mr-2" style="color:#C8102E;"></i>Evolución Institucional (1992 – 2024)</h3>
         <p style="color:#6b7280; margin-bottom:15px; font-size:0.95rem;">Más de 30 años de trayectoria en educación superior</p>
-        <img src="assets/inst_slides/inst_slide_5_img_1.png" alt="Línea de Tiempo Institucional" style="max-width:100%; border-radius:10px; border:1px solid #e5e7eb; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+        <img src="assets/evolucion_timeline.png" alt="Línea de Tiempo Institucional" style="max-width:100%; border-radius:10px; border:1px solid #e5e7eb; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
     </div>
 
     <!-- Timeline interactivo -->
@@ -477,8 +477,8 @@ window.SECTIONS.inst = `
 <!-- ==================== TAB: RETOS ==================== -->
 <div id="instTab_retos" class="inst-tab-content" style="display:none;">
     <!-- Imagen de retos del PPTX -->
-    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px; margin-bottom:25px; text-align:center;">
-        <img src="assets/inst_slides/inst_slide_19_img_1.png" alt="Retos Estratégicos" style="max-width:500px; width:100%; border-radius:10px;">
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px; margin-bottom:25px; text-align:center; display:flex; justify-content:center; align-items:center;">
+        <img src="assets/inst_slides/inst_slide_19_img_1.png" alt="Retos Estratégicos" style="max-width:450px; width:100%; border-radius:10px; display:block; margin:0 auto;">
     </div>
 
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:25px;">
