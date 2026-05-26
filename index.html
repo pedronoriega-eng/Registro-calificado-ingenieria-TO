@@ -30,6 +30,8 @@
     
     <!-- Carga de la BD Documental (Obligatorio para conservar argumentos tecnicos) -->
     <script src="sections.js?v=6"></script>
+    <!-- Presentación Institucional (PRIMERA SECCIÓN) -->
+    <script src="sections_inst.js?v=1"></script>
     <!-- Scripts del Portal - Versión v19 -->
     <script src="sections2.js?v=19"></script>
     <script src="sections_c1.js?v=19"></script>
@@ -207,6 +209,7 @@
             }, 50);
         }
         const condInfo = [
+            { id: 'inst', title: 'Presentación Institucional', img: 'https://images.unsplash.com/photo-1523050854058-8df90110c476?auto=format&fit=crop&w=600&q=80', slideLabel: 'Identidad TO · 8 Secciones', icon: 'fas fa-university' },
             { id: 'c1', title: '1. Denominación del Programa', img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-id-card' },
             { id: 'c2', title: '2. Justificación', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-chart-bar' },
             { id: 'c3', title: '3. Contenidos Curriculares', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-sitemap' },
@@ -225,7 +228,7 @@
                 <div onclick="openPresentation('${c.id}', '${c.title}')" class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:border-toBlue cursor-pointer group flex flex-col transform transition hover:-translate-y-2 hover:shadow-2xl">
                     <div class="h-40 relative overflow-hidden">
                         <img src="${c.img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'h-full bg-gradient-to-br from-toBlue to-toLightBlue flex items-center justify-center\'><i class=\'${c.icon} text-white text-4xl\'></i></div>';">
-                        <div class="absolute top-3 right-3 bg-toBlue/80 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">${c.id === 'anexos' ? 'SOPORTE' : 'CONDICIÓN ' + c.id.replace('c','')}</div>
+                        <div class="absolute top-3 right-3 bg-toBlue/80 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">${c.id === 'anexos' ? 'SOPORTE' : c.id === 'inst' ? 'INSTITUCIONAL' : 'CONDICIÓN ' + c.id.replace('c','')}</div>
                     </div>
                     <div class="p-5 flex-1 flex flex-col">
                         <h3 class="text-lg font-bold text-toBlue font-heading">${c.title}</h3>
@@ -258,7 +261,7 @@
             document.getElementById('slideCounter').parentElement.innerHTML = `<span id="slideCounter">${idx >= 0 ? idx + 1 : '-'}</span> / ${condInfo.length}`;
 
             // Setear el título superior de la diapositiva
-            document.getElementById('slideCategory').innerText = id === 'anexos' ? 'DOCUMENTACIÓN' : `CONDICIÓN ${id.replace('c','')}`;
+            document.getElementById('slideCategory').innerText = id === 'anexos' ? 'DOCUMENTACIÓN' : id === 'inst' ? 'PRESENTACIÓN INSTITUCIONAL' : `CONDICIÓN ${id.replace('c','')}`;
             document.getElementById('slideTitle').innerText = condInfo.find(c => c.id === id)?.title || title;
 
             // Mostrar el visor
@@ -293,6 +296,7 @@
         function runSlideScripts(id) {
             setTimeout(() => {
                 // Módulos interactivos agregados: C1, C2 (ECharts/Leaflet), C3 (Pestañas y Malla), C5, Anexos
+                if (id === 'inst' && window.instInit) window.instInit();
                 if (id === 'c1' && window.c1Init) window.c1Init();
                 if (id === 'c2' && window.c2Init) window.c2Init();
                 if (id === 'c3') {
