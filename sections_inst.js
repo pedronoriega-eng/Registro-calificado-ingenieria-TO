@@ -401,14 +401,9 @@ window.SECTIONS.inst = `
 
 <!-- ==================== TAB: INFRAESTRUCTURA ==================== -->
 <div id="instTab_infra" class="inst-tab-content" style="display:none;">
-    <!-- Foto panorámica de las 3 sedes -->
+    <!-- Foto oficial de las sedes -->
     <div style="border-radius:16px; overflow:hidden; margin-bottom:25px; border:2px solid #e5e7eb; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
-        <img src="assets/inst_slides/inst_slide_17_img_2.png" alt="Sedes de la Tecnológica del Oriente" style="width:100%; display:block;">
-    </div>
-
-    <!-- Detalle de sedes con datos del PPTX -->
-    <div style="border-radius:16px; overflow:hidden; margin-bottom:25px; border:2px solid #e5e7eb; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
-        <img src="assets/inst_slides/inst_slide_17_img_1.png" alt="Detalle Infraestructura 3 Sedes" style="width:100%; display:block;">
+        <img src="assets/sedes_institucionales.png" alt="Sedes de la Tecnológica del Oriente" style="width:100%; display:block;">
     </div>
 
     <!-- Tarjetas de sedes -->
@@ -429,13 +424,14 @@ window.SECTIONS.inst = `
         <div style="background:white; border:2px solid #0A2540; border-radius:12px; overflow:hidden; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
             <div style="background:#0A2540; color:white; padding:12px 15px; font-weight:700; text-align:center; font-size:1.1rem;">SEDE B</div>
             <div style="padding:15px;">
-                <p style="color:#6b7280; font-size:0.82rem; margin-bottom:10px;">📍 Calle 48 # 27-64</p>
-                <div style="font-size:1.8rem; font-weight:800; color:#0A2540; font-family:'Montserrat'; margin-bottom:10px;">2.407 m²</div>
+                <p style="color:#6b7280; font-size:0.82rem; margin-bottom:10px;">📍 Cra. 10 No. 35-40</p>
+                <div style="font-size:1.8rem; font-weight:800; color:#0A2540; font-family:'Montserrat'; margin-bottom:10px;">1.527,3 m²</div>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px; font-size:0.78rem; color:#374151;">
-                    <div>🏫 21 Aulas</div><div>🔬 3 Laboratorios</div>
-                    <div>☕ 1 Cafetería</div><div>🎮 1 Ludoteca</div>
-                    <div>💻 2 Salas Informática</div><div>🏢 2 Of. Admin.</div>
-                    <div>📚 1 Biblioteca</div><div>👨‍🏫 1 Sala Docentes</div>
+                    <div>🏫 9 Aulas</div><div>🔬 1 Laboratorio</div>
+                    <div>☕ 1 Cafetería</div><div>👨‍🏫 1 Sala Docentes</div>
+                    <div>💻 1 Sala Informática</div><div>🏢 4 Of. Admin.</div>
+                    <div>📚 1 Biblioteca</div><div>🎤 1 Auditorio</div>
+                    <div>🚿 4 Baterías Baño</div>
                 </div>
             </div>
         </div>
@@ -681,7 +677,7 @@ window._initInstCharts = function(tabId) {
                     labels: ['Sede A', 'Sede B', 'Sede C'],
                     datasets: [{
                         label: 'Área (m²)',
-                        data: [1140, 2407, 404],
+                        data: [1140, 1527, 404],
                         backgroundColor: ['#C8102E', '#0A2540', '#d97706'],
                         borderRadius: 8,
                         barThickness: 45
@@ -695,9 +691,9 @@ window._initInstCharts = function(tabId) {
             window._instCharts.esp = new Chart(ctx7, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Aulas (38)', 'Laboratorios (4)', 'Salas Inf. (4)', 'Of. Admin. (28)', 'Otros (8)'],
+                    labels: ['Aulas (26)', 'Laboratorios (2)', 'Salas Inf. (3)', 'Of. Admin. (30)', 'Otros (8)'],
                     datasets: [{
-                        data: [38, 4, 4, 28, 8],
+                        data: [26, 2, 3, 30, 8],
                         backgroundColor: ['#0A2540', '#C8102E', '#3b82f6', '#d97706', '#16a34a'],
                         borderWidth: 2, borderColor: '#fff'
                     }]

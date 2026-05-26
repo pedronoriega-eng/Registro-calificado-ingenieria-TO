@@ -88,7 +88,7 @@ window._c9Slides = [
     {img:'assets/c9_slide_13.png', title:'Sede B: Auditorios y Espacios de Proyección'},
     {img:'assets/c9_slide_14.png', title:'Sede C: Laboratorios Especializados de Práctica'},
     {img:'assets/c9_slide_15.png', title:'Sede C: Laboratorios de Cómputo y Licencias Especiales'},
-    {img:'assets/c9_slide_16.png', title:'Disponibilidad de Espacios y Capacidad Instalada (21 Aulas)'},
+    {img:'assets/c9_slide_16.png', title:'Disponibilidad de Espacios y Capacidad Instalada (26 Aulas)'},
     {img:'assets/c9_slide_17.png', title:'Infraestructura Tecnológica del Programa (Capacidad y Servidores)'},
     {img:'assets/c9_slide_18.png', title:'Red Interna Tecnológica: Sede A (Esquema de Conexiones)'},
     {img:'assets/c9_slide_19.png', title:'Red Interna Tecnológica: Sede B (Esquema de Conexiones)'},
