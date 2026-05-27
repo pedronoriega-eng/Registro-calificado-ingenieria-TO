@@ -39,10 +39,10 @@ window.SECTIONS.inst = `
                 <img src="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" alt="Logo" style="height:80px; background:white; padding:8px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
                 <div>
                     <h2 style="font-size:1.8rem; font-weight:800; margin:0; font-family:'Montserrat',sans-serif;">Tecnológica del Oriente</h2>
-                    <p style="font-size:1rem; color:#94a3b8; margin:5px 0 0;">Institución de Educación Superior · Bucaramanga, Santander</p>
+                    <p style="font-size:1rem; color:#cbd5e1; margin:5px 0 0;">Institución de Educación Superior · Bucaramanga, Santander</p>
                 </div>
             </div>
-            <p style="font-size:1.05rem; line-height:1.7; color:#cbd5e1; max-width:650px;">Institución de Educación Superior que contribuye al desarrollo integral de sus estudiantes, mediante un Modelo Pedagógico denominado <strong style="color:#fbbf24;">"Formación en Contextos de Aplicación"</strong> que incorpora la transferencia del conocimiento a la solución de los problemas reales del entorno.</p>
+            <p style="font-size:1.05rem; line-height:1.7; color:#ffffff; max-width:95%; text-align:justify; font-family:'Open Sans', sans-serif;">Institución de Educación Superior que contribuye al desarrollo integral de sus estudiantes, mediante un Modelo Pedagógico denominado <strong style="color:#fbbf24;">"Formación en Contextos de Aplicación"</strong> que incorpora la transferencia del conocimiento a la solución de los problemas reales del entorno.</p>
         </div>
     </div>
 
@@ -55,7 +55,7 @@ window.SECTIONS.inst = `
         </div>
         <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px; text-align:center; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(10,37,64,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
             <div style="width:55px; height:55px; background:linear-gradient(135deg, #0A2540, #173A66); border-radius:50%; margin:0 auto 10px; display:flex; align-items:center; justify-content:center;"><i class="fas fa-laptop" style="color:white; font-size:1.3rem;"></i></div>
-            <div style="font-size:2.5rem; font-weight:800; color:#0A2540; font-family:'Montserrat';">3</div>
+            <div style="font-size:2.5rem; font-weight:800; color:#0A2540; font-family:'Montserrat';">5</div>
             <div style="font-size:0.78rem; font-weight:700; color:#6b7280; text-transform:uppercase; letter-spacing:0.5px;">Pregrado Virtual</div>
         </div>
         <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px; text-align:center; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(10,37,64,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
@@ -65,7 +65,7 @@ window.SECTIONS.inst = `
         </div>
         <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px; text-align:center; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(10,37,64,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
             <div style="width:55px; height:55px; background:linear-gradient(135deg, #7c3aed, #8b5cf6); border-radius:50%; margin:0 auto 10px; display:flex; align-items:center; justify-content:center;"><i class="fas fa-wifi" style="color:white; font-size:1.3rem;"></i></div>
-            <div style="font-size:2.5rem; font-weight:800; color:#0A2540; font-family:'Montserrat';">2</div>
+            <div style="font-size:2.5rem; font-weight:800; color:#0A2540; font-family:'Montserrat';">4</div>
             <div style="font-size:0.78rem; font-weight:700; color:#6b7280; text-transform:uppercase; letter-spacing:0.5px;">Posgrado Virtual</div>
         </div>
     </div>
@@ -110,10 +110,69 @@ window.SECTIONS.inst = `
         </div>
     </div>
 
-    <!-- Gráfico radar PEI -->
-    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px;">
-        <h3 style="color:#0A2540; font-weight:700; font-size:1.2rem; margin-bottom:15px;"><i class="fas fa-compass mr-2" style="color:#C8102E;"></i>Ejes del Modelo Pedagógico</h3>
-        <div style="max-width:450px; margin:0 auto;"><canvas id="instPeiRadar"></canvas></div>
+    <!-- Gráfico rueda interactiva PEI -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; display:grid; grid-template-columns:1.2fr 1fr; gap:20px; align-items:center;">
+        <div>
+            <h3 style="color:#0A2540; font-weight:700; font-size:1.2rem; margin-bottom:15px;"><i class="fas fa-puzzle-piece mr-2" style="color:#C8102E;"></i>Ejes del Modelo Pedagógico</h3>
+            <div style="position:relative; width:100%; max-width:360px; margin:0 auto;">
+                <svg viewBox="0 0 400 400" width="100%" height="100%" id="peiPuzzleWheel" style="overflow:visible;">
+                    <defs>
+                        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fff" />
+                            <stop offset="100%" stop-color="#f8fafc" />
+                        </radialGradient>
+                    </defs>
+                    <!-- 8 Sectors of the Puzzle -->
+                    <!-- Sector 1: Excelencia Académica (top) -->
+                    <path d="M 200 200 L 200 40 A 160 160 0 0 1 313.1 86.9 Z" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('excelencia', this)" onmouseover="this.style.fill='#c7d2fe'" onmouseout="this.style.fill='#e0e7ff'" />
+                    <!-- Sector 2: Corporatividad -->
+                    <path d="M 200 200 L 313.1 86.9 A 160 160 0 0 1 360 200 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('corporatividad', this)" onmouseover="this.style.fill='#bbf7d0'" onmouseout="this.style.fill='#dcfce7'" />
+                    <!-- Sector 3: Flexibilidad Curricular -->
+                    <path d="M 200 200 L 360 200 A 160 160 0 0 1 313.1 313.1 Z" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('flexibilidad', this)" onmouseover="this.style.fill='#fef08a'" onmouseout="this.style.fill='#fef9c3'" />
+                    <!-- Sector 4: Formación Integral -->
+                    <path d="M 200 200 L 313.1 313.1 A 160 160 0 0 1 200 360 Z" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('formacion', this)" onmouseover="this.style.fill='#fed7aa'" onmouseout="this.style.fill='#ffedd5'" />
+                    <!-- Sector 5: Desarrollo Sostenible -->
+                    <path d="M 200 200 L 200 360 A 160 160 0 0 1 86.9 313.1 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('desarrollo', this)" onmouseover="this.style.fill='#fecaca'" onmouseout="this.style.fill='#fee2e2'" />
+                    <!-- Sector 6: Coherencia y Coexistencia -->
+                    <path d="M 200 200 L 86.9 313.1 A 160 160 0 0 1 40 200 Z" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('coherencia', this)" onmouseover="this.style.fill='#ddd6fe'" onmouseout="this.style.fill='#f5f3ff'" />
+                    <!-- Sector 7: Pertinencia -->
+                    <path d="M 200 200 L 40 200 A 160 160 0 0 1 86.9 86.9 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('pertinencia', this)" onmouseover="this.style.fill='#bae6fd'" onmouseout="this.style.fill='#e0f2fe'" />
+                    <!-- Sector 8: Innovación -->
+                    <path d="M 200 200 L 86.9 86.9 A 160 160 0 0 1 200 40 Z" fill="#fae8ff" stroke="#c084fc" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('innovacion', this)" onmouseover="this.style.fill='#f5d0fe'" onmouseout="this.style.fill='#fae8ff'" />
+
+                    <!-- Central Circle -->
+                    <circle cx="200" cy="200" r="72" fill="url(#centerGlow)" stroke="#0A2540" stroke-width="2.5" />
+                    <circle cx="200" cy="200" r="58" fill="none" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2" />
+
+                    <!-- Central Icon and Text -->
+                    <image href="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" x="165" y="150" height="50" width="70" />
+                    <text x="200" y="215" fill="#0A2540" font-size="8.5" font-weight="800" text-anchor="middle">PEI</text>
+                    <text x="200" y="225" fill="#FF6600" font-size="6.5" font-weight="700" text-anchor="middle">Click en Eje</text>
+
+                    <!-- Labels on the sectors -->
+                    <text x="222" y="78" fill="#4f46e5" font-size="7.5" font-weight="800">Excelencia</text>
+                    <text x="282" y="142" fill="#16a34a" font-size="7.5" font-weight="800">Corporatividad</text>
+                    <text x="278" y="252" fill="#ca8a04" font-size="7.5" font-weight="800">Flexibilidad</text>
+                    <text x="215" y="312" fill="#ea580c" font-size="7.5" font-weight="800">F. Integral</text>
+                    <text x="135" y="312" fill="#dc2626" font-size="7.5" font-weight="800">Sostenibilidad</text>
+                    <text x="78" y="252" fill="#7c3aed" font-size="7.5" font-weight="800">Coherencia</text>
+                    <text x="65" y="142" fill="#0284c7" font-size="7.5" font-weight="800">Pertinencia</text>
+                    <text x="135" y="78" fill="#c084fc" font-size="7.5" font-weight="800">Innovación</text>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Panel de Detalles -->
+        <div id="peiAxisDetailPanel" style="background:#f8fafc; border:2px solid #e5e7eb; border-radius:12px; padding:20px; min-height:280px; display:flex; flex-direction:column; justify-content:center; border-left:5px solid #0A2540; transition: border-left-color 0.3s;">
+            <div id="peiAxisDetailDefault">
+                <h4 style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 10px 0;"><i class="fas fa-info-circle mr-2" style="color:#FF6600;"></i>Ejes del PEI</h4>
+                <p style="color:#475569; font-size:0.85rem; line-height:1.5; margin:0;">Haga clic en cualquiera de las piezas del rompecabezas del modelo PEI para ver su descripción conceptual y cómo se articula con nuestro modelo educativo.</p>
+            </div>
+            <div id="peiAxisDetailActive" style="display:none;">
+                <h4 id="peiAxisActiveTitle" style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 8px 0; text-transform:uppercase;">Eje Seleccionado</h4>
+                <p id="peiAxisActiveDesc" style="color:#475569; font-size:0.85rem; line-height:1.5; margin:0; font-style:italic;">Descripción...</p>
+            </div>
+        </div>
     </div>
 
     <div class="evidence-box" style="background:#f0fdf4; color:#166534; border-left:5px solid #16a34a; padding:15px; font-weight:bold; font-size:1rem; border-radius:4px; margin-top:20px;">
@@ -195,21 +254,36 @@ window.SECTIONS.inst = `
 
 <!-- ==================== TAB: CONVENIOS ==================== -->
 <div id="instTab_convenios" class="inst-tab-content" style="display:none;">
+    <!-- Hero Banner (Uniforme) -->
+    <div style="position:relative; border-radius:16px; overflow:hidden; margin-bottom:25px; min-height:220px; background:linear-gradient(135deg, #0A2540 0%, #173A66 60%, #1e3a5f 100%);">
+        <div style="position:absolute; top:0; right:0; width:45%; height:100%; opacity:0.15; background:url('assets/inst_slides/inst_slide_7_img_0.png') center/cover;"></div>
+        <div style="position:relative; z-index:2; padding:35px 30px; color:white;">
+            <div style="display:flex; align-items:center; gap:20px; margin-bottom:20px;">
+                <img src="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" alt="Logo" style="height:80px; background:white; padding:8px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+                <div>
+                    <h2 style="font-size:1.8rem; font-weight:800; margin:0; font-family:'Montserrat',sans-serif;">Tecnológica del Oriente</h2>
+                    <p style="font-size:1rem; color:#cbd5e1; margin:5px 0 0;">Institución de Educación Superior · Bucaramanga, Santander</p>
+                </div>
+            </div>
+            <p style="font-size:1.05rem; line-height:1.7; color:#ffffff; max-width:95%; text-align:justify; font-family:'Open Sans', sans-serif;">Institución de Educación Superior que contribuye al desarrollo integral de sus estudiantes, mediante un Modelo Pedagógico denominado <strong style="color:#fbbf24;">"Formación en Contextos de Aplicación"</strong> que incorpora la transferencia del conocimiento a la solución de los problemas reales del entorno.</p>
+        </div>
+    </div>
+
     <!-- Mapa de convenios -->
     <div style="display:grid; grid-template-columns:1fr; gap:20px; margin-bottom:25px;">
         <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:15px;">
             <div style="background:linear-gradient(135deg, #0A2540, #173A66); color:white; border-radius:12px; padding:20px; text-align:center;">
-                <div style="font-size:2.5rem; font-weight:800; font-family:'Montserrat'; color:#fbbf24;">4</div>
+                <div style="font-size:2.5rem; font-weight:800; font-family:'Montserrat'; color:#fbbf24;">más de 4</div>
                 <div style="font-size:0.85rem; font-weight:600; color:#94a3b8;">Convenios Internacionales</div>
                 <div style="font-size:0.75rem; color:#64748b; margin-top:5px;">México · España · Ecuador · Panamá</div>
             </div>
             <div style="background:white; border:2px solid #C8102E; border-radius:12px; padding:20px; text-align:center;">
-                <div style="font-size:2.5rem; font-weight:800; font-family:'Montserrat'; color:#C8102E;">5+</div>
+                <div style="font-size:2.5rem; font-weight:800; font-family:'Montserrat'; color:#C8102E;">más de 25</div>
                 <div style="font-size:0.85rem; font-weight:600; color:#6b7280;">Convenios Académicos</div>
                 <div style="font-size:0.75rem; color:#9ca3af; margin-top:5px;">Universidades y centros de formación</div>
             </div>
             <div style="background:white; border:2px solid #0A2540; border-radius:12px; padding:20px; text-align:center;">
-                <div style="font-size:2.5rem; font-weight:800; font-family:'Montserrat'; color:#0A2540;">15+</div>
+                <div style="font-size:2.5rem; font-weight:800; font-family:'Montserrat'; color:#0A2540;">más de 100</div>
                 <div style="font-size:0.85rem; font-weight:600; color:#6b7280;">Sector Público y Privado</div>
                 <div style="font-size:0.75rem; color:#9ca3af; margin-top:5px;">Gobernaciones, alcaldías, empresas</div>
             </div>
@@ -283,18 +357,28 @@ window.SECTIONS.inst = `
         <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:25px;">
             <div style="background:#f9fafb; border:2px solid #3b82f6; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
                 <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">💼 Administración de Empresas</div>
-                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · 145 Cr.</div>
-                <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">NUEVA MODALIDAD</span>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES 108445 · 145 Cr.</div>
+                <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
             </div>
             <div style="background:#f9fafb; border:2px solid #3b82f6; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
                 <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">👶 Lic. Educación Infantil</div>
-                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · 158 Cr.</div>
-                <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">NUEVA MODALIDAD</span>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES 116357 · 158 Cr.</div>
+                <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
             </div>
             <div style="background:#f9fafb; border:2px solid #C8102E; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
                 <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">💻 Ingeniería de Software</div>
-                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · 155 Cr.</div>
-                <span style="display:inline-block; background:#C8102E; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">🆕 NUEVO PROGRAMA</span>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">8 Sem · SNIES 118074 · 144 Cr.</div>
+                <span style="display:inline-block; background:#C8102E; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
+            </div>
+            <div style="background:#f9fafb; border:2px solid #16a34a; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
+                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">🛡️ Seguridad y Salud en el Trabajo</div>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES 106177 · 155 Cr.</div>
+                <span style="display:inline-block; background:#16a34a; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
+            </div>
+            <div style="background:#f9fafb; border:2px solid #7c3aed; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
+                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">⚖️ Derecho</div>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES 111068 · 159 Cr.</div>
+                <span style="display:inline-block; background:#7c3aed; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
             </div>
         </div>
 
@@ -312,8 +396,10 @@ window.SECTIONS.inst = `
             <div>
                 <div style="color:#6b7280; font-weight:700; font-size:0.8rem; text-transform:uppercase; margin-bottom:8px;">Virtuales · Cobertura Nacional</div>
                 <div style="display:grid; gap:8px;">
-                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Gestión de la SST</div><div style="font-size:0.75rem; color:#94a3b8;">2 Sem. · 24 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:1px 5px; border-radius:3px; margin-top:4px;">NUEVA</span></div>
-                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Inteligencia de Negocios y Analítica</div><div style="font-size:0.75rem; color:#94a3b8;">2 Sem. · 24 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:1px 5px; border-radius:3px; margin-top:4px;">NUEVA</span></div>
+                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia de la Seguridad y Salud en el Trabajo</div><div style="font-size:0.75rem; color:#cbd5e1;">2 Sem · SNIES 111195 · 24 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span></div>
+                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Esp. Inteligencia de Negocios y Analítica</div><div style="font-size:0.75rem; color:#cbd5e1;">2 Sem · SNIES 111246 · 24 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span></div>
+                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia de Proyectos</div><div style="font-size:0.75rem; color:#cbd5e1;">2 Sem · SNIES 103745 · 28 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span></div>
+                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Esp. Pedagogía y Didácticas Específicas</div><div style="font-size:0.75rem; color:#cbd5e1;">4 Sem · SNIES 101639 · 35 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span></div>
                 </div>
             </div>
         </div>
@@ -323,7 +409,6 @@ window.SECTIONS.inst = `
             <h4 style="color:#92400e; font-weight:700; font-size:1rem; margin-bottom:10px;"><i class="fas fa-rocket mr-2"></i>Próximamente</h4>
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
                 <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#C8102E;">🏭 Ingeniería Industrial</span>
-                <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#374151;">⚖️ Derecho</span>
                 <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#374151;">📱 Marketing Digital</span>
                 <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#374151;">🎓 Esp. Psicopedagogía</span>
                 <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#374151;">📚 Maestría en Educación</span>
@@ -347,12 +432,12 @@ window.SECTIONS.inst = `
     <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:15px; margin-bottom:25px;">
         <div style="background:linear-gradient(135deg, #C8102E, #e53e3e); color:white; border-radius:12px; padding:20px; text-align:center;">
             <i class="fas fa-user-graduate" style="font-size:1.8rem; margin-bottom:8px; opacity:0.8;"></i>
-            <div style="font-size:2rem; font-weight:800; font-family:'Montserrat';">12</div>
+            <div style="font-size:2rem; font-weight:800; font-family:'Montserrat';">16</div>
             <div style="font-size:0.75rem; font-weight:600; color:rgba(255,255,255,0.8); text-transform:uppercase;">Programas Activos</div>
         </div>
         <div style="background:linear-gradient(135deg, #0A2540, #173A66); color:white; border-radius:12px; padding:20px; text-align:center;">
             <i class="fas fa-laptop-code" style="font-size:1.8rem; margin-bottom:8px; opacity:0.8;"></i>
-            <div style="font-size:2rem; font-weight:800; font-family:'Montserrat';">5</div>
+            <div style="font-size:2rem; font-weight:800; font-family:'Montserrat';">9</div>
             <div style="font-size:0.75rem; font-weight:600; color:rgba(255,255,255,0.8); text-transform:uppercase;">Programas Virtuales</div>
         </div>
         <div style="background:linear-gradient(135deg, #16a34a, #22c55e); color:white; border-radius:12px; padding:20px; text-align:center;">
@@ -406,47 +491,7 @@ window.SECTIONS.inst = `
         <img src="assets/sedes_institucionales.png" alt="Sedes de la Tecnológica del Oriente" style="width:100%; display:block;">
     </div>
 
-    <!-- Tarjetas de sedes -->
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:15px; margin-bottom:25px;">
-        <div style="background:white; border:2px solid #C8102E; border-radius:12px; overflow:hidden; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-            <div style="background:#C8102E; color:white; padding:12px 15px; font-weight:700; text-align:center; font-size:1.1rem;">SEDE A</div>
-            <div style="padding:15px;">
-                <p style="color:#6b7280; font-size:0.82rem; margin-bottom:10px;">📍 Calle 41 # 10-30</p>
-                <div style="font-size:1.8rem; font-weight:800; color:#C8102E; font-family:'Montserrat'; margin-bottom:10px;">1.140 m²</div>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px; font-size:0.78rem; color:#374151;">
-                    <div>🏫 11 Aulas</div><div>🔬 1 Laboratorio</div>
-                    <div>☕ 1 Cafetería</div><div>👨‍🏫 1 Sala Docentes</div>
-                    <div>💻 1 Sala Informática</div><div>🏢 24 Of. Admin.</div>
-                    <div>📚 1 Biblioteca</div><div>🚿 14 Baterías Baño</div>
-                </div>
-            </div>
-        </div>
-        <div style="background:white; border:2px solid #0A2540; border-radius:12px; overflow:hidden; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-            <div style="background:#0A2540; color:white; padding:12px 15px; font-weight:700; text-align:center; font-size:1.1rem;">SEDE B</div>
-            <div style="padding:15px;">
-                <p style="color:#6b7280; font-size:0.82rem; margin-bottom:10px;">📍 Cra. 10 No. 35-40</p>
-                <div style="font-size:1.8rem; font-weight:800; color:#0A2540; font-family:'Montserrat'; margin-bottom:10px;">1.527,3 m²</div>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px; font-size:0.78rem; color:#374151;">
-                    <div>🏫 9 Aulas</div><div>🔬 1 Laboratorio</div>
-                    <div>☕ 1 Cafetería</div><div>👨‍🏫 1 Sala Docentes</div>
-                    <div>💻 1 Sala Informática</div><div>🏢 4 Of. Admin.</div>
-                    <div>📚 1 Biblioteca</div><div>🎤 1 Auditorio</div>
-                    <div>🚿 4 Baterías Baño</div>
-                </div>
-            </div>
-        </div>
-        <div style="background:white; border:2px solid #d97706; border-radius:12px; overflow:hidden; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform=''">
-            <div style="background:#d97706; color:white; padding:12px 15px; font-weight:700; text-align:center; font-size:1.1rem;">SEDE C</div>
-            <div style="padding:15px;">
-                <p style="color:#6b7280; font-size:0.82rem; margin-bottom:10px;">📍 Cra 10 # 41-73</p>
-                <div style="font-size:1.8rem; font-weight:800; color:#d97706; font-family:'Montserrat'; margin-bottom:10px;">404 m²</div>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px; font-size:0.78rem; color:#374151;">
-                    <div>🏫 6 Aulas</div><div>🏢 2 Oficinas</div>
-                    <div>💻 1 Sala Informática</div><div>🚿 4 Baterías Baño</div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Gráfico de área por sede -->
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:25px;">
@@ -576,7 +621,7 @@ window._initInstCharts = function(tabId) {
                 data: {
                     labels: ['Pregrado Presencial', 'Pregrado Virtual', 'Posgrado Presencial', 'Posgrado Virtual'],
                     datasets: [{
-                        data: [4, 3, 3, 2],
+                        data: [4, 5, 3, 4],
                         backgroundColor: ['#C8102E', '#0A2540', '#d97706', '#7c3aed'],
                         borderWidth: 3,
                         borderColor: '#fff'
@@ -587,27 +632,13 @@ window._initInstCharts = function(tabId) {
         }
     }
 
-    // PEI - Radar
+    // PEI (Inicialización Rueda)
     if (tabId === 'pei') {
-        var ctx2 = document.getElementById('instPeiRadar');
-        if (ctx2 && !window._instCharts.pei) {
-            window._instCharts.pei = new Chart(ctx2, {
-                type: 'radar',
-                data: {
-                    labels: ['Formación Integral', 'Contextos Aplicación', 'Investigación', 'Proyección Social', 'Internacionalización', 'Bienestar'],
-                    datasets: [{
-                        label: 'Nivel de Desarrollo',
-                        data: [90, 95, 75, 85, 70, 80],
-                        backgroundColor: 'rgba(200,16,46,0.15)',
-                        borderColor: '#C8102E',
-                        borderWidth: 2,
-                        pointBackgroundColor: '#C8102E',
-                        pointRadius: 5
-                    }]
-                },
-                options: { responsive: true, scales: { r: { beginAtZero: true, max: 100, grid: { color: '#e5e7eb' }, angleLines: { color: '#e5e7eb' }, pointLabels: { color: '#374151', font: { size: 11, weight: 'bold' } }, ticks: { display: false } } }, plugins: { legend: { display: false } } }
-            });
-        }
+        setTimeout(function() {
+            if (typeof window.showPeiAxisDetail === 'function') {
+                window.showPeiAxisDetail('excelencia');
+            }
+        }, 100);
     }
 
     // Convenios
@@ -617,16 +648,16 @@ window._initInstCharts = function(tabId) {
             window._instCharts.conv = new Chart(ctx3, {
                 type: 'bar',
                 data: {
-                    labels: ['Internacionales', 'Académicos', 'Sector Público', 'Sector Privado', 'Alcaldías'],
+                    labels: ['Internacionales', 'Académicos', 'Sector Público y Privado'],
                     datasets: [{
                         label: 'Convenios',
-                        data: [4, 5, 6, 5, 4],
-                        backgroundColor: ['#0A2540', '#C8102E', '#3b82f6', '#d97706', '#16a34a'],
+                        data: [4, 25, 100],
+                        backgroundColor: ['#0A2540', '#C8102E', '#3b82f6'],
                         borderRadius: 8,
                         barThickness: 30
                     }]
                 },
-                options: { responsive: true, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, grid: { color: '#e5e7eb' }, ticks: { color: '#374151', stepSize: 1 } }, y: { grid: { display: false }, ticks: { color: '#374151', font: { size: 11, weight: 'bold' } } } } }
+                options: { responsive: true, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, grid: { color: '#e5e7eb' }, ticks: { color: '#374151' } }, y: { grid: { display: false }, ticks: { color: '#374151', font: { size: 11, weight: 'bold' } } } } }
             });
         }
     }
@@ -700,6 +731,82 @@ window._initInstCharts = function(tabId) {
                 },
                 options: { responsive: true, cutout: '50%', plugins: { legend: { position: 'bottom', labels: { color: '#374151', font: { size: 10, weight: 'bold' }, padding: 8 } } } }
             });
+        }
+    }
+};
+
+// =====================================================
+// DETALLE EJE PEI INTERACTIVO
+// =====================================================
+window.showPeiAxisDetail = function(axisId, pathEl) {
+    document.querySelectorAll('.pei-sector').forEach(el => {
+        el.style.opacity = '0.7';
+        el.style.strokeWidth = '1.5';
+    });
+
+    const axisData = {
+        excelencia: {
+            title: "Excelencia Académica",
+            desc: "Compromiso institucional constante con la calidad educativa, procesos de autoevaluación, mejoramiento de mallas curriculares y cualificación de primer nivel para la planta docente.",
+            color: "#4f46e5"
+        },
+        corporatividad: {
+            title: "Corporatividad",
+            desc: "Articulación institucional, identidad corporativa y sentido de pertenencia. Promueve el trabajo en equipo interdisciplinar alineado a metas colectivas y de responsabilidad social.",
+            color: "#16a34a"
+        },
+        flexibilidad: {
+            title: "Flexibilidad Curricular",
+            desc: "Rutas de aprendizaje adaptables y personalizadas, opciones de doble titulación, homologación ágil y múltiples alternativas de trabajo de grado acordes con el perfil profesional.",
+            color: "#ca8a04"
+        },
+        formacion: {
+            title: "Formación Integral",
+            desc: "Equilibrio formativo entre el ser, el saber y el hacer. Integramos competencias técnicas de ingeniería con un fuerte sentido ético, humanístico e integral de la persona.",
+            color: "#ea580c"
+        },
+        desarrollo: {
+            title: "Desarrollo Sostenible",
+            desc: "Promoción de prácticas ambientales responsables, economía circular y uso eficiente de los recursos en la cadena de suministros para un desarrollo socialmente responsable.",
+            color: "#dc2626"
+        },
+        coherencia: {
+            title: "Coherencia y Coexistencia",
+            desc: "Garantía de sintonía absoluta entre las intenciones del Proyecto Educativo Institucional (PEI), los planes de estudio prácticos y las demandas socioeconómicas externas.",
+            color: "#7c3aed"
+        },
+        pertinencia: {
+            title: "Pertinencia",
+            desc: "Enfoque en la solución directa de problemas reales y urgentes del entorno, transfiriendo activamente los saberes de la ingeniería a las necesidades de la región y el país.",
+            color: "#0284c7"
+        },
+        innovacion: {
+            title: "Innovación",
+            desc: "Fomento de una cultura emprendedora de base tecnológica, metodologías de enseñanza activa e incorporación de tendencias de vanguardia digital como la Inteligencia Artificial.",
+            color: "#c084fc"
+        }
+    };
+
+    const data = axisData[axisId];
+    if (data) {
+        const def = document.getElementById('peiAxisDetailDefault');
+        const act = document.getElementById('peiAxisDetailActive');
+        const tit = document.getElementById('peiAxisActiveTitle');
+        const dsc = document.getElementById('peiAxisActiveDesc');
+        const pnl = document.getElementById('peiAxisDetailPanel');
+        
+        if (def) def.style.display = 'none';
+        if (act) act.style.display = 'block';
+        if (tit) {
+            tit.innerText = data.title;
+            tit.style.color = data.color;
+        }
+        if (dsc) dsc.innerText = data.desc;
+        if (pnl) pnl.style.borderLeftColor = data.color;
+
+        if (pathEl) {
+            pathEl.style.opacity = '1';
+            pathEl.style.strokeWidth = '3';
         }
     }
 };

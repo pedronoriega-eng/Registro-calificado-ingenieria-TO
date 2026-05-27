@@ -22,6 +22,14 @@ window.toggleC4Tab = function(tabId, btn) {
         btn.style.backgroundColor = '#0A2540';
         btn.style.color = '#ffffff';
     }
+
+    if (tabId === 'c4-tab-docentes') {
+        setTimeout(() => {
+            if (typeof window.initCargaDocenteChart === 'function') {
+                window.initCargaDocenteChart('TC');
+            }
+        }, 150);
+    }
 };
 
 window.calculateWorkload = function() {
@@ -389,6 +397,9 @@ window.SECTIONS.c4 = `
         </button>
         <button class="c4-tab-btn" onclick="toggleC4Tab('c4-tab-retencion', this)">
             <i class="fas fa-user-shield"></i> Acompañamiento y Alertas
+        </button>
+        <button class="c4-tab-btn" onclick="toggleC4Tab('c4-tab-docentes', this)">
+            <i class="fas fa-chalkboard-teacher"></i> Tiempos y Carga Docente
         </button>
     </div>
 
@@ -849,6 +860,81 @@ window.SECTIONS.c4 = `
             </div>
         </div>
     </div>
+
+    <!-- TAB 5: PLAN DE TRABAJO DOCENTE (TIEMPOS Y CARGA DOCENTE) -->
+    <div id="c4-tab-docentes" class="c4-pane">
+        <div class="c4-grid-2">
+            <!-- Left Card: Teachers Time Distribution Details -->
+            <div class="c4-card" style="display:flex; flex-direction:column; justify-content:space-between; min-height:430px;">
+                <div>
+                    <h3 style="color:#0A2540; font-weight:800; font-size:1.15rem; margin-top:0; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+                        <i class="fas fa-business-time" style="color:#FF6600;"></i> Plan de Dedicación y Tiempos Docentes
+                    </h3>
+                    <p style="font-size:0.85rem; color:#475569; line-height:1.6; margin-bottom:16px;">
+                        Establecemos una distribución del plan de trabajo docente rigurosa y alineada, dividiendo la carga laboral según su modalidad de contratación para Tiempo Completo (TC - 40h) y Medio Tiempo (MT - 20h):
+                    </p>
+                    
+                    <!-- Selector de Vinculación -->
+                    <div style="margin-bottom:15px; display:flex; align-items:center; gap:12px; background:#f1f5f9; padding:10px; border-radius:8px; justify-content:center;">
+                        <span style="font-weight:700; color:#0A2540; font-size:0.85rem;">Tipo de Vinculación:</span>
+                        <button onclick="window.initCargaDocenteChart('TC')" class="c4-vinculo-btn active" style="padding:6px 12px; font-weight:800; font-size:0.8rem; border-radius:6px; border:1.5px solid #0A2540; background:#0A2540; color:white; cursor:pointer;" id="btn_vinculo_tc">Tiempo Completo (40h)</button>
+                        <button onclick="window.initCargaDocenteChart('MT')" class="c4-vinculo-btn" style="padding:6px 12px; font-weight:800; font-size:0.8rem; border-radius:6px; border:1.5px solid #cbd5e1; background:white; color:#475569; cursor:pointer;" id="btn_vinculo_mt">Medio Tiempo (20h)</button>
+                    </div>
+
+                    <!-- Horas Desglosadas -->
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.75rem; color:#374151;">
+                        <div style="background:#fafafa; border-left:3.5px solid #0A2540; padding:8px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                            <div><strong>Sincrónico (30%):</strong></div>
+                            <div id="c4-hrs-sinc" style="font-weight:800; color:#0A2540;">12.0 h</div>
+                        </div>
+                        <div style="background:#fafafa; border-left:3.5px solid #3b82f6; padding:8px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                            <div><strong>Tutorías (5%):</strong></div>
+                            <div id="c4-hrs-tuto" style="font-weight:800; color:#3b82f6;">2.0 h</div>
+                        </div>
+                        <div style="background:#fafafa; border-left:3.5px solid #60a5fa; padding:8px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                            <div><strong>Foros (5%):</strong></div>
+                            <div id="c4-hrs-foro" style="font-weight:800; color:#60a5fa;">2.0 h</div>
+                        </div>
+                        <div style="background:#fafafa; border-left:3.5px solid #1d4ed8; padding:8px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                            <div><strong>Entregables (10%):</strong></div>
+                            <div id="c4-hrs-entr" style="font-weight:800; color:#1d4ed8;">4.0 h</div>
+                        </div>
+                        <div style="background:#fafafa; border-left:3.5px solid #C8102E; padding:8px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                            <div><strong>Investigación (15%):</strong></div>
+                            <div id="c4-hrs-inve" style="font-weight:800; color:#C8102E;">6.0 h</div>
+                        </div>
+                        <div style="background:#fafafa; border-left:3.5px solid #16a34a; padding:8px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                            <div><strong>Proy. Social (10%):</strong></div>
+                            <div id="c4-hrs-proy" style="font-weight:800; color:#16a34a;">4.0 h</div>
+                        </div>
+                        <div style="background:#fafafa; border-left:3.5px solid #d97706; padding:8px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                            <div><strong>Administrativo (10%):</strong></div>
+                            <div id="c4-hrs-admi" style="font-weight:800; color:#d97706;">4.0 h</div>
+                        </div>
+                        <div style="background:#fafafa; border-left:3.5px solid #64748b; padding:8px 10px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+                            <div><strong>Otras Labores (15%):</strong></div>
+                            <div id="c4-hrs-otra" style="font-weight:800; color:#64748b;">6.0 h</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="evidence-box" style="margin-top:auto;">
+                    <i class="fas fa-file-pdf"></i> Lineamiento de Carga Laboral:
+                    <a href="Anexo 18. Lineamiento de Distribución de Planes de Trabajo.pdf" target="_blank" style="color:#047857; text-decoration:underline;">Anexo 18 (Planes de Trabajo)</a>
+                </div>
+            </div>
+
+            <!-- Right Card: The Donut Chart for Teacher dedication -->
+            <div class="c4-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:430px;">
+                <h4 style="color:#0A2540; font-weight:800; font-size:1.1rem; margin-top:0; margin-bottom:15px; width:100%; text-align:center;"><i class="fas fa-chart-pie mr-2" style="color:#FF6600;"></i>Distribución Porcentual del Tiempo Semanal</h4>
+                <div style="width:100%; max-width:280px; margin:0 auto;"><canvas id="c4CargaDocenteChart"></canvas></div>
+                <div style="margin-top:15px; font-size:0.75rem; font-weight:700; color:#64748b; text-align:center;" id="c4-docente-summary">
+                    Total dedicación semanal contratada: <span style="color:#C8102E;" id="c4-hrs-total">40.0 h/semana</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 <script>
@@ -858,5 +944,112 @@ window.SECTIONS.c4 = `
             window.c4Init();
         }
     }, 150);
+</script>
+
+<!-- =====================================================
+     GRÁFICO INTERACTIVO DE DISTRIBUCIÓN DE CARGA DOCENTE
+     ===================================================== -->
+<script>
+window._c4CargaDocenteChartInstance = null;
+
+window.initCargaDocenteChart = function(tipoVinculacion) {
+    var ctx = document.getElementById('c4CargaDocenteChart');
+    if (!ctx) return;
+    
+    // Destroy previous chart if it exists
+    if (window._c4CargaDocenteChartInstance) {
+        window._c4CargaDocenteChartInstance.destroy();
+    }
+    
+    const horasTotales = tipoVinculacion === 'TC' ? 40 : 20;
+    
+    // Update button active styles
+    const btnTC = document.getElementById('btn_vinculo_tc');
+    const btnMT = document.getElementById('btn_vinculo_mt');
+    if (tipoVinculacion === 'TC') {
+        if (btnTC) {
+            btnTC.style.backgroundColor = '#0A2540';
+            btnTC.style.color = 'white';
+            btnTC.style.borderColor = '#0A2540';
+        }
+        if (btnMT) {
+            btnMT.style.backgroundColor = 'white';
+            btnMT.style.color = '#475569';
+            btnMT.style.borderColor = '#cbd5e1';
+        }
+    } else {
+        if (btnTC) {
+            btnTC.style.backgroundColor = 'white';
+            btnTC.style.color = '#475569';
+            btnTC.style.borderColor = '#cbd5e1';
+        }
+        if (btnMT) {
+            btnMT.style.backgroundColor = '#0A2540';
+            btnMT.style.color = 'white';
+            btnMT.style.borderColor = '#0A2540';
+        }
+    }
+
+    // Render Chart.js
+    window._c4CargaDocenteChartInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Sincrónicos (30%)',
+                'Tutorías (5%)',
+                'Foros (5%)',
+                'Entregables (10%)',
+                'Investigación (15%)',
+                'Proy. Social (10%)',
+                'Administrativo (10%)',
+                'Otras Labores (15%)'
+            ],
+            datasets: [{
+                data: [30, 5, 5, 10, 15, 10, 10, 15],
+                backgroundColor: [
+                    '#0A2540',
+                    '#3b82f6',
+                    '#60a5fa',
+                    '#1d4ed8',
+                    '#C8102E',
+                    '#16a34a',
+                    '#d97706',
+                    '#64748b'
+                ],
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            cutout: '60%',
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const pct = context.raw;
+                            const hrs = ((pct / 100) * horasTotales).toFixed(1);
+                            return context.label + ": " + pct + "% (" + hrs + " horas/sem)";
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Update text labels
+    document.getElementById('c4-hrs-sinc').innerText = ((30/100)*horasTotales).toFixed(1) + " h";
+    document.getElementById('c4-hrs-tuto').innerText = ((5/100)*horasTotales).toFixed(1) + " h";
+    document.getElementById('c4-hrs-foro').innerText = ((5/100)*horasTotales).toFixed(1) + " h";
+    document.getElementById('c4-hrs-entr').innerText = ((10/100)*horasTotales).toFixed(1) + " h";
+    document.getElementById('c4-hrs-inve').innerText = ((15/100)*horasTotales).toFixed(1) + " h";
+    document.getElementById('c4-hrs-proy').innerText = ((10/100)*horasTotales).toFixed(1) + " h";
+    document.getElementById('c4-hrs-admi').innerText = ((10/100)*horasTotales).toFixed(1) + " h";
+    document.getElementById('c4-hrs-otra').innerText = ((15/100)*horasTotales).toFixed(1) + " h";
+    document.getElementById('c4-hrs-total').innerText = horasTotales.toFixed(1) + " h/semana";
+};
 </script>
 `;

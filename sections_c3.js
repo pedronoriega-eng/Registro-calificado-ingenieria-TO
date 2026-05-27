@@ -620,10 +620,10 @@ window.selectFundComponent = function(compName, btn) {
 
 window.changeTab = function(tabId, event) {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active', 'border-toOrange', 'text-toOrange'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active', 'border-toOrange', 'text-toOrange', 'font-bold'));
     document.getElementById(tabId).classList.remove('hidden');
     if(event && event.currentTarget) {
-        event.currentTarget.classList.add('active', 'border-toOrange', 'text-toOrange');
+        event.currentTarget.classList.add('active', 'border-toOrange', 'text-toOrange', 'font-bold');
     }
     
     if(tabId === 'fund') {
@@ -643,6 +643,10 @@ window.changeTab = function(tabId, event) {
         document.getElementById('ra_prog').textContent = "-";
         document.getElementById('ra_perfil').textContent = "-";
         document.getElementById('ra_title').textContent = "Detalle de Asignatura";
+        setTimeout(function() {
+            const firstDiff = document.querySelector('.diff-factor-btn');
+            if (firstDiff) firstDiff.click();
+        }, 100);
     }
 };
 
@@ -1014,11 +1018,15 @@ window.SECTIONS.c3 = `
 
 <!-- Sistema de Pestañas Interactivo -->
 <div class="flex border-b border-gray-200 mb-6 overflow-x-auto">
-    <button onclick="changeTab('fund', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap">Fundamentación</button>
-    <button onclick="changeTab('perfiles', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap">Perfiles y RA</button>
-    <button onclick="changeTab('modelo_pei', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap">Modelo PEI (Tridimensional)</button>
-    <button onclick="changeTab('malla_traz', event)" class="tab-btn active px-6 py-3 border-b-2 border-toOrange text-toOrange font-bold whitespace-nowrap">Malla y Trazabilidad (Interactivo)</button>
-    <button onclick="changeTab('flex', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap">Flexibilidad</button>
+    <button onclick="changeTab('fund', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap"><i class="fas fa-layer-group mr-1"></i> Componentes Formativos</button>
+    <button onclick="changeTab('pedagogicos', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap"><i class="fas fa-chalkboard-teacher mr-1"></i> Pedagógicos y Didácticos</button>
+    <button onclick="changeTab('interaccion', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap"><i class="fas fa-handshake mr-1"></i> Componentes de Interacción</button>
+    <button onclick="changeTab('teorica', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap"><i class="fas fa-brain mr-1"></i> Conceptualización Teórica</button>
+    <button onclick="changeTab('modelo_pei', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap"><i class="fas fa-cube mr-1"></i> Ejes PEI</button>
+    <button onclick="changeTab('perfiles', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap"><i class="fas fa-id-card mr-1"></i> Perfiles y RA</button>
+    <button onclick="changeTab('evaluacion', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap"><i class="fas fa-check-double mr-1"></i> Mecanismos de Evaluación</button>
+    <button onclick="changeTab('malla_traz', event)" class="tab-btn active px-6 py-3 border-b-2 border-toOrange text-toOrange font-bold whitespace-nowrap"><i class="fas fa-th mr-1"></i> Malla Curricular</button>
+    <button onclick="changeTab('flex', event)" class="tab-btn px-6 py-3 border-b-2 border-transparent hover:text-toOrange transition whitespace-nowrap"><i class="fas fa-exchange-alt mr-1"></i> Flexibilidad</button>
 </div>
 
 <!-- CONTENIDO: FUNDAMENTACION -->
@@ -1410,6 +1418,196 @@ window.SECTIONS.c3 = `
     </div>
 </div>
 
+<!-- CONTENIDO: PEDAGÓGICOS Y DIDÁCTICOS -->
+<div id="pedagogicos" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; min-height:430px;">
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-laptop-code" style="color:#C8102E;"></i> Mediación Pedagógica en Modalidad Virtual</h4>
+                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">El programa en modalidad virtual de la TO se estructura bajo estándares de interactividad, aprendizaje dinámico y rigurosidad técnica:</p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-network-wired mr-1" style="color:#C8102E;"></i> Plataforma LMS Moodle de Alta Disponibilidad</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Aulas virtuales organizadas científicamente bajo tres fases metodológicas: Inicio (Encuadre), Desarrollo (Construcción) y Cierre (Valoración).</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-video mr-1" style="color:#C8102E;"></i> Espacios Sincrónicos y Asincrónicos Equilibrados</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Encuentros sincrónicos obligatorios por semana (30% del plan de trabajo docente) y foros de debate asincrónicos para aprendizaje constructivo colaborativo.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-flask mr-1" style="color:#C8102E;"></i> Recursos Interactivos y Simuladores Remotos</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Integración directa de software de vanguardia (como FlexSim para simulación de procesos industriales y R-Studio para analítica) y acceso completo a bases de datos en la biblioteca virtual E-Libro.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toRed" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-graduation-cap" style="color:#0A2540;"></i> Teorías Pedagógicas de Soporte</h4>
+                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">Nuestro modelo pedagógico se fundamenta en marcos científicos constructivistas enfocados en el aprendizaje significativo y contextualizado:</p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Constructivismo Cognitivo y Social</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">El estudiante es el centro del proceso formativo, construyendo activamente su propio conocimiento a través del análisis autónomo y la resolución colaborativa de retos reales con sus pares y el docente.</span>
+                    </div>
+                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Formación en Contextos de Aplicación</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Enfoque institucional de la TO centrado en la transferencia directa de las teorías de ingeniería industrial a problemáticas concretas del sector productivo local y regional.</span>
+                    </div>
+                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Aprendizaje Basado en Problemas y Proyectos (ABP/ABPr)</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Metodología integradora presente en proyectos transversales y laboratorios, impulsando el razonamiento práctico de optimización y de modelado tecnológico.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENIDO: COMPONENTES DE INTERACCIÓN -->
+<div id="interaccion" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; min-height:430px;">
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-handshake" style="color:#C8102E;"></i> Relacionamiento con el Sector Externo</h4>
+                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">Articulamos de forma permanente el conocimiento de los estudiantes con las dinámicas reales del sector empresarial y la sociedad civil:</p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-building mr-1" style="color:#C8102E;"></i> Prácticas Profesionales de Excelencia</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Estudiantes vinculados directamente a proyectos reales en empresas del sector productivo y público (Fenalco, Cajasan, Gobernación), resolviendo problemas operativos mediante metodologías Lean y Six Sigma.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-users-cog mr-1" style="color:#C8102E;"></i> Proyectos de Proyección Social e Integración Regional</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Consultoría y transferencia de conocimiento técnico a microempresarios, PYMES y comunidades vulnerables de Santander, impulsando la productividad colectiva.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-flask mr-1" style="color:#C8102E;"></i> Semilleros y Grupos de Investigación Aplicada</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Investigación de impacto contextualizada en optimización logística, analítica de datos e Inteligencia Artificial orientada a la innovación regional.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toRed" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-globe" style="color:#0A2540;"></i> Interacción con Otras Instituciones</h4>
+                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">Fomentamos el intercambio académico y la internacionalización del currículo para enriquecer el perfil global de nuestros ingenieros:</p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-camera mr-1" style="color:#C8102E;"></i> Clases Espejo Interactivas</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Encuentros virtuales sincrónicos en los cuales estudiantes de la TO y de universidades extranjeras (ej. UNADE de México, Universidad de Granada en España, UMECIT de Panamá) abordan temáticas conjuntas en tiempo real.</span>
+                    </div>
+                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-route mr-1" style="color:#C8102E;"></i> Movilidad Académica Sincrónica y de Investigación</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Oportunidades de pasantías virtuales, codirección de proyectos de grado internacionales y visitas técnicas sincrónicas asistidas por tecnología.</span>
+                    </div>
+                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-project-diagram mr-1" style="color:#C8102E;"></i> Participación en Redes Académicas y Científicas</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Colaboración constante con redes de decanos y facultades de ingeniería nacionales e internacionales para estandarizar mejores prácticas y foros de investigación.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENIDO: CONCEPTUALIZACIÓN TEÓRICA Y EPISTEMOLÓGICA -->
+<div id="teorica" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
+    <div style="display:grid; grid-template-columns: 1fr 1.1fr; gap:20px; min-height:430px;">
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-brain" style="color:#C8102E;"></i> Fundamentos Teóricos y Epistemológicos</h4>
+                <p style="font-size:0.8rem; color:#475569; line-height:1.45; margin-bottom:12px;">Soportes científicos oficiales del programa (según el Documento Maestro, Sección 3.2.2):</p>
+                <div style="max-height: 290px; overflow-y: auto; padding-right: 8px; display:flex; flex-direction:column; gap:10px;" class="custom-scrollbar">
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-project-diagram mr-1" style="color:#C8102E;"></i> Enfoque Sistémico - Teoría General de Sistemas (TGS)</strong>
+                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> La TGS, desarrollada por Ludwig von Bertalanffy (1968), sostiene que las organizaciones y los sistemas productivos deben ser comprendidos como sistemas abiertos, interdependientes y dinámicos, en los que cada componente influye en el funcionamiento del todo.</span>
+                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> Asignaturas como Procesos Industriales y Gestión de Operaciones con IA se enfocan en analizar, diseñar y optimizar sistemas productivos como un todo integrado. La TGS promueve en los estudiantes la capacidad de abordar problemas organizacionales desde un enfoque holístico.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-robot mr-1" style="color:#C8102E;"></i> Transformación Digital - Teoría de la Revolución 4.0</strong>
+                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> La Revolución 4.0, descrita por Schwab (2016), enfatiza el impacto de tecnologías avanzadas como inteligencia artificial, big data y sistemas ciberfísicos en los procesos industriales y organizacionales. Estas tecnologías han redefinido la producción, la gestión y el consumo, requiriendo competencias avanzadas en el uso de estas herramientas.</span>
+                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> Asignaturas como Big Data y Analítica de Datos, Inteligencia Artificial permiten a los estudiantes desarrollar habilidades para implementar tecnologías avanzadas en entornos reales. El enfoque pedagógico incluye simulaciones y herramientas interactivas que facilitan el aprendizaje práctico de estas tecnologías.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-leaf mr-1" style="color:#C8102E;"></i> Sostenibilidad y Responsabilidad Social - Teoría del Desarrollo Sostenible</strong>
+                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> La teoría del desarrollo sostenible, formalizada en el Informe Brundtland (1987), plantea que las acciones humanas deben satisfacer las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer las suyas.</span>
+                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> Asignaturas como Desarrollo Sostenible y Sustentable, Bioética / Globalización y Economía promueven en los estudiantes una perspectiva ética y responsable en la gestión de recursos y procesos industriales. Se fomenta una integración transversal de la sostenibilidad en todas las etapas del diseño y la ejecución de proyectos.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-lightbulb mr-1" style="color:#C8102E;"></i> Innovación y Gestión de Proyectos - Teoría de la Innovación Disruptiva</strong>
+                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> Christensen (1997) describe cómo las innovaciones disruptivas pueden transformar mercados y organizaciones al introducir cambios significativos en tecnologías, procesos y modelos de negocio.</span>
+                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> Asignaturas como Laboratorio de Innovación y Emprendimiento y Formulación y Evaluación de Proyectos preparan a los estudiantes para identificar oportunidades de negocio y desarrollar soluciones innovadoras. El enfoque pedagógico incluye estudios de caso y proyectos prácticos que fomentan la creatividad y la capacidad emprendedora.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-graduation-cap mr-1" style="color:#C8102E;"></i> Perspectiva Pedagógica - Teoría del Constructivismo</strong>
+                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> Piaget (1970) sostiene que el aprendizaje se construye activamente a través de la interacción del estudiante con su entorno. Este enfoque se complementa con el constructivismo social de Vygotsky (1978), quien enfatiza el rol del contexto social y cultural en el aprendizaje.</span>
+                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> La metodología virtual del programa incorpora plataformas interactivas y actividades colaborativas que fomentan el aprendizaje autónomo y en equipo. El plan de estudios incluye simulaciones, proyectos y foros virtuales que facilitan la construcción del conocimiento a través de experiencias prácticas y colectivas.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toRed" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-project-diagram" style="color:#0A2540;"></i> Enfoque Epistemológico Tridimensional (PEI)</h4>
+                <p style="font-size:0.82rem; color:#475569; line-height:1.4; margin-bottom:12px;">Visualización y concepción de cómo interactúan las dimensiones del conocimiento científico del programa, conectando la fundamentación disciplinar con la realidad del entorno:</p>
+                
+                <div style="background:#fdf2f2; border:1px solid #fee2e2; padding:12px; border-radius:8px; display:flex; flex-direction:column; gap:10px;">
+                    <div style="font-size:0.76rem; color:#475569; line-height:1.45;"><strong style="color:#C8102E; display:block; margin-bottom:2px;">Eje longitudinal, secuencial disciplinar:</strong> Constituye la organización de los saberes o contenidos de las disciplinas mediante un plan de estudios ordenado y sistemático, de tal forma que se realiza una estructura cognoscitiva bajo un modelo integrativo. Las asignaturas funcionan como piezas relacionables entre sí y con el todo para lograr los diferentes niveles de integración y concreción curricular.</div>
+                    <div style="font-size:0.76rem; color:#475569; line-height:1.45;"><strong style="color:#16a34a; display:block; margin-bottom:2px;">Eje problémico, resolutivo e interdisciplinar:</strong> Este eje es esencialmente interdisciplinario y permite resolver los problemas reales, complejos y multicausales que se presentan en diversos contextos. Es el escenario ideal para la evaluación de competencias integrales requeridas para el manejo de los problemas inmersos en contextos específicos, puesto que es el plano donde confluyen el saber hacer, el saber conocer y el saber ser, frente a diversas circunstancias.</div>
+                    <div style="font-size:0.76rem; color:#475569; line-height:1.45;"><strong style="color:#0284c7; display:block; margin-bottom:2px;">Eje transversal transdisciplinario y proyecto ético:</strong> Es el eje esencialmente formativo que acompaña la enseñanza y el aprendizaje, se va construyendo en todas las interacciones de la vida académica, económica, social y cultural del estudiante en formación. Hace síntesis de sucesos y procesos ocurridos en el aula y en cualquier otro escenario de aprendizaje o de la vida. Se denomina transversal porque atraviesa todos los aspectos de la vida académica de un estudiante: todas las asignaturas del Plan de estudios, las prácticas académicas, los procesos de convivencia, el trabajo en equipo y las condiciones de vida.</div>
+                </div>
+                <div style="text-align:center; margin-top:12px;">
+                    <button onclick="changeTab('modelo_pei', event)" class="px-4 py-2 bg-toBlue text-white font-bold rounded-lg shadow hover:bg-toLightBlue transition" style="font-size:0.75rem;"><i class="fas fa-cube mr-2"></i>Ver Ejes del PEI Tridimensional</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENIDO: MECANISMOS DE EVALUACIÓN Y PRERREQUISITOS -->
+<div id="evaluacion" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
+    <div style="display:grid; grid-template-columns: 1fr 1.1fr; gap:20px; min-height:430px;">
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-check-double" style="color:#C8102E;"></i> Mecanismos de Evaluación Académica</h4>
+                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">Aseguramos la objetividad, rigurosidad y carácter continuo del proceso de evaluación del aprendizaje (Decreto 1330):</p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Evaluación Continua por Cortes</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">3 periodos de valoración por semestre (Corte I: 35%, Corte II: 35%, Corte III: 30%) garantizando retroalimentación oportuna en Moodle.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Rúbricas Analíticas y Criterios Claros</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Evaluación de competencias a través de rúbricas detalladas para calificar proyectos, laboratorios, talleres de código y foros.</span>
+                    </div>
+                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
+                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Evaluación del RAP (Resultados de Aprendizaje)</strong>
+                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Alineación directa entre las evidencias del estudiante y los 9 Resultados de Aprendizaje del Programa (RAP) validados periódicamente.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toRed" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-link" style="color:#0A2540;"></i> Funcionamiento e Interacción de los Prerrequisitos</h4>
+                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">Los prerrequisitos configuran una **ruta científica de aprendizaje progresivo**, asegurando que el estudiante adquiera las competencias base para cursar con éxito materias complejas:</p>
+                
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                    <div style="background:#fdf2f2; border:1px solid #fee2e2; padding:8px 12px; border-radius:6px; font-size:0.75rem; color:#475569;">
+                        <strong>1. Línea de Ciencias Básicas (Cálculo):</strong> Cálculo Diferencial <i class="fas fa-chevron-right mx-1" style="color:#C8102E;"></i> Cálculo Integral <i class="fas fa-chevron-right mx-1" style="color:#C8102E;"></i> Cálculo Multivariado <i class="fas fa-chevron-right mx-1" style="color:#C8102E;"></i> Ecuaciones Diferenciales. Asegura la madurez matemática formal para modelación.
+                    </div>
+                    <div style="background:#fdf2f2; border:1px solid #fee2e2; padding:8px 12px; border-radius:6px; font-size:0.75rem; color:#475569;">
+                        <strong>2. Línea de Datos y Métodos:</strong> Estadística Descriptiva <i class="fas fa-chevron-right mx-1" style="color:#C8102E;"></i> Estadística Inferencial <i class="fas fa-chevron-right mx-1" style="color:#C8102E;"></i> Diseño de Experimentos. Construye la solidez estadística fundamental.
+                    </div>
+                    <div style="background:#fdf2f2; border:1px solid #fee2e2; padding:8px 12px; border-radius:6px; font-size:0.75rem; color:#475569;">
+                        <strong>3. Línea de Optimización:</strong> Investigación de Operaciones I <i class="fas fa-chevron-right mx-1" style="color:#C8102E;"></i> Investigación de Operaciones II <i class="fas fa-chevron-right mx-1" style="color:#C8102E;"></i> Modelación y Simulación. Provee herramientas matemáticas estocásticas y determinísticas avanzadas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- CONTENIDO: FLEXIBILIDAD -->
 <div id="flex" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-6" style="font-family: 'Montserrat', sans-serif;">
     
@@ -1530,27 +1728,50 @@ window.SECTIONS.c3 = `
     <!-- VISTA GLOBAL DE LA MALLA (SEMESTRE VS COMPONENTE) -->
     <div id="malla_global_view" style="background:white; border:1px solid #e2e8f0; border-radius:14px; padding:20px; margin-bottom:15px; box-shadow:0 2px 8px rgba(0,0,0,0.04); font-family:'Montserrat', sans-serif;">
         <h3 style="color:#0A2540; font-weight:800; margin-top:0; margin-bottom:6px; font-size:1.1rem;"><i class="fas fa-th" style="color:#FF6600; margin-right:8px;"></i> Malla Curricular de Ingeniería Industrial (Vista Global)</h3>
-        <p style="font-size:0.78rem; color:#64748b; margin-bottom:15px;">Estructura por períodos académicos (columnas) y componentes curriculares (filas). Haga clic en cualquier materia para cargar su trazabilidad detallada abajo.</p>
+        <p style="font-size:0.78rem; color:#64748b; margin-bottom:15px;">Estructura por semestres académicos (columnas) y componentes curriculares (filas). Haga clic en cualquier materia para cargar su trazabilidad detallada abajo.</p>
         
         <div style="border-radius:8px; border:1px solid #cbd5e1; overflow:hidden;">
             <table style="width:100%; border-collapse:collapse; background:white; font-size:0.62rem; table-layout: fixed;">
                 <thead>
                     <tr style="background:#0A2540; color:white; border-bottom:2px solid #cbd5e1;">
                         <th style="padding:6px 4px; border-right:1px solid #334155; text-align:left; font-weight:800; width:14%; font-size:0.65rem;">Componente Curricular</th>
-                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. I</th>
-                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. II</th>
-                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. III</th>
-                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. IV</th>
-                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. V</th>
-                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. VI</th>
-                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. VII</th>
-                        <th style="padding:6px 4px; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">Per. VIII</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">SEMESTRE I</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">SEMESTRE II</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">SEMESTRE III</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">SEMESTRE IV</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">SEMESTRE V</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">SEMESTRE VI</th>
+                        <th style="padding:6px 4px; border-right:1px solid #334155; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">SEMESTRE VII</th>
+                        <th style="padding:6px 4px; text-align:center; font-weight:800; width:10.75%; font-size:0.65rem;">SEMESTRE VIII</th>
                     </tr>
                 </thead>
                 <tbody id="malla_global_table_body">
                     <!-- Dinámico -->
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <!-- SECCIÓN INTERACTIVA: FACTORES DIFERENCIADORES -->
+    <div style="background:white; border:1px solid #e2e8f0; border-radius:14px; padding:20px; margin-bottom:15px; box-shadow:0 2px 8px rgba(0,0,0,0.04); font-family:'Montserrat', sans-serif;">
+        <h4 style="color:#0A2540; font-weight:800; margin-top:0; margin-bottom:6px; font-size:1rem;"><i class="fas fa-star" style="color:#ea580c; margin-right:8px;"></i> FACTOR DIFERENCIADOR: ¿Qué hace único al programa de la TO?</h4>
+        <p style="font-size:0.75rem; color:#64748b; margin-bottom:12px;">Haga clic en cualquiera de nuestros tres factores diferenciadores oficiales para visualizar las asignaturas de la malla curricular que le dan soporte:</p>
+        
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:15px;">
+            <button onclick="window.showDiferenciadorDetail('ia', this)" class="diff-factor-btn" style="padding:12px; font-size:0.8rem; font-weight:800; border-radius:8px; border:1px solid #cbd5e1; background:white; color:#475569; cursor:pointer; text-align:left; display:flex; align-items:center; gap:8px; transition:all 0.2s;">
+                <i class="fas fa-robot" style="color:#3b82f6;"></i> Integración IA
+            </button>
+            <button onclick="window.showDiferenciadorDetail('sostenibilidad', this)" class="diff-factor-btn" style="padding:12px; font-size:0.8rem; font-weight:800; border-radius:8px; border:1px solid #cbd5e1; background:white; color:#475569; cursor:pointer; text-align:left; display:flex; align-items:center; gap:8px; transition:all 0.2s;">
+                <i class="fas fa-leaf" style="color:#16a34a;"></i> Sostenibilidad
+            </button>
+            <button onclick="window.showDiferenciadorDetail('innovacion', this)" class="diff-factor-btn" style="padding:12px; font-size:0.8rem; font-weight:800; border-radius:8px; border:1px solid #cbd5e1; background:white; color:#475569; cursor:pointer; text-align:left; display:flex; align-items:center; gap:8px; transition:all 0.2s;">
+                <i class="fas fa-lightbulb" style="color:#d97706;"></i> Innovación
+            </button>
+        </div>
+        
+        <!-- Panel de Resultados de Factores -->
+        <div id="diffFactorResultPanel" style="background:#fafafa; border:1px solid #e2e8f0; border-radius:10px; padding:15px; display:none; min-height:80px;">
+            <!-- Dinámico -->
         </div>
     </div>
 
@@ -1584,3 +1805,65 @@ window.SECTIONS.c3 = `
 `;
 // Aseguramos que se dibuje al cargar la sección
 setTimeout(window.renderMalla, 100);
+
+// =====================================================
+// FACTORES DIFERENCIADORES INTERACTIVOS
+// =====================================================
+window.showDiferenciadorDetail = function(factorId, btnEl) {
+    document.querySelectorAll('.diff-factor-btn').forEach(btn => {
+        btn.style.backgroundColor = 'white';
+        btn.style.borderColor = '#cbd5e1';
+        btn.style.color = '#475569';
+    });
+
+    const factorData = {
+        ia: {
+            title: "Integración IA (Nueva Generación)",
+            desc: "Nuestro programa no menciona la IA como adorno: la integra curricularmente en asignaturas de aplicación directa, posicionándonos como un programa de nueva generación.",
+            subjects: ["Gestión de Operaciones con IA", "Producción e IA", "Simulación con IA", "Fundamentos de Programación", "Inteligencia Artificial"],
+            color: "#3b82f6",
+            bg: "#eff6ff"
+        },
+        sostenibilidad: {
+            title: "Sostenibilidad (Futuro Circular)",
+            desc: "Eje estratégico para modelos de negocio sostenibles y economía circular, formando ingenieros con conciencia social y ecológica.",
+            subjects: ["Sistemas Integrados de Gestión (SIG)", "Gestión de la Higiene y Seguridad", "Termodinámica", "Electiva Profesional II (Logística Verde)"],
+            color: "#16a34a",
+            bg: "#f0fdf4"
+        },
+        innovacion: {
+            title: "Innovación (Emprendimiento Real)",
+            desc: "Emprendimiento y desarrollo de productos integrados al currículo, incentivando la creación de valor desde las aulas virtuales.",
+            subjects: ["Laboratorio de Innovación y Emprendimiento", "Gerencia Tecnológica y de la Innovación", "Formulación y Evaluación de Proyectos", "Pensamiento Estratégico y Prospectivo"],
+            color: "#d97706",
+            bg: "#fef3c7"
+        }
+    };
+
+    const data = factorData[factorId];
+    if (data) {
+        if (btnEl) {
+            btnEl.style.backgroundColor = data.bg;
+            btnEl.style.borderColor = data.color;
+            btnEl.style.color = '#0A2540';
+        }
+
+        const panel = document.getElementById('diffFactorResultPanel');
+        let subHtml = data.subjects.map(s => `
+            <span style="font-size:0.72rem; padding:4px 10px; background:${data.bg}; color:${data.color}; border:1px solid ${data.color}33; border-radius:6px; font-weight:700; display:inline-block; margin-right:6px; margin-bottom:6px;"><i class="fas fa-tag mr-1" style="font-size:0.65rem;"></i>${s}</span>
+        `).join('');
+
+        if (panel) {
+            panel.innerHTML = `
+                <div style="border-left:4px solid ${data.color}; padding-left:12px; min-height:80px; display:flex; flex-direction:column; justify-content:center;">
+                    <h5 style="margin:0 0 6px 0; font-size:0.85rem; font-weight:800; color:#0A2540;">${data.title}</h5>
+                    <p style="margin:0 0 10px 0; font-size:0.75rem; color:#475569; line-height:1.45; font-style:italic;">"${data.desc}"</p>
+                    <div style="display:flex; flex-wrap:wrap;">
+                        ${subHtml}
+                    </div>
+                </div>
+            `;
+            panel.style.display = 'block';
+        }
+    }
+};
