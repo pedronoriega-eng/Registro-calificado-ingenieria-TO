@@ -1,6 +1,6 @@
 // ===================================================================
 // SECCIÓN: SISTEMA DE EDUCACIÓN VIRTUAL — PORTAL INTERACTIVO
-// Fuente: Sistema de Educación Virtual.pptx (28 slides completos)
+// Fuente: Sistema de Educación Virtual.pptx (Diapositivas Ajustadas)
 // ===================================================================
 window.SECTIONS = window.SECTIONS || {};
 
@@ -49,37 +49,35 @@ window.SECTIONS.virtual = `
     </div>
 
     <!-- Modelo Pedagógico y su Núcleo -->
-    <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:25px; margin-bottom:25px; align-items:start;">
-        <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
-            <h3 style="color:#0A2540; font-weight:800; font-size:1.3rem; margin-top:0; margin-bottom:15px; border-bottom:2px solid #C8102E; padding-bottom:8px;">
-                <i class="fas fa-graduation-cap mr-2" style="color:#C8102E;"></i>Núcleo del Modelo
-            </h3>
-            <p style="color:#374151; font-size:0.95rem; line-height:1.7; text-align:justify; margin-bottom:15px;">
-                En nuestro modelo **"Formación en Contextos de Aplicación"**, el **estudiante es el centro absoluto** del acto educativo. Él interactúa activamente con:
-            </p>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:15px;">
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #0A2540; border-radius:8px; padding:12px;">
-                    <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">👨‍🏫 Docente Mediador</div>
-                    <div style="font-size:0.8rem; color:#64748b; margin-top:4px;">Guía, orienta y acompaña el proceso del estudiante.</div>
-                </div>
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #C8102E; border-radius:8px; padding:12px;">
-                    <div style="font-weight:700; color:#C8102E; font-size:0.9rem;">🌍 Contexto Social y Cultural</div>
-                    <div style="font-size:0.8rem; color:#64748b; margin-top:4px;">La realidad externa como fuente inagotable de aprendizaje.</div>
-                </div>
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #d97706; border-radius:8px; padding:12px;">
-                    <div style="font-weight:700; color:#d97706; font-size:0.9rem;">🔍 Indagación y Observación</div>
-                    <div style="font-size:0.8rem; color:#64748b; margin-top:4px;">Fomento de la curiosidad, investigación y análisis crítico.</div>
-                </div>
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #16a34a; border-radius:8px; padding:12px;">
-                    <div style="font-weight:700; color:#16a34a; font-size:0.9rem;">🤝 Trabajo Colaborativo</div>
-                    <div style="font-size:0.8rem; color:#64748b; margin-top:4px;">Co-construcción de saberes mediante interacción grupal.</div>
+    <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:25px; margin-bottom:25px; align-items:start;">
+        <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; box-shadow:0 4px 12px rgba(0,0,0,0.02); min-height:430px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h3 style="color:#0A2540; font-weight:800; font-size:1.3rem; margin-top:0; margin-bottom:15px; border-bottom:2px solid #C8102E; padding-bottom:8px;">
+                    <i class="fas fa-graduation-cap mr-2" style="color:#C8102E;"></i>Núcleo del Modelo
+                </h3>
+                <p style="color:#374151; font-size:0.95rem; line-height:1.7; text-align:justify; margin-bottom:15px;">
+                    En nuestro modelo **"Formación en Contextos de Aplicación"**, el **estudiante es el centro absoluto** del acto educativo. Él interactúa activamente con:
+                </p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:15px;">
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #0A2540; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#0A2540; font-size:0.85rem;">👨‍🏫 Docente Mediador</div>
+                    </div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #C8102E; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#C8102E; font-size:0.85rem;">🌍 Contexto Social</div>
+                    </div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #d97706; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#d97706; font-size:0.85rem;">🔍 Indagación</div>
+                    </div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #16a34a; border-radius:8px; padding:10px;">
+                        <div style="font-weight:700; color:#16a34a; font-size:0.85rem;">🤝 Trabajo Colaborativo</div>
+                    </div>
                 </div>
             </div>
             <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:15px; border-left:4px solid #1e40af;">
                 <p style="margin:0; font-size:0.9rem; line-height:1.6; color:#1e3a8a; font-weight:600;">
                     <i class="fas fa-star mr-1"></i> Formación Integral en 3 Dimensiones:
                 </p>
-                <div style="display:flex; justify-content:space-around; margin-top:10px; font-weight:700; font-size:0.85rem; color:#1e40af;">
+                <div style="display:flex; justify-content:space-around; margin-top:8px; font-weight:700; font-size:0.85rem; color:#1e40af;">
                     <span>🧠 Cognitiva</span>
                     <span>❤️ Emocional</span>
                     <span>🛠️ Praxeológica</span>
@@ -90,87 +88,75 @@ window.SECTIONS.virtual = `
             </div>
         </div>
 
-        <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.02); text-align:center;">
-            <h3 style="color:#0A2540; font-weight:700; font-size:1.15rem; margin-top:0; margin-bottom:15px; text-align:left;">
-                <i class="fas fa-image mr-2" style="color:#FF6600;"></i>Ilustración del Modelo
+        <!-- Custom HTML/CSS/SVG Interactive Model (Very Simple & Modern) -->
+        <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; box-shadow:0 4px 12px rgba(0,0,0,0.02); text-align:center; min-height:430px; display:flex; flex-direction:column; justify-content:space-between;">
+            <h3 style="color:#0A2540; font-weight:700; font-size:1.15rem; margin-top:0; margin-bottom:10px; text-align:left;">
+                <i class="fas fa-project-diagram mr-2" style="color:#FF6600;"></i>Ilustración Interactiva del Modelo
             </h3>
-            <div style="background:#fafafa; border:1px solid #e5e7eb; border-radius:8px; padding:10px; display:inline-block; max-width:100%;">
-                <img src="assets/virtual_slides/virtual_slide_5.png" alt="Esquema Modelo Pedagógico" style="max-width:100%; max-height:280px; border-radius:4px; display:block; margin:0 auto;">
-            </div>
-            <p style="color:#6b7280; font-size:0.8rem; margin:10px 0 0; font-style:italic;">Interrelación del estudiante con el mediador, el contexto y la praxeología.</p>
-        </div>
-    </div>
+            
+            <div style="position: relative; width: 100%; max-width: 320px; margin: 0 auto;">
+                <svg viewBox="0 0 400 400" width="100%" height="100%" style="display: block;">
+                    <defs>
+                        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#C8102E" stop-opacity="0.2" />
+                            <stop offset="100%" stop-color="#C8102E" stop-opacity="0" />
+                        </radialGradient>
+                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0A2540" flood-opacity="0.15" />
+                        </filter>
+                    </defs>
 
-    <!-- Sustentos Teóricos del Modelo -->
-    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; box-shadow:0 4px 12px rgba(0,0,0,0.02); margin-bottom:25px;">
-        <h3 style="color:#0A2540; font-weight:800; font-size:1.3rem; margin-top:0; margin-bottom:15px; border-bottom:2px solid #C8102E; padding-bottom:8px;">
-            <i class="fas fa-book-reader mr-2" style="color:#C8102E;"></i>Sustentos Teóricos del Modelo Pedagógico
-        </h3>
-        <p style="color:#374151; font-size:0.95rem; line-height:1.6; margin-bottom:20px;">
-            El modelo pedagógico de educación virtual de la **TO** no es improvisado; se fundamenta conceptualmente sobre referentes pedagógicos rigurosos y consolidados a nivel global:
-        </p>
+                    <!-- Glow pulse background -->
+                    <circle cx="200" cy="200" r="85" fill="url(#glow)">
+                        <animate attributeName="r" values="75;95;75" dur="4s" repeatCount="indefinite" />
+                    </circle>
 
-        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin-bottom:20px;">
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; text-align:center; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#0A2540';" onmouseout="this.style.transform=''; this.style.borderColor='#e2e8f0';">
-                <div style="font-size:1.8rem; margin-bottom:5px;">👥</div>
-                <div style="font-weight:700; color:#0A2540; font-size:0.88rem; margin-bottom:4px;">Constructivismo Social</div>
-                <div style="font-weight:600; color:#C8102E; font-size:0.8rem; margin-bottom:6px;">L. Vygotsky</div>
-                <div style="font-size:0.78rem; color:#475569; line-height:1.4;">El conocimiento se co-construye a través de la interacción social.</div>
-            </div>
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; text-align:center; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#0A2540';" onmouseout="this.style.transform=''; this.style.borderColor='#e2e8f0';">
-                <div style="font-size:1.8rem; margin-bottom:5px;">🧠</div>
-                <div style="font-weight:700; color:#0A2540; font-size:0.88rem; margin-bottom:4px;">Aprendizaje Significativo</div>
-                <div style="font-weight:600; color:#C8102E; font-size:0.8rem; margin-bottom:6px;">D. Ausubel</div>
-                <div style="font-size:0.78rem; color:#475569; line-height:1.4;">Anclaje del nuevo saber sobre estructuras y presaberes del alumno.</div>
-            </div>
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; text-align:center; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#0A2540';" onmouseout="this.style.transform=''; this.style.borderColor='#e2e8f0';">
-                <div style="font-size:1.8rem; margin-bottom:5px;">🛠️</div>
-                <div style="font-weight:700; color:#0A2540; font-size:0.88rem; margin-bottom:4px;">Aprendizaje Experiencial</div>
-                <div style="font-weight:600; color:#C8102E; font-size:0.8rem; margin-bottom:6px;">J. Dewey</div>
-                <div style="font-size:0.78rem; color:#475569; line-height:1.4;">Aprender haciendo, resolviendo situaciones problemáticas directas.</div>
-            </div>
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; text-align:center; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#0A2540';" onmouseout="this.style.transform=''; this.style.borderColor='#e2e8f0';">
-                <div style="font-size:1.8rem; margin-bottom:5px;">🧩</div>
-                <div style="font-weight:700; color:#0A2540; font-size:0.88rem; margin-bottom:4px;">A. Basado en Problemas</div>
-                <div style="font-weight:600; color:#C8102E; font-size:0.8rem; margin-bottom:6px;">H. Barrows</div>
-                <div style="font-size:0.78rem; color:#475569; line-height:1.4;">ABP como articulador práctico de casos profesionales de estudio.</div>
-            </div>
-        </div>
+                    <!-- Connecting Lines to Center -->
+                    <line x1="200" y1="200" x2="200" y2="70" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="6,6" />
+                    <line x1="200" y1="200" x2="200" y2="330" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="6,6" />
+                    <line x1="200" y1="200" x2="70" y2="200" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="6,6" />
+                    <line x1="200" y1="200" x2="330" y2="200" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="6,6" />
 
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; text-align:center; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#0A2540';" onmouseout="this.style.transform=''; this.style.borderColor='#e2e8f0';">
-                <div style="font-size:1.8rem; margin-bottom:5px;">📊</div>
-                <div style="font-weight:700; color:#0A2540; font-size:0.88rem; margin-bottom:4px;">Taxonomía Cognitiva</div>
-                <div style="font-weight:600; color:#C8102E; font-size:0.8rem; margin-bottom:6px;">B. Bloom</div>
-                <div style="font-size:0.78rem; color:#475569; line-height:1.4;">Niveles del pensamiento: recordar, comprender, aplicar, analizar, evaluar, crear.</div>
+                    <!-- Node 1: Docente Mediador -->
+                    <g cursor="pointer" onclick="document.getElementById('pedagogicModelDetail').innerHTML = '<strong>👨‍🏫 Docente Mediador:</strong> Actúa como guía y mentor interactivo, facilitando canales y construyendo rutas personalizadas.'">
+                        <circle cx="200" cy="70" r="35" fill="#0A2540" filter="url(#shadow)" stroke="#fff" stroke-width="2" />
+                        <text x="200" y="65" text-anchor="middle" fill="#fff" font-size="20" font-family="'Segoe UI Emoji', sans-serif">👨‍🏫</text>
+                        <text x="200" y="120" text-anchor="middle" fill="#0A2540" font-size="11" font-family="'Montserrat', sans-serif" font-weight="bold">Docente Mediador</text>
+                    </g>
+
+                    <!-- Node 2: Trabajo Colaborativo -->
+                    <g cursor="pointer" onclick="document.getElementById('pedagogicModelDetail').innerHTML = '<strong>🤝 Trabajo Colaborativo:</strong> Promueve la interacción grupal activa y el co-diseño de soluciones ingenieriles.'">
+                        <circle cx="330" cy="200" r="35" fill="#0A2540" filter="url(#shadow)" stroke="#fff" stroke-width="2" />
+                        <text x="330" y="195" text-anchor="middle" fill="#fff" font-size="20" font-family="'Segoe UI Emoji', sans-serif">🤝</text>
+                        <text x="330" y="250" text-anchor="middle" fill="#0A2540" font-size="11" font-family="'Montserrat', sans-serif" font-weight="bold">Colaborativo</text>
+                    </g>
+
+                    <!-- Node 3: Contexto Social y Cultural -->
+                    <g cursor="pointer" onclick="document.getElementById('pedagogicModelDetail').innerHTML = '<strong>🌍 Contexto Social:</strong> Transferencia directa del conocimiento a la resolución de problemas reales del sector regional.'">
+                        <circle cx="200" cy="330" r="35" fill="#0A2540" filter="url(#shadow)" stroke="#fff" stroke-width="2" />
+                        <text x="200" y="325" text-anchor="middle" fill="#fff" font-size="20" font-family="'Segoe UI Emoji', sans-serif">🌍</text>
+                        <text x="200" y="380" text-anchor="middle" fill="#0A2540" font-size="11" font-family="'Montserrat', sans-serif" font-weight="bold">Contexto Real</text>
+                    </g>
+
+                    <!-- Node 4: Indagación y Observación -->
+                    <g cursor="pointer" onclick="document.getElementById('pedagogicModelDetail').innerHTML = '<strong>🔍 Indagación:</strong> Fomento del espíritu de investigación aplicada y la observación analítica y crítica.'">
+                        <circle cx="70" cy="200" r="35" fill="#0A2540" filter="url(#shadow)" stroke="#fff" stroke-width="2" />
+                        <text x="70" y="195" text-anchor="middle" fill="#fff" font-size="20" font-family="'Segoe UI Emoji', sans-serif">🔍</text>
+                        <text x="70" y="250" text-anchor="middle" fill="#0A2540" font-size="11" font-family="'Montserrat', sans-serif" font-weight="bold">Indagación</text>
+                    </g>
+
+                    <!-- Center Node: ESTUDIANTE -->
+                    <g cursor="pointer" onclick="document.getElementById('pedagogicModelDetail').innerHTML = '<strong>🎓 Estudiante al Centro:</strong> Autogestión del aprendizaje, desarrollo autónomo y núcleo praxeológico del modelo virtual.'">
+                        <circle cx="200" cy="200" r="48" fill="#C8102E" filter="url(#shadow)" stroke="#fff" stroke-width="3" />
+                        <text x="200" y="194" text-anchor="middle" fill="#fff" font-size="22" font-family="'Segoe UI Emoji', sans-serif">🎓</text>
+                        <text x="200" y="215" text-anchor="middle" fill="#fff" font-size="9" font-family="'Montserrat', sans-serif" font-weight="bold" letter-spacing="1">ESTUDIANTE</text>
+                    </g>
+                </svg>
             </div>
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; text-align:center; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#0A2540';" onmouseout="this.style.transform=''; this.style.borderColor='#e2e8f0';">
-                <div style="font-size:1.8rem; margin-bottom:5px;">🎯</div>
-                <div style="font-weight:700; color:#0A2540; font-size:0.88rem; margin-bottom:4px;">Enfoque por Competencias</div>
-                <div style="font-weight:600; color:#C8102E; font-size:0.8rem; margin-bottom:6px;">S. Tobón</div>
-                <div style="font-size:0.78rem; color:#475569; line-height:1.4;">Socioformación orientada a formar profesionales idóneos ante desafíos reales.</div>
-            </div>
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; text-align:center; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#0A2540';" onmouseout="this.style.transform=''; this.style.borderColor='#e2e8f0';">
-                <div style="font-size:1.8rem; margin-bottom:5px;">🔄</div>
-                <div style="font-weight:700; color:#0A2540; font-size:0.88rem; margin-bottom:4px;">Flexibilidad Curricular</div>
-                <div style="font-weight:600; color:#C8102E; font-size:0.8rem; margin-bottom:6px;">J. Arnaz</div>
-                <div style="font-size:0.78rem; color:#475569; line-height:1.4;">Trayectos y créditos académicos adaptables a la realidad de cada estudiante.</div>
-            </div>
-        </div>
-        
-        <!-- Galería de imágenes sustentadoras reales de la PPTX -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:25px; border-top:1px solid #e5e7eb; padding-top:20px;">
-            <div style="background:#fcfcfc; border:1px solid #e2e8f0; border-radius:10px; padding:15px; text-align:center;">
-                <h4 style="color:#0A2540; font-size:0.95rem; font-weight:700; margin-top:0; margin-bottom:10px;">Sustentos del Modelo (Fidelidad Completa)</h4>
-                <div style="display:flex; justify-content:center; gap:10px;">
-                    <img src="assets/virtual_slides/virtual_slide_2.png" alt="Sustentos Slide 2" style="max-height:160px; max-width:100%; border-radius:6px; border:1px solid #ddd; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
-                </div>
-            </div>
-            <div style="background:#fcfcfc; border:1px solid #e2e8f0; border-radius:10px; padding:15px; text-align:center;">
-                <h4 style="color:#0A2540; font-size:0.95rem; font-weight:700; margin-top:0; margin-bottom:10px;">Referentes e Hitos Conceptuales</h4>
-                <div style="display:flex; justify-content:center; gap:10px;">
-                    <img src="assets/virtual_slides/virtual_slide_3.png" alt="Referentes Slide 3" style="max-height:160px; max-width:100%; border-radius:6px; border:1px solid #ddd; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
-                </div>
+
+            <!-- Detail panel -->
+            <div style="background: #fafafa; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 12px; font-size: 0.82rem; color: #475569; min-height: 52px; display: flex; align-items: center; justify-content: center; line-height: 1.4;" id="pedagogicModelDetail">
+                💡 Haz clic en cualquier nodo para explorar su rol en el Modelo de la TO.
             </div>
         </div>
     </div>
@@ -187,7 +173,7 @@ window.SECTIONS.virtual = `
             </div>
         </div>
         <p style="margin:0; font-size:1rem; line-height:1.6; color:#e2e8f0; text-align:justify;">
-            La educación virtual en la institución se gestiona y audita a través de **cuatro dimensiones operativas y estratégicas**. Ninguna funciona de forma aislada; coexisten para asegurar un servicio académico robusto, legal, pedagógico e interactivo.
+            La educación virtual en la institución se gestiona a través de **cuatro dimensiones operativas y estratégicas**. Ninguna funciona de forma aislada; coexisten para asegurar un servicio académico de primer nivel.
         </p>
     </div>
 
@@ -200,7 +186,7 @@ window.SECTIONS.virtual = `
                 <h4 style="color:#0A2540; font-weight:800; font-size:1.15rem; margin:0;">Dimensión Pedagógica</h4>
             </div>
             <p style="color:#4b5563; font-size:0.88rem; line-height:1.6; text-align:justify; margin:0;">
-                Permite definir **qué tecnologías** pueden ser parte del proceso enseñanza - aprendizaje y **cómo** se establecerán las relaciones comunicativas entre los diferentes elements del acto educativo (docentes, estudiantes y contenidos). Define los lineamientos del aula virtual.
+                Permite definir **qué tecnologías** pueden ser parte del proceso enseñanza - aprendizaje y **cómo** se establecerán las relaciones comunicativas entre los diferentes elementos del acto educativo (docentes, estudiantes y contenidos). Define los lineamientos del aula virtual.
             </p>
         </div>
 
@@ -222,7 +208,7 @@ window.SECTIONS.virtual = `
                 <h4 style="color:#0A2540; font-weight:800; font-size:1.15rem; margin:0;">Dimensión Tecnológica</h4>
             </div>
             <p style="color:#4b5563; font-size:0.88rem; line-height:1.6; text-align:justify; margin:0;">
-                Permite definir las herramientas y servicios de **hardware, software y conectividad** bajo estrictos estándares de calidad. Abarca sistemas de información académica, la infraestructura de red, la plataforma virtual (LMS Moodle), la biblioteca virtual integrada, el soporte técnico y la seguridad integral de la información.
+                Permite definir las herramientas y servicios de **hardware, software y conectividad** bajo estrictos estándares de calidad. Abarca sistemas de información académica, la infraestructura de red, la plataforma virtual (LMS Moodle), la biblioteca virtual integrada, el soporte técnico y la seguridad de la información.
             </p>
         </div>
 
@@ -252,11 +238,10 @@ window.SECTIONS.virtual = `
 
 <!-- ==================== TAB: DIMENSIÓN PEDAGÓGICA Y CURRÍCULO ==================== -->
 <div id="virtualTab_pedagogica" class="virtual-tab-content" style="display:none;">
-    <!-- Sub-menú Interno para navegación interna de la pestaña -->
-    <div style="display:grid; grid-template-columns:1fr 1fr 1.2fr 1fr; gap:8px; margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:12px;">
+    <!-- Sub-menú Interno para navegación interna de la pestaña (Sin Sección 3 - Créditos Académicos) -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:12px;">
         <button class="v-subtab-btn active" onclick="window.switchVirtualSubtab('actores', this)" style="padding:8px 12px; background:#0A2540; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:700; font-size:0.8rem; transition:0.2s;"><i class="fas fa-users mr-1"></i> Actores & Roles</button>
         <button class="v-subtab-btn" onclick="window.switchVirtualSubtab('estructura', this)" style="padding:8px 12px; background:#f3f4f6; color:#374151; border:none; border-radius:6px; cursor:pointer; font-weight:700; font-size:0.8rem; transition:0.2s;"><i class="fas fa-sitemap mr-1"></i> Estructura Módulos</button>
-        <button class="v-subtab-btn" onclick="window.switchVirtualSubtab('creditos', this)" style="padding:8px 12px; background:#f3f4f6; color:#374151; border:none; border-radius:6px; cursor:pointer; font-weight:700; font-size:0.8rem; transition:0.2s;"><i class="fas fa-clock mr-1"></i> Créditos & Actividades</button>
         <button class="v-subtab-btn" onclick="window.switchVirtualSubtab('evaluacion', this)" style="padding:8px 12px; background:#f3f4f6; color:#374151; border:none; border-radius:6px; cursor:pointer; font-weight:700; font-size:0.8rem; transition:0.2s;"><i class="fas fa-clipboard-check mr-1"></i> Eval. & Resultados</button>
     </div>
 
@@ -334,33 +319,6 @@ window.SECTIONS.virtual = `
                 </p>
                 <div style="background:#fafafa; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
                     <img src="assets/virtual_slides/virtual_slide_11.png" alt="Estructura Módulos Completa" style="width:100%; border-radius:4px;">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SUB-TAB: CRÉDITOS & ACTIVIDADES -->
-    <div id="v_subtab_creditos" class="v-subtab-content" style="display:none;">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:25px; align-items:start;">
-            <!-- Distribución de Créditos -->
-            <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:22px;">
-                <h4 style="color:#0A2540; font-weight:800; font-size:1.15rem; margin-top:0; margin-bottom:12px;"><i class="fas fa-clock mr-2" style="color:#C8102E;"></i>Distribución de Créditos Académicos (Relación Directa)</h4>
-                <p style="color:#4b5563; font-size:0.88rem; line-height:1.6; text-align:justify; margin-bottom:15px;">
-                    La TO aplica la normatividad nacional de créditos (1 crédito = 48 horas de esfuerzo del estudiante, con 12h de trabajo directo y 36h de aprendizaje autónomo):
-                </p>
-                <div style="background:#fafafa; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
-                    <img src="assets/virtual_slides/virtual_slide_15.png" alt="Distribución de Créditos Académicos" style="width:100%; border-radius:4px;">
-                </div>
-            </div>
-
-            <!-- Actividades de Aprendizaje -->
-            <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:22px; text-align:center;">
-                <h4 style="color:#0A2540; font-weight:800; font-size:1.15rem; margin-top:0; margin-bottom:12px; text-align:left;"><i class="fas fa-tasks mr-2" style="color:#0A2540;"></i>Actividades de Aprendizaje Integradas</h4>
-                <p style="color:#4b5563; font-size:0.85rem; line-height:1.6; text-align:justify; margin-bottom:15px;">
-                    Estructuradas en el campus virtual de forma interactiva y secuencial para asegurar la asimilación del conocimiento:
-                </p>
-                <div style="background:#fafafa; border:1px solid #e2e8f0; border-radius:8px; padding:10px; text-align:center;">
-                    <img src="assets/virtual_slides/virtual_slide_12.png" alt="Actividades de Aprendizaje" style="width:100%; border-radius:4px;">
                 </div>
             </div>
         </div>
@@ -505,15 +463,6 @@ window.SECTIONS.virtual = `
                 <img src="assets/virtual_slides/virtual_slide_27.png" alt="Dimensión Organizacional Pilares" style="width:100%; max-height:120px; object-fit:contain;">
             </div>
         </div>
-    </div>
-
-    <!-- Cierre Formal y Agradecimientos de la PPTX -->
-    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.02); text-align:center;">
-        <h4 style="color:#0A2540; font-size:1.1rem; font-weight:800; margin-top:0; margin-bottom:15px;"><i class="fas fa-award mr-1" style="color:#C8102E;"></i>Sustentación Técnica de Calidad (TO)</h4>
-        <div style="background:#0A2540; border-radius:10px; padding:12px; max-width:400px; margin:0 auto; box-shadow:0 4px 15px rgba(10,37,64,0.15);">
-            <img src="assets/virtual_slides/virtual_slide_28.png" alt="Agradecimientos Finales TO" style="width:100%; border-radius:6px; display:block; margin:0 auto;">
-        </div>
-        <p style="color:#6b7280; font-size:0.8rem; margin:10px 0 0; font-style:italic;">"El Sistema de Educación Virtual de la TO agradece su atención en esta sustentación técnica."</p>
     </div>
 </div>
 `;
