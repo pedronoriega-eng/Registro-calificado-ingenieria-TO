@@ -111,66 +111,40 @@ window.SECTIONS.inst = `
     </div>
 
     <!-- Gráfico rueda interactiva PEI -->
-    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; display:grid; grid-template-columns:1.2fr 1fr; gap:20px; align-items:center;">
-        <div>
-            <h3 style="color:#0A2540; font-weight:700; font-size:1.2rem; margin-bottom:15px;"><i class="fas fa-puzzle-piece mr-2" style="color:#C8102E;"></i>Ejes del Modelo Pedagógico</h3>
-            <div style="position:relative; width:100%; max-width:360px; margin:0 auto;">
-                <svg viewBox="0 0 400 400" width="100%" height="100%" id="peiPuzzleWheel" style="overflow:visible;">
-                    <defs>
-                        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="#fff" />
-                            <stop offset="100%" stop-color="#f8fafc" />
-                        </radialGradient>
-                    </defs>
-                    <!-- 8 Sectors of the Puzzle -->
-                    <!-- Sector 1: Excelencia Académica (top) -->
-                    <path d="M 200 200 L 200 40 A 160 160 0 0 1 313.1 86.9 Z" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('excelencia', this)" onmouseover="this.style.fill='#c7d2fe'" onmouseout="this.style.fill='#e0e7ff'" />
-                    <!-- Sector 2: Corporatividad -->
-                    <path d="M 200 200 L 313.1 86.9 A 160 160 0 0 1 360 200 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('corporatividad', this)" onmouseover="this.style.fill='#bbf7d0'" onmouseout="this.style.fill='#dcfce7'" />
-                    <!-- Sector 3: Flexibilidad Curricular -->
-                    <path d="M 200 200 L 360 200 A 160 160 0 0 1 313.1 313.1 Z" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('flexibilidad', this)" onmouseover="this.style.fill='#fef08a'" onmouseout="this.style.fill='#fef9c3'" />
-                    <!-- Sector 4: Formación Integral -->
-                    <path d="M 200 200 L 313.1 313.1 A 160 160 0 0 1 200 360 Z" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('formacion', this)" onmouseover="this.style.fill='#fed7aa'" onmouseout="this.style.fill='#ffedd5'" />
-                    <!-- Sector 5: Desarrollo Sostenible -->
-                    <path d="M 200 200 L 200 360 A 160 160 0 0 1 86.9 313.1 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('desarrollo', this)" onmouseover="this.style.fill='#fecaca'" onmouseout="this.style.fill='#fee2e2'" />
-                    <!-- Sector 6: Coherencia y Coexistencia -->
-                    <path d="M 200 200 L 86.9 313.1 A 160 160 0 0 1 40 200 Z" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('coherencia', this)" onmouseover="this.style.fill='#ddd6fe'" onmouseout="this.style.fill='#f5f3ff'" />
-                    <!-- Sector 7: Pertinencia -->
-                    <path d="M 200 200 L 40 200 A 160 160 0 0 1 86.9 86.9 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('pertinencia', this)" onmouseover="this.style.fill='#bae6fd'" onmouseout="this.style.fill='#e0f2fe'" />
-                    <!-- Sector 8: Innovación -->
-                    <path d="M 200 200 L 86.9 86.9 A 160 160 0 0 1 200 40 Z" fill="#fae8ff" stroke="#c084fc" stroke-width="1.5" class="pei-sector" style="cursor:pointer; transition:all 0.3s;" onclick="window.showPeiAxisDetail('innovacion', this)" onmouseover="this.style.fill='#f5d0fe'" onmouseout="this.style.fill='#fae8ff'" />
-
-                    <!-- Central Circle -->
-                    <circle cx="200" cy="200" r="72" fill="url(#centerGlow)" stroke="#0A2540" stroke-width="2.5" />
-                    <circle cx="200" cy="200" r="58" fill="none" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2" />
-
-                    <!-- Central Icon and Text -->
-                    <image href="https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg" x="165" y="150" height="50" width="70" />
-                    <text x="200" y="215" fill="#0A2540" font-size="8.5" font-weight="800" text-anchor="middle">PEI</text>
-                    <text x="200" y="225" fill="#FF6600" font-size="6.5" font-weight="700" text-anchor="middle">Click en Eje</text>
-
-                    <!-- Labels on the sectors -->
-                    <text x="222" y="78" fill="#4f46e5" font-size="7.5" font-weight="800">Excelencia</text>
-                    <text x="282" y="142" fill="#16a34a" font-size="7.5" font-weight="800">Corporatividad</text>
-                    <text x="278" y="252" fill="#ca8a04" font-size="7.5" font-weight="800">Flexibilidad</text>
-                    <text x="215" y="312" fill="#ea580c" font-size="7.5" font-weight="800">F. Integral</text>
-                    <text x="135" y="312" fill="#dc2626" font-size="7.5" font-weight="800">Sostenibilidad</text>
-                    <text x="78" y="252" fill="#7c3aed" font-size="7.5" font-weight="800">Coherencia</text>
-                    <text x="65" y="142" fill="#0284c7" font-size="7.5" font-weight="800">Pertinencia</text>
-                    <text x="135" y="78" fill="#c084fc" font-size="7.5" font-weight="800">Innovación</text>
-                </svg>
+    <!-- Gráfico rueda interactiva PEI -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; display:grid; grid-template-columns:1fr 1.2fr; gap:25px; align-items:start;">
+        <div style="text-align:center;">
+            <h3 style="color:#0A2540; font-weight:700; font-size:1.2rem; margin-bottom:15px; text-align:left;"><i class="fas fa-puzzle-piece mr-2" style="color:#C8102E;"></i>Ejes del Modelo Pedagógico</h3>
+            <div style="background:#fafafa; border:1px solid #cbd5e1; border-radius:12px; padding:15px; box-shadow:0 4px 10px rgba(0,0,0,0.02); display:inline-block;">
+                <img src="assets/media__1779920604503.png" alt="Ejes del Modelo Pedagógico - PEI" style="max-width:100%; max-height:360px; border-radius:8px; border:1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display:block; margin:0 auto;">
             </div>
         </div>
         
-        <!-- Panel de Detalles -->
-        <div id="peiAxisDetailPanel" style="background:#f8fafc; border:2px solid #e5e7eb; border-radius:12px; padding:20px; min-height:280px; display:flex; flex-direction:column; justify-content:center; border-left:5px solid #0A2540; transition: border-left-color 0.3s;">
-            <div id="peiAxisDetailDefault">
-                <h4 style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 10px 0;"><i class="fas fa-info-circle mr-2" style="color:#FF6600;"></i>Ejes del PEI</h4>
-                <p style="color:#475569; font-size:0.85rem; line-height:1.5; margin:0;">Haga clic en cualquiera de las piezas del rompecabezas del modelo PEI para ver su descripción conceptual y cómo se articula con nuestro modelo educativo.</p>
+        <div>
+            <h3 style="color:#0A2540; font-weight:700; font-size:1.2rem; margin-bottom:15px;"><i class="fas fa-hand-pointer mr-2" style="color:#FF6600;"></i>Seleccione un Eje para explorar</h3>
+            
+            <!-- Listado interactivo de ejes -->
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:15px;">
+                <button onclick="window.showPeiAxisDetail('excelencia', this)" class="pei-btn" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #4f46e5; border-radius:6px; padding:10px; text-align:left; font-weight:700; font-size:0.82rem; color:#334155; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#eff6ff'" onmouseout="if(!this.classList.contains('active')) this.style.background='#f8fafc'">🛡️ Excelencia Académica</button>
+                <button onclick="window.showPeiAxisDetail('corporatividad', this)" class="pei-btn" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #16a34a; border-radius:6px; padding:10px; text-align:left; font-weight:700; font-size:0.82rem; color:#334155; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#eff6ff'" onmouseout="if(!this.classList.contains('active')) this.style.background='#f8fafc'">🤝 Corporatividad</button>
+                <button onclick="window.showPeiAxisDetail('flexibilidad', this)" class="pei-btn" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #ca8a04; border-radius:6px; padding:10px; text-align:left; font-weight:700; font-size:0.82rem; color:#334155; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#eff6ff'" onmouseout="if(!this.classList.contains('active')) this.style.background='#f8fafc'">🔄 Flexibilidad Curricular</button>
+                <button onclick="window.showPeiAxisDetail('formacion', this)" class="pei-btn" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #ea580c; border-radius:6px; padding:10px; text-align:left; font-weight:700; font-size:0.82rem; color:#334155; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#eff6ff'" onmouseout="if(!this.classList.contains('active')) this.style.background='#f8fafc'">🌱 Formación Integral</button>
+                <button onclick="window.showPeiAxisDetail('desarrollo', this)" class="pei-btn" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #dc2626; border-radius:6px; padding:10px; text-align:left; font-weight:700; font-size:0.82rem; color:#334155; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#eff6ff'" onmouseout="if(!this.classList.contains('active')) this.style.background='#f8fafc'">🍀 Desarrollo Sostenible</button>
+                <button onclick="window.showPeiAxisDetail('coherencia', this)" class="pei-btn" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #7c3aed; border-radius:6px; padding:10px; text-align:left; font-weight:700; font-size:0.82rem; color:#334155; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#eff6ff'" onmouseout="if(!this.classList.contains('active')) this.style.background='#f8fafc'">🧩 Coherencia y Coexistencia</button>
+                <button onclick="window.showPeiAxisDetail('pertinencia', this)" class="pei-btn" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #0284c7; border-radius:6px; padding:10px; text-align:left; font-weight:700; font-size:0.82rem; color:#334155; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#eff6ff'" onmouseout="if(!this.classList.contains('active')) this.style.background='#f8fafc'">🎯 Pertinencia</button>
+                <button onclick="window.showPeiAxisDetail('innovacion', this)" class="pei-btn" style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #c084fc; border-radius:6px; padding:10px; text-align:left; font-weight:700; font-size:0.82rem; color:#334155; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#eff6ff'" onmouseout="if(!this.classList.contains('active')) this.style.background='#f8fafc'">💡 Innovación</button>
             </div>
-            <div id="peiAxisDetailActive" style="display:none;">
-                <h4 id="peiAxisActiveTitle" style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 8px 0; text-transform:uppercase;">Eje Seleccionado</h4>
-                <p id="peiAxisActiveDesc" style="color:#475569; font-size:0.85rem; line-height:1.5; margin:0; font-style:italic;">Descripción...</p>
+
+            <!-- Panel de Detalles -->
+            <div id="peiAxisDetailPanel" style="background:#f8fafc; border:2px solid #e5e7eb; border-radius:12px; padding:20px; min-height:170px; display:flex; flex-direction:column; justify-content:center; border-left:5px solid #0A2540; transition: border-left-color 0.3s;">
+                <div id="peiAxisDetailDefault">
+                    <h4 style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 10px 0;"><i class="fas fa-info-circle mr-2" style="color:#FF6600;"></i>Ejes del PEI</h4>
+                    <p style="color:#475569; font-size:0.85rem; line-height:1.5; margin:0;">Seleccione cualquiera de los ejes del modelo PEI de la lista para ver su descripción conceptual y cómo se articula con nuestro modelo educativo.</p>
+                </div>
+                <div id="peiAxisDetailActive" style="display:none;">
+                    <h4 id="peiAxisActiveTitle" style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 8px 0; text-transform:uppercase;">Eje Seleccionado</h4>
+                    <p id="peiAxisActiveDesc" style="color:#475569; font-size:0.85rem; line-height:1.5; margin:0; font-style:italic;">Descripción...</p>
+                </div>
             </div>
         </div>
     </div>
@@ -265,7 +239,7 @@ window.SECTIONS.inst = `
                     <p style="font-size:1rem; color:#cbd5e1; margin:5px 0 0;">Institución de Educación Superior · Bucaramanga, Santander</p>
                 </div>
             </div>
-            <p style="font-size:1.05rem; line-height:1.7; color:#ffffff; max-width:95%; text-align:justify; font-family:'Open Sans', sans-serif;">Institución de Educación Superior que contribuye al desarrollo integral de sus estudiantes, mediante un Modelo Pedagógico denominado <strong style="color:#fbbf24;">"Formación en Contextos de Aplicación"</strong> que incorpora la transferencia del conocimiento a la solución de los problemas reales del entorno.</p>
+            <p style="font-size:1.05rem; line-height:1.7; color:#ffffff; max-width:95%; text-align:justify; font-family:'Open Sans', sans-serif;">La Corporación Escuela Tecnológica del Oriente promueve activamente la cooperación interinstitucional para enriquecer los procesos de docencia, investigación y proyección social. A través de más de 25 convenios académicos con prestigiosas universidades, más de 100 alianzas estratégicas con el sector público y privado (incluyendo alcaldías, gobernaciones y gremios empresariales), y más de 4 convenios internacionales con instituciones de México, España, Ecuador y Panamá, garantizamos la transferencia efectiva de conocimiento, clases espejo, movilidad académica y espacios idóneos de práctica profesional en contextos reales de aplicación.</p>
         </div>
     </div>
 
@@ -315,10 +289,18 @@ window.SECTIONS.inst = `
         </div>
     </div>
 
-    <!-- Gráfico de convenios -->
-    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px; margin-top:20px;">
-        <h3 style="color:#0A2540; font-weight:700; font-size:1.2rem; margin-bottom:15px;"><i class="fas fa-chart-bar mr-2" style="color:#C8102E;"></i>Distribución de Convenios por Tipo</h3>
-        <div style="max-width:500px; margin:0 auto;"><canvas id="instConveniosChart"></canvas></div>
+    <!-- Gráfico de convenios y galería de alianzas -->
+    <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:20px; margin-top:20px; align-items:start;">
+        <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px;">
+            <h3 style="color:#0A2540; font-weight:700; font-size:1.15rem; margin-bottom:15px;"><i class="fas fa-chart-bar mr-2" style="color:#C8102E;"></i>Distribución de Convenios</h3>
+            <canvas id="instConveniosChart" style="max-height:180px;"></canvas>
+        </div>
+        <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:20px; text-align:center;">
+            <h3 style="color:#0A2540; font-weight:700; font-size:1.15rem; margin-bottom:15px; text-align:left;"><i class="fas fa-handshake-alt mr-2" style="color:#FF6600;"></i>Alianzas Estratégicas</h3>
+            <div style="background:#fafafa; border:1px solid #cbd5e1; border-radius:8px; padding:8px;">
+                <img src="assets/media__1779920630192.png" alt="Logos Alianzas Estratégicas" style="max-width:100%; border-radius:4px; display:block; margin:0 auto;">
+            </div>
+        </div>
     </div>
 </div>
 
@@ -328,27 +310,27 @@ window.SECTIONS.inst = `
         <h3 style="color:#0A2540; font-weight:800; font-size:1.5rem; margin-bottom:20px;"><i class="fas fa-graduation-cap mr-2" style="color:#C8102E;"></i>Oferta Académica Vigente</h3>
         
         <!-- Pregrado Presencial -->
-        <h4 style="color:#0A2540; font-weight:700; font-size:1.15rem; margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid #e5e7eb;"><i class="fas fa-school mr-2" style="color:#C8102E;"></i>Pregrado Presencial<span style="float:right; font-size:0.78rem; color:#6b7280; font-weight:400;">📍 Calle 41 · 10-30, Bucaramanga</span></h4>
+        <h4 style="color:#0A2540; font-weight:700; font-size:1.15rem; margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid #e5e7eb;"><i class="fas fa-school mr-2" style="color:#C8102E;"></i>Pregrado Presencial<span style="float:right; font-size:0.78rem; color:#6b7280; font-weight:400;">📍 Campus Bucaramanga</span></h4>
         <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; margin-bottom:25px;">
-            <div style="background:#fef2f2; border-left:4px solid #C8102E; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
-                <div style="font-weight:700; color:#0A2540; font-size:0.95rem;">🏭 Téc. Prof. en Higiene y Seguridad en el Trabajo</div>
-                <div style="font-size:0.82rem; color:#6b7280; margin-top:4px;">4 Sem · SNIES: 103527 · 62 Cr.</div>
-                <span style="display:inline-block; background:#C8102E; color:white; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:4px; margin-top:5px;">🔥 ALTA DEMANDA</span>
-            </div>
             <div style="background:#eff6ff; border-left:4px solid #0A2540; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
                 <div style="font-weight:700; color:#0A2540; font-size:0.95rem;">💼 Administración de Empresas</div>
-                <div style="font-size:0.82rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES: 108445 · 145 Cr.</div>
+                <div style="font-size:0.82rem; color:#6b7280; margin-top:4px;">9 Semestres · SNIES: 108445 · 145 Cr.</div>
                 <span style="display:inline-block; background:#0A2540; color:white; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:4px; margin-top:5px;">👑 PREMIUM</span>
             </div>
             <div style="background:#f0fdf4; border-left:4px solid #16a34a; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
                 <div style="font-weight:700; color:#0A2540; font-size:0.95rem;">👶 Licenciatura en Educación Infantil</div>
-                <div style="font-size:0.82rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES: 116357 · 158 Cr.</div>
+                <div style="font-size:0.82rem; color:#6b7280; margin-top:4px;">9 Semestres · SNIES: 116357 · 158 Cr.</div>
                 <span style="display:inline-block; background:#16a34a; color:white; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:4px; margin-top:5px;">💝 VOCACIÓN</span>
             </div>
             <div style="background:#fef3c7; border-left:4px solid #d97706; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
                 <div style="font-weight:700; color:#0A2540; font-size:0.95rem;">🛡️ Seguridad y Salud en el Trabajo</div>
-                <div style="font-size:0.82rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES: 106177 · 155 Cr.</div>
+                <div style="font-size:0.82rem; color:#6b7280; margin-top:4px;">9 Semestres · SNIES: 106177 · 155 Cr.</div>
                 <span style="display:inline-block; background:#d97706; color:white; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:4px; margin-top:5px;">💼 LIDERAZGO</span>
+            </div>
+            <div style="background:#fef2f2; border-left:4px solid #C8102E; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
+                <div style="font-weight:700; color:#0A2540; font-size:0.95rem;">🏭 Técnica Profesional en Higiene y Seguridad en el Trabajo</div>
+                <div style="font-size:0.82rem; color:#6b7280; margin-top:4px;">4 Semestres · SNIES: 103527 · 62 Cr.</div>
+                <span style="display:inline-block; background:#C8102E; color:white; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:4px; margin-top:5px;">🔥 ALTA DEMANDA</span>
             </div>
         </div>
 
@@ -356,29 +338,29 @@ window.SECTIONS.inst = `
         <h4 style="color:#0A2540; font-weight:700; font-size:1.15rem; margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid #e5e7eb;"><i class="fas fa-laptop mr-2" style="color:#C8102E;"></i>Pregrado Virtual<span style="float:right; font-size:0.78rem; color:#6b7280; font-weight:400;">🌐 Cobertura Nacional</span></h4>
         <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:25px;">
             <div style="background:#f9fafb; border:2px solid #3b82f6; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
-                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">💼 Administración de Empresas</div>
-                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES 108445 · 145 Cr.</div>
+                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">💼 Administración de Empresas Virtual</div>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Semestres · SNIES: 108445 · 145 Cr.</div>
                 <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
-            </div>
-            <div style="background:#f9fafb; border:2px solid #3b82f6; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
-                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">👶 Lic. Educación Infantil</div>
-                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES 116357 · 158 Cr.</div>
-                <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
-            </div>
-            <div style="background:#f9fafb; border:2px solid #C8102E; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
-                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">💻 Ingeniería de Software</div>
-                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">8 Sem · SNIES 118074 · 144 Cr.</div>
-                <span style="display:inline-block; background:#C8102E; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
-            </div>
-            <div style="background:#f9fafb; border:2px solid #16a34a; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
-                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">🛡️ Seguridad y Salud en el Trabajo</div>
-                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES 106177 · 155 Cr.</div>
-                <span style="display:inline-block; background:#16a34a; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
             </div>
             <div style="background:#f9fafb; border:2px solid #7c3aed; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
-                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">⚖️ Derecho</div>
-                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Sem · SNIES 111068 · 159 Cr.</div>
+                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">⚖️ Derecho Virtual</div>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">10 Semestres · Regist. Resol. N° 010686 · 159 Cr.</div>
                 <span style="display:inline-block; background:#7c3aed; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
+            </div>
+            <div style="background:#f9fafb; border:2px solid #C8102E; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
+                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">💻 Ingeniería en Desarrollo de Software</div>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">8 Semestres · SNIES: 118074 · 144 Cr.</div>
+                <span style="display:inline-block; background:#C8102E; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
+            </div>
+            <div style="background:#f9fafb; border:2px solid #3b82f6; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
+                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">👶 Licenciatura en Educación Infantil Virtual</div>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Semestres · SNIES: 116357 · 158 Cr.</div>
+                <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
+            </div>
+            <div style="background:#f9fafb; border:2px solid #16a34a; border-radius:8px; padding:15px; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''">
+                <div style="font-weight:700; color:#0A2540; font-size:0.9rem;">🛡️ Seguridad y Salud en el Trabajo Virtual</div>
+                <div style="font-size:0.78rem; color:#6b7280; margin-top:4px;">9 Semestres · SNIES: 106177 · 155 Cr.</div>
+                <span style="display:inline-block; background:#16a34a; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:5px;">VIRTUAL</span>
             </div>
         </div>
 
@@ -388,18 +370,43 @@ window.SECTIONS.inst = `
             <div>
                 <div style="color:#6b7280; font-weight:700; font-size:0.8rem; text-transform:uppercase; margin-bottom:8px;">Presenciales · Sábados</div>
                 <div style="display:grid; gap:8px;">
-                    <div style="background:#0A2540; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #C8102E;"><div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia Integral del Riesgo, SST</div><div style="font-size:0.75rem; color:#94a3b8;">3 Cuatr. · SNIES: 110536 · 30 Cr.</div></div>
-                    <div style="background:#0A2540; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #C8102E;"><div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia de Proyectos</div><div style="font-size:0.75rem; color:#94a3b8;">2 Sem. · SNIES: 103745 · 28 Cr.</div></div>
-                    <div style="background:#0A2540; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #C8102E;"><div style="font-weight:700; font-size:0.88rem;">Esp. Pedagogía y Didácticas Específicas</div><div style="font-size:0.75rem; color:#94a3b8;">4 Sem. · SNIES: 101639 · 35 Cr.</div></div>
+                    <div style="background:#0A2540; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #C8102E;">
+                        <div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia Integral de Riesgo, Seguridad y Salud en el Trabajo</div>
+                        <div style="font-size:0.75rem; color:#94a3b8;">3 Cuatrimestres · SNIES: 110536 · 30 Cr.</div>
+                    </div>
+                    <div style="background:#0A2540; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #C8102E;">
+                        <div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia de Proyectos</div>
+                        <div style="font-size:0.75rem; color:#94a3b8;">2 Semestres · SNIES: 103745 · 28 Cr.</div>
+                    </div>
+                    <div style="background:#0A2540; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #C8102E;">
+                        <div style="font-weight:700; font-size:0.88rem;">Esp. Pedagogía y Didácticas Específicas</div>
+                        <div style="font-size:0.75rem; color:#94a3b8;">4 Trimestres · SNIES: 101639 · 35 Cr.</div>
+                    </div>
                 </div>
             </div>
             <div>
                 <div style="color:#6b7280; font-weight:700; font-size:0.8rem; text-transform:uppercase; margin-bottom:8px;">Virtuales · Cobertura Nacional</div>
                 <div style="display:grid; gap:8px;">
-                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia de la Seguridad y Salud en el Trabajo</div><div style="font-size:0.75rem; color:#cbd5e1;">2 Sem · SNIES 111195 · 24 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span></div>
-                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Esp. Inteligencia de Negocios y Analítica</div><div style="font-size:0.75rem; color:#cbd5e1;">2 Sem · SNIES 111246 · 24 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span></div>
-                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia de Proyectos</div><div style="font-size:0.75rem; color:#cbd5e1;">2 Sem · SNIES 103745 · 28 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span></div>
-                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;"><div style="font-weight:700; font-size:0.88rem;">Esp. Pedagogía y Didácticas Específicas</div><div style="font-size:0.75rem; color:#cbd5e1;">4 Sem · SNIES 101639 · 35 Cr.</div><span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span></div>
+                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;">
+                        <div style="font-weight:700; font-size:0.88rem;">Esp. Gestión de la Seguridad y Salud en el Trabajo Virtual</div>
+                        <div style="font-size:0.75rem; color:#cbd5e1;">2 Semestres · SNIES: 118070 · 24 Cr.</div>
+                        <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span>
+                    </div>
+                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;">
+                        <div style="font-weight:700; font-size:0.88rem;">Esp. Inteligencia de Negocios y Analítica de Datos Virtual</div>
+                        <div style="font-size:0.75rem; color:#cbd5e1;">2 Semestres · Resol. N° 005278 · 24 Cr.</div>
+                        <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span>
+                    </div>
+                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;">
+                        <div style="font-weight:700; font-size:0.88rem;">Esp. Gerencia de Proyectos Virtual</div>
+                        <div style="font-size:0.75rem; color:#cbd5e1;">2 Semestres · Resol. N° 010313 · 28 Cr.</div>
+                        <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span>
+                    </div>
+                    <div style="background:#173A66; color:white; border-radius:8px; padding:12px; border-bottom:3px solid #3b82f6;">
+                        <div style="font-weight:700; font-size:0.88rem;">Esp. Innovación Educativa en Entornos Virtuales de Aprendizaje Virtual</div>
+                        <div style="font-size:0.75rem; color:#cbd5e1;">2 Semestres · Resol. N° 011264 · 24 Cr.</div>
+                        <span style="display:inline-block; background:#3b82f6; color:white; font-size:0.6rem; font-weight:700; padding:2px 6px; border-radius:3px; margin-top:4px;">VIRTUAL</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -410,7 +417,7 @@ window.SECTIONS.inst = `
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
                 <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#C8102E;">🏭 Ingeniería Industrial</span>
                 <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#374151;">📱 Marketing Digital</span>
-                <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#374151;">🎓 Esp. Psicopedagogía</span>
+                <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#374151;">🏫 Especialización en Psicopedagogía y Docencia</span>
                 <span style="background:white; border:1px solid #d97706; border-radius:5px; padding:4px 10px; font-size:0.82rem; font-weight:600; color:#374151;">📚 Maestría en Educación</span>
             </div>
         </div>
@@ -729,19 +736,19 @@ window._initInstCharts = function(tabId) {
                         borderWidth: 2, borderColor: '#fff'
                     }]
                 },
-                options: { responsive: true, cutout: '50%', plugins: { legend: { position: 'bottom', labels: { color: '#374151', font: { size: 10, weight: 'bold' }, padding: 8 } } } }
+                options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { color: '#374151', font: { size: 11 } } } } }
             });
         }
     }
 };
 
-// =====================================================
-// DETALLE EJE PEI INTERACTIVO
-// =====================================================
-window.showPeiAxisDetail = function(axisId, pathEl) {
-    document.querySelectorAll('.pei-sector').forEach(el => {
-        el.style.opacity = '0.7';
-        el.style.strokeWidth = '1.5';
+window.showPeiAxisDetail = function(axisId, btnEl) {
+    // Quitar clase activa y resetear estilos de todos los botones de ejes
+    document.querySelectorAll('.pei-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.background = '#f8fafc';
+        btn.style.boxShadow = 'none';
+        btn.style.color = '#334155';
     });
 
     const axisData = {
@@ -804,9 +811,22 @@ window.showPeiAxisDetail = function(axisId, pathEl) {
         if (dsc) dsc.innerText = data.desc;
         if (pnl) pnl.style.borderLeftColor = data.color;
 
-        if (pathEl) {
-            pathEl.style.opacity = '1';
-            pathEl.style.strokeWidth = '3';
+        if (btnEl) {
+            btnEl.classList.add('active');
+            btnEl.style.background = '#eff6ff';
+            btnEl.style.boxShadow = '0 0 0 1px ' + data.color + ' inset, 0 2px 8px rgba(0,0,0,0.05)';
+            btnEl.style.color = '#0A2540';
+        } else {
+            // Highlight programmatically on init
+            const btns = document.querySelectorAll('.pei-btn');
+            btns.forEach(btn => {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes("'" + axisId + "'")) {
+                    btn.classList.add('active');
+                    btn.style.background = '#eff6ff';
+                    btn.style.boxShadow = '0 0 0 1px ' + data.color + ' inset, 0 2px 8px rgba(0,0,0,0.05)';
+                    btn.style.color = '#0A2540';
+                }
+            });
         }
     }
 };
