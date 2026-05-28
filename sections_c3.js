@@ -1782,43 +1782,59 @@ window.SECTIONS.c3 = `
 
 <!-- CONTENIDO: PEDAGÓGICOS Y DIDÁCTICOS -->
 <div id="pedagogicos" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; min-height:430px;">
-        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-laptop-code" style="color:#C8102E;"></i> Mediación Pedagógica en Modalidad Virtual</h4>
-                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">El programa en modalidad virtual de la TO se estructura bajo estándares de interactividad, aprendizaje dinámico y rigurosidad técnica:</p>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:22px; min-height:430px;">
+        <!-- TARJETA: Mediación Pedagógica -->
+        <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 25px rgba(10,37,64,0.1); border:1px solid #e2e8f0; transition:all 0.4s cubic-bezier(.4,0,.2,1);" onmouseover="this.style.boxShadow='0 12px 40px rgba(10,37,64,0.18)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.boxShadow='0 4px 25px rgba(10,37,64,0.1)'; this.style.transform='';">
+            <div style="background:linear-gradient(135deg, #0A2540 0%, #173A66 60%, #1e4d8c 100%); padding:18px 20px; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:-20px; right:-20px; width:80px; height:80px; background:rgba(255,255,255,0.05); border-radius:50%;"></div>
+                <div style="position:absolute; bottom:-15px; right:30px; width:50px; height:50px; background:rgba(255,255,255,0.03); border-radius:50%;"></div>
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <div style="width:42px; height:42px; background:rgba(255,255,255,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.15);"><i class="fas fa-laptop-code" style="color:#fbbf24; font-size:1.1rem;"></i></div>
+                    <div><h4 style="margin:0; font-size:1rem; font-weight:800; color:white; letter-spacing:-0.3px;">Mediación Pedagógica</h4><span style="font-size:0.68rem; color:#94a3b8; font-weight:500;">Modalidad Virtual · Alta Interactividad</span></div>
+                </div>
+            </div>
+            <div style="padding:18px 20px;">
+                <p style="font-size:0.78rem; color:#475569; line-height:1.55; margin:0 0 14px 0;">El programa virtual se estructura bajo estándares de interactividad, aprendizaje dinámico y rigurosidad técnica:</p>
                 <div style="display:flex; flex-direction:column; gap:10px;">
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-network-wired mr-1" style="color:#C8102E;"></i> Plataforma LMS Moodle de Alta Disponibilidad</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Aulas virtuales organizadas científicamente bajo tres fases metodológicas: Inicio (Encuadre), Desarrollo (Construcción) y Cierre (Valoración).</span>
+                    <div style="background:linear-gradient(135deg, #f0f9ff, #e0f2fe); padding:12px 14px; border-radius:10px; border-left:4px solid #0284c7; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(2,132,199,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#0284c7; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;">01</span><strong style="font-size:0.8rem; color:#0A2540;">Plataforma LMS Moodle</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Aulas virtuales organizadas bajo tres fases metodológicas: Inicio (Encuadre), Desarrollo (Construcción) y Cierre (Valoración).</span>
                     </div>
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-video mr-1" style="color:#C8102E;"></i> Espacios Sincrónicos y Asincrónicos Equilibrados</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Encuentros sincrónicos obligatorios por semana (30% del plan de trabajo docente) y foros de debate asincrónicos para aprendizaje constructivo colaborativo.</span>
+                    <div style="background:linear-gradient(135deg, #f0f9ff, #e0f2fe); padding:12px 14px; border-radius:10px; border-left:4px solid #0284c7; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(2,132,199,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#0284c7; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;">02</span><strong style="font-size:0.8rem; color:#0A2540;">Sincrónico + Asincrónico</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Encuentros sincrónicos obligatorios (30% del plan docente) y foros de debate asincrónicos para aprendizaje constructivo colaborativo.</span>
                     </div>
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-flask mr-1" style="color:#C8102E;"></i> Recursos Interactivos y Simuladores Remotos</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Integración directa de software de vanguardia (como FlexSim para simulación de procesos industriales y R-Studio para analítica) y acceso completo a bases de datos en la biblioteca virtual E-Libro.</span>
+                    <div style="background:linear-gradient(135deg, #f0f9ff, #e0f2fe); padding:12px 14px; border-radius:10px; border-left:4px solid #0284c7; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(2,132,199,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#0284c7; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;">03</span><strong style="font-size:0.8rem; color:#0A2540;">Simuladores y Recursos</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Software de vanguardia (FlexSim, R-Studio) y acceso completo a la biblioteca virtual E-Libro.</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toRed" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-graduation-cap" style="color:#0A2540;"></i> Teorías Pedagógicas de Soporte</h4>
-                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">Nuestro modelo pedagógico se fundamenta en marcos científicos constructivistas enfocados en el aprendizaje significativo y contextualizado:</p>
+        <!-- TARJETA: Teorías Pedagógicas -->
+        <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 25px rgba(10,37,64,0.1); border:1px solid #e2e8f0; transition:all 0.4s cubic-bezier(.4,0,.2,1);" onmouseover="this.style.boxShadow='0 12px 40px rgba(200,16,46,0.15)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.boxShadow='0 4px 25px rgba(10,37,64,0.1)'; this.style.transform='';">
+            <div style="background:linear-gradient(135deg, #7f1d1d 0%, #991b1b 40%, #C8102E 100%); padding:18px 20px; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:-20px; right:-20px; width:80px; height:80px; background:rgba(255,255,255,0.05); border-radius:50%;"></div>
+                <div style="position:absolute; bottom:-15px; right:30px; width:50px; height:50px; background:rgba(255,255,255,0.03); border-radius:50%;"></div>
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <div style="width:42px; height:42px; background:rgba(255,255,255,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.15);"><i class="fas fa-graduation-cap" style="color:#fbbf24; font-size:1.1rem;"></i></div>
+                    <div><h4 style="margin:0; font-size:1rem; font-weight:800; color:white; letter-spacing:-0.3px;">Teorías Pedagógicas</h4><span style="font-size:0.68rem; color:rgba(255,255,255,0.6); font-weight:500;">Marcos Científicos Constructivistas</span></div>
+                </div>
+            </div>
+            <div style="padding:18px 20px;">
+                <p style="font-size:0.78rem; color:#475569; line-height:1.55; margin:0 0 14px 0;">Modelo pedagógico fundamentado en marcos científicos enfocados en el aprendizaje significativo y contextualizado:</p>
                 <div style="display:flex; flex-direction:column; gap:10px;">
-                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Constructivismo Cognitivo y Social</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">El estudiante es el centro del proceso formativo, construyendo activamente su propio conocimiento a través del análisis autónomo y la resolución colaborativa de retos reales con sus pares y el docente.</span>
+                    <div style="background:linear-gradient(135deg, #fef2f2, #fee2e2); padding:12px 14px; border-radius:10px; border-left:4px solid #C8102E; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(200,16,46,0.12)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#C8102E; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-brain" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">Constructivismo Cognitivo y Social</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">El estudiante construye activamente su conocimiento mediante análisis autónomo y resolución colaborativa de retos reales con pares y docente.</span>
                     </div>
-                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Formación en Contextos de Aplicación</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Enfoque institucional de la TO centrado en la transferencia directa de las teorías de ingeniería industrial a problemáticas concretas del sector productivo local y regional.</span>
+                    <div style="background:linear-gradient(135deg, #fef2f2, #fee2e2); padding:12px 14px; border-radius:10px; border-left:4px solid #C8102E; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(200,16,46,0.12)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#C8102E; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-industry" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">Formación en Contextos de Aplicación</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Transferencia directa de las teorías de ingeniería industrial a problemáticas concretas del sector productivo local y regional.</span>
                     </div>
-                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;">Aprendizaje Basado en Problemas y Proyectos (ABP/ABPr)</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Metodología integradora presente en proyectos transversales y laboratorios, impulsando el razonamiento práctico de optimización y de modelado tecnológico.</span>
+                    <div style="background:linear-gradient(135deg, #fef2f2, #fee2e2); padding:12px 14px; border-radius:10px; border-left:4px solid #C8102E; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(200,16,46,0.12)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#C8102E; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-project-diagram" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">ABP / ABPr</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Metodología integradora en proyectos transversales y laboratorios, impulsando el razonamiento práctico de optimización y modelado tecnológico.</span>
                     </div>
                 </div>
             </div>
@@ -1828,43 +1844,59 @@ window.SECTIONS.c3 = `
 
 <!-- CONTENIDO: COMPONENTES DE INTERACCIÓN -->
 <div id="interaccion" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; min-height:430px;">
-        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-handshake" style="color:#C8102E;"></i> Relacionamiento con el Sector Externo</h4>
-                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">Articulamos de forma permanente el conocimiento de los estudiantes con las dinámicas reales del sector empresarial y la sociedad civil:</p>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:22px; min-height:430px;">
+        <!-- TARJETA: Sector Externo -->
+        <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 25px rgba(10,37,64,0.1); border:1px solid #e2e8f0; transition:all 0.4s cubic-bezier(.4,0,.2,1);" onmouseover="this.style.boxShadow='0 12px 40px rgba(10,37,64,0.18)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.boxShadow='0 4px 25px rgba(10,37,64,0.1)'; this.style.transform='';">
+            <div style="background:linear-gradient(135deg, #0A2540 0%, #173A66 60%, #1e4d8c 100%); padding:18px 20px; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:-20px; right:-20px; width:80px; height:80px; background:rgba(255,255,255,0.05); border-radius:50%;"></div>
+                <div style="position:absolute; bottom:-15px; right:30px; width:50px; height:50px; background:rgba(255,255,255,0.03); border-radius:50%;"></div>
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <div style="width:42px; height:42px; background:rgba(255,255,255,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.15);"><i class="fas fa-handshake" style="color:#fbbf24; font-size:1.1rem;"></i></div>
+                    <div><h4 style="margin:0; font-size:1rem; font-weight:800; color:white; letter-spacing:-0.3px;">Sector Externo</h4><span style="font-size:0.68rem; color:#94a3b8; font-weight:500;">Articulación Empresa · Sociedad · Investigación</span></div>
+                </div>
+            </div>
+            <div style="padding:18px 20px;">
+                <p style="font-size:0.78rem; color:#475569; line-height:1.55; margin:0 0 14px 0;">Articulamos el conocimiento de los estudiantes con las dinámicas reales del sector empresarial y la sociedad civil:</p>
                 <div style="display:flex; flex-direction:column; gap:10px;">
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-building mr-1" style="color:#C8102E;"></i> Prácticas Profesionales de Excelencia</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Estudiantes vinculados directamente a proyectos reales en empresas del sector productivo y público (Fenalco, Cajasan, Gobernación), resolviendo problemas operativos mediante metodologías Lean y Six Sigma.</span>
+                    <div style="background:linear-gradient(135deg, #f0f9ff, #e0f2fe); padding:12px 14px; border-radius:10px; border-left:4px solid #0284c7; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(2,132,199,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#0284c7; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-building" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">Prácticas Profesionales de Excelencia</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Vinculación directa a proyectos reales en empresas del sector productivo y público (Fenalco, Cajasan, Gobernación), con metodologías Lean y Six Sigma.</span>
                     </div>
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-users-cog mr-1" style="color:#C8102E;"></i> Proyectos de Proyección Social e Integración Regional</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Consultoría y transferencia de conocimiento técnico a microempresarios, PYMES y comunidades vulnerables de Santander, impulsando la productividad colectiva.</span>
+                    <div style="background:linear-gradient(135deg, #f0f9ff, #e0f2fe); padding:12px 14px; border-radius:10px; border-left:4px solid #0284c7; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(2,132,199,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#0284c7; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-users-cog" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">Proyección Social e Integración Regional</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Consultoría y transferencia técnica a microempresarios, PYMES y comunidades vulnerables de Santander, impulsando la productividad colectiva.</span>
                     </div>
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-flask mr-1" style="color:#C8102E;"></i> Semilleros y Grupos de Investigación Aplicada</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Investigación de impacto contextualizada en optimización logística, analítica de datos e Inteligencia Artificial orientada a la innovación regional.</span>
+                    <div style="background:linear-gradient(135deg, #f0f9ff, #e0f2fe); padding:12px 14px; border-radius:10px; border-left:4px solid #0284c7; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(2,132,199,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#0284c7; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-flask" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">Semilleros de Investigación Aplicada</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Investigación en optimización logística, analítica de datos e IA orientada a la innovación regional.</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toRed" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-globe" style="color:#0A2540;"></i> Interacción con Otras Instituciones</h4>
-                <p style="font-size:0.82rem; color:#475569; line-height:1.5; margin-bottom:12px;">Fomentamos el intercambio académico y la internacionalización del currículo para enriquecer el perfil global de nuestros ingenieros:</p>
+        <!-- TARJETA: Interacción Institucional -->
+        <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 25px rgba(10,37,64,0.1); border:1px solid #e2e8f0; transition:all 0.4s cubic-bezier(.4,0,.2,1);" onmouseover="this.style.boxShadow='0 12px 40px rgba(200,16,46,0.15)'; this.style.transform='translateY(-4px)';" onmouseout="this.style.boxShadow='0 4px 25px rgba(10,37,64,0.1)'; this.style.transform='';">
+            <div style="background:linear-gradient(135deg, #7f1d1d 0%, #991b1b 40%, #C8102E 100%); padding:18px 20px; position:relative; overflow:hidden;">
+                <div style="position:absolute; top:-20px; right:-20px; width:80px; height:80px; background:rgba(255,255,255,0.05); border-radius:50%;"></div>
+                <div style="position:absolute; bottom:-15px; right:30px; width:50px; height:50px; background:rgba(255,255,255,0.03); border-radius:50%;"></div>
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <div style="width:42px; height:42px; background:rgba(255,255,255,0.12); border-radius:12px; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.15);"><i class="fas fa-globe" style="color:#fbbf24; font-size:1.1rem;"></i></div>
+                    <div><h4 style="margin:0; font-size:1rem; font-weight:800; color:white; letter-spacing:-0.3px;">Interacción Institucional</h4><span style="font-size:0.68rem; color:rgba(255,255,255,0.6); font-weight:500;">Internacionalización · Redes Académicas</span></div>
+                </div>
+            </div>
+            <div style="padding:18px 20px;">
+                <p style="font-size:0.78rem; color:#475569; line-height:1.55; margin:0 0 14px 0;">Intercambio académico e internacionalización del currículo para enriquecer el perfil global de nuestros ingenieros:</p>
                 <div style="display:flex; flex-direction:column; gap:10px;">
-                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-camera mr-1" style="color:#C8102E;"></i> Clases Espejo Interactivas</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Encuentros virtuales sincrónicos en los cuales estudiantes de la TO y de universidades extranjeras (ej. UNADE de México, Universidad de Granada en España, UMECIT de Panamá) abordan temáticas conjuntas en tiempo real.</span>
+                    <div style="background:linear-gradient(135deg, #fef2f2, #fee2e2); padding:12px 14px; border-radius:10px; border-left:4px solid #C8102E; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(200,16,46,0.12)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#C8102E; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-camera" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">Clases Espejo Interactivas</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Encuentros sincrónicos con universidades extranjeras (UNADE México, U. de Granada España, UMECIT Panamá) abordando temáticas conjuntas en tiempo real.</span>
                     </div>
-                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-route mr-1" style="color:#C8102E;"></i> Movilidad Académica Sincrónica y de Investigación</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Oportunidades de pasantías virtuales, codirección de proyectos de grado internacionales y visitas técnicas sincrónicas asistidas por tecnología.</span>
+                    <div style="background:linear-gradient(135deg, #fef2f2, #fee2e2); padding:12px 14px; border-radius:10px; border-left:4px solid #C8102E; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(200,16,46,0.12)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#C8102E; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-route" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">Movilidad Académica Sincrónica</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Pasantías virtuales, codirección de proyectos de grado internacionales y visitas técnicas sincrónicas asistidas por tecnología.</span>
                     </div>
-                    <div style="background:#fdf2f2; border-left:3.5px solid #C8102E; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:2px;"><i class="fas fa-project-diagram mr-1" style="color:#C8102E;"></i> Participación en Redes Académicas y Científicas</strong>
-                        <span style="font-size:0.75rem; color:#64748b; line-height:1.4; display:block;">Colaboración constante con redes de decanos y facultades de ingeniería nacionales e internacionales para estandarizar mejores prácticas y foros de investigación.</span>
+                    <div style="background:linear-gradient(135deg, #fef2f2, #fee2e2); padding:12px 14px; border-radius:10px; border-left:4px solid #C8102E; cursor:pointer; transition:all 0.3s;" onmouseover="this.style.transform='translateX(6px)'; this.style.boxShadow='0 4px 15px rgba(200,16,46,0.12)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><span style="width:22px; height:22px; background:#C8102E; color:white; border-radius:6px; display:inline-flex; align-items:center; justify-content:center; font-size:0.6rem; font-weight:800;"><i class="fas fa-project-diagram" style="font-size:0.55rem;"></i></span><strong style="font-size:0.8rem; color:#0A2540;">Redes Académicas y Científicas</strong></div>
+                        <span style="font-size:0.72rem; color:#64748b; line-height:1.45; display:block; padding-left:30px;">Colaboración constante con redes de decanos y facultades de ingeniería nacionales e internacionales.</span>
                     </div>
                 </div>
             </div>
