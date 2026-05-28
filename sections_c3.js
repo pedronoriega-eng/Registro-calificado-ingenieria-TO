@@ -466,7 +466,8 @@ window.fundComponentData = {
         purpose: "Proporciona las herramientas conceptuales y metodológicas necesarias para la modelación matemática, física y estadística de fenómenos complejos en ingeniería industrial, sirviendo de cimiento analítico para la toma de decisiones.",
         icon: "fa-calculator",
         color: "#0284c7",
-        bg: "#e0f2fe"
+        bg: "#e0f2fe",
+        competencia: "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización de sistemas productivos, logísticos y administrativos."
     },
     "Tecnología, Análisis y Transformación de Datos": {
         credits: 24,
@@ -475,7 +476,8 @@ window.fundComponentData = {
         purpose: "Capacita al estudiante en la integración de herramientas informáticas, lenguajes de programación, inteligencia artificial y analítica de datos para liderar la transformación digital en las organizaciones.",
         icon: "fa-robot",
         color: "#0d9488",
-        bg: "#ccfbf1"
+        bg: "#ccfbf1",
+        competencia: "11. Integra tecnologías de información y analítica de datos en la toma de decisiones, fortaleciendo la competitividad y sostenibilidad de las organizaciones."
     },
     "Procesos y Sistemas Productivos": {
         credits: 30,
@@ -484,7 +486,8 @@ window.fundComponentData = {
         purpose: "Centrado en el diseño, control, optimización y mejora continua de sistemas productivos de bienes y servicios, integrando metodologías avanzadas como Lean Manufacturing y Six Sigma.",
         icon: "fa-industry",
         color: "#ea580c",
-        bg: "#ffedd5"
+        bg: "#ffedd5",
+        competencia: "10. Diseña, gestiona y mejora procesos industriales y de servicios, utilizando metodologías como Lean Manufacturing, Six Sigma y herramientas de simulación y modelación."
     },
     "Gestión Organizacional, Económica y Financiera": {
         credits: 30,
@@ -493,7 +496,8 @@ window.fundComponentData = {
         purpose: "Prepara al futuro ingeniero para administrar de manera eficiente, ética y sostenible los recursos humanos, financieros, materiales y de calidad en entornos empresariales altamente competitivos.",
         icon: "fa-chart-line",
         color: "#9333ea",
-        bg: "#f3e8ff"
+        bg: "#f3e8ff",
+        competencia: "12. Gestiona recursos humanos, materiales, financieros y tecnológicos, bajo criterios de eficiencia, calidad y responsabilidad social."
     },
     "Investigación, Innovación y Emprendimiento": {
         credits: 12,
@@ -502,7 +506,8 @@ window.fundComponentData = {
         purpose: "Fomenta el desarrollo de competencias para diagnosticar problemas reales, formular proyectos sostenibles, emprender modelos de negocio innovadores y aplicar el método científico.",
         icon: "fa-lightbulb",
         color: "#16a34a",
-        bg: "#dcfce7"
+        bg: "#dcfce7",
+        competencia: "13 y 14. Formula y ejecuta proyectos empresariales de innovación orientados a la creación de valor, y aplica enfoques investigativos cuantitativos y cualitativos."
     },
     "Formación Humanística, Ética y Ciudadana": {
         credits: 12,
@@ -511,7 +516,8 @@ window.fundComponentData = {
         purpose: "Garantiza una formación integral, promoviendo el liderazgo ético, la responsabilidad social corporativa, la resolución de conflictos y competencias lingüísticas esenciales (inglés).",
         icon: "fa-users",
         color: "#dc2626",
-        bg: "#fee2e2"
+        bg: "#fee2e2",
+        competencia: "15 y 16. Actúa con ética profesional, liderazgo y compromiso social, y se comunica efectivamente en inglés y contextos multidisciplinarios."
     },
     "Componente Electivo (Profundización)": {
         credits: 9,
@@ -520,7 +526,8 @@ window.fundComponentData = {
         purpose: "Permite al estudiante personalizar su ruta formativa eligiendo énfasis avanzados de alta gerencia, logística sostenible (verde) o ciencia de datos e IA aplicada.",
         icon: "fa-layer-group",
         color: "#ca8a04",
-        bg: "#fef9c3"
+        bg: "#fef9c3",
+        competencia: "11. Integra tecnologías de información y analítica de datos en la toma de decisiones en énfasis avanzados (IA y Datos, Logística Verde, Alta Gerencia)."
     }
 };
 
@@ -605,6 +612,12 @@ window.selectFundComponent = function(compName, btn) {
                     <span style="font-size:0.68rem; font-weight:800; background:#fff1f2; color:#C8102E; padding:3px 8px; border-radius:6px; border:1.1px solid #fee2e2; margin-left:auto;">${data.credits} Créditos (${data.percentage})</span>
                 </div>
                 <p style="margin:0 0 12px 0; font-size:0.75rem; color:#475569; line-height:1.45; font-style:italic;">"${data.purpose}"</p>
+                
+                <!-- Relación con el Perfil Profesional (Competencias 9 a 16) -->
+                <div style="background:${data.bg}44; border:1px solid ${data.color}22; padding:10px 12px; border-radius:8px; border-left:4px solid ${data.color}; margin-bottom:12px; box-shadow:0 1px 3px rgba(0,0,0,0.01);">
+                    <h5 style="margin:0 0 4px 0; font-size:0.7rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.3px;"><i class="fas fa-id-card" style="color:${data.color}; margin-right:4px;"></i> Contribución al Perfil Profesional (Egreso):</h5>
+                    <p style="margin:0; font-size:0.72rem; color:#475569; line-height:1.4;"><strong>Competencia ${data.competencia.split('.')[0]}:</strong> ${data.competencia.substring(data.competencia.indexOf('.') + 1).trim()}</p>
+                </div>
             </div>
             
             <div>
@@ -630,9 +643,20 @@ window.changeTab = function(tabId, event) {
         window.initFundComponents();
     }
     
+    if(tabId === 'teorica') {
+        window.initTeorica();
+    }
+    
     if(tabId === 'modelo_pei') {
         setTimeout(function() {
             window.selectPeiAxis('longitudinal');
+        }, 50);
+    }
+    
+    if(tabId === 'perfiles') {
+        setTimeout(function() {
+            const firstSubTab = document.querySelector('.subtab-btn');
+            if (firstSubTab) firstSubTab.click();
         }, 50);
     }
     
@@ -818,6 +842,315 @@ window.changeProfileSubTab = function(subtabId, btn) {
         if (iconDiv) {
             iconDiv.style.transform = 'scale(1.05)';
         }
+    }
+    
+    if (subtabId === 'sub_egreso') {
+        window.initProfileCorrelation();
+        setTimeout(function() {
+            const firstCorr = document.querySelector('.profile-corr-btn');
+            if (firstCorr) firstCorr.click();
+        }, 50);
+    }
+};
+
+window.teoricaData = {
+    "tgs": {
+        title: "Enfoque Sistémico (TGS)",
+        fullTitle: "Enfoque Sistémico - Teoría General de Sistemas (TGS)",
+        icon: "fa-project-diagram",
+        color: "#0A2540",
+        accent: "#0284c7",
+        bg: "#e0f2fe",
+        quote: "La TGS, desarrollada por Ludwig von Bertalanffy (1968), sostiene que las organizaciones y los sistemas productivos deben ser comprendidos como sistemas abiertos, interdependientes y dinámicos, en los que cada componente influye en el funcionamiento del todo.",
+        application: "Asignaturas como Procesos Industriales y Gestión de Operaciones con IA se enfocan en analizar, diseñar y optimizar sistemas productivos como un todo integrado. La TGS promueve en los estudiantes la capacidad de abordar problemas organizacionales desde un enfoque holístico.",
+        subjects: ["Procesos Industriales y de Manufactura", "Gestión de Operaciones con IA", "Investigación de Operaciones I", "Investigación de Operaciones II", "Modelación y Simulación"],
+        competency: "9. Aplica principios de las ciencias básicas y de la ingeniería... / 10. Diseña, gestiona y mejora procesos..."
+    },
+    "rev4": {
+        title: "Revolución 4.0",
+        fullTitle: "Transformación Digital - Teoría de la Revolución 4.0",
+        icon: "fa-robot",
+        color: "#C8102E",
+        accent: "#0d9488",
+        bg: "#ccfbf1",
+        quote: "La Revolución 4.0, descrita por Schwab (2016), enfatiza el impacto de tecnologías avanzadas como inteligencia artificial, big data y sistemas ciberfísicos en los procesos industriales y organizacionales. Estas tecnologías han redefinido la producción, la gestión y el consumo, requiriendo competencias avanzadas en el uso de estas herramientas.",
+        application: "Asignaturas como Big Data y Analítica de Datos, Inteligencia Artificial permiten a los estudiantes desarrollar habilidades para implementar tecnologías avanzadas en entornos reales. El enfoque pedagógico incluye simulaciones y herramientas interactivas que facilitan el aprendizaje práctico de estas tecnologías.",
+        subjects: ["Inteligencia Artificial", "Big Data y Analítica de Datos", "Modelación y Simulación", "Fundamentos de Programación", "Producción e IA"],
+        competency: "11. Integra tecnologías de información y analítica de datos..."
+    },
+    "sostenibilidad": {
+        title: "Desarrollo Sostenible",
+        fullTitle: "Sostenibilidad y Responsabilidad Social - Teoría del Desarrollo Sostenible",
+        icon: "fa-leaf",
+        color: "#16a34a",
+        accent: "#16a34a",
+        bg: "#dcfce7",
+        quote: "La teoría del desarrollo sostenible, formalizada en el Informe Brundtland (1987), plantea que las acciones humanas deben satisfacer las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer las suyas.",
+        application: "Asignaturas como Desarrollo Sostenible y Sustentable, Bioética / Globalización y Economía promueven en los estudiantes una perspectiva ética y responsable en la gestión de recursos y procesos industriales. Se fomenta una integración transversal de la sostenibilidad en todas las etapas del diseño y la ejecución de proyectos.",
+        subjects: ["Desarrollo Sostenible", "Sistemas Integrados de Gestión (SIG)", "Gestión de la Higiene y Seguridad", "Termodinámica"],
+        competency: "12. Gestiona recursos... bajo responsabilidad social. / 15. Actúa con ética profesional y compromiso social..."
+    },
+    "innovacion": {
+        title: "Innovación Disruptiva",
+        fullTitle: "Innovación y Gestión de Proyectos - Teoría de la Innovación Disruptiva",
+        icon: "fa-lightbulb",
+        color: "#ca8a04",
+        accent: "#ea580c",
+        bg: "#fef9c3",
+        quote: "Christensen (1997) describe cómo las innovaciones disruptivas pueden transformar mercados y organizaciones al introducir cambios significativos en tecnologías, procesos y modelos de negocio.",
+        application: "Asignaturas como Laboratorio de Innovación y Emprendimiento y Formulación y Evaluación de Proyectos preparan a los estudiantes para identificar oportunidades de negocio y desarrollar soluciones innovadoras. El enfoque pedagógico incluye estudios de caso y proyectos prácticos que fomentan la creatividad y la capacidad emprendedora.",
+        subjects: ["Laboratorio de Innovación y Emprendimiento", "Formulación y Evaluación de Proyectos", "Pensamiento Estratégico y Prospectivo", "Gerencia Tecnológica y de la Innovación"],
+        competency: "13. Formula y ejecuta proyectos empresariales de innovación..."
+    },
+    "constructivismo": {
+        title: "Teoría Constructivista",
+        fullTitle: "Perspectiva Pedagógica - Teoría del Constructivismo",
+        icon: "fa-graduation-cap",
+        color: "#9333ea",
+        accent: "#9333ea",
+        bg: "#f3e8ff",
+        quote: "Piaget (1970) sostiene que el aprendizaje se construye activamente a través de la interacción del estudiante con su entorno. Este enfoque se complementa con el constructivismo social de Vygotsky (1978), quien enfatiza el rol del contexto social y cultural en el aprendizaje.",
+        application: "La metodología virtual del programa incorpora plataformas interactivas y actividades colaborativas que fomentan el aprendizaje autónomo y en equipo. El plan de estudios incluye simulaciones, proyectos y foros virtuales que facilitan la construcción del conocimiento a través de experiencias prácticas y colectivas.",
+        subjects: ["Cátedra de la Paz y Resolución de Conflictos", "Inglés I", "Inglés II", "Inglés III"],
+        competency: "14. Aplica enfoques investigativos cuantitativos y cualitativos... / 16. Se comunica efectivamente..."
+    }
+};
+
+window.initTeorica = function() {
+    let listHtml = '';
+    for (const key in window.teoricaData) {
+        const data = window.teoricaData[key];
+        listHtml += `
+            <button onclick="window.selectTeoricaFoundation('${key}', this)" class="teorica-btn" id="teo_btn_${key}" style="width:100%; text-align:left; padding:8px 12px; border-radius:8px; border:1.5px solid #e2e8f0; background:white; font-weight:700; color:#475569; font-size:0.72rem; cursor:pointer; transition:all 0.25s; display:flex; gap:8px; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.01);">
+                <div class="teorica-icon-box" style="width:22px; height:22px; border-radius:5px; background:${data.bg}; color:${data.accent}; display:flex; align-items:center; justify-content:center; font-size:0.75rem; transition:all 0.2s;"><i class="fas ${data.icon}"></i></div>
+                <div style="display:flex; flex-direction:column; line-height:1.15;">
+                    <span style="font-weight:800; color:#0A2540;">${data.title}</span>
+                    <span style="font-size:0.56rem; color:#64748b; font-weight:600; margin-top:1px;">Fundamento Oficial</span>
+                </div>
+            </button>
+        `;
+    }
+    const container = document.getElementById('teorica_selector_list');
+    if (container) {
+        container.innerHTML = listHtml;
+        const firstBtn = container.querySelector('.teorica-btn');
+        if (firstBtn) {
+            const firstKey = Object.keys(window.teoricaData)[0];
+            window.selectTeoricaFoundation(firstKey, firstBtn);
+        }
+    }
+};
+
+window.selectTeoricaFoundation = function(id, btn) {
+    document.querySelectorAll('.teorica-btn').forEach(b => {
+        b.style.background = 'white';
+        b.style.color = '#475569';
+        b.style.borderColor = '#e2e8f0';
+        b.style.boxShadow = 'none';
+        b.style.transform = 'scale(1)';
+        const iconDiv = b.querySelector('.teorica-icon-box');
+        if (iconDiv) {
+            iconDiv.style.transform = 'scale(1)';
+        }
+    });
+
+    const data = window.teoricaData[id];
+    if (!data) return;
+
+    if (btn) {
+        btn.style.background = '#f8fafc';
+        btn.style.borderColor = data.accent;
+        btn.style.color = '#0A2540';
+        btn.style.boxShadow = '0 4px 15px -3px ' + data.accent + '22, 0 4px 6px -2px ' + data.accent + '11';
+        btn.style.transform = 'scale(1.01)';
+        const iconDiv = btn.querySelector('.teorica-icon-box');
+        if (iconDiv) {
+            iconDiv.style.transform = 'scale(1.05)';
+        }
+    }
+
+    let subjectsHtml = data.subjects.map(s => `
+        <span style="font-size:0.6rem; padding:2px 6px; background:${data.bg}; color:${data.accent}; border:1px solid ${data.accent}25; border-radius:4px; font-weight:700; display:inline-block; margin-right:4px; margin-bottom:4px;">
+            <i class="fas fa-tag mr-1" style="font-size:0.5rem; color:${data.accent}; opacity:0.8;"></i>${s}
+        </span>
+    `).join('');
+
+    const detailCard = document.getElementById('teorica_detail_card');
+    if (detailCard) {
+        detailCard.innerHTML = `
+            <div style="display:flex; flex-direction:column; gap:10px; height:100%; justify-content:space-between; font-family:'Montserrat', sans-serif;">
+                <div>
+                    <!-- Header -->
+                    <div style="display:flex; justify-content:between; align-items:center; border-bottom:2px solid #f1f5f9; padding-bottom:6px; margin-bottom:8px;">
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <div style="width:26px; height:26px; border-radius:5px; background:${data.bg}; color:${data.accent}; display:flex; align-items:center; justify-content:center; font-size:0.85rem;"><i class="fas ${data.icon}"></i></div>
+                            <h4 style="margin:0; font-size:0.85rem; font-weight:800; color:#0A2540;">${data.fullTitle}</h4>
+                        </div>
+                        <span style="font-size:0.58rem; font-weight:800; background:#f1f5f9; color:#475569; padding:2px 5px; border-radius:4px; border:1px solid #cbd5e1; margin-left:auto;">Sección 3.2.2</span>
+                    </div>
+
+                    <!-- Cita Verbatim Box -->
+                    <div style="background:${data.bg}22; border:1px solid ${data.accent}20; border-left:4px solid ${data.accent}; border-radius:6px; padding:10px; margin-bottom:10px; position:relative; box-shadow:0 1px 3px rgba(0,0,0,0.01);">
+                        <div style="position:absolute; top:2px; right:6px; font-size:1.5rem; color:${data.accent}12; font-family:Georgia, serif; line-height:1;"><i class="fas fa-quote-right"></i></div>
+                        <h5 style="margin:0 0 3px 0; font-size:0.62rem; font-weight:800; color:${data.accent}; text-transform:uppercase; letter-spacing:0.5px;"><i class="fas fa-bookmark" style="margin-right:4px;"></i> Cita Oficial (Verbatim Documento Maestro):</h5>
+                        <p style="margin:0; font-size:0.7rem; color:#334155; line-height:1.45; font-style:italic;">"${data.quote}"</p>
+                    </div>
+
+                    <!-- Aplicación en el Plan de Estudios -->
+                    <div style="margin-bottom:10px;">
+                        <h5 style="margin:0 0 3px 0; font-size:0.68rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.5px;"><i class="fas fa-laptop-code mr-1" style="color:${data.accent};"></i> Aplicación Curricular:</h5>
+                        <p style="margin:0; font-size:0.7rem; color:#475569; line-height:1.45;">${data.application}</p>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Mapeo Curricular y Competencia -->
+                    <div style="background:#fafafa; border:1px solid #e2e8f0; padding:6px 8px; border-radius:5px; margin-bottom:8px;">
+                        <h5 style="margin:0 0 2px 0; font-size:0.62rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.3px;"><i class="fas fa-id-card mr-1" style="color:${data.accent};"></i> Conexión con Perfil Profesional:</h5>
+                        <p style="margin:0; font-size:0.68rem; color:#475569; line-height:1.3;">${data.competency}</p>
+                    </div>
+
+                    <!-- Asignaturas Clave -->
+                    <div>
+                        <h5 style="margin:0 0 4px 0; font-size:0.68rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.5px;"><i class="fas fa-graduation-cap mr-1" style="color:${data.accent};"></i> Asignaturas de Soporte Asociadas:</h5>
+                        <div style="display:flex; flex-wrap:wrap; gap:3px;">
+                            ${subjectsHtml}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        detailCard.style.borderTopColor = data.accent;
+    }
+};
+
+window.profileCorrelationData = {
+    "procesos": {
+        title: "Diseño y Optimización de Procesos",
+        icon: "fa-cogs",
+        color: "#0284c7",
+        bg: "#e0f2fe",
+        competencia: "9. Aplica principios de las ciencias básicas y de la ingeniería... / 10. Diseña, gestiona y mejora procesos...",
+        description: "Desarrolla la capacidad técnica para diseñar, modelar, analizar y mejorar flujos de trabajo, layouts de planta y procesos de manufactura utilizando metodologías de clase mundial (Lean, Six Sigma).",
+        subjects: ["Procesos Industriales y de Manufactura", "Dibujo Industrial", "Gerencia de la Producción I", "Gerencia de la Producción II (Lean)", "Gerencia de la Calidad (Six Sigma)", "Distribución de Planta"]
+    },
+    "tecnologia": {
+        title: "Gestión Tecnológica",
+        icon: "fa-robot",
+        color: "#0d9488",
+        bg: "#ccfbf1",
+        competencia: "11. Integra tecnologías de información y analítica de datos en la toma de decisiones...",
+        description: "Capacita en la adopción de herramientas informáticas de vanguardia, programación y tecnologías de la Revolución 4.0 para el procesamiento de datos y toma de decisiones inteligentes.",
+        subjects: ["Inteligencia Artificial", "Big Data y Analítica de Datos", "Modelación y Simulación", "Fundamentos de Programación", "Gestión de Operaciones con IA", "Producción e IA"]
+    },
+    "sostenibilidad": {
+        title: "Sostenibilidad",
+        icon: "fa-leaf",
+        color: "#16a34a",
+        bg: "#dcfce7",
+        competencia: "12. Gestiona recursos... bajo responsabilidad social. / 15. Actúa con ética profesional y compromiso social...",
+        description: "Integra la conciencia ecológica, el diseño circular, la gestión del riesgo laboral y los estándares internacionales (ISO) para el diseño de soluciones industriales responsables.",
+        subjects: ["Desarrollo Sostenible", "Sistemas Integrados de Gestión (SIG)", "Gestión de la Higiene y Seguridad Industrial", "Termodinámica", "Bioética / Globalización y Economía"]
+    },
+    "liderazgo": {
+        title: "Talento Humano y Liderazgo",
+        icon: "fa-users",
+        color: "#9333ea",
+        bg: "#f3e8ff",
+        competencia: "15. Actúa con ética profesional, liderazgo y compromiso social... / 12. Gestiona recursos humanos...",
+        description: "Forja líderes con pensamiento crítico, ético y habilidades directivas para gestionar personas, resolver conflictos de forma pacífica y coordinar equipos multiculturales.",
+        subjects: ["Gerencia del Talento Humano", "Cátedra de la Paz y Resolución de Conflictos", "Derecho Laboral y Comercial", "Teoría Organizacional"]
+    },
+    "innovacion": {
+        title: "Innovación y Emprendimiento",
+        icon: "fa-lightbulb",
+        color: "#ca8a04",
+        bg: "#fef9c3",
+        competencia: "13. Formula y ejecuta proyectos empresariales de innovación orientados a la creación de valor...",
+        description: "Prepara para idear, validar y formular modelos de negocio escalables de base tecnológica y evaluar la viabilidad financiera de proyectos innovadores.",
+        subjects: ["Laboratorio de Innovación y Emprendimiento", "Formulación y Evaluación de Proyectos", "Pensamiento Estratégico y Prospectivo", "Gerencia Tecnológica y de la Innovación"]
+    },
+    "bases": {
+        title: "Bases de Ingeniería",
+        icon: "fa-calculator",
+        color: "#dc2626",
+        bg: "#fee2e2",
+        competencia: "9. Aplica principios de las ciencias básicas y de la ingeniería para la modelación, análisis y optimización...",
+        description: "Provee la base analítica, el razonamiento deductivo y los modelos matemáticos, físicos y estadísticos indispensables para resolver problemas complejos de ingeniería.",
+        subjects: ["Cálculo Diferencial", "Álgebra Lineal", "Cálculo Integral", "Física I (Mecánica)", "Estadística Descriptiva", "Cálculo Multivariado", "Física II (Electromagnetismo)", "Estadística Inferencial", "Ecuaciones Diferenciales"]
+    }
+};
+
+window.initProfileCorrelation = function() {
+    let listHtml = '';
+    for (const key in window.profileCorrelationData) {
+        const data = window.profileCorrelationData[key];
+        listHtml += `
+            <button onclick="window.selectProfileCorrelation('${key}', this)" class="profile-corr-btn" id="corr_btn_${key}" style="width:100%; text-align:left; padding:8px 12px; border-radius:6px; border:1.5px solid #e2e8f0; background:white; font-weight:700; color:#475569; font-size:0.72rem; cursor:pointer; transition:all 0.2s; display:flex; gap:8px; align-items:center; box-shadow:0 1px 2px rgba(0,0,0,0.02);">
+                <div class="profile-corr-icon-box" style="width:20px; height:20px; border-radius:4px; background:${data.bg}; color:${data.color}; display:flex; align-items:center; justify-content:center; font-size:0.72rem; transition:all 0.2s;"><i class="fas ${data.icon}"></i></div>
+                <span style="line-height:1.2;">${data.title}</span>
+            </button>
+        `;
+    }
+    const container = document.getElementById('profile_corr_list');
+    if (container) {
+        container.innerHTML = listHtml;
+    }
+};
+
+window.selectProfileCorrelation = function(key, btn) {
+    document.querySelectorAll('.profile-corr-btn').forEach(b => {
+        b.style.background = 'white';
+        b.style.color = '#475569';
+        b.style.borderColor = '#e2e8f0';
+        b.style.boxShadow = '0 1px 2px rgba(0,0,0,0.02)';
+        const iconBox = b.querySelector('.profile-corr-icon-box');
+        if (iconBox) iconBox.style.transform = 'scale(1)';
+    });
+
+    const data = window.profileCorrelationData[key];
+    if (!data) return;
+
+    if (btn) {
+        btn.style.background = '#f8fafc';
+        btn.style.borderColor = data.color;
+        btn.style.color = '#0A2540';
+        btn.style.boxShadow = '0 3px 8px rgba(0,0,0,0.04)';
+        const iconBox = btn.querySelector('.profile-corr-icon-box');
+        if (iconBox) iconBox.style.transform = 'scale(1.05)';
+    }
+
+    let subjectsHtml = data.subjects.map(s => `
+        <span style="font-size:0.6rem; padding:2px 6px; background:${data.bg}; color:${data.color}; border:1px solid ${data.color}25; border-radius:4px; font-weight:700; display:inline-block; margin-right:4px; margin-bottom:4px;">
+            <i class="fas fa-tag mr-1" style="font-size:0.5rem; color:${data.color}; opacity:0.8;"></i>${s}
+        </span>
+    `).join('');
+
+    const detailCard = document.getElementById('profile_corr_detail_card');
+    if (detailCard) {
+        detailCard.innerHTML = `
+            <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%; gap:8px; font-family:'Montserrat', sans-serif;">
+                <div>
+                    <div style="display:flex; align-items:center; gap:8px; border-bottom:1.5px solid #f1f5f9; padding-bottom:5px; margin-bottom:6px;">
+                        <div style="width:20px; height:20px; border-radius:4px; background:${data.bg}; color:${data.color}; display:flex; align-items:center; justify-content:center; font-size:0.75rem;"><i class="fas ${data.icon}"></i></div>
+                        <h5 style="margin:0; font-size:0.75rem; font-weight:800; color:#0A2540;">${data.title}</h5>
+                    </div>
+                    <p style="margin:0 0 6px 0; font-size:0.7rem; color:#475569; line-height:1.4;">${data.description}</p>
+                    
+                    <div style="background:${data.bg}22; border:1px solid ${data.color}15; padding:6px 8px; border-radius:5px; margin-bottom:6px;">
+                        <h6 style="margin:0 0 2px 0; font-size:0.6rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.3px;"><i class="fas fa-id-card" style="color:${data.color}; margin-right:3px;"></i> Competencias del Egresado Vinculadas:</h6>
+                        <p style="margin:0; font-size:0.65rem; color:#475569; line-height:1.35;">${data.competencia}</p>
+                    </div>
+                </div>
+                <div>
+                    <h6 style="margin:0 0 4px 0; font-size:0.62rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.5px;"><i class="fas fa-graduation-cap" style="color:${data.color}; margin-right:3px;"></i> Asignaturas de Soporte de la Malla:</h6>
+                    <div style="display:flex; flex-wrap:wrap; gap:2px;">
+                        ${subjectsHtml}
+                    </div>
+                </div>
+            </div>
+        `;
+        detailCard.style.borderLeftColor = data.color;
     }
 };
 
@@ -1155,49 +1488,78 @@ window.SECTIONS.c3 = `
             
             <!-- SUB-TAB 2: PERFIL DE EGRESO -->
             <div id="sub_egreso" class="subtab-content hidden">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px;">
                     <i class="fas fa-user-tie text-toOrange" style="font-size: 1.5rem; color: #ea580c;"></i>
                     <h4 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0A2540;">Perfil de Egreso (Profesional Integral)</h4>
                 </div>
                 
-                <p style="font-size: 0.85rem; color: #475569; line-height: 1.5; margin-bottom: 12px;">
+                <p style="font-size: 0.82rem; color: #475569; line-height: 1.45; margin-bottom: 10px;">
                     El egresado es un profesional con sólida formación científica, tecnológica y humanista, capaz de comprender, diseñar y optimizar sistemas integrados de personas, materiales, información y tecnología, con el fin de mejorar la productividad, eficiencia y sostenibilidad de las organizaciones.
                 </p>
                 
-                <h5 style="margin: 0 0 8px 0; font-size: 0.85rem; font-weight: 700; color: #0A2540; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fas fa-tasks text-toOrange mr-1" style="color: #ea580c;"></i> Competencias Específicas del Perfil:</h5>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.75rem; color: #374151;">
-                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
-                        <span style="font-weight: 800; color: #FF6600;">9.</span>
-                        <span><strong>Modelación Científica:</strong> Aplica ciencias básicas y de ingeniería para optimizar sistemas.</span>
+                <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap:15px; margin-bottom:12px;">
+                    <!-- Competencias Específicas List -->
+                    <div>
+                        <h5 style="margin: 0 0 6px 0; font-size: 0.8rem; font-weight: 700; color: #0A2540; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fas fa-tasks text-toOrange mr-1" style="color: #ea580c;"></i> Competencias Específicas:</h5>
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 4px; max-height:165px; overflow-y:auto; font-size: 0.72rem; color: #374151;" class="custom-scrollbar">
+                            <div style="display: flex; gap: 6px; background: #fafafa; border: 1px solid #f1f5f9; padding: 4px 6px; border-radius: 4px;">
+                                <span style="font-weight: 800; color: #FF6600;">9.</span>
+                                <span><strong>Modelación Científica:</strong> Aplica ciencias básicas y de ingeniería para optimizar sistemas.</span>
+                            </div>
+                            <div style="display: flex; gap: 6px; background: #fafafa; border: 1px solid #f1f5f9; padding: 4px 6px; border-radius: 4px;">
+                                <span style="font-weight: 800; color: #FF6600;">10.</span>
+                                <span><strong>Diseño y Procesos:</strong> Optimiza manufactura y servicios usando Lean y Six Sigma.</span>
+                            </div>
+                            <div style="display: flex; gap: 6px; background: #fafafa; border: 1px solid #f1f5f9; padding: 4px 6px; border-radius: 4px;">
+                                <span style="font-weight: 800; color: #FF6600;">11.</span>
+                                <span><strong>Transformación Digital:</strong> Integra analítica de datos e IA en la toma de decisiones.</span>
+                            </div>
+                            <div style="display: flex; gap: 6px; background: #fafafa; border: 1px solid #f1f5f9; padding: 4px 6px; border-radius: 4px;">
+                                <span style="font-weight: 800; color: #FF6600;">12.</span>
+                                <span><strong>Gestión Eficiente:</strong> Dirige recursos con criterios de eficiencia, calidad y RSE.</span>
+                            </div>
+                            <div style="display: flex; gap: 6px; background: #fafafa; border: 1px solid #f1f5f9; padding: 4px 6px; border-radius: 4px;">
+                                <span style="font-weight: 800; color: #FF6600;">13.</span>
+                                <span><strong>Proyectos e Innovación:</strong> Formula y ejecuta proyectos de emprendimiento sostenible.</span>
+                            </div>
+                            <div style="display: flex; gap: 6px; background: #fafafa; border: 1px solid #f1f5f9; padding: 4px 6px; border-radius: 4px;">
+                                <span style="font-weight: 800; color: #FF6600;">14.</span>
+                                <span><strong>Enfoques de Investigación:</strong> Resuelve problemáticas usando metodologías científicas.</span>
+                            </div>
+                            <div style="display: flex; gap: 6px; background: #fafafa; border: 1px solid #f1f5f9; padding: 4px 6px; border-radius: 4px;">
+                                <span style="font-weight: 800; color: #FF6600;">15.</span>
+                                <span><strong>Ética y Sostenibilidad:</strong> Actúa con valores sólidos y vela por la preservación ambiental.</span>
+                            </div>
+                            <div style="display: flex; gap: 6px; background: #fafafa; border: 1px solid #f1f5f9; padding: 4px 6px; border-radius: 4px;">
+                                <span style="font-weight: 800; color: #FF6600;">16.</span>
+                                <span><strong>Dominio Global:</strong> Se comunica en equipos multiculturales y domina inglés.</span>
+                            </div>
+                        </div>
                     </div>
-                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
-                        <span style="font-weight: 800; color: #FF6600;">10.</span>
-                        <span><strong>Diseño y Procesos:</strong> Optimiza manufactura y servicios usando Lean y Six Sigma.</span>
+                    
+                    <!-- Direct Action Banner -->
+                    <div style="background: linear-gradient(135deg, #0A2540 0%, #1a365d 100%); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); padding: 12px; display:flex; flex-direction:column; justify-content:center; color:white; position:relative; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+                        <div style="position:absolute; right:-10px; bottom:-10px; font-size:4rem; color:rgba(255,255,255,0.03); transform:rotate(-15deg);"><i class="fas fa-graduation-cap"></i></div>
+                        <h6 style="margin:0 0 4px 0; font-size:0.75rem; font-weight:800; color:#FF6600; text-transform:uppercase;"><i class="fas fa-certificate mr-1"></i> Aseguramiento Curricular</h6>
+                        <p style="margin:0; font-size:0.68rem; color:#e2e8f0; line-height:1.45; font-style:italic;">"Cada competencia declarada para el perfil de egreso está respaldada de forma concreta por asignaturas clave en la malla curricular académica."</p>
                     </div>
-                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
-                        <span style="font-weight: 800; color: #FF6600;">11.</span>
-                        <span><strong>Transformación Digital:</strong> Integra analítica de datos e IA en la toma de decisiones.</span>
-                    </div>
-                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
-                        <span style="font-weight: 800; color: #FF6600;">12.</span>
-                        <span><strong>Gestión Eficiente:</strong> Dirige recursos con criterios de eficiencia, calidad y RSE.</span>
-                    </div>
-                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
-                        <span style="font-weight: 800; color: #FF6600;">13.</span>
-                        <span><strong>Proyectos e Innovación:</strong> Formula y ejecuta proyectos de emprendimiento sostenible.</span>
-                    </div>
-                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
-                        <span style="font-weight: 800; color: #FF6600;">14.</span>
-                        <span><strong>Enfoques de Investigación:</strong> Resuelve problemáticas usando metodologías científicas.</span>
-                    </div>
-                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
-                        <span style="font-weight: 800; color: #FF6600;">15.</span>
-                        <span><strong>Ética y Sostenibilidad:</strong> Actúa con valores sólidos y vela por la preservación ambiental.</span>
-                    </div>
-                    <div style="display: flex; gap: 8px; background: #fafafa; border: 1px solid #f1f5f9; padding: 8px; border-radius: 6px;">
-                        <span style="font-weight: 800; color: #FF6600;">16.</span>
-                        <span><strong>Dominio Global:</strong> Se comunica efectivamente en equipos multiculturales y domina inglés.</span>
+                </div>
+
+                <!-- Correlación Interactiva Diapositiva 11 -->
+                <div style="border-top:1.5px solid #f1f5f9; padding-top:10px;">
+                    <h5 style="margin: 0 0 6px 0; font-size: 0.8rem; font-weight: 800; color: #0A2540; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-network-wired" style="color: #FF6600;"></i> Correlación Contenidos - Perfil Profesional (Diapositiva 11)
+                    </h5>
+                    
+                    <div style="display: grid; grid-template-columns: 260px 1fr; gap: 15px; min-height: 200px;">
+                        <!-- Left: List -->
+                        <div style="display: flex; flex-direction: column; gap: 5px;" id="profile_corr_list">
+                            <!-- Dinámico -->
+                        </div>
+                        <!-- Right: Detail -->
+                        <div id="profile_corr_detail_card" style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; border-left: 4px solid #FF6600; display: flex; flex-direction: column; justify-content: space-between; box-shadow:0 2px 6px rgba(0,0,0,0.01);">
+                            <!-- Dinámico -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1512,54 +1874,29 @@ window.SECTIONS.c3 = `
 
 <!-- CONTENIDO: CONCEPTUALIZACIÓN TEÓRICA Y EPISTEMOLÓGICA -->
 <div id="teorica" class="tab-content hidden" style="font-family:'Montserrat', sans-serif;">
-    <div style="display:grid; grid-template-columns: 1fr 1.1fr; gap:20px; min-height:430px;">
-        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between;">
+    <div style="display:grid; grid-template-columns: 1fr 1.25fr; gap:20px; min-height:430px;">
+        <!-- COLUMNA IZQUIERDA: SELECTOR DE FUNDAMENTOS -->
+        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toBlue" style="display:flex; flex-direction:column; justify-content:space-between; border-top-color:#0A2540;">
             <div>
-                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-brain" style="color:#C8102E;"></i> Fundamentos Teóricos y Epistemológicos</h4>
-                <p style="font-size:0.8rem; color:#475569; line-height:1.45; margin-bottom:12px;">Soportes científicos oficiales del programa (según el Documento Maestro, Sección 3.2.2):</p>
-                <div style="max-height: 290px; overflow-y: auto; padding-right: 8px; display:flex; flex-direction:column; gap:10px;" class="custom-scrollbar">
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-project-diagram mr-1" style="color:#C8102E;"></i> Enfoque Sistémico - Teoría General de Sistemas (TGS)</strong>
-                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> La TGS, desarrollada por Ludwig von Bertalanffy (1968), sostiene que las organizaciones y los sistemas productivos deben ser comprendidos como sistemas abiertos, interdependientes y dinámicos, en los que cada componente influye en el funcionamiento del todo.</span>
-                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> Asignaturas como Procesos Industriales y Gestión de Operaciones con IA se enfocan en analizar, diseñar y optimizar sistemas productivos como un todo integrado. La TGS promueve en los estudiantes la capacidad de abordar problemas organizacionales desde un enfoque holístico.</span>
-                    </div>
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-robot mr-1" style="color:#C8102E;"></i> Transformación Digital - Teoría de la Revolución 4.0</strong>
-                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> La Revolución 4.0, descrita por Schwab (2016), enfatiza el impacto de tecnologías avanzadas como inteligencia artificial, big data y sistemas ciberfísicos en los procesos industriales y organizacionales. Estas tecnologías han redefinido la producción, la gestión y el consumo, requiriendo competencias avanzadas en el uso de estas herramientas.</span>
-                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> Asignaturas como Big Data y Analítica de Datos, Inteligencia Artificial permiten a los estudiantes desarrollar habilidades para implementar tecnologías avanzadas en entornos reales. El enfoque pedagógico incluye simulaciones y herramientas interactivas que facilitan el aprendizaje práctico de estas tecnologías.</span>
-                    </div>
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-leaf mr-1" style="color:#C8102E;"></i> Sostenibilidad y Responsabilidad Social - Teoría del Desarrollo Sostenible</strong>
-                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> La teoría del desarrollo sostenible, formalizada en el Informe Brundtland (1987), plantea que las acciones humanas deben satisfacer las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer las suyas.</span>
-                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> Asignaturas como Desarrollo Sostenible y Sustentable, Bioética / Globalización y Economía promueven en los estudiantes una perspectiva ética y responsable en la gestión de recursos y procesos industriales. Se fomenta una integración transversal de la sostenibilidad en todas las etapas del diseño y la ejecución de proyectos.</span>
-                    </div>
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-lightbulb mr-1" style="color:#C8102E;"></i> Innovación y Gestión de Proyectos - Teoría de la Innovación Disruptiva</strong>
-                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> Christensen (1997) describe cómo las innovaciones disruptivas pueden transformar mercados y organizaciones al introducir cambios significativos en tecnologías, procesos y modelos de negocio.</span>
-                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> Asignaturas como Laboratorio de Innovación y Emprendimiento y Formulación y Evaluación de Proyectos preparan a los estudiantes para identificar oportunidades de negocio y desarrollar soluciones innovadoras. El enfoque pedagógico incluye estudios de caso y proyectos prácticos que fomentan la creatividad y la capacidad emprendedora.</span>
-                    </div>
-                    <div style="background:#f8fafc; border-left:3.5px solid #0A2540; padding:10px 12px; border-radius:6px;">
-                        <strong style="font-size:0.82rem; color:#0A2540; display:block; margin-bottom:4px;"><i class="fas fa-graduation-cap mr-1" style="color:#C8102E;"></i> Perspectiva Pedagógica - Teoría del Constructivismo</strong>
-                        <span style="font-size:0.74rem; color:#475569; line-height:1.5; display:block; margin-bottom:4px;"><strong>Fundamento Teórico:</strong> Piaget (1970) sostiene que el aprendizaje se construye activamente a través de la interacción del estudiante con su entorno. Este enfoque se complementa con el constructivismo social de Vygotsky (1978), quien enfatiza el rol del contexto social y cultural en el aprendizaje.</span>
-                        <span style="font-size:0.74rem; color:#64748b; line-height:1.5; display:block;"><strong>Aplicación en el Plan de Estudios:</strong> La metodología virtual del programa incorpora plataformas interactivas y actividades colaborativas que fomentan el aprendizaje autónomo y en equipo. El plan de estudios incluye simulaciones, proyectos y foros virtuales que facilitan la construcción del conocimiento a través de experiencias prácticas y colectivas.</span>
-                    </div>
+                <h4 style="margin:0 0 8px 0; font-size:1.05rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-brain" style="color:#C8102E;"></i> Aspectos Epistemológicos</h4>
+                <p style="font-size:0.75rem; color:#64748b; margin-bottom:10px; line-height:1.35;">Explore los 5 fundamentos teóricos oficiales que estructuran científicamente el programa (Sección 3.2.2):</p>
+                
+                <div style="display:flex; flex-direction:column; gap:6px;" id="teorica_selector_list">
+                    <!-- Dinámico -->
                 </div>
+            </div>
+            
+            <!-- Integración Ejes PEI -->
+            <div style="margin-top:12px; background:#fafafa; border:1px solid #e2e8f0; padding:10px; border-radius:8px; border-left:4px solid #C8102E; box-shadow:0 1px 3px rgba(0,0,0,0.01);">
+                <h5 style="margin:0 0 4px 0; font-size:0.72rem; font-weight:800; color:#0A2540; text-transform:uppercase; letter-spacing:0.3px;"><i class="fas fa-cube mr-1" style="color:#C8102E;"></i> Enfoque Tridimensional (PEI):</h5>
+                <p style="margin:0 0 8px 0; font-size:0.68rem; color:#475569; line-height:1.35;">El plan de estudios articula e integra el conocimiento mediante el **Eje Longitudinal, Eje Problémico y Eje Transversal**.</p>
+                <button onclick="changeTab('modelo_pei', event)" style="width:100%; border:none; background:#0A2540; color:white; font-weight:700; font-size:0.65rem; padding:6px; border-radius:4px; cursor:pointer; text-align:center; transition:background 0.2s;"><i class="fas fa-cube mr-1"></i>Ver Ejes del PEI Tridimensional</button>
             </div>
         </div>
-        <div class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toRed" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-                <h4 style="margin:0 0 12px 0; font-size:1.1rem; font-weight:800; color:#0A2540; display:flex; align-items:center; gap:8px;"><i class="fas fa-project-diagram" style="color:#0A2540;"></i> Enfoque Epistemológico Tridimensional (PEI)</h4>
-                <p style="font-size:0.82rem; color:#475569; line-height:1.4; margin-bottom:12px;">Visualización y concepción de cómo interactúan las dimensiones del conocimiento científico del programa, conectando la fundamentación disciplinar con la realidad del entorno:</p>
-                
-                <div style="background:#fdf2f2; border:1px solid #fee2e2; padding:12px; border-radius:8px; display:flex; flex-direction:column; gap:10px;">
-                    <div style="font-size:0.76rem; color:#475569; line-height:1.45;"><strong style="color:#C8102E; display:block; margin-bottom:2px;">Eje longitudinal, secuencial disciplinar:</strong> Constituye la organización de los saberes o contenidos de las disciplinas mediante un plan de estudios ordenado y sistemático, de tal forma que se realiza una estructura cognoscitiva bajo un modelo integrativo. Las asignaturas funcionan como piezas relacionables entre sí y con el todo para lograr los diferentes niveles de integración y concreción curricular.</div>
-                    <div style="font-size:0.76rem; color:#475569; line-height:1.45;"><strong style="color:#16a34a; display:block; margin-bottom:2px;">Eje problémico, resolutivo e interdisciplinar:</strong> Este eje es esencialmente interdisciplinario y permite resolver los problemas reales, complejos y multicausales que se presentan en diversos contextos. Es el escenario ideal para la evaluación de competencias integrales requeridas para el manejo de los problemas inmersos en contextos específicos, puesto que es el plano donde confluyen el saber hacer, el saber conocer y el saber ser, frente a diversas circunstancias.</div>
-                    <div style="font-size:0.76rem; color:#475569; line-height:1.45;"><strong style="color:#0284c7; display:block; margin-bottom:2px;">Eje transversal transdisciplinario y proyecto ético:</strong> Es el eje esencialmente formativo que acompaña la enseñanza y el aprendizaje, se va construyendo en todas las interacciones de la vida académica, económica, social y cultural del estudiante en formación. Hace síntesis de sucesos y procesos ocurridos en el aula y en cualquier otro escenario de aprendizaje o de la vida. Se denomina transversal porque atraviesa todos los aspectos de la vida académica de un estudiante: todas las asignaturas del Plan de estudios, las prácticas académicas, los procesos de convivencia, el trabajo en equipo y las condiciones de vida.</div>
-                </div>
-                <div style="text-align:center; margin-top:12px;">
-                    <button onclick="changeTab('modelo_pei', event)" class="px-4 py-2 bg-toBlue text-white font-bold rounded-lg shadow hover:bg-toLightBlue transition" style="font-size:0.75rem;"><i class="fas fa-cube mr-2"></i>Ver Ejes del PEI Tridimensional</button>
-                </div>
-            </div>
+        
+        <!-- COLUMNA DERECHA: EXPLORADOR DINÁMICO DE DETALLE -->
+        <div id="teorica_detail_card" class="card p-5 bg-white rounded-xl shadow-lg border-t-4 border-toRed" style="min-height:430px; border-top-color:#C8102E;">
+            <!-- Dinámico -->
         </div>
     </div>
 </div>
