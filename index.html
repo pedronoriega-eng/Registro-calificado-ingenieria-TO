@@ -32,6 +32,8 @@
     <script src="sections.js?v=6"></script>
     <!-- Presentación Institucional (PRIMERA SECCIÓN) -->
     <script src="sections_inst.js?v=3"></script>
+    <!-- Sistema de Educación Virtual -->
+    <script src="sections_virtual.js?v=1"></script>
     <!-- Scripts del Portal - Versión v19 -->
     <script src="sections2.js?v=19"></script>
     <script src="sections_c1.js?v=19"></script>
@@ -210,6 +212,7 @@
         }
         const condInfo = [
             { id: 'inst', title: 'Presentación Institucional', img: 'https://campusvirtual.tecnologicadeloriente.edu.co/pluginfile.php/1/theme_edmo/mobile_logo/1772556380/logo%2Bvertical-1920w.jpg', slideLabel: 'Identidad TO · 8 Secciones', icon: 'fas fa-university' },
+            { id: 'virtual', title: 'Sistema de Educación Virtual', img: 'assets/virtual_slides/virtual_slide_1_img_0.png', slideLabel: 'Ecosistema & Modelo Pedagógico', icon: 'fas fa-laptop-code' },
             { id: 'c1', title: '1. Denominación del Programa', img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-id-card' },
             { id: 'c2', title: '2. Justificación', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-chart-bar' },
             { id: 'c3', title: '3. Contenidos Curriculares', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80', slideLabel: 'Presentación Interactiva', icon: 'fas fa-sitemap' },
@@ -261,7 +264,7 @@
             document.getElementById('slideCounter').parentElement.innerHTML = `<span id="slideCounter">${idx >= 0 ? idx + 1 : '-'}</span> / ${condInfo.length}`;
 
             // Setear el título superior de la diapositiva
-            document.getElementById('slideCategory').innerText = id === 'anexos' ? 'DOCUMENTACIÓN' : id === 'inst' ? 'PRESENTACIÓN INSTITUCIONAL' : `CONDICIÓN ${id.replace('c','')}`;
+            document.getElementById('slideCategory').innerText = id === 'anexos' ? 'DOCUMENTACIÓN' : id === 'inst' ? 'PRESENTACIÓN INSTITUCIONAL' : id === 'virtual' ? 'EDUCACIÓN VIRTUAL' : `CONDICIÓN ${id.replace('c','')}`;
             document.getElementById('slideTitle').innerText = condInfo.find(c => c.id === id)?.title || title;
 
             // Mostrar el visor
@@ -297,6 +300,7 @@
             setTimeout(() => {
                 // Módulos interactivos agregados: C1, C2 (ECharts/Leaflet), C3 (Pestañas y Malla), C5, Anexos
                 if (id === 'inst' && window.instInit) window.instInit();
+                if (id === 'virtual' && window.virtualInit) window.virtualInit();
                 if (id === 'c1' && window.c1Init) window.c1Init();
                 if (id === 'c2' && window.c2Init) window.c2Init();
                 if (id === 'c3') {
