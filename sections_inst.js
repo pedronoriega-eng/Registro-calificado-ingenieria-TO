@@ -493,35 +493,103 @@ window.SECTIONS.inst = `
 
 <!-- ==================== TAB: INFRAESTRUCTURA ==================== -->
 <div id="instTab_infra" class="inst-tab-content" style="display:none;">
-    <!-- Foto oficial de las sedes -->
-    <div style="border-radius:16px; overflow:hidden; margin-bottom:25px; border:2px solid #e5e7eb; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+    <!-- Banner Hero de Infraestructura -->
+    <div style="position:relative; border-radius:16px; overflow:hidden; margin-bottom:25px; box-shadow:0 8px 30px rgba(10,37,64,0.15);">
         <img src="assets/sedes_institucionales.png" alt="Sedes de la Tecnológica del Oriente" style="width:100%; display:block;">
+        <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top, rgba(10,37,64,0.92) 0%, rgba(10,37,64,0.5) 60%, transparent 100%); padding:25px 25px 20px;">
+            <h3 style="color:white; font-size:1.6rem; font-weight:800; margin:0 0 5px; font-family:'Montserrat',sans-serif; text-shadow:0 2px 8px rgba(0,0,0,0.3);"><i class="fas fa-building mr-2" style="color:#fbbf24;"></i>Infraestructura Física</h3>
+            <p style="color:#cbd5e1; margin:0; font-size:0.9rem;">3 sedes estratégicamente ubicadas en el corazón de Bucaramanga · Más de 3.071 m² de área construida</p>
+        </div>
     </div>
 
-
-
-    <!-- Gráfico de área por sede -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:25px;">
-        <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px;">
-            <h4 style="color:#0A2540; font-weight:700; font-size:1.1rem; margin-bottom:15px;"><i class="fas fa-chart-bar mr-2" style="color:#C8102E;"></i>Área por Sede (m²)</h4>
-            <canvas id="instAreaChart"></canvas>
+    <!-- Tarjetas interactivas de Sedes -->
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-bottom:25px;">
+        <!-- SEDE A -->
+        <div style="background:white; border-radius:14px; overflow:hidden; border:2px solid #e5e7eb; transition:all 0.35s cubic-bezier(.4,0,.2,1); cursor:pointer; position:relative;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 35px rgba(200,16,46,0.2)'; this.style.borderColor='#C8102E';" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='#e5e7eb';">
+            <div style="background:linear-gradient(135deg, #C8102E, #991b1b); color:white; padding:16px 18px; text-align:center;">
+                <div style="font-size:1.6rem; font-weight:800; font-family:'Montserrat';">SEDE A</div>
+                <div style="font-size:0.78rem; color:rgba(255,255,255,0.8); margin-top:2px;">📍 Calle 41 # 10-30</div>
+            </div>
+            <div style="padding:18px;">
+                <div style="text-align:center; margin-bottom:14px;">
+                    <div style="font-size:2.2rem; font-weight:800; color:#C8102E; font-family:'Montserrat';">1.140</div>
+                    <div style="font-size:0.72rem; font-weight:700; color:#6b7280; text-transform:uppercase; letter-spacing:1px;">Metros Cuadrados</div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:0.78rem;">
+                    <div style="background:#fef2f2; padding:6px 8px; border-radius:6px; color:#991b1b; font-weight:600;"><i class="fas fa-door-open mr-1" style="font-size:0.65rem;"></i>11 Aulas</div>
+                    <div style="background:#fef2f2; padding:6px 8px; border-radius:6px; color:#991b1b; font-weight:600;"><i class="fas fa-flask mr-1" style="font-size:0.65rem;"></i>1 Laboratorio</div>
+                    <div style="background:#fef2f2; padding:6px 8px; border-radius:6px; color:#991b1b; font-weight:600;"><i class="fas fa-laptop mr-1" style="font-size:0.65rem;"></i>1 Sala Inf.</div>
+                    <div style="background:#fef2f2; padding:6px 8px; border-radius:6px; color:#991b1b; font-weight:600;"><i class="fas fa-briefcase mr-1" style="font-size:0.65rem;"></i>24 Oficinas</div>
+                    <div style="background:#fef2f2; padding:6px 8px; border-radius:6px; color:#991b1b; font-weight:600;"><i class="fas fa-book mr-1" style="font-size:0.65rem;"></i>1 Biblioteca</div>
+                    <div style="background:#fef2f2; padding:6px 8px; border-radius:6px; color:#991b1b; font-weight:600;"><i class="fas fa-restroom mr-1" style="font-size:0.65rem;"></i>14 Bat. Baño</div>
+                </div>
+            </div>
         </div>
-        <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; padding:25px;">
-            <h4 style="color:#0A2540; font-weight:700; font-size:1.1rem; margin-bottom:15px;"><i class="fas fa-chart-pie mr-2" style="color:#0A2540;"></i>Total Espacios Académicos</h4>
-            <canvas id="instEspaciosChart"></canvas>
+        <!-- SEDE B -->
+        <div style="background:white; border-radius:14px; overflow:hidden; border:2px solid #e5e7eb; transition:all 0.35s cubic-bezier(.4,0,.2,1); cursor:pointer; position:relative;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 35px rgba(10,37,64,0.2)'; this.style.borderColor='#0A2540';" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='#e5e7eb';">
+            <div style="background:linear-gradient(135deg, #0A2540, #173A66); color:white; padding:16px 18px; text-align:center;">
+                <div style="font-size:1.6rem; font-weight:800; font-family:'Montserrat';">SEDE B</div>
+                <div style="font-size:0.78rem; color:rgba(255,255,255,0.8); margin-top:2px;">📍 Cra. 10 No. 35-40</div>
+            </div>
+            <div style="padding:18px;">
+                <div style="text-align:center; margin-bottom:14px;">
+                    <div style="font-size:2.2rem; font-weight:800; color:#0A2540; font-family:'Montserrat';">1.527</div>
+                    <div style="font-size:0.72rem; font-weight:700; color:#6b7280; text-transform:uppercase; letter-spacing:1px;">Metros Cuadrados</div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:0.78rem;">
+                    <div style="background:#eff6ff; padding:6px 8px; border-radius:6px; color:#1e3a5f; font-weight:600;"><i class="fas fa-door-open mr-1" style="font-size:0.65rem;"></i>9 Aulas</div>
+                    <div style="background:#eff6ff; padding:6px 8px; border-radius:6px; color:#1e3a5f; font-weight:600;"><i class="fas fa-flask mr-1" style="font-size:0.65rem;"></i>1 Laboratorio</div>
+                    <div style="background:#eff6ff; padding:6px 8px; border-radius:6px; color:#1e3a5f; font-weight:600;"><i class="fas fa-laptop mr-1" style="font-size:0.65rem;"></i>1 Sala Inf.</div>
+                    <div style="background:#eff6ff; padding:6px 8px; border-radius:6px; color:#1e3a5f; font-weight:600;"><i class="fas fa-briefcase mr-1" style="font-size:0.65rem;"></i>4 Oficinas</div>
+                    <div style="background:#eff6ff; padding:6px 8px; border-radius:6px; color:#1e3a5f; font-weight:600;"><i class="fas fa-book mr-1" style="font-size:0.65rem;"></i>1 Biblioteca</div>
+                    <div style="background:#eff6ff; padding:6px 8px; border-radius:6px; color:#1e3a5f; font-weight:600;"><i class="fas fa-theater-masks mr-1" style="font-size:0.65rem;"></i>1 Auditorio</div>
+                </div>
+            </div>
         </div>
+        <!-- SEDE C -->
+        <div style="background:white; border-radius:14px; overflow:hidden; border:2px solid #e5e7eb; transition:all 0.35s cubic-bezier(.4,0,.2,1); cursor:pointer; position:relative;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 35px rgba(217,119,6,0.2)'; this.style.borderColor='#d97706';" onmouseout="this.style.transform=''; this.style.boxShadow=''; this.style.borderColor='#e5e7eb';">
+            <div style="background:linear-gradient(135deg, #d97706, #b45309); color:white; padding:16px 18px; text-align:center;">
+                <div style="font-size:1.6rem; font-weight:800; font-family:'Montserrat';">SEDE C</div>
+                <div style="font-size:0.78rem; color:rgba(255,255,255,0.8); margin-top:2px;">📍 Cra 10 # 41-73</div>
+            </div>
+            <div style="padding:18px;">
+                <div style="text-align:center; margin-bottom:14px;">
+                    <div style="font-size:2.2rem; font-weight:800; color:#d97706; font-family:'Montserrat';">404</div>
+                    <div style="font-size:0.72rem; font-weight:700; color:#6b7280; text-transform:uppercase; letter-spacing:1px;">Metros Cuadrados</div>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:0.78rem;">
+                    <div style="background:#fef3c7; padding:6px 8px; border-radius:6px; color:#92400e; font-weight:600;"><i class="fas fa-door-open mr-1" style="font-size:0.65rem;"></i>6 Aulas</div>
+                    <div style="background:#fef3c7; padding:6px 8px; border-radius:6px; color:#92400e; font-weight:600;"><i class="fas fa-briefcase mr-1" style="font-size:0.65rem;"></i>2 Oficinas</div>
+                    <div style="background:#fef3c7; padding:6px 8px; border-radius:6px; color:#92400e; font-weight:600;"><i class="fas fa-laptop mr-1" style="font-size:0.65rem;"></i>1 Sala Inf.</div>
+                    <div style="background:#fef3c7; padding:6px 8px; border-radius:6px; color:#92400e; font-weight:600;"><i class="fas fa-restroom mr-1" style="font-size:0.65rem;"></i>4 Bat. Baño</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resumen de Recursos Totales -->
+    <div style="background:linear-gradient(135deg, #0A2540 0%, #173A66 100%); border-radius:14px; padding:22px 25px; margin-bottom:25px; display:flex; justify-content:space-around; flex-wrap:wrap; gap:12px;">
+        <div style="text-align:center; min-width:100px;"><div style="font-size:1.8rem; font-weight:800; color:#fbbf24; font-family:'Montserrat';">26</div><div style="font-size:0.72rem; color:#94a3b8; font-weight:600; text-transform:uppercase;">Aulas de Clase</div></div>
+        <div style="width:1px; background:rgba(255,255,255,0.15);"></div>
+        <div style="text-align:center; min-width:100px;"><div style="font-size:1.8rem; font-weight:800; color:#fbbf24; font-family:'Montserrat';">2</div><div style="font-size:0.72rem; color:#94a3b8; font-weight:600; text-transform:uppercase;">Laboratorios</div></div>
+        <div style="width:1px; background:rgba(255,255,255,0.15);"></div>
+        <div style="text-align:center; min-width:100px;"><div style="font-size:1.8rem; font-weight:800; color:#fbbf24; font-family:'Montserrat';">3</div><div style="font-size:0.72rem; color:#94a3b8; font-weight:600; text-transform:uppercase;">Salas Informáticas</div></div>
+        <div style="width:1px; background:rgba(255,255,255,0.15);"></div>
+        <div style="text-align:center; min-width:100px;"><div style="font-size:1.8rem; font-weight:800; color:#fbbf24; font-family:'Montserrat';">30</div><div style="font-size:0.72rem; color:#94a3b8; font-weight:600; text-transform:uppercase;">Oficinas Admin.</div></div>
+        <div style="width:1px; background:rgba(255,255,255,0.15);"></div>
+        <div style="text-align:center; min-width:100px;"><div style="font-size:1.8rem; font-weight:800; color:#fbbf24; font-family:'Montserrat';">3.071</div><div style="font-size:0.72rem; color:#94a3b8; font-weight:600; text-transform:uppercase;">m² Totales</div></div>
     </div>
 
     <!-- Sedes recreativas -->
-    <div style="background:white; border:2px solid #e5e7eb; border-radius:12px; overflow:hidden;">
-        <div style="background:#16a34a; color:white; padding:15px 20px;"><h4 style="margin:0; font-weight:700; font-size:1.15rem;"><i class="fas fa-tree mr-2"></i>Sedes Recreativas y Deportivas</h4></div>
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; overflow:hidden;">
+        <div style="background:linear-gradient(135deg, #16a34a, #15803d); color:white; padding:15px 20px;"><h4 style="margin:0; font-weight:700; font-size:1.15rem;"><i class="fas fa-tree mr-2"></i>Sedes Recreativas y Deportivas</h4></div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
             <div style="padding:0;"><img src="assets/inst_slides/inst_slide_18_img_1.png" alt="Instalaciones deportivas" style="width:100%; height:200px; object-fit:cover;"></div>
             <div style="padding:0;"><img src="assets/inst_slides/inst_slide_18_img_2.jpg" alt="Cajasan Campo Alegre" style="width:100%; height:200px; object-fit:cover;"></div>
         </div>
         <div style="padding:15px; display:flex; gap:15px;">
-            <div style="flex:1; background:#f9fafb; padding:12px; border-radius:8px; border-left:3px solid #16a34a;"><div style="font-weight:700; color:#0A2540; font-size:0.9rem;">Recrear la Victoria</div><div style="font-size:0.8rem; color:#6b7280;">Canchas, piscinas y zonas verdes</div></div>
-            <div style="flex:1; background:#f9fafb; padding:12px; border-radius:8px; border-left:3px solid #16a34a;"><div style="font-weight:700; color:#0A2540; font-size:0.9rem;">Cajasan Campo Alegre</div><div style="font-size:0.8rem; color:#6b7280;">Bienestar institucional</div></div>
+            <div style="flex:1; background:#f0fdf4; padding:12px; border-radius:8px; border-left:3px solid #16a34a; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''"><div style="font-weight:700; color:#0A2540; font-size:0.9rem;"><i class="fas fa-futbol mr-1" style="color:#16a34a;"></i>Recrear la Victoria</div><div style="font-size:0.8rem; color:#6b7280;">Canchas, piscinas y zonas verdes</div></div>
+            <div style="flex:1; background:#f0fdf4; padding:12px; border-radius:8px; border-left:3px solid #16a34a; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform=''"><div style="font-weight:700; color:#0A2540; font-size:0.9rem;"><i class="fas fa-swimming-pool mr-1" style="color:#16a34a;"></i>Cajasan Campo Alegre</div><div style="font-size:0.8rem; color:#6b7280;">Bienestar institucional</div></div>
         </div>
     </div>
 </div>
@@ -705,41 +773,7 @@ window._initInstCharts = function(tabId) {
         }
     }
 
-    // Infraestructura
-    if (tabId === 'infra') {
-        var ctx6 = document.getElementById('instAreaChart');
-        if (ctx6 && !window._instCharts.area) {
-            window._instCharts.area = new Chart(ctx6, {
-                type: 'bar',
-                data: {
-                    labels: ['Sede A', 'Sede B', 'Sede C'],
-                    datasets: [{
-                        label: 'Área (m²)',
-                        data: [1140, 1527, 404],
-                        backgroundColor: ['#C8102E', '#0A2540', '#d97706'],
-                        borderRadius: 8,
-                        barThickness: 45
-                    }]
-                },
-                options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#e5e7eb' }, ticks: { color: '#374151' } }, x: { grid: { display: false }, ticks: { color: '#374151', font: { weight: 'bold', size: 13 } } } } }
-            });
-        }
-        var ctx7 = document.getElementById('instEspaciosChart');
-        if (ctx7 && !window._instCharts.esp) {
-            window._instCharts.esp = new Chart(ctx7, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Aulas (26)', 'Laboratorios (2)', 'Salas Inf. (3)', 'Of. Admin. (30)', 'Otros (8)'],
-                    datasets: [{
-                        data: [26, 2, 3, 30, 8],
-                        backgroundColor: ['#0A2540', '#C8102E', '#3b82f6', '#d97706', '#16a34a'],
-                        borderWidth: 2, borderColor: '#fff'
-                    }]
-                },
-                options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { color: '#374151', font: { size: 11 } } } } }
-            });
-        }
-    }
+    // Infraestructura - no charts needed, pure interactive HTML cards
 };
 
 window.showPeiAxisDetail = function(axisId, btnEl) {
