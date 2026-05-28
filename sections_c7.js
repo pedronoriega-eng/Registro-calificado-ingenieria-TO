@@ -17,6 +17,9 @@ window.SECTIONS.c7 = `
         <button id="c7Tab_cualificacion" onclick="window.switchC7Tab('cualificacion')" class="c7-tab-btn" style="padding:8px 18px; border-radius:25px; font-weight:700; border:none; cursor:pointer; font-size:0.85rem; transition:0.3s; background:transparent; color:#4b5563;">Cualificación</button>
         <button id="c7Tab_bienestar" onclick="window.switchC7Tab('bienestar')" class="c7-tab-btn" style="padding:8px 18px; border-radius:25px; font-weight:700; border:none; cursor:pointer; font-size:0.85rem; transition:0.3s; background:transparent; color:#4b5563;">Bienestar</button>
         <button id="c7Tab_evaluacion" onclick="window.switchC7Tab('evaluacion')" class="c7-tab-btn" style="padding:8px 18px; border-radius:25px; font-weight:700; border:none; cursor:pointer; font-size:0.85rem; transition:0.3s; background:transparent; color:#4b5563;">Evaluación Docente</button>
+        <button id="c7Tab_escalafon" onclick="window.switchC7Tab('escalafon')" class="c7-tab-btn" style="padding:8px 18px; border-radius:25px; font-weight:700; border:none; cursor:pointer; font-size:0.85rem; transition:0.3s; background:transparent; color:#4b5563;">Escalafón y Salarios</button>
+        <button id="c7Tab_estimulos" onclick="window.switchC7Tab('estimulos')" class="c7-tab-btn" style="padding:8px 18px; border-radius:25px; font-weight:700; border:none; cursor:pointer; font-size:0.85rem; transition:0.3s; background:transparent; color:#4b5563;">Estímulos y Capacitación</button>
+        <button id="c7Tab_regimen" onclick="window.switchC7Tab('regimen')" class="c7-tab-btn" style="padding:8px 18px; border-radius:25px; font-weight:700; border:none; cursor:pointer; font-size:0.85rem; transition:0.3s; background:transparent; color:#4b5563;">Régimen Disciplinario</button>
         <button id="c7Tab_slides" onclick="window.switchC7Tab('slides')" class="c7-tab-btn" style="padding:8px 18px; border-radius:25px; font-weight:700; border:none; cursor:pointer; font-size:0.85rem; transition:0.3s; background:transparent; color:#4b5563;">Presentación Completa</button>
     </div>
 </div>
@@ -764,6 +767,429 @@ window.SECTIONS.c7 = `
     </div>
 </div>
 
+<!-- ========== TAB: ESCALAFÓN Y SALARIOS ========== -->
+<div id="c7Content_escalafon" class="c7-tab-content" style="display:none;">
+    <!-- Introducción -->
+    <div style="background:linear-gradient(135deg,#0A2540 0%,#173A66 100%); border-radius:16px; padding:30px; margin-bottom:25px; color:white;">
+        <h2 style="font-family:'Montserrat',sans-serif; font-size:1.6rem; margin:0 0 8px 0; color:white;"><i class="fas fa-layer-group" style="color:#C8102E; margin-right:10px;"></i>Escalafón Docente y Estructura Salarial</h2>
+        <p style="color:#cbd5e1; font-size:0.95rem; margin:0;">Capítulo VIII: Sistema de clasificación, requisitos por categorías, equivalencias y tabla de remuneración de la Corporación Escuela Tecnológica del Oriente.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 2fr; gap:20px; margin-bottom:25px;">
+        <!-- Criterios del Escalafón -->
+        <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:24px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+            <h3 style="color:#0A2540; font-family:'Montserrat',sans-serif; font-size:1.15rem; margin:0 0 16px 0; font-weight:800;"><i class="fas fa-list-check" style="color:#C8102E; margin-right:8px;"></i>Criterios de Clasificación</h3>
+            <p style="color:#4b5563; font-size:0.85rem; line-height:1.5; margin:0 0 14px 0;">El escalafón docente se define en el <strong>Artículo 21</strong> como el sistema de clasificación de acuerdo con el saber disciplinar, la experiencia y la investigación, según los siguientes criterios:</p>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <div style="display:flex; align-items:center; gap:10px; font-size:0.85rem; color:#374151; background:#f8fafc; padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0;"><i class="fas fa-graduation-cap" style="color:#C8102E; width:16px;"></i><span>Formación académica</span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:0.85rem; color:#374151; background:#f8fafc; padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0;"><i class="fas fa-briefcase" style="color:#C8102E; width:16px;"></i><span>Experiencia profesional certificada</span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:0.85rem; color:#374151; background:#f8fafc; padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0;"><i class="fas fa-chalkboard-teacher" style="color:#C8102E; width:16px;"></i><span>Experiencia como docente universitario</span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:0.85rem; color:#374151; background:#f8fafc; padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0;"><i class="fas fa-microscope" style="color:#C8102E; width:16px;"></i><span>Producción en investigación e innovación</span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:0.85rem; color:#374151; background:#f8fafc; padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0;"><i class="fas fa-book-open" style="color:#C8102E; width:16px;"></i><span>Formación continuada</span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:0.85rem; color:#374151; background:#f8fafc; padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0;"><i class="fas fa-star" style="color:#C8102E; width:16px;"></i><span>Resultados de evaluación docente</span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:0.85rem; color:#374151; background:#f8fafc; padding:8px 12px; border-radius:8px; border:1px solid #e2e8f0;"><i class="fas fa-history" style="color:#C8102E; width:16px;"></i><span>Permanencia y estabilidad institucional</span></div>
+            </div>
+        </div>
+
+        <!-- Tabla Salarial (Imagen Adjunta) -->
+        <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:24px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h3 style="color:#0A2540; font-family:'Montserrat',sans-serif; font-size:1.15rem; margin:0; font-weight:800;"><i class="fas fa-dollar-sign" style="color:#10b981; margin-right:8px;"></i>Escala Salarial Vigente</h3>
+                <span style="background:#eff6ff; color:#2563eb; font-weight:800; font-size:0.75rem; padding:4px 12px; border-radius:20px;"><i class="fas fa-clock" style="margin-right:4px;"></i>Estructura de Cargos</span>
+            </div>
+            <p style="color:#4b5563; font-size:0.85rem; line-height:1.5; margin:0 0 16px 0;">Remuneración mensual establecida de acuerdo con la jornada laboral y el nivel de formación académica alcanzado:</p>
+            
+            <table class="tbl" style="border-radius:10px; overflow:hidden; width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#0A2540; color:white;">
+                        <th style="background:#0A2540; color:white; font-weight:700; padding:12px; text-align:left; font-size:0.85rem;">Nivel de Formación</th>
+                        <th style="background:#0A2540; color:white; font-weight:700; padding:12px; text-align:right; font-size:0.85rem;">Medio Tiempo <br><span style="font-size:0.7rem; font-weight:normal; opacity:0.85;">(22 horas / semana)</span></th>
+                        <th style="background:#0A2540; color:white; font-weight:700; padding:12px; text-align:right; font-size:0.85rem;">Tiempo Completo <br><span style="font-size:0.7rem; font-weight:normal; opacity:0.85;">(40 horas / semana)</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid #e2e8f0; transition: background 0.2s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                        <td style="padding:12px; font-weight:700; color:#374151; font-size:0.85rem;"><i class="fas fa-user-graduate" style="color:#94a3b8; margin-right:8px;"></i>Profesional</td>
+                        <td style="padding:12px; text-align:right; font-weight:800; color:#0A2540; font-size:0.9rem;">$ 1.382.450</td>
+                        <td style="padding:12px; text-align:right; font-weight:800; color:#C8102E; font-size:0.9rem;">$ 2.404.300</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0; background:#f8fafc; transition: background 0.2s;" onmouseover="this.style.background='#f1f5f9'" onmouseout="this.style.background='#f8fafc'">
+                        <td style="padding:12px; font-weight:700; color:#374151; font-size:0.85rem;"><i class="fas fa-medal" style="color:#eab308; margin-right:8px;"></i>Especialista</td>
+                        <td style="padding:12px; text-align:right; font-weight:800; color:#0A2540; font-size:0.9rem;">$ 1.744.100</td>
+                        <td style="padding:12px; text-align:right; font-weight:800; color:#C8102E; font-size:0.9rem;">$ 3.005.650</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0; transition: background 0.2s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                        <td style="padding:12px; font-weight:700; color:#374151; font-size:0.85rem;"><i class="fas fa-award" style="color:#3b82f6; margin-right:8px;"></i>Magíster</td>
+                        <td style="padding:12px; text-align:right; font-weight:800; color:#0A2540; font-size:0.9rem;">$ 2.103.650</td>
+                        <td style="padding:12px; text-align:right; font-weight:800; color:#C8102E; font-size:0.9rem;">$ 3.603.450</td>
+                    </tr>
+                    <tr style="background:#eff6ff; border-bottom:2px solid #bfdbfe; transition: background 0.2s;" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='#eff6ff'">
+                        <td style="padding:12px; font-weight:800; color:#1e40af; font-size:0.85rem;"><i class="fas fa-graduation-cap" style="color:#1d4ed8; margin-right:8px;"></i>Doctor</td>
+                        <td style="padding:12px; text-align:right; font-weight:800; color:#1e40af; font-size:0.95rem;">$ 2.524.500</td>
+                        <td style="padding:12px; text-align:right; font-weight:800; color:#b91c1c; font-size:0.95rem;">$ 4.327.700</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top:12px; background:#faf5ff; border:1px dashed #c084fc; border-radius:8px; padding:10px; font-size:0.75rem; color:#6b21a8; display:flex; gap:8px; align-items:center;">
+                <i class="fas fa-info-circle" style="font-size:1rem; flex-shrink:0;"></i>
+                <span><strong>Nota de Remuneración:</strong> El escalafón docente se complementa con la formación y la producción académica regulada por el Comité de Contratación.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proceso de Ingreso y Categorías -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:28px; margin-bottom:25px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+        <h3 style="color:#0A2540; font-family:'Montserrat',sans-serif; font-size:1.25rem; margin:0 0 16px 0; font-weight:800;"><i class="fas fa-sitemap" style="color:#C8102E; margin-right:8px;"></i>Categorías del Escalafón Docente (Artículo 22)</h3>
+        <p style="color:#4b5563; font-size:0.88rem; line-height:1.5; margin:0 0 20px 0;">Para ingresar al escalafón docente, el docente debe haber superado el proceso de ingreso (<strong>reclutamiento, selección y contratación</strong>) y cumplir con todos los criterios de la respectiva categoría:</p>
+
+        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
+            <!-- Profesor Auxiliar -->
+            <div style="border:2px solid #e2e8f0; border-radius:12px; padding:18px; background:#fff; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 6px rgba(0,0,0,0.02);">
+                <div>
+                    <span style="background:#e2e8f0; color:#475569; padding:3px 10px; border-radius:20px; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; display:inline-block; margin-bottom:10px;">Art. 23</span>
+                    <h4 style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 10px 0;"><i class="fas fa-chalkboard-teacher" style="color:#475569; margin-right:6px;"></i>Auxiliar</h4>
+                    <ul style="margin:0; padding-left:14px; color:#4b5563; font-size:0.78rem; display:flex; flex-direction:column; gap:6px;">
+                        <li>Pregrado universitario.</li>
+                        <li>Mínimo 1 año de experiencia laboral.</li>
+                        <li>Mínimo 1 año de experiencia docente en educación superior.</li>
+                        <li>Mínimo 20 horas en formación pedagógica/didáctica.</li>
+                        <li>Acreditar Producción Académica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Profesor Asistente -->
+            <div style="border:2px solid #bfdbfe; border-radius:12px; padding:18px; background:#eff6ff; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 6px rgba(0,0,0,0.02);">
+                <div>
+                    <span style="background:#3b82f6; color:white; padding:3px 10px; border-radius:20px; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; display:inline-block; margin-bottom:10px;">Art. 24</span>
+                    <h4 style="color:#1e40af; font-weight:800; font-size:1.1rem; margin:0 0 10px 0;"><i class="fas fa-user-md" style="color:#2563eb; margin-right:6px;"></i>Asistente</h4>
+                    <ul style="margin:0; padding-left:14px; color:#1e3a8a; font-size:0.78rem; display:flex; flex-direction:column; gap:6px;">
+                        <li>Pregrado + Posgrado a nivel de <strong>Especialista</strong>.</li>
+                        <li>Mínimo 2 años de experiencia laboral.</li>
+                        <li>Mínimo 2 años de experiencia docente IES.</li>
+                        <li>Acreditar Producción Académica.</li>
+                        <li>Lengua extranjera nivel mínimo <strong>A2</strong>.</li>
+                        <li>Valoración de "alto grado" en evaluación docente.</li>
+                        <li>Participar en plan de cualificación.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Profesor Asociado -->
+            <div style="border:2px solid #fed7aa; border-radius:12px; padding:18px; background:#fff7ed; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 6px rgba(0,0,0,0.02);">
+                <div>
+                    <span style="background:#f97316; color:white; padding:3px 10px; border-radius:20px; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; display:inline-block; margin-bottom:10px;">Art. 25</span>
+                    <h4 style="color:#9a3412; font-weight:800; font-size:1.1rem; margin:0 0 10px 0;"><i class="fas fa-medal" style="color:#ea580c; margin-right:6px;"></i>Asociado</h4>
+                    <ul style="margin:0; padding-left:14px; color:#7c2d12; font-size:0.78rem; display:flex; flex-direction:column; gap:6px;">
+                        <li>Pregrado + Posgrado a nivel de <strong>Maestría o Doctorado</strong>.</li>
+                        <li>Mínimo 3 años de experiencia laboral.</li>
+                        <li>Mínimo 4 años de experiencia docente IES.</li>
+                        <li>Acreditar Producción Académica.</li>
+                        <li>Lengua extranjera nivel mínimo <strong>B1</strong>.</li>
+                        <li>Vinculación de mínimo 1 año a grupos de investigación institucional.</li>
+                        <li>Valoración de "alto grado" en evaluación docente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Profesor Titular -->
+            <div style="border:2px solid #fbcfe8; border-radius:12px; padding:18px; background:#fdf2f8; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 6px rgba(0,0,0,0.02);">
+                <div>
+                    <span style="background:#ec4899; color:white; padding:3px 10px; border-radius:20px; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; display:inline-block; margin-bottom:10px;">Art. 26</span>
+                    <h4 style="color:#9d174d; font-weight:800; font-size:1.1rem; margin:0 0 10px 0;"><i class="fas fa-crown" style="color:#db2777; margin-right:6px;"></i>Titular</h4>
+                    <ul style="margin:0; padding-left:14px; color:#831843; font-size:0.78rem; display:flex; flex-direction:column; gap:6px;">
+                        <li>Pregrado + Posgrado a nivel de <strong>Maestría o Doctorado</strong>.</li>
+                        <li>Mínimo 5 años de experiencia laboral.</li>
+                        <li>Mínimo 5 años de experiencia docente IES.</li>
+                        <li>Acreditar Producción Académica.</li>
+                        <li>Lengua extranjera nivel mínimo <strong>B2</strong>.</li>
+                        <li>Vinculación de mínimo 2 años a grupos de investigación institucional.</li>
+                        <li>Valoración de "alto grado" en evaluación docente.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Equivalencias, Comité y Normas adicionales -->
+    <div style="display:grid; grid-template-columns:2fr 1fr; gap:20px;">
+        <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:24px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+            <h3 style="color:#0A2540; font-family:'Montserrat',sans-serif; font-size:1.15rem; margin:0 0 14px 0; font-weight:800;"><i class="fas fa-equals" style="color:#C8102E; margin-right:8px;"></i>Equivalencias del Escalafón (Artículo 30)</h3>
+            <p style="color:#4b5563; font-size:0.85rem; margin:0 0 14px 0;">Se establecen criterios de equivalencia para clasificar la experiencia y la formación académica:</p>
+            
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px;">
+                    <h5 style="color:#0A2540; margin:0 0 8px 0; font-weight:800; font-size:0.85rem;"><i class="fas fa-history" style="color:#059669; margin-right:6px;"></i>Equivalencias de Experiencia:</h5>
+                    <span style="font-size:0.75rem; color:#6b7280; display:block; margin-bottom:8px;">1 año de experiencia de tiempo completo equivale a:</span>
+                    <ul style="margin:0; padding-left:14px; color:#4b5563; font-size:0.75rem; display:flex; flex-direction:column; gap:6px;">
+                        <li>2 años de experiencia en educación básica y media.</li>
+                        <li>2 años de experiencia en cargos de dirección académica en IES.</li>
+                        <li>2 años como profesor de medio tiempo en IES.</li>
+                        <li>2 años en instituciones de formación para el trabajo y desarrollo humano.</li>
+                    </ul>
+                </div>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px;">
+                    <h5 style="color:#0A2540; margin:0 0 8px 0; font-weight:800; font-size:0.85rem;"><i class="fas fa-graduation-cap" style="color:#2563eb; margin-right:6px;"></i>Equivalencias de Formación:</h5>
+                    <ul style="margin:0; padding-left:14px; color:#4b5563; font-size:0.75rem; display:flex; flex-direction:column; gap:6px; margin-bottom:10px;">
+                        <li>Las especializaciones médicas son equivalentes al título de maestría (Art. 30, b).</li>
+                    </ul>
+                    <div style="background:#eff6ff; border-left:3px solid #2563eb; padding:8px; border-radius:4px; font-size:0.72rem; color:#1e40af; line-height:1.4;">
+                        <strong>Parágrafo 1:</strong> Expertos en áreas de saber sin título académico, pero con reconocida trayectoria, serán evaluados por el Comité de Contratación.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:24px; box-shadow:0 4px 12px rgba(0,0,0,0.06); display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <h3 style="color:#0A2540; font-family:'Montserrat',sans-serif; font-size:1.15rem; margin:0 0 12px 0; font-weight:800;"><i class="fas fa-users-cog" style="color:#C8102E; margin-right:8px;"></i>Comité & Reconocimientos</h3>
+                <div style="display:flex; flex-direction:column; gap:10px; font-size:0.78rem; color:#4b5563;">
+                    <div style="background:#f0fdf4; border-radius:8px; padding:10px; border:1px solid #bbf7d0;">
+                        <strong>Artículos 27 y 28:</strong> La experiencia en otras IES y en básica y media se tomará en cuenta para el cálculo de requisitos y la debida categorización de nuevos profesores.
+                    </div>
+                    <div style="background:#f8fafc; border-radius:8px; padding:10px; border:1px solid #e2e8f0;">
+                        <strong>Artículo 29:</strong> El Comité de Contratación Docente es el responsable de la reclasificación antes del primer periodo de cada año.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== TAB: ESTÍMULOS Y CAPACITACIÓN ========== -->
+<div id="c7Content_estimulos" class="c7-tab-content" style="display:none;">
+    <!-- Introducción -->
+    <div style="background:linear-gradient(135deg,#0A2540 0%,#173A66 100%); border-radius:16px; padding:30px; margin-bottom:25px; color:white;">
+        <h2 style="font-family:'Montserrat',sans-serif; font-size:1.6rem; margin:0 0 8px 0; color:white;"><i class="fas fa-gift" style="color:#C8102E; margin-right:10px;"></i>Distinciones, Estímulos y Capacitación Docente</h2>
+        <p style="color:#cbd5e1; font-size:0.95rem; margin:0;">Capítulo IX: Reconocimiento a los méritos académicos, becas de posgrado y políticas de perfeccionamiento institucional de la Corporación Escuela Tecnológica del Oriente.</p>
+    </div>
+
+    <!-- Becas e Incentivos a Estudios Posgraduales -->
+    <div style="background:linear-gradient(135deg,#fefce8 0%,#fef9c3 100%); border:2px solid #fef08a; border-radius:14px; padding:28px; margin-bottom:25px; box-shadow:0 4px 12px rgba(234,179,8,0.15);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; flex-wrap:wrap; gap:10px;">
+            <h3 style="color:#0A2540; font-family:'Montserrat',sans-serif; font-size:1.25rem; margin:0; font-weight:800;"><i class="fas fa-percentage" style="color:#eab308; margin-right:8px;"></i>Plan de Becas para Formación Avanzada (Art. 38, b)</h3>
+            <span style="background:#eab308; color:#0A2540; font-weight:800; font-size:0.75rem; padding:4px 12px; border-radius:20px;"><i class="fas fa-handshake" style="margin-right:4px;"></i>Aliados Estratégicos</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.88rem; line-height:1.5; margin:0 0 20px 0;">La institución garantiza herramientas y ofrece estímulos para incentivar estudios posgraduales a su profesorado a través de convenios activos de becas:</p>
+        
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
+            <div style="background:white; border-radius:12px; padding:20px; text-align:center; border:2px solid #fde68a; box-shadow:0 4px 8px rgba(0,0,0,0.02);">
+                <div style="width:60px; height:60px; background:#eff6ff; border-radius:50%; margin:0 auto 12px; display:flex; align-items:center; justify-content:center;"><i class="fas fa-user-graduate" style="color:#3b82f6; font-size:1.5rem;"></i></div>
+                <h4 style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 6px 0;">Especializaciones</h4>
+                <div style="font-size:2rem; font-weight:800; color:#3b82f6; margin-bottom:6px;">20% <span style="font-size:0.9rem; font-weight:normal; color:#6b7280;">Beca</span></div>
+                <p style="color:#6b7280; font-size:0.78rem; margin:0;">Incentivo para la formación en especializaciones aliadas</p>
+            </div>
+            <div style="background:white; border-radius:12px; padding:20px; text-align:center; border:2px solid #fde68a; box-shadow:0 4px 8px rgba(0,0,0,0.02);">
+                <div style="width:60px; height:60px; background:#faf5ff; border-radius:50%; margin:0 auto 12px; display:flex; align-items:center; justify-content:center;"><i class="fas fa-book-reader" style="color:#8b5cf6; font-size:1.5rem;"></i></div>
+                <h4 style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 6px 0;">Maestrías</h4>
+                <div style="font-size:2rem; font-weight:800; color:#8b5cf6; margin-bottom:6px;">10% <span style="font-size:0.9rem; font-weight:normal; color:#6b7280;">Beca</span></div>
+                <p style="color:#6b7280; font-size:0.78rem; margin:0;">Apoyo institucional para la realización de maestrías</p>
+            </div>
+            <div style="background:white; border-radius:12px; padding:20px; text-align:center; border:2px solid #fde68a; box-shadow:0 4px 8px rgba(0,0,0,0.02);">
+                <div style="width:60px; height:60px; background:#fdf2f8; border-radius:50%; margin:0 auto 12px; display:flex; align-items:center; justify-content:center;"><i class="fas fa-university" style="color:#ec4899; font-size:1.5rem;"></i></div>
+                <h4 style="color:#0A2540; font-weight:800; font-size:1.1rem; margin:0 0 6px 0;">Doctorados</h4>
+                <div style="font-size:2rem; font-weight:800; color:#ec4899; margin-bottom:6px;">Hasta 5% <span style="font-size:0.9rem; font-weight:normal; color:#6b7280;">Beca</span></div>
+                <p style="color:#6b7280; font-size:0.78rem; margin:0;">Incentivo especial con convenios activos de aliados estratégicos</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Distinciones Académicas (Art. 32-36) -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:28px; margin-bottom:25px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+        <h3 style="color:#0A2540; font-family:'Montserrat',sans-serif; font-size:1.25rem; margin:0 0 16px 0; font-weight:800;"><i class="fas fa-award" style="color:#C8102E; margin-right:8px;"></i>Distinciones y Reconocimientos (Artículo 32)</h3>
+        <p style="color:#4b5563; font-size:0.88rem; line-height:1.5; margin:0 0 18px 0;">Para exaltar los méritos de su cuerpo de profesores, se otorgan las siguientes distinciones solemnes que constarán en acuerdos del Consejo Superior y Rectoría:</p>
+        
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+            <!-- Docente Distinguido -->
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                        <div style="width:36px; height:36px; background:#eab308; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fas fa-star" style="color:#eab308; font-size:0.9rem; filter: drop-shadow(0 0 2px rgba(0,0,0,0.25));"></i></div>
+                        <h4 style="color:#0A2540; margin:0; font-weight:800; font-size:0.95rem;">Docente Distinguido</h4>
+                    </div>
+                    <span style="font-size:0.7rem; color:#6b7280; display:block; margin-bottom:8px;"><strong>Requisitos (Art. 33):</strong></span>
+                    <ul style="margin:0; padding-left:14px; color:#4b5563; font-size:0.75rem; display:flex; flex-direction:column; gap:6px;">
+                        <li>Docente en ejercicio y mínimo 5 años de servicio continuo en la institución.</li>
+                        <li>Reconocimiento por producción intelectual, aporte científico, disciplinar o tecnológico (publicación nacional/internacional).</li>
+                        <li>Evaluación de desempeño anual ≥ 4.5 o valoración cualitativa de "Excelente".</li>
+                    </ul>
+                </div>
+                <div style="margin-top:14px; background:#fef3c7; border-radius:6px; padding:8px; font-size:0.7rem; color:#b45309; line-height:1.3;">
+                    <strong>Beneficio:</strong> Equivale a los requisitos de producción intelectual para ascenso en escalafón.
+                </div>
+            </div>
+
+            <!-- Docente Emérito -->
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                        <div style="width:36px; height:36px; background:#3b82f6; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fas fa-medal" style="color:white; font-size:0.9rem;"></i></div>
+                        <h4 style="color:#0A2540; margin:0; font-weight:800; font-size:0.95rem;">Docente Emérito</h4>
+                    </div>
+                    <span style="font-size:0.7rem; color:#6b7280; display:block; margin-bottom:8px;"><strong>Requisitos (Art. 34):</strong></span>
+                    <ul style="margin:0; padding-left:14px; color:#4b5563; font-size:0.75rem; display:flex; flex-direction:column; gap:6px;">
+                        <li>Ser o haber sido docente de la institución.</li>
+                        <li>Reconocimiento nacional o internacional por sus elevados y relevantes aportes a la ciencia, técnica, humanidades, deporte o artes.</li>
+                    </ul>
+                </div>
+                <div style="margin-top:14px; background:#eff6ff; border-radius:6px; padding:8px; font-size:0.7rem; color:#1d4ed8; line-height:1.3;">
+                    <strong>Otorgado por:</strong> Consejo Superior a propuesta del Consejo Académico.
+                </div>
+            </div>
+
+            <!-- Menciones Especiales -->
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                        <div style="width:36px; height:36px; background:#ec4899; border-radius:50%; display:flex; align-items:center; justify-content:center;"><i class="fas fa-ribbon" style="color:white; font-size:0.9rem;"></i></div>
+                        <h4 style="color:#0A2540; margin:0; font-weight:800; font-size:0.95rem;">Menciones Especiales</h4>
+                    </div>
+                    <span style="font-size:0.7rem; color:#6b7280; display:block; margin-bottom:8px;"><strong>Requisitos (Art. 35):</strong></span>
+                    <ul style="margin:0; padding-left:14px; color:#4b5563; font-size:0.75rem; display:flex; flex-direction:column; gap:6px;">
+                        <li>Docente que por sus aportes intelectuales merezca la distinción.</li>
+                        <li>Por evaluación académica sobresaliente.</li>
+                        <li>Por tiempo de servicios destacado.</li>
+                        <li>Por actuaciones sobresalientes en certámenes tecnológicos, culturales, artísticos y deportivos.</li>
+                    </ul>
+                </div>
+                <div style="margin-top:14px; background:#fdf2f8; border-radius:6px; padding:8px; font-size:0.7rem; color:#be185d; line-height:1.3;">
+                    <strong>Otorgado por:</strong> El Rector de la Corporación en acto público (Art. 36).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Políticas de Capacitación y Perfeccionamiento -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:28px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h3 style="color:#0A2540; font-family:'Montserrat',sans-serif; font-size:1.25rem; margin:0; font-weight:800;"><i class="fas fa-graduation-cap" style="color:#C8102E; margin-right:8px;"></i>Políticas de Capacitación Docente (Artículos 37, 38 y 39)</h3>
+            <span style="background:#f0fdf4; color:#16a34a; font-weight:800; font-size:0.75rem; padding:4px 12px; border-radius:20px;"><i class="fas fa-check" style="margin-right:4px;"></i>Calidad Educativa</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.85rem; line-height:1.5; margin:0 0 16px 0;">La institución concibe el perfeccionamiento como un proceso permanente para garantizar el mejoramiento del desempeño y la práctica pedagógica:</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <div style="background:#f8fafc; border-left:3px solid #C8102E; padding:10px 14px; border-radius:0 8px 8px 0; font-size:0.8rem; color:#475569;">
+                    <strong>A. Proceso Permanente:</strong> Bajo criterios de eficiencia y eficacia para el mejoramiento continuo y consolidación académica.
+                </div>
+                <div style="background:#f8fafc; border-left:3px solid #C8102E; padding:10px 14px; border-radius:0 8px 8px 0; font-size:0.8rem; color:#475569;">
+                    <strong>B. Formación Posgradual:</strong> Incentivos y becas (especializaciones 20%, maestrías 10%, doctorados hasta 5%) con aliados estratégicos.
+                </div>
+                <div style="background:#f8fafc; border-left:3px solid #C8102E; padding:10px 14px; border-radius:0 8px 8px 0; font-size:0.8rem; color:#475569;">
+                    <strong>C. Articulación Curricular:</strong> Toda capacitación debe guardar coherencia con la Misión, Modelo Pedagógico y Lineamientos.
+                </div>
+                <div style="background:#f8fafc; border-left:3px solid #C8102E; padding:10px 14px; border-radius:0 8px 8px 0; font-size:0.8rem; color:#475569;">
+                    <strong>D. Derecho y Deber:</strong> Derecho del docente y deber de la institución para la evolución de la gestión académica.
+                </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <div style="background:#f8fafc; border-left:3px solid #0a2540; padding:10px 14px; border-radius:0 8px 8px 0; font-size:0.8rem; color:#475569;">
+                    <strong>E. Superación Profesional:</strong> Actitud permanente de superación según tendencias pedagógicas y tecnológicas.
+                </div>
+                <div style="background:#f8fafc; border-left:3px solid #0a2540; padding:10px 14px; border-radius:0 8px 8px 0; font-size:0.8rem; color:#475569;">
+                    <strong>F. Estímulos a Innovación:</strong> Estímulos a docentes destacados y a quienes desarrollen e implementen innovación pedagógica.
+                </div>
+                <div style="background:#f8fafc; border-left:3px solid #0a2540; padding:10px 14px; border-radius:0 8px 8px 0; font-size:0.8rem; color:#475569;">
+                    <strong>G. Coordinación:</strong> Actividades coordinadas por la Vicerrectoría Académica para garantizar pertinencia (Art. 39, Parágrafo 1).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== TAB: RÉGIMEN DISCIPLINARIO ========== -->
+<div id="c7Content_regimen" class="c7-tab-content" style="display:none;">
+    <!-- Introducción -->
+    <div style="background:linear-gradient(135deg,#0A2540 0%,#173A66 100%); border-radius:16px; padding:30px; margin-bottom:25px; color:white;">
+        <h2 style="font-family:'Montserrat',sans-serif; font-size:1.6rem; margin:0 0 8px 0; color:white;"><i class="fas fa-shield-halved" style="color:#C8102E; margin-right:10px;"></i>Régimen Disciplinario y de Cumplimiento</h2>
+        <p style="color:#cbd5e1; font-size:0.95rem; margin:0;">Capítulo X: Impedimentos, inhabilidades, incompatibilidades, prohibiciones y conflicto de intereses en la Corporación Escuela Tecnológica del Oriente.</p>
+    </div>
+
+    <!-- Módulos de Cumplimiento -->
+    <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:16px; margin-bottom:25px;">
+        <!-- Impedimentos -->
+        <div style="background:#fff; border:2px solid #ef4444; border-radius:14px; padding:20px; transition:transform 0.3s; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 4px 12px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div>
+                <span style="background:#fef2f2; color:#ef4444; font-weight:800; font-size:0.7rem; padding:3px 10px; border-radius:12px; display:inline-block; margin-bottom:10px; text-transform:uppercase;">Art. 40</span>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                    <div style="width:34px; height:34px; background:#fef2f2; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fas fa-gavel" style="color:#ef4444; font-size:0.85rem;"></i></div>
+                    <h4 style="color:#0A2540; margin:0; font-weight:800; font-size:0.85rem;">Impedimentos</h4>
+                </div>
+                <p style="color:#4b5563; font-size:0.75rem; line-height:1.4; margin:0;">Para representación o participación en cuerpos colegiados, el docente debe declararse impedido en decisiones (votos) que atañen beneficios familiares o personales.</p>
+            </div>
+            <div style="margin-top:14px; font-size:0.7rem; color:#ef4444; font-weight:bold;">
+                <i class="fas fa-exclamation-triangle"></i> Manifestar conflicto de interés.
+            </div>
+        </div>
+
+        <!-- Inhabilidades -->
+        <div style="background:#fff; border:2px solid #f97316; border-radius:14px; padding:20px; transition:transform 0.3s; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 4px 12px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div>
+                <span style="background:#fff7ed; color:#f97316; font-weight:800; font-size:0.7rem; padding:3px 10px; border-radius:12px; display:inline-block; margin-bottom:10px; text-transform:uppercase;">Art. 41</span>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                    <div style="width:34px; height:34px; background:#fff7ed; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fas fa-user-slash" style="color:#f97316; font-size:0.85rem;"></i></div>
+                    <h4 style="color:#0A2540; margin:0; font-weight:800; font-size:0.85rem;">Inhabilidades</h4>
+                </div>
+                <p style="color:#4b5563; font-size:0.75rem; line-height:1.4; margin:0;">De acuerdo con el RIT, el docente podrá estar sujeto a inhabilidades por procesos disciplinarios o situaciones de incapacidad para sus funciones.</p>
+            </div>
+            <div style="margin-top:14px; font-size:0.7rem; color:#f97316; font-weight:bold;">
+                <i class="fas fa-info-circle"></i> Notificar a Talento Humano.
+            </div>
+        </div>
+
+        <!-- Incompatibilidades -->
+        <div style="background:#fff; border:2px solid #eab308; border-radius:14px; padding:20px; transition:transform 0.3s; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 4px 12px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div>
+                <span style="background:#fefce8; color:#eab308; font-weight:800; font-size:0.7rem; padding:3px 10px; border-radius:12px; display:inline-block; margin-bottom:10px; text-transform:uppercase;">Art. 42</span>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                    <div style="width:34px; height:34px; background:#fefce8; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fas fa-balance-scale" style="color:#eab308; font-size:0.85rem;"></i></div>
+                    <h4 style="color:#0A2540; margin:0; font-weight:800; font-size:0.85rem;">Incompatibilidades</h4>
+                </div>
+                <p style="color:#4b5563; font-size:0.75rem; line-height:1.4; margin:0;">Ningún docente podrá tener simultáneamente en la misma jornada laboral dos cargos adscritos a la institución que ameriten relación laboral.</p>
+            </div>
+            <div style="margin-top:14px; font-size:0.7rem; color:#eab308; font-weight:bold;">
+                <i class="fas fa-ban"></i> Restricción de doble cargo.
+            </div>
+        </div>
+
+        <!-- Prohibiciones -->
+        <div style="background:#fff; border:2px solid #8b5cf6; border-radius:14px; padding:20px; transition:transform 0.3s; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 4px 12px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div>
+                <span style="background:#faf5ff; color:#8b5cf6; font-weight:800; font-size:0.7rem; padding:3px 10px; border-radius:12px; display:inline-block; margin-bottom:10px; text-transform:uppercase;">Art. 43</span>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                    <div style="width:34px; height:34px; background:#faf5ff; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fas fa-ban" style="color:#8b5cf6; font-size:0.85rem;"></i></div>
+                    <h4 style="color:#0A2540; margin:0; font-weight:800; font-size:0.85rem;">Prohibiciones</h4>
+                </div>
+                <p style="color:#4b5563; font-size:0.75rem; line-height:1.4; margin:0;">Ningún docente permanente podrá tener simultáneamente contrato de tiempo completo en la Corporación y otro en el mismo sector económico.</p>
+            </div>
+            <div style="margin-top:14px; font-size:0.7rem; color:#8b5cf6; font-weight:bold;">
+                <i class="fas fa-exclamation-circle"></i> Dedicación exclusiva.
+            </div>
+        </div>
+
+        <!-- Conflicto de Intereses -->
+        <div style="background:#fff; border:2px solid #ec4899; border-radius:14px; padding:20px; transition:transform 0.3s; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 4px 12px rgba(0,0,0,0.03);" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div>
+                <span style="background:#fdf2f8; color:#ec4899; font-weight:800; font-size:0.7rem; padding:3px 10px; border-radius:12px; display:inline-block; margin-bottom:10px; text-transform:uppercase;">Art. 44</span>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                    <div style="width:34px; height:34px; background:#fdf2f8; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fas fa-handshake-slash" style="color:#ec4899; font-size:0.85rem;"></i></div>
+                    <h4 style="color:#0A2540; margin:0; font-weight:800; font-size:0.85rem;">Conflicto Interés</h4>
+                </div>
+                <p style="color:#4b5563; font-size:0.75rem; line-height:1.4; margin:0;">Todo interés primario/secundario, familiar o colectivo que ponga en riesgo la integridad institucional o el buen nombre activará el proceso sancionatorio.</p>
+            </div>
+            <div style="margin-top:14px; font-size:0.7rem; color:#ec4899; font-weight:bold;">
+                <i class="fas fa-balance-scale"></i> Proceso Sancionatorio.
+            </div>
+        </div>
+    </div>
+
+    <!-- Gobierno y Transparencia -->
+    <div style="background:#eff6ff; border-left:4px solid #3b82f6; border-radius:8px; padding:18px;">
+        <h5 style="color:#1e40af; margin:0 0 6px 0; font-weight:800; font-size:0.95rem;"><i class="fas fa-university" style="margin-right:8px;"></i>Código de Buen Gobierno</h5>
+        <p style="color:#4b5563; font-size:0.85rem; margin:0; line-height:1.4;">Los reglamentos disciplinarios de la Corporación Escuela Tecnológica del Oriente garantizan la transparencia, autorregulación y apego a los más altos estándares éticos, en cumplimiento con el Reglamento Interno de Trabajo (RIT) administrado por la Dirección de Talento Humano.</p>
+    </div>
+</div>
+
 <!-- ========== TAB 7: PRESENTACIÓN COMPLETA (SLIDES PPTX) ========== -->
 <div id="c7Content_slides" class="c7-tab-content" style="display:none;">
     <div style="background:#f9fafb; border:2px solid #e5e7eb; border-radius:12px; padding:20px; text-align:center;">
@@ -782,7 +1208,7 @@ window.SECTIONS.c7 = `
 // INTERACTIVIDAD — TAB SWITCHING
 // ===================================================================
 window.switchC7Tab = function(tabId) {
-    var tabs = ['estatuto','seleccion','proyeccion','cualificacion','bienestar','evaluacion','slides'];
+    var tabs = ['estatuto','seleccion','proyeccion','cualificacion','bienestar','evaluacion','escalafon','estimulos','regimen','slides'];
     tabs.forEach(function(t) {
         var content = document.getElementById('c7Content_' + t);
         var btn = document.getElementById('c7Tab_' + t);
